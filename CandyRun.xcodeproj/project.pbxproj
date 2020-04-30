@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
+		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
+		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
 		6311931E245B174500FE95F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6311931D245B174500FE95F7 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
+		402B6064245B20F300A4DE19 /* CandyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyRun.entitlements; sourceTree = "<group>"; };
 		6311931A245B174500FE95F7 /* CandyRun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CandyRun; sourceTree = BUILT_PRODUCTS_DIR; };
 		6311931D245B174500FE95F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,17 +39,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */,
+				402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */,
+				402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		402B605D245B20C300A4DE19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */,
+				402B6060245B20C700A4DE19 /* GLUT.framework */,
+				402B605E245B20C300A4DE19 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63119311245B174500FE95F7 = {
 			isa = PBXGroup;
 			children = (
 				6311931C245B174500FE95F7 /* CandyRun */,
 				6311931B245B174500FE95F7 /* Products */,
+				402B605D245B20C300A4DE19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +78,7 @@
 		6311931C245B174500FE95F7 /* CandyRun */ = {
 			isa = PBXGroup;
 			children = (
+				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
 				6311931D245B174500FE95F7 /* main.cpp */,
 			);
 			path = CandyRun;
@@ -238,9 +260,15 @@
 		63119322245B174500FE95F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/freeglut/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,9 +276,15 @@
 		63119323245B174500FE95F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/freeglut/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
