@@ -2,7 +2,7 @@
 //  main.cpp
 //  CandyRun
 //
-//  Created by Gennaro Mellone on 30/04/2020.
+//  Created by Gennaro Mellone and Ciro Giuseppe De Vita on 30/04/2020.
 //  Copyright © 2020 BesTeam-ing. All rights reserved.
 //
 
