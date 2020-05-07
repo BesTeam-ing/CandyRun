@@ -30,6 +30,7 @@
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
 		402B6064245B20F300A4DE19 /* CandyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyRun.entitlements; sourceTree = "<group>"; };
+		4070F11D2461D06A00500C06 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		6311931A245B174500FE95F7 /* CandyRun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CandyRun; sourceTree = BUILT_PRODUCTS_DIR; };
 		6311931D245B174500FE95F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +81,7 @@
 			children = (
 				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
 				6311931D245B174500FE95F7 /* main.cpp */,
+				4070F11D2461D06A00500C06 /* header.h */,
 			);
 			path = CandyRun;
 			sourceTree = "<group>";
