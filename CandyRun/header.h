@@ -9,16 +9,20 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
+#include "SkyBox/display.h"
+
+#include "SOIL2.h"
+#include "SkyBox/global.h"
 
 #include <sstream>
-#include <time.h>
 #include <stdio.h>
 #include <ctime>
 #include <iostream>
 #include <cstring>
-
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
 
 using namespace std;
-
-#define W 1280
-#define H 720
