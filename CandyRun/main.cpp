@@ -1,5 +1,6 @@
 #include "header.h"
 
+
 void initGlobals(void)
 {
     /* WINDOW */
@@ -21,6 +22,7 @@ void initGlobals(void)
 
 void initSkybox(void)
 {
+    
   /*
     SKY_FRONT 0
     SKY_RIGHT 1
@@ -30,12 +32,12 @@ void initSkybox(void)
     SKY_DOWN 5
    */
 
-    skybox[SKY_FRONT] = SOIL_load_OGL_texture("../textures/txStormydays_front.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_RIGHT] = SOIL_load_OGL_texture("/Users/gennaromellone/Downloads/textures/txStormydays_right.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_LEFT] = SOIL_load_OGL_texture("/Users/gennaromellone/Downloads/textures/txStormydays_left.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_BACK] = SOIL_load_OGL_texture("/Users/gennaromellone/Downloads/textures/txStormydays_back.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_UP] = SOIL_load_OGL_texture("/Users/gennaromellone/Downloads/textures/txStormydays_up.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_DOWN] = SOIL_load_OGL_texture("/Users/gennaromellone/Downloads/textures/txStormydays_down.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    skybox[SKY_FRONT] = SOIL_load_OGL_texture("textures/txStormydays_front.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    skybox[SKY_RIGHT] = SOIL_load_OGL_texture("textures/txStormydays_right.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    skybox[SKY_LEFT] = SOIL_load_OGL_texture("textures/txStormydays_left.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    skybox[SKY_BACK] = SOIL_load_OGL_texture("textures/txStormydays_back.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    skybox[SKY_UP] = SOIL_load_OGL_texture("textures/txStormydays_up.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    skybox[SKY_DOWN] = SOIL_load_OGL_texture("textures/txStormydays_down.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
 }
 
 // Initialization routine.

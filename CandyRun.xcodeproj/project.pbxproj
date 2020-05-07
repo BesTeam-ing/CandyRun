@@ -11,17 +11,43 @@
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
 		6311931E245B174500FE95F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6311931D245B174500FE95F7 /* main.cpp */; };
+		6396F14E2464A62400B72597 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1392464A51900B72597 /* image_helper.c */; };
+		6396F14F2464A62400B72597 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13C2464A51900B72597 /* image_DXT.c */; };
+		6396F1502464A62400B72597 /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13F2464A51900B72597 /* SOIL2.c */; };
+		6396F1512464A62400B72597 /* etc1_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1492464A51900B72597 /* etc1_utils.c */; };
+		6396F15F2464B0F700B72597 /* txStormydays_down.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BA2464A47B00B72597 /* txStormydays_down.bmp */; };
+		6396F1602464B0F700B72597 /* txStormydays_back.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0B92464A47B00B72597 /* txStormydays_back.bmp */; };
+		6396F1612464B0F700B72597 /* txStormydays_up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0B82464A47A00B72597 /* txStormydays_up.bmp */; };
+		6396F1622464B0F700B72597 /* txStormydays_left.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BB2464A47B00B72597 /* txStormydays_left.bmp */; };
+		6396F1632464B0F700B72597 /* txStormydays_right.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BC2464A47B00B72597 /* txStormydays_right.bmp */; };
+		6396F1642464B0F700B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		63119318245B174500FE95F7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		6396F1582464AFDB00B72597 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = textures;
+			dstSubfolderSpec = 16;
+			files = (
+				6396F15F2464B0F700B72597 /* txStormydays_down.bmp in Copy Files */,
+				6396F1602464B0F700B72597 /* txStormydays_back.bmp in Copy Files */,
+				6396F1612464B0F700B72597 /* txStormydays_up.bmp in Copy Files */,
+				6396F1622464B0F700B72597 /* txStormydays_left.bmp in Copy Files */,
+				6396F1632464B0F700B72597 /* txStormydays_right.bmp in Copy Files */,
+				6396F1642464B0F700B72597 /* txStormydays_front.bmp in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -137,8 +163,10 @@
 				6396F0BC2464A47B00B72597 /* txStormydays_right.bmp */,
 				6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */,
 			);
-			path = textures;
-			sourceTree = "<group>";
+			name = textures;
+			path = CandyRun/textures;
+			sourceTree = SOURCE_ROOT;
+			usesTabs = 0;
 		};
 		6396F1382464A51900B72597 /* SOIL2 */ = {
 			isa = PBXGroup;
@@ -178,6 +206,7 @@
 				63119316245B174500FE95F7 /* Sources */,
 				63119317245B174500FE95F7 /* Frameworks */,
 				63119318245B174500FE95F7 /* CopyFiles */,
+				6396F1582464AFDB00B72597 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -225,6 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6396F14E2464A62400B72597 /* image_helper.c in Sources */,
+				6396F14F2464A62400B72597 /* image_DXT.c in Sources */,
+				6396F1502464A62400B72597 /* SOIL2.c in Sources */,
+				6396F1512464A62400B72597 /* etc1_utils.c in Sources */,
 				6311931E245B174500FE95F7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
