@@ -1,5 +1,6 @@
 #include "header.h"
 
+SkyBox sky;
 
 void initGlobals(void)
 {
@@ -18,30 +19,6 @@ void initGlobals(void)
     ecX=DEF_ECX;
     ecY=DEF_ECY;
     ecZ=DEF_ECZ;
-}
-
-void initSkybox(void)
-{
-    
-  /*
-    SKY_FRONT 0
-    SKY_RIGHT 1
-    SKY_LEFT 2
-    SKY_BACK 3
-    SKY_UP 4
-    SKY_DOWN 5
-   */
-
-    skybox[SKY_FRONT] = SOIL_load_OGL_texture("textures/txStormydays_front.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_RIGHT] = SOIL_load_OGL_texture("textures/txStormydays_right.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_LEFT] = SOIL_load_OGL_texture("textures/txStormydays_left.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_BACK] = SOIL_load_OGL_texture("textures/txStormydays_back.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_UP] = SOIL_load_OGL_texture("textures/txStormydays_up.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    skybox[SKY_DOWN] = SOIL_load_OGL_texture("textures/txStormydays_down.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
-    
-    SkyBox x = SkyBox();
-    x.test(3);
-    
 }
 
 // Initialization routine.
@@ -65,10 +42,13 @@ void resize(int w, int h)
 void windowKey(unsigned char key,int x,int y)
 {
   /*  Exit on ESC */
-  if (key == 27) exit(0);
+  if (key == 27)
+      exit(0);
   /*  Change field of view angle */
-  else if (key == '-' && key>1) fov--;
-  else if (key == '+' && key<179) fov++;
+  else if (key == '-' && key>1)
+      fov--;
+  else if (key == '+' && key<179)
+      fov++;
 
   redisplayAll();
 }
@@ -76,17 +56,30 @@ void windowKey(unsigned char key,int x,int y)
 void windowSpecial(int key,int x,int y)
 {
   /*  Right/Left - rotate */
-  if (key == GLUT_KEY_RIGHT) th += 5;
-  else if (key == GLUT_KEY_LEFT) th -= 5;
+    if (key == GLUT_KEY_RIGHT) th += 5;
+    else if (key == GLUT_KEY_LEFT) th -= 5;
   /*  Up/Down - elevation */
-  else if (key == GLUT_KEY_UP) ph += 5;
-  else if (key == GLUT_KEY_DOWN) ph -= 5;
+    else if (key == GLUT_KEY_UP) ph += 5;
+    else if (key == GLUT_KEY_DOWN) ph -= 5;
   
   /*  Keep angles at +/- 360 degrees */
   th %= 360;
   ph %= 360;
 
   redisplayAll();
+}
+
+void drawScene()
+{
+    /* setup functions */
+    displayInit();
+    displayEye();
+
+    sky.drawSkyBox(3.5*dim);
+
+    /* Flush, SwapBuffers, and sanity check */
+    glFlush();
+    glutSwapBuffers();
 }
 
 int main(int argc, char **argv)
@@ -100,14 +93,14 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(windowWidth,windowHeight);
     glutInitWindowPosition(windowPosWidth,windowPosHeight);
-    glutCreateWindow("Candy Run");
+    glutCreateWindow(windowName);
 
-    glutDisplayFunc(display);
+    glutDisplayFunc(drawScene);
     glutReshapeFunc(displayReshape);
     glutKeyboardFunc(windowKey);
     glutSpecialFunc(windowSpecial);
 
-    initSkybox();
+    sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
 
     redisplayAll();
     glutMainLoop();

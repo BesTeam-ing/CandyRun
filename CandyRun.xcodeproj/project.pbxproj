@@ -120,8 +120,6 @@
 		40CCC3FC246486D400156FA6 /* SkyBox */ = {
 			isa = PBXGroup;
 			children = (
-				40CCC3FD246486FF00156FA6 /* global.h */,
-				40CCC41924648C4300156FA6 /* display.h */,
 				6396F1652465B47E00B72597 /* skybox.cpp */,
 				6396F1662465B47E00B72597 /* skybox.hpp */,
 			);
@@ -152,6 +150,8 @@
 				6396F0B72464A46500B72597 /* textures */,
 				40CCC3FC246486D400156FA6 /* SkyBox */,
 				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
+				40CCC3FD246486FF00156FA6 /* global.h */,
+				40CCC41924648C4300156FA6 /* display.h */,
 				6311931D245B174500FE95F7 /* main.cpp */,
 				4070F11D2461D06A00500C06 /* header.h */,
 			);
@@ -385,7 +385,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -401,7 +401,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (

@@ -8,11 +8,72 @@
 
 #include "skybox.hpp"
 
-SkyBox::SkyBox(){
-    
+SkyBox::SkyBox(){}
+
+SkyBox::~SkyBox(){}
+
+void SkyBox::initSkyBox(char *front, char *right, char *left, char *back, char *up, char *down){
+    this->skybox[FRONT] = SOIL_load_OGL_texture(front, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    this->skybox[RIGHT] = SOIL_load_OGL_texture(right, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    this->skybox[LEFT] = SOIL_load_OGL_texture(left, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    this->skybox[BACK] = SOIL_load_OGL_texture(back, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    this->skybox[UP] = SOIL_load_OGL_texture(up, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    this->skybox[DOWN] = SOIL_load_OGL_texture(down, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
 }
 
-int SkyBox::test(int x){
+void SkyBox::drawSkyBox(double D){
+    glColor3f(1.0f,1.0f,1.0f);
+    glEnable(GL_TEXTURE_2D);
+
+    /* Sides */
+    glBindTexture(GL_TEXTURE_2D,this->skybox[RIGHT]);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0,0); glVertex3f(-D,-D,-D);
+        glTexCoord2f(1,0); glVertex3f(+D,-D,-D);
+        glTexCoord2f(1,1); glVertex3f(+D,+D,-D);
+        glTexCoord2f(0,1); glVertex3f(-D,+D,-D);
+    glEnd();
     
-    return x+2;
+    glBindTexture(GL_TEXTURE_2D,this->skybox[FRONT]);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0,0); glVertex3f(+D,-D,-D);
+        glTexCoord2f(1,0); glVertex3f(+D,-D,+D);
+        glTexCoord2f(1,1); glVertex3f(+D,+D,+D);
+        glTexCoord2f(0,1); glVertex3f(+D,+D,-D);
+    glEnd();
+    
+    glBindTexture(GL_TEXTURE_2D,this->skybox[LEFT]);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0,0); glVertex3f(+D,-D,+D);
+        glTexCoord2f(1,0); glVertex3f(-D,-D,+D);
+        glTexCoord2f(1,1); glVertex3f(-D,+D,+D);
+        glTexCoord2f(0,1); glVertex3f(+D,+D,+D);
+    glEnd();
+    
+    glBindTexture(GL_TEXTURE_2D,this->skybox[BACK]);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0,0); glVertex3f(-D,-D,+D);
+        glTexCoord2f(1,0); glVertex3f(-D,-D,-D);
+        glTexCoord2f(1,1); glVertex3f(-D,+D,-D);
+        glTexCoord2f(0,1); glVertex3f(-D,+D,+D);
+    glEnd();
+
+    /* Top and Bottom */
+    glBindTexture(GL_TEXTURE_2D,this->skybox[UP]);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0,0); glVertex3f(-D,+D,-D);
+        glTexCoord2f(1,0); glVertex3f(+D,+D,-D);
+        glTexCoord2f(1,1); glVertex3f(+D,+D,+D);
+        glTexCoord2f(0,1); glVertex3f(-D,+D,+D);
+    glEnd();
+    
+    glBindTexture(GL_TEXTURE_2D,this->skybox[DOWN]);
+    glBegin(GL_QUADS);
+        glTexCoord2f(1,1); glVertex3f(+D,-D,-D);
+        glTexCoord2f(0,1); glVertex3f(-D,-D,-D);
+        glTexCoord2f(0,0); glVertex3f(-D,-D,+D);
+        glTexCoord2f(1,0); glVertex3f(+D,-D,+D);
+    glEnd();
+
+    glDisable(GL_TEXTURE_2D);
 }

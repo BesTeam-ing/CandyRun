@@ -53,7 +53,7 @@
 int screencastID = 0;
 
 /*  WINDOW  */
-std::string windowName="OpenGL screenscasts XX: Placeholder";
+char *windowName="Candy Run";
 int windowHeight=DEF_WINDOW_HEIGHT;
 int windowWidth=DEF_WINDOW_WIDTH;
 int windowPosHeight=DEF_WINDOW_POS_H;
@@ -71,8 +71,5 @@ double ecZ=DEF_ECZ;
 
 /*  COLORS  */
 float white[]={1,1,1,1};
-
-/*  TEXTURES  */
-static unsigned int skybox[6];
 
 #endif /* global_h */

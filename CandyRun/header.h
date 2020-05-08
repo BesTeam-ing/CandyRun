@@ -9,12 +9,12 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
-#include "SkyBox/display.h"
+#include "display.h"
 
 #include "SkyBox/skybox.hpp"
 
 #include <SOIL2/SOIL2.h>
-#include "SkyBox/global.h"
+#include "global.h"
 
 #include <sstream>
 #include <stdio.h>
