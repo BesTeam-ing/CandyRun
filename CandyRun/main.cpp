@@ -21,18 +21,6 @@ void initGlobals(void)
     ecZ=DEF_ECZ;
 }
 
-// Initialization routine.
-void setup(void)
-{
-    glClearColor(1.0, 1.0, 1.0, 1.0);
-    glViewport(0, 0, 1280, 720);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(0.0f, 1280, 0.0f, 720, 0.0f, 1.0f);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-}
-
 // OpenGL window reshape routine.
 void resize(int w, int h)
 {
@@ -85,9 +73,9 @@ void drawScene()
     double Ex = -2*dim*Sin(th)*Cos(ph);
     double Ey = +2*dim        *Sin(ph);
     double Ez = +2*dim*Cos(th)*Cos(ph);
-    
+        
     /* camera/eye position, aim of camera lens, up-vector */
-    gluLookAt(Ex+ecX,Ey,Ez+ecZ , ecX,ecY,ecZ , 0,Cos(ph),0);
+    gluLookAt(Ex+ecX, Ey,Ez+ecZ, ecX,ecY, ecZ, 0, Cos(ph), 0);
 
     sky.drawSkyBox(3.5*dim);
 

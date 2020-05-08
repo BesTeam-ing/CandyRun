@@ -29,7 +29,7 @@ public:
     
     ~SkyBox();
     
-    void initSkyBox(char *front, char *right, char *left, char *back, char *up, char *down);
+    void initSkyBox(char const *front, char const *right, char const *left, char const *back, char const *up, char const *down);
     void drawSkyBox(double D);
     
 private:

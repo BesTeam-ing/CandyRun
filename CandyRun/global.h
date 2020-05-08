@@ -21,8 +21,8 @@
 /*  Defaults for window sizing  */
 #define DEF_WINDOW_HEIGHT 720
 #define DEF_WINDOW_WIDTH 1280
-#define DEF_WINDOW_POS_H 150
-#define DEF_WINDOW_POS_W 150
+#define DEF_WINDOW_POS_H 50
+#define DEF_WINDOW_POS_W 50
 
 /*  Projection  */
 #define DEF_ASP 1
@@ -53,7 +53,7 @@
 int screencastID = 0;
 
 /*  WINDOW  */
-char *windowName="Candy Run";
+char const *windowName="Candy Run";
 int windowHeight=DEF_WINDOW_HEIGHT;
 int windowWidth=DEF_WINDOW_WIDTH;
 int windowPosHeight=DEF_WINDOW_POS_H;
