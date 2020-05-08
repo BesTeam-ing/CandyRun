@@ -21,6 +21,7 @@
 		6396F1622464B0F700B72597 /* txStormydays_left.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BB2464A47B00B72597 /* txStormydays_left.bmp */; };
 		6396F1632464B0F700B72597 /* txStormydays_right.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BC2464A47B00B72597 /* txStormydays_right.bmp */; };
 		6396F1642464B0F700B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */; };
+		6396F1672465B47E00B72597 /* skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1652465B47E00B72597 /* skybox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +89,8 @@
 		6396F14B2464A51900B72597 /* stbi_pkm_c.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stbi_pkm_c.h; sourceTree = "<group>"; };
 		6396F14C2464A51900B72597 /* stbi_DDS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stbi_DDS.h; sourceTree = "<group>"; };
 		6396F14D2464A51900B72597 /* pvr_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pvr_helper.h; sourceTree = "<group>"; };
+		6396F1652465B47E00B72597 /* skybox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = skybox.cpp; sourceTree = "<group>"; };
+		6396F1662465B47E00B72597 /* skybox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = skybox.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 			children = (
 				40CCC3FD246486FF00156FA6 /* global.h */,
 				40CCC41924648C4300156FA6 /* display.h */,
+				6396F1652465B47E00B72597 /* skybox.cpp */,
+				6396F1662465B47E00B72597 /* skybox.hpp */,
 			);
 			path = SkyBox;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				6396F1502464A62400B72597 /* SOIL2.c in Sources */,
 				6396F1512464A62400B72597 /* etc1_utils.c in Sources */,
 				6311931E245B174500FE95F7 /* main.cpp in Sources */,
+				6396F1672465B47E00B72597 /* skybox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

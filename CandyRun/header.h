@@ -11,6 +11,8 @@
 #include <OpenGL/glext.h>
 #include "SkyBox/display.h"
 
+#include "SkyBox/skybox.hpp"
+
 #include <SOIL2/SOIL2.h>
 #include "SkyBox/global.h"
 

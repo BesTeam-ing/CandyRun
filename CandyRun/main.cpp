@@ -38,6 +38,10 @@ void initSkybox(void)
     skybox[SKY_BACK] = SOIL_load_OGL_texture("textures/txStormydays_back.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     skybox[SKY_UP] = SOIL_load_OGL_texture("textures/txStormydays_up.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     skybox[SKY_DOWN] = SOIL_load_OGL_texture("textures/txStormydays_down.bmp", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    
+    SkyBox x = SkyBox();
+    x.test(3);
+    
 }
 
 // Initialization routine.
