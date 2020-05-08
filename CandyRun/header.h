@@ -14,6 +14,7 @@
 #include "display.h"
 #include "global.h"
 #include "SkyBox/skybox.hpp"
+#include "WeatherEffects/w_effects.hpp"
 
 #include <iostream>
 #include <string.h>

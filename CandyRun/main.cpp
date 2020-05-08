@@ -1,6 +1,7 @@
 #include "header.h"
 
 SkyBox sky;
+WeatherEffects part;
 
 void initGlobals(void)
 {
@@ -68,6 +69,8 @@ void drawScene()
     glClearColor(0.0,0.0,0.0,0.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
+    glMatrixMode(GL_MODELVIEW);
+
     glLoadIdentity();
     
     double Ex = -2*dim*Sin(th)*Cos(ph);
@@ -78,6 +81,8 @@ void drawScene()
     gluLookAt(Ex+ecX, Ey,Ez+ecZ, ecX,ecY, ecZ, 0, Cos(ph), 0);
 
     sky.drawSkyBox(3.5*dim);
+    part.drawRain();
+    redisplayAll();
 
     /* Flush, SwapBuffers, and sanity check */
     glFlush();
@@ -87,7 +92,7 @@ void drawScene()
 int main(int argc, char **argv)
 {
     initGlobals();
-
+    
     /* screencast specific variables */
     screencastID = 21;
     
@@ -103,9 +108,10 @@ int main(int argc, char **argv)
     glutSpecialFunc(windowSpecial);
 
     sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
+    part.initParticles();
 
-    redisplayAll();
     glutMainLoop();
+    
     return 0;
 }
 

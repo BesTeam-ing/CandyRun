@@ -22,6 +22,7 @@
 		6396F1632464B0F700B72597 /* txStormydays_right.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BC2464A47B00B72597 /* txStormydays_right.bmp */; };
 		6396F1642464B0F700B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */; };
 		6396F1672465B47E00B72597 /* skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1652465B47E00B72597 /* skybox.cpp */; };
+		6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1692465EFB600B72597 /* w_effects.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +92,8 @@
 		6396F14D2464A51900B72597 /* pvr_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pvr_helper.h; sourceTree = "<group>"; };
 		6396F1652465B47E00B72597 /* skybox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = skybox.cpp; sourceTree = "<group>"; };
 		6396F1662465B47E00B72597 /* skybox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = skybox.hpp; sourceTree = "<group>"; };
+		6396F1692465EFB600B72597 /* w_effects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = w_effects.cpp; sourceTree = "<group>"; };
+		6396F16A2465EFB600B72597 /* w_effects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = w_effects.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,10 +149,11 @@
 		6311931C245B174500FE95F7 /* CandyRun */ = {
 			isa = PBXGroup;
 			children = (
+				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
+				6396F1682465EF8600B72597 /* WeatherEffects */,
 				6396F1382464A51900B72597 /* SOIL2 */,
 				6396F0B72464A46500B72597 /* textures */,
 				40CCC3FC246486D400156FA6 /* SkyBox */,
-				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
 				40CCC3FD246486FF00156FA6 /* global.h */,
 				40CCC41924648C4300156FA6 /* display.h */,
 				6311931D245B174500FE95F7 /* main.cpp */,
@@ -199,6 +203,15 @@
 				6396F14D2464A51900B72597 /* pvr_helper.h */,
 			);
 			path = SOIL2;
+			sourceTree = "<group>";
+		};
+		6396F1682465EF8600B72597 /* WeatherEffects */ = {
+			isa = PBXGroup;
+			children = (
+				6396F1692465EFB600B72597 /* w_effects.cpp */,
+				6396F16A2465EFB600B72597 /* w_effects.hpp */,
+			);
+			path = WeatherEffects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +274,7 @@
 			files = (
 				6396F14E2464A62400B72597 /* image_helper.c in Sources */,
 				6396F14F2464A62400B72597 /* image_DXT.c in Sources */,
+				6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */,
 				6396F1502464A62400B72597 /* SOIL2.c in Sources */,
 				6396F1512464A62400B72597 /* etc1_utils.c in Sources */,
 				6311931E245B174500FE95F7 /* main.cpp in Sources */,
@@ -384,8 +398,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -400,8 +415,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (

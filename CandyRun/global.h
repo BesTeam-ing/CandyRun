@@ -9,6 +9,8 @@
 #ifndef global_h
 #define global_h
 
+#define MAX_PARTICLES 1000
+
 /*  Poor man's approximation of PI */
 #define PI 3.1415926535898
 /*  Macro for sin & cos in degrees */

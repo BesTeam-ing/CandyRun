@@ -77,7 +77,7 @@ void SkyBox::drawSkyBox(double D){
     
     glDisable(GL_TEXTURE_2D);
     
-    /*
+    
      glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, this->skybox[UP]);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -93,5 +93,5 @@ void SkyBox::drawSkyBox(double D){
             glVertex3f(3.0f, 0.0f, -10000.0f);
         glEnd();
      glDisable(GL_TEXTURE_2D);
-     */
+     
 }
