@@ -41,39 +41,53 @@ void resize(int w, int h)
 
 void windowKey(unsigned char key,int x,int y)
 {
-  /*  Exit on ESC */
-  if (key == 27)
-      exit(0);
-  /*  Change field of view angle */
-  else if (key == '-' && key>1)
-      fov--;
-  else if (key == '+' && key<179)
-      fov++;
+    /*  Exit on ESC */
+    if (key == 27)
+        exit(0);
+    
+    /*  Change field of view angle */
+    else if (key == '-' && key>1)
+        fov--;
+    
+    else if (key == '+' && key<179)
+        fov++;
 
-  redisplayAll();
+    redisplayAll();
 }
 
 void windowSpecial(int key,int x,int y)
 {
-  /*  Right/Left - rotate */
-    if (key == GLUT_KEY_RIGHT) th += 5;
-    else if (key == GLUT_KEY_LEFT) th -= 5;
-  /*  Up/Down - elevation */
-    else if (key == GLUT_KEY_UP) ph += 5;
-    else if (key == GLUT_KEY_DOWN) ph -= 5;
+    /*  Right/Left - rotate */
+    if (key == GLUT_KEY_RIGHT)
+        th += 5;
+    else if (key == GLUT_KEY_LEFT)
+        th -= 5;
+    /*  Up/Down - elevation */
+    else if (key == GLUT_KEY_UP)
+        ph -= 5;
+    else if (key == GLUT_KEY_DOWN)
+        ph += 5;
   
-  /*  Keep angles at +/- 360 degrees */
-  th %= 360;
-  ph %= 360;
+    /*  Keep angles at +/- 360 degrees */
+    th %= 360;
+    ph %= 360;
 
-  redisplayAll();
+    redisplayAll();
 }
 
 void drawScene()
 {
-    /* setup functions */
-    displayInit();
-    displayEye();
+    glClearColor(0.0,0.0,0.0,0.0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+    glLoadIdentity();
+    
+    double Ex = -2*dim*Sin(th)*Cos(ph);
+    double Ey = +2*dim        *Sin(ph);
+    double Ez = +2*dim*Cos(th)*Cos(ph);
+    
+    /* camera/eye position, aim of camera lens, up-vector */
+    gluLookAt(Ex+ecX,Ey,Ez+ecZ , ecX,ecY,ecZ , 0,Cos(ph),0);
 
     sky.drawSkyBox(3.5*dim);
 

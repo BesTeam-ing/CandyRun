@@ -12,33 +12,6 @@
 #include "header.h"
 
 /*
- *  displayInit()
- *  -------
- *  Initializes display
- */
-void displayInit(void)
-{
-    glClearColor(0.0,0.0,0.0,0.0);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
-    glLoadIdentity();
-}
-
-/*
- * displayEye()
- * ------
- * Set the eye position
- */
-void displayEye(void)
-{
-  double Ex = -2*dim*Sin(th)*Cos(ph);
-  double Ey = +2*dim        *Sin(ph);
-  double Ez = +2*dim*Cos(th)*Cos(ph);
-  /* camera/eye position, aim of camera lens, up-vector */
-  gluLookAt(Ex+ecX,Ey,Ez+ecZ , ecX,ecY,ecZ , 0,Cos(ph),0);
-}
-
-/*
  * displayProject()
  * ------
  * Sets the projection
