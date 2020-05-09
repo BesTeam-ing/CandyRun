@@ -15,15 +15,8 @@
 		6396F14F2464A62400B72597 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13C2464A51900B72597 /* image_DXT.c */; };
 		6396F1502464A62400B72597 /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13F2464A51900B72597 /* SOIL2.c */; };
 		6396F1512464A62400B72597 /* etc1_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1492464A51900B72597 /* etc1_utils.c */; };
-		6396F15F2464B0F700B72597 /* txStormydays_down.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BA2464A47B00B72597 /* txStormydays_down.bmp */; };
-		6396F1602464B0F700B72597 /* txStormydays_back.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0B92464A47B00B72597 /* txStormydays_back.bmp */; };
-		6396F1612464B0F700B72597 /* txStormydays_up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0B82464A47A00B72597 /* txStormydays_up.bmp */; };
-		6396F1622464B0F700B72597 /* txStormydays_left.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BB2464A47B00B72597 /* txStormydays_left.bmp */; };
-		6396F1632464B0F700B72597 /* txStormydays_right.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BC2464A47B00B72597 /* txStormydays_right.bmp */; };
-		6396F1642464B0F700B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */; };
 		6396F1672465B47E00B72597 /* skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1652465B47E00B72597 /* skybox.cpp */; };
 		6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1692465EFB600B72597 /* w_effects.cpp */; };
-		6396F16D2467090D00B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F16C246708F700B72597 /* road.jpg */; };
 		6396F17124670EBA00B72597 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F16F24670EBA00B72597 /* objects.cpp */; };
 /* End PBXBuildFile section */
 
@@ -43,13 +36,6 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
-				6396F16D2467090D00B72597 /* road.jpg in Copy Files */,
-				6396F15F2464B0F700B72597 /* txStormydays_down.bmp in Copy Files */,
-				6396F1602464B0F700B72597 /* txStormydays_back.bmp in Copy Files */,
-				6396F1612464B0F700B72597 /* txStormydays_up.bmp in Copy Files */,
-				6396F1622464B0F700B72597 /* txStormydays_left.bmp in Copy Files */,
-				6396F1632464B0F700B72597 /* txStormydays_right.bmp in Copy Files */,
-				6396F1642464B0F700B72597 /* txStormydays_front.bmp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,12 +52,6 @@
 		40CCC41924648C4300156FA6 /* display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
 		6311931A245B174500FE95F7 /* CandyRun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CandyRun; sourceTree = BUILT_PRODUCTS_DIR; };
 		6311931D245B174500FE95F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		6396F0B82464A47A00B72597 /* txStormydays_up.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_up.bmp; sourceTree = "<group>"; };
-		6396F0B92464A47B00B72597 /* txStormydays_back.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_back.bmp; sourceTree = "<group>"; };
-		6396F0BA2464A47B00B72597 /* txStormydays_down.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_down.bmp; sourceTree = "<group>"; };
-		6396F0BB2464A47B00B72597 /* txStormydays_left.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_left.bmp; sourceTree = "<group>"; };
-		6396F0BC2464A47B00B72597 /* txStormydays_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_right.bmp; sourceTree = "<group>"; };
-		6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_front.bmp; sourceTree = "<group>"; };
 		6396F1392464A51900B72597 /* image_helper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
 		6396F13A2464A51900B72597 /* stbi_pkm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stbi_pkm.h; sourceTree = "<group>"; };
 		6396F13B2464A51900B72597 /* jo_jpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jo_jpeg.h; sourceTree = "<group>"; };
@@ -97,9 +77,15 @@
 		6396F1662465B47E00B72597 /* skybox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = skybox.hpp; sourceTree = "<group>"; };
 		6396F1692465EFB600B72597 /* w_effects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = w_effects.cpp; sourceTree = "<group>"; };
 		6396F16A2465EFB600B72597 /* w_effects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = w_effects.hpp; sourceTree = "<group>"; };
-		6396F16C246708F700B72597 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = road.jpg; path = ../../../../../Desktop/road.jpg; sourceTree = "<group>"; };
 		6396F16F24670EBA00B72597 /* objects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objects.cpp; sourceTree = "<group>"; };
 		6396F17024670EBA00B72597 /* objects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
+		6396F17A246754E300B72597 /* txStormydays_down.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_down.bmp; sourceTree = "<group>"; };
+		6396F17B246754E300B72597 /* txStormydays_back.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_back.bmp; sourceTree = "<group>"; };
+		6396F17C246754E300B72597 /* txStormydays_up.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_up.bmp; sourceTree = "<group>"; };
+		6396F17D246754E300B72597 /* txStormydays_left.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_left.bmp; sourceTree = "<group>"; };
+		6396F17E246754E300B72597 /* txStormydays_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_right.bmp; sourceTree = "<group>"; };
+		6396F17F246754E300B72597 /* txStormydays_front.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_front.bmp; sourceTree = "<group>"; };
+		6396F180246754E700B72597 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = road.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +143,7 @@
 			children = (
 				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
 				6396F1382464A51900B72597 /* SOIL2 */,
-				6396F0B72464A46500B72597 /* textures */,
+				6396F179246754E300B72597 /* textures */,
 				6396F1682465EF8600B72597 /* WeatherEffects */,
 				40CCC3FC246486D400156FA6 /* SkyBox */,
 				6396F16E24670E9100B72597 /* Objects */,
@@ -168,22 +154,6 @@
 			);
 			path = CandyRun;
 			sourceTree = "<group>";
-		};
-		6396F0B72464A46500B72597 /* textures */ = {
-			isa = PBXGroup;
-			children = (
-				6396F16C246708F700B72597 /* road.jpg */,
-				6396F0BA2464A47B00B72597 /* txStormydays_down.bmp */,
-				6396F0B92464A47B00B72597 /* txStormydays_back.bmp */,
-				6396F0B82464A47A00B72597 /* txStormydays_up.bmp */,
-				6396F0BB2464A47B00B72597 /* txStormydays_left.bmp */,
-				6396F0BC2464A47B00B72597 /* txStormydays_right.bmp */,
-				6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */,
-			);
-			name = textures;
-			path = CandyRun/textures;
-			sourceTree = SOURCE_ROOT;
-			usesTabs = 0;
 		};
 		6396F1382464A51900B72597 /* SOIL2 */ = {
 			isa = PBXGroup;
@@ -229,6 +199,20 @@
 				6396F17024670EBA00B72597 /* objects.hpp */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		6396F179246754E300B72597 /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				6396F180246754E700B72597 /* road.jpg */,
+				6396F17A246754E300B72597 /* txStormydays_down.bmp */,
+				6396F17B246754E300B72597 /* txStormydays_back.bmp */,
+				6396F17C246754E300B72597 /* txStormydays_up.bmp */,
+				6396F17D246754E300B72597 /* txStormydays_left.bmp */,
+				6396F17E246754E300B72597 /* txStormydays_right.bmp */,
+				6396F17F246754E300B72597 /* txStormydays_front.bmp */,
+			);
+			path = textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
