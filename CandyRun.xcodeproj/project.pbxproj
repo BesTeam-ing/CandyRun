@@ -18,6 +18,13 @@
 		6396F1672465B47E00B72597 /* skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1652465B47E00B72597 /* skybox.cpp */; };
 		6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1692465EFB600B72597 /* w_effects.cpp */; };
 		6396F17124670EBA00B72597 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F16F24670EBA00B72597 /* objects.cpp */; };
+		6396F1812467558E00B72597 /* txStormydays_down.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17A246754E300B72597 /* txStormydays_down.bmp */; };
+		6396F1822467558E00B72597 /* txStormydays_back.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17B246754E300B72597 /* txStormydays_back.bmp */; };
+		6396F1832467558E00B72597 /* txStormydays_up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17C246754E300B72597 /* txStormydays_up.bmp */; };
+		6396F1842467558E00B72597 /* txStormydays_left.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17D246754E300B72597 /* txStormydays_left.bmp */; };
+		6396F1852467558E00B72597 /* txStormydays_right.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17E246754E300B72597 /* txStormydays_right.bmp */; };
+		6396F1862467558E00B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17F246754E300B72597 /* txStormydays_front.bmp */; };
+		6396F1872467559700B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F180246754E700B72597 /* road.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +43,13 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				6396F1872467559700B72597 /* road.jpg in Copy Files */,
+				6396F1812467558E00B72597 /* txStormydays_down.bmp in Copy Files */,
+				6396F1822467558E00B72597 /* txStormydays_back.bmp in Copy Files */,
+				6396F1832467558E00B72597 /* txStormydays_up.bmp in Copy Files */,
+				6396F1842467558E00B72597 /* txStormydays_left.bmp in Copy Files */,
+				6396F1852467558E00B72597 /* txStormydays_right.bmp in Copy Files */,
+				6396F1862467558E00B72597 /* txStormydays_front.bmp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
