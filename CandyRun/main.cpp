@@ -82,7 +82,7 @@ void drawScene()
     /* camera/eye position, aim of camera lens, up-vector */
     //gluLookAt(Ex+ecX, Ey,Ez+ecZ, ecX,ecY, ecZ, 0, Cos(ph), 0);
     //gluLookAt(Ex+ecX, -1, Ez+ecZ, 10, 5, 10, 0, Cos(ph), 0);
-    gluLookAt(ecX, 3.0f, ecZ + 20, ecX + 0.0, 2.0f, 0.0 - 1.0f, 0.0f, 1.0f, 0.0f);    //z+1500.0f means make camera move 1500f backward,y coordinates are for inclination
+    gluLookAt(ecX, 3.0f, ecZ + 20, ecX + 0.0, 2.0f, 0.0 - 1.0f, 0.0f, 1.0f, 0.0f);
 
     sky.drawSkyBox(3.5*dim);
     part.drawSnow();

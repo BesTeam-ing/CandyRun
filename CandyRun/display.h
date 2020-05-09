@@ -20,7 +20,6 @@ void displayProject(double fov, double asp, double dim)
 {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    std::cout<<fov<<std::endl;
     gluPerspective(fov,asp,dim/16,16*dim);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
