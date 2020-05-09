@@ -23,6 +23,8 @@
 		6396F1642464B0F700B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F0BD2464A47B00B72597 /* txStormydays_front.bmp */; };
 		6396F1672465B47E00B72597 /* skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1652465B47E00B72597 /* skybox.cpp */; };
 		6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1692465EFB600B72597 /* w_effects.cpp */; };
+		6396F16D2467090D00B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F16C246708F700B72597 /* road.jpg */; };
+		6396F17124670EBA00B72597 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F16F24670EBA00B72597 /* objects.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +43,7 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				6396F16D2467090D00B72597 /* road.jpg in Copy Files */,
 				6396F15F2464B0F700B72597 /* txStormydays_down.bmp in Copy Files */,
 				6396F1602464B0F700B72597 /* txStormydays_back.bmp in Copy Files */,
 				6396F1612464B0F700B72597 /* txStormydays_up.bmp in Copy Files */,
@@ -94,6 +97,9 @@
 		6396F1662465B47E00B72597 /* skybox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = skybox.hpp; sourceTree = "<group>"; };
 		6396F1692465EFB600B72597 /* w_effects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = w_effects.cpp; sourceTree = "<group>"; };
 		6396F16A2465EFB600B72597 /* w_effects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = w_effects.hpp; sourceTree = "<group>"; };
+		6396F16C246708F700B72597 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = road.jpg; path = ../../../../../Desktop/road.jpg; sourceTree = "<group>"; };
+		6396F16F24670EBA00B72597 /* objects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objects.cpp; sourceTree = "<group>"; };
+		6396F17024670EBA00B72597 /* objects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,10 +156,11 @@
 			isa = PBXGroup;
 			children = (
 				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
-				6396F1682465EF8600B72597 /* WeatherEffects */,
 				6396F1382464A51900B72597 /* SOIL2 */,
 				6396F0B72464A46500B72597 /* textures */,
+				6396F1682465EF8600B72597 /* WeatherEffects */,
 				40CCC3FC246486D400156FA6 /* SkyBox */,
+				6396F16E24670E9100B72597 /* Objects */,
 				40CCC3FD246486FF00156FA6 /* global.h */,
 				40CCC41924648C4300156FA6 /* display.h */,
 				6311931D245B174500FE95F7 /* main.cpp */,
@@ -165,6 +172,7 @@
 		6396F0B72464A46500B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				6396F16C246708F700B72597 /* road.jpg */,
 				6396F0BA2464A47B00B72597 /* txStormydays_down.bmp */,
 				6396F0B92464A47B00B72597 /* txStormydays_back.bmp */,
 				6396F0B82464A47A00B72597 /* txStormydays_up.bmp */,
@@ -212,6 +220,15 @@
 				6396F16A2465EFB600B72597 /* w_effects.hpp */,
 			);
 			path = WeatherEffects;
+			sourceTree = "<group>";
+		};
+		6396F16E24670E9100B72597 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				6396F16F24670EBA00B72597 /* objects.cpp */,
+				6396F17024670EBA00B72597 /* objects.hpp */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +295,7 @@
 				6396F1502464A62400B72597 /* SOIL2.c in Sources */,
 				6396F1512464A62400B72597 /* etc1_utils.c in Sources */,
 				6311931E245B174500FE95F7 /* main.cpp in Sources */,
+				6396F17124670EBA00B72597 /* objects.cpp in Sources */,
 				6396F1672465B47E00B72597 /* skybox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
