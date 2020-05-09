@@ -28,10 +28,10 @@
 
 /*  Projection  */
 #define DEF_ASP 1
-#define DEF_DIM 25
+#define DEF_DIM 15
 #define DEF_TH 340
 #define DEF_PH 30
-#define DEF_FOV 25
+#define DEF_FOV 60
 #define DEF_ECX 0
 #define DEF_ECY 0
 #define DEF_ECZ 0

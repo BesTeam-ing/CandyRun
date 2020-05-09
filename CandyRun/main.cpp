@@ -48,9 +48,11 @@ void windowSpecial(int key,int x,int y)
 {
     /*  Right/Left - rotate */
     if (key == GLUT_KEY_RIGHT)
-        th += 5;
+        //th += 5;
+        ecX += 1.0;
     else if (key == GLUT_KEY_LEFT)
-        th -= 5;
+        //th -= 5;
+        ecX -= 1.0;
     /*  Up/Down - elevation */
     else if (key == GLUT_KEY_UP)
         ph -= 5;
@@ -73,15 +75,17 @@ void drawScene()
 
     glLoadIdentity();
     
-    double Ex = -2*dim*Sin(th)*Cos(ph);
-    double Ey = +2*dim        *Sin(ph);
-    double Ez = +2*dim*Cos(th)*Cos(ph);
+    //double Ex = -2*dim*Sin(th)*Cos(ph);
+    //double Ey = +2*dim        *Sin(ph);
+    //double Ez = +2*dim*Cos(th)*Cos(ph);
         
     /* camera/eye position, aim of camera lens, up-vector */
-    gluLookAt(Ex+ecX, Ey,Ez+ecZ, ecX,ecY, ecZ, 0, Cos(ph), 0);
+    //gluLookAt(Ex+ecX, Ey,Ez+ecZ, ecX,ecY, ecZ, 0, Cos(ph), 0);
+    //gluLookAt(Ex+ecX, -1, Ez+ecZ, 10, 5, 10, 0, Cos(ph), 0);
+    gluLookAt(ecX, 3.0f, ecZ + 20, ecX + 0.0, 2.0f, 0.0 - 1.0f, 0.0f, 1.0f, 0.0f);    //z+1500.0f means make camera move 1500f backward,y coordinates are for inclination
 
     sky.drawSkyBox(3.5*dim);
-    part.drawRain();
+    part.drawSnow();
     redisplayAll();
 
     /* Flush, SwapBuffers, and sanity check */
