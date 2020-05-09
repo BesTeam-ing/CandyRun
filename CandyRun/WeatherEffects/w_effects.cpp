@@ -16,9 +16,9 @@ void WeatherEffects::init(int i){
     this->par_sys[i].life = 1.0;
     this->par_sys[i].fade = float (rand()%100)/1000.0f+0.003f;
 
-    this->par_sys[i].xpos = (float) (rand() % 30) - 15.0;
-    this->par_sys[i].ypos = 15.0;
-    this->par_sys[i].zpos = (float) (rand() % 20) + 40.0;
+    this->par_sys[i].xpos = (float) (rand() % 30) + start_X;
+    this->par_sys[i].ypos = start_Y;
+    this->par_sys[i].zpos = (float) (rand() % 20) + start_Z;
 
     this->par_sys[i].red = 0.5;
     this->par_sys[i].green = 0.5;
@@ -60,7 +60,7 @@ void WeatherEffects::drawRain(){
         // Decay
         this->par_sys[loop].life -= this->par_sys[loop].fade;
 
-        if (this->par_sys[loop].ypos <= -10) {
+        if (this->par_sys[loop].ypos <= final_Y) {
           this->par_sys[loop].life = -1.0;
         }
         //Revive
@@ -94,7 +94,7 @@ void WeatherEffects::drawSnow(){
         // Decay
         par_sys[loop].life -= par_sys[loop].fade;
 
-        if (par_sys[loop].ypos <= -10) {
+        if (par_sys[loop].ypos <= final_Y) {
             /*
           int zi = z - zoom + 10;
           int xi = x + 10;
@@ -162,7 +162,7 @@ void WeatherEffects::drawHail(){
 
         // Update values
         //Move
-        if (par_sys[loop].ypos <= -10) {
+        if (par_sys[loop].ypos <= final_Y) {
           par_sys[loop].vel = par_sys[loop].vel * -1.0;
         }
         par_sys[loop].ypos += par_sys[loop].vel / (slowdown*1000); // * 1000

@@ -19,6 +19,7 @@ void SkyBox::initSkyBox(char const *front, char const *right, char const *left, 
     this->skybox[BACK] = SOIL_load_OGL_texture(back, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     this->skybox[UP] = SOIL_load_OGL_texture(up, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     this->skybox[DOWN] = SOIL_load_OGL_texture(down, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+
 }
 
 void SkyBox::drawSkyBox(double D){
@@ -77,20 +78,4 @@ void SkyBox::drawSkyBox(double D){
     
     glDisable(GL_TEXTURE_2D);
     
-    
-     glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, this->skybox[UP]);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        glBegin(GL_QUADS);
-            glTexCoord2f(0.0f,0.0f);
-            glVertex3f(-5.0f, 0.0f, -10000.0f);
-            glTexCoord2f(0.0f,2000.0f);
-            glVertex3f(-5.0f, 0.0f, 10000.0f);
-            glTexCoord2f(1.0f,2000.0f);
-            glVertex3f(5.0f, 0.0f, 10000.0f);
-            glTexCoord2f(1.0f,0.0f);
-            glVertex3f(5.0f, 0.0f, -10000.0f);
-        glEnd();
-     glDisable(GL_TEXTURE_2D);
 }
