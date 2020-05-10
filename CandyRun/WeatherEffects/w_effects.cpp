@@ -45,8 +45,8 @@ void WeatherEffects::drawRain(){
         z = this->par_sys[loop].zpos + zoom;
 
         // Draw particles
-       // glColor3f(0.5, 0.5, 1.0);
-          glColor4f(0.8, 0.8, 0.2, 0.1);
+          glColor3f(0.5, 0.5, 1.0);
+          //glColor4f(0.8, 0.8, 0.2, 0.1);
         glBegin(GL_LINES);
             glVertex3f(x, y, z);
             glVertex3f(x, y+0.5, z);

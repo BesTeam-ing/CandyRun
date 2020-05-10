@@ -56,9 +56,11 @@ void windowSpecial(int key,int x,int y)
         ecX -= 1.0;
     /*  Up/Down - elevation */
     else if (key == GLUT_KEY_UP)
-        ph -= 5;
+       // ph -= 5;
+        road.setPosition(road.getX(), road.getY(), road.getZ()-3);
     else if (key == GLUT_KEY_DOWN)
-        ph += 5;
+        //ph += 5;
+        road.setPosition(road.getX(), road.getY(), road.getZ()+3);
   
     /*  Keep angles at +/- 360 degrees */
     th %= 360;
@@ -87,8 +89,9 @@ void drawScene()
 
     sky.drawSkyBox(3.5*dim);
     part.drawRain();
-    road.draw();
     
+    road.draw(); //Sostituire con funzione drawRoad() per muoverla
+    std::cout<<"X:"<<road.getX()<<" Y:"<<road.getY()<<" Z:"<<road.getZ()<<std::endl;
     redisplayAll();
 
     /* Flush, SwapBuffers, and sanity check */

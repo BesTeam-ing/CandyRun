@@ -14,23 +14,43 @@
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
 
-class Road{
+#include <iostream>
+// CLASSES
+
+class Road
+{
     
 private:
     unsigned int texture;
-    float start_X;
-    float start_Y;
-    float start_Z;
-    float end_X;
-    float end_Y;
-    float end_Z;
+    float start_X = -5.0;
+    float start_Y = 0.0;
+    float start_Z = -10.0;
+    
+    float end_X = 5.0;
+    float end_Y = 0.0;
+    float end_Z = 10.0;
+    
+    float pos_X = 0;
+    float pos_Y = 0;
+    float pos_Z = 0;
     
 public:
+    bool alive = true;
+    
     Road();
     ~Road();
     
     void init(char* t);
     void draw();
+    void setPosition(float X,float Y,float Z);
+    float getX();
+    float getY();
+    float getZ();
+    unsigned int getTexture();
 };
+
+//OTHER FUNCTIONS
+void drawRoad();
+
 
 #endif /* objects_hpp */
