@@ -100,6 +100,7 @@
 		6396F17E246754E300B72597 /* txStormydays_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_right.bmp; sourceTree = "<group>"; };
 		6396F17F246754E300B72597 /* txStormydays_front.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_front.bmp; sourceTree = "<group>"; };
 		6396F180246754E700B72597 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = road.jpg; sourceTree = "<group>"; };
+		6396F188246836C600B72597 /* Vector3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3f.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +210,7 @@
 		6396F16E24670E9100B72597 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				6396F188246836C600B72597 /* Vector3f.h */,
 				6396F16F24670EBA00B72597 /* objects.cpp */,
 				6396F17024670EBA00B72597 /* objects.hpp */,
 			);
