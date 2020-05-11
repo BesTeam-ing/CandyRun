@@ -10,6 +10,8 @@
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
+		40E0382E2469E4C400F1EDC2 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E0382D2469E4C400F1EDC2 /* libirrklang.dylib */; };
+		40E038322469E54E00F1EDC2 /* sound.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40E038312469E54900F1EDC2 /* sound.wav */; };
 		40F68AEF2469828100538F5B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AED2469828100538F5B /* Server.cpp */; };
 		40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F68AF02469829B00538F5B /* libcurl.4.tbd */; };
 		40F68AF32469878400538F5B /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AF22469878400538F5B /* jsoncpp.cpp */; };
@@ -31,6 +33,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		40E0382F2469E52B00F1EDC2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = sounds;
+			dstSubfolderSpec = 16;
+			files = (
+				40E038322469E54E00F1EDC2 /* sound.wav in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63119318245B174500FE95F7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,6 +79,8 @@
 		4070F11D2461D06A00500C06 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		40CCC3FD246486FF00156FA6 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		40CCC41924648C4300156FA6 /* display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
+		40E0382D2469E4C400F1EDC2 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "../../../../../Downloads/irrKlang-64bit-1.5.0/bin/macosx-gcc/libirrklang.dylib"; sourceTree = "<group>"; };
+		40E038312469E54900F1EDC2 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		40F68AED2469828100538F5B /* Server.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
 		40F68AEE2469828100538F5B /* Server.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Server.hpp; sourceTree = "<group>"; };
 		40F68AF02469829B00538F5B /* libcurl.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.4.tbd; path = usr/lib/libcurl.4.tbd; sourceTree = SDKROOT; };
@@ -115,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E0382E2469E4C400F1EDC2 /* libirrklang.dylib in Frameworks */,
 				40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */,
 				402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */,
 				402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */,
@@ -128,6 +143,7 @@
 		402B605D245B20C300A4DE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40E0382D2469E4C400F1EDC2 /* libirrklang.dylib */,
 				40F68AF02469829B00538F5B /* libcurl.4.tbd */,
 				402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */,
 				402B6060245B20C700A4DE19 /* GLUT.framework */,
@@ -143,6 +159,14 @@
 				6396F1662465B47E00B72597 /* skybox.hpp */,
 			);
 			path = SkyBox;
+			sourceTree = "<group>";
+		};
+		40E038302469E53200F1EDC2 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				40E038312469E54900F1EDC2 /* sound.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 		63119311245B174500FE95F7 = {
@@ -168,6 +192,7 @@
 				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
 				6396F1382464A51900B72597 /* SOIL2 */,
 				6396F179246754E300B72597 /* textures */,
+				40E038302469E53200F1EDC2 /* sounds */,
 				6396F1682465EF8600B72597 /* WeatherEffects */,
 				40CCC3FC246486D400156FA6 /* SkyBox */,
 				6396F16E24670E9100B72597 /* Objects */,
@@ -254,6 +279,7 @@
 				63119317245B174500FE95F7 /* Frameworks */,
 				63119318245B174500FE95F7 /* CopyFiles */,
 				6396F1582464AFDB00B72597 /* Copy Files */,
+				40E0382F2469E52B00F1EDC2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -434,10 +460,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/include",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/freeglut/3.2.1/lib,
+					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/bin/macosx-gcc",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -451,10 +481,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/include",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/freeglut/3.2.1/lib,
+					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/bin/macosx-gcc",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

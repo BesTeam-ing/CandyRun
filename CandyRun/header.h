@@ -10,6 +10,7 @@
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
+#include <irrKlang.h>
 
 #include "display.h"
 #include "global.h"

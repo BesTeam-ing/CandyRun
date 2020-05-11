@@ -5,6 +5,7 @@ WeatherEffects part;
 Road road;
 Camera camera = Camera(ecX, 3.0f, ecZ + 20, ecX + 0.0, 2.0f, 0.0 - 1.0f, 0.0f, 1.0f, 0.0f);
 Server server;
+irrklang::ISoundEngine* engine;
 
 GLdouble fovy = 45.0;
 GLdouble aspectRatio = (GLdouble)DEF_WINDOW_WIDTH / (GLdouble)DEF_WINDOW_HEIGHT;
@@ -39,8 +40,10 @@ void resize(int w, int h)
 void windowKey(unsigned char key,int x,int y)
 {
     /*  Exit on ESC */
-    if (key == 27)
+    if (key == 27){
+        engine->drop();
         exit(0);
+    }
     
     /*  Change field of view angle */
     else if (key == '-' && key>1)
@@ -147,6 +150,14 @@ void drawScene()
 int main(int argc, char **argv)
 {
     initGlobals();
+    engine = irrklang::createIrrKlangDevice();
+    
+    if (!engine){
+        printf("Could not startup engine\n");
+        return 0; // error starting up the engine
+    }
+    
+    engine->play2D("sounds/sound.wav", true);
     
     /* screencast specific variables */
     screencastID = 21;
@@ -175,4 +186,5 @@ int main(int argc, char **argv)
     
     return 0;
 }
+
 
