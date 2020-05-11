@@ -26,8 +26,6 @@ public:
     void drawRain();
     void drawSnow();
     void drawHail();
-
-    
     
 private:
     void init(int i);

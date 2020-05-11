@@ -4,6 +4,7 @@ SkyBox sky;
 WeatherEffects part;
 Road road;
 Camera camera = Camera(ecX, 3.0f, ecZ + 20, ecX + 0.0, 2.0f, 0.0 - 1.0f, 0.0f, 1.0f, 0.0f);
+Server server;
 
 GLdouble fovy = 45.0;
 GLdouble aspectRatio = (GLdouble)DEF_WINDOW_WIDTH / (GLdouble)DEF_WINDOW_HEIGHT;
@@ -161,10 +162,15 @@ int main(int argc, char **argv)
     glutKeyboardFunc(windowKey);
     glutSpecialFunc(windowSpecial);
     initializeGround();
+    
+    //server.getWeather();
+    
     sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
+    
     part.initParticles();
+    
     road.init("textures/road.jpg");
-
+    
     glutMainLoop();
     
     return 0;

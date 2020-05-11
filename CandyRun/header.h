@@ -16,6 +16,7 @@
 #include "SkyBox/skybox.hpp"
 #include "WeatherEffects/w_effects.hpp"
 #include "Objects/objects.hpp"
+#include "WeatherEffects/Server.hpp"
 
 #include <iostream>
 #include <string.h>

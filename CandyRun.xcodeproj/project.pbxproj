@@ -10,6 +10,9 @@
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
+		40F68AEF2469828100538F5B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AED2469828100538F5B /* Server.cpp */; };
+		40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F68AF02469829B00538F5B /* libcurl.4.tbd */; };
+		40F68AF32469878400538F5B /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AF22469878400538F5B /* jsoncpp.cpp */; };
 		6311931E245B174500FE95F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6311931D245B174500FE95F7 /* main.cpp */; };
 		6396F14E2464A62400B72597 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1392464A51900B72597 /* image_helper.c */; };
 		6396F14F2464A62400B72597 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13C2464A51900B72597 /* image_DXT.c */; };
@@ -64,6 +67,10 @@
 		4070F11D2461D06A00500C06 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		40CCC3FD246486FF00156FA6 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		40CCC41924648C4300156FA6 /* display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
+		40F68AED2469828100538F5B /* Server.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
+		40F68AEE2469828100538F5B /* Server.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Server.hpp; sourceTree = "<group>"; };
+		40F68AF02469829B00538F5B /* libcurl.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.4.tbd; path = usr/lib/libcurl.4.tbd; sourceTree = SDKROOT; };
+		40F68AF22469878400538F5B /* jsoncpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
 		6311931A245B174500FE95F7 /* CandyRun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CandyRun; sourceTree = BUILT_PRODUCTS_DIR; };
 		6311931D245B174500FE95F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6396F1392464A51900B72597 /* image_helper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
@@ -108,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */,
 				402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */,
 				402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */,
 				402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */,
@@ -120,6 +128,7 @@
 		402B605D245B20C300A4DE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40F68AF02469829B00538F5B /* libcurl.4.tbd */,
 				402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */,
 				402B6060245B20C700A4DE19 /* GLUT.framework */,
 				402B605E245B20C300A4DE19 /* OpenGL.framework */,
@@ -203,6 +212,9 @@
 			children = (
 				6396F1692465EFB600B72597 /* w_effects.cpp */,
 				6396F16A2465EFB600B72597 /* w_effects.hpp */,
+				40F68AED2469828100538F5B /* Server.cpp */,
+				40F68AEE2469828100538F5B /* Server.hpp */,
+				40F68AF22469878400538F5B /* jsoncpp.cpp */,
 			);
 			path = WeatherEffects;
 			sourceTree = "<group>";
@@ -221,12 +233,12 @@
 			isa = PBXGroup;
 			children = (
 				6396F180246754E700B72597 /* road.jpg */,
+				6396F17F246754E300B72597 /* txStormydays_front.bmp */,
 				6396F17A246754E300B72597 /* txStormydays_down.bmp */,
 				6396F17B246754E300B72597 /* txStormydays_back.bmp */,
 				6396F17C246754E300B72597 /* txStormydays_up.bmp */,
 				6396F17D246754E300B72597 /* txStormydays_left.bmp */,
 				6396F17E246754E300B72597 /* txStormydays_right.bmp */,
-				6396F17F246754E300B72597 /* txStormydays_front.bmp */,
 			);
 			path = textures;
 			sourceTree = "<group>";
@@ -293,6 +305,8 @@
 				6396F14F2464A62400B72597 /* image_DXT.c in Sources */,
 				6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */,
 				6396F1502464A62400B72597 /* SOIL2.c in Sources */,
+				40F68AEF2469828100538F5B /* Server.cpp in Sources */,
+				40F68AF32469878400538F5B /* jsoncpp.cpp in Sources */,
 				6396F1512464A62400B72597 /* etc1_utils.c in Sources */,
 				6311931E245B174500FE95F7 /* main.cpp in Sources */,
 				6396F17124670EBA00B72597 /* objects.cpp in Sources */,

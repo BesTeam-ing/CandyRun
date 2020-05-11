@@ -26,7 +26,6 @@ void WeatherEffects::init(int i){
 
     this->par_sys[i].vel = this->velocity;
     this->par_sys[i].gravity = -0.8; //-0.8;
-
 };
 
 void WeatherEffects::initParticles(){
