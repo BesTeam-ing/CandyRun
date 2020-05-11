@@ -128,9 +128,6 @@ public:
 
 
 void initializeGround();
-void drawRoad(Road road);
-
-void sceneAnim(int value);
-
+void drawRoad(Road &road);
 
 #endif /* objects_hpp */

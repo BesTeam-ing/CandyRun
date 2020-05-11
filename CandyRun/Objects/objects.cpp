@@ -13,12 +13,10 @@ Road::Road(){}
 Road::~Road(){}
 
 void Road::init(char *t){
-
     texture = SOIL_load_OGL_texture(t, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
 }
 
-void Road::draw()
-{
+void Road::draw(){
     glColor4f(0.8, 0.8, 0.8, 0.1);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, this->texture);
@@ -59,44 +57,28 @@ float Road::getZ(){
 unsigned int Road::getTexture(){
     return this->texture;
 }
-float groundSegments[10];
+
+float groundSegments[5];
 int sceneMotion = 0;
 
 void initializeGround(){
-    float beginning = 240.0;
-    for (int i = 0; i < 10; i++){
+    float beginning = -90.0;
+    for (int i = 0; i < 5; i++){
         groundSegments[i] = beginning;
-        beginning -= 30.0;
+        beginning += 30.0;
     }
 }
 
-void drawRoad(Road road)
-{
-    for (int i = 0; i < 10; i++){
+void drawRoad(Road &road){
+    if(road.getZ()>=27.0)
+        road.setPosition(0.0, 0.0, 0.0);
+    else
+        road.setPosition(road.getX(), road.getY(), road.getZ()+0.1);
+    
+    for (int i = 0; i < 5; i++){
         glPushMatrix();
-        glTranslatef( 0, 0,groundSegments[i]);
-        road.draw();
-        
+            glTranslatef( 0, 0,groundSegments[i]);
+            road.draw();
         glPopMatrix();
     }
-    
 }
-
-void sceneAnim(int value){
-    sceneMotion += 1;
-    
-    for (int i = 0; i < 10; i++){
-        if (sceneMotion + groundSegments[i] >= 270){
-            
-            groundSegments[i] -= 300;
-            std::cout<<groundSegments[i]<<std::endl;
-        }
-
-    }
-    glutPostRedisplay();
-    glutTimerFunc(34, sceneAnim, 0);
-}
-// CAMERA
-
-
-

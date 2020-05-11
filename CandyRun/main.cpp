@@ -68,15 +68,20 @@ void windowKey(unsigned char key,int x,int y)
     redisplayAll();
 }
 
+float rotateAngle = 0.0;
+float x_sphere = 0.0;
+
 void windowSpecial(int key,int x,int y)
 {
     /*  Right/Left - rotate */
     if (key == GLUT_KEY_RIGHT)
         //th += 5;
-        ecX += 1.0;
+        //ecX += 1.0;
+        x_sphere+=0.5;
     else if (key == GLUT_KEY_LEFT)
         //th -= 5;
-        ecX -= 1.0;
+        //ecX -= 1.0;
+        x_sphere-=0.5;
     /*  Up/Down - elevation */
     else if (key == GLUT_KEY_UP){
         // ph -= 5;
@@ -120,8 +125,16 @@ void drawScene()
     sky.drawSkyBox(3.5*dim);
     part.drawRain();
     
-    road.setPosition(road.getX(), road.getY(), road.getZ()+0.1);
     drawRoad(road);
+    
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glPushMatrix();
+        glTranslatef(x_sphere, 0.5, 15);
+        glRotatef(rotateAngle, -1, 0, 0);
+        glutWireSphere(0.5, 20, 20);
+    glPopMatrix();
+    
+    rotateAngle += 1;
     
     redisplayAll();
 
@@ -150,7 +163,6 @@ int main(int argc, char **argv)
     initializeGround();
     sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
     part.initParticles();
-    glutTimerFunc(33, sceneAnim, 0);
     road.init("textures/road.jpg");
 
     glutMainLoop();
