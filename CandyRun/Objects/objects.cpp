@@ -60,6 +60,36 @@ unsigned int Road::getTexture(){
 
 Enemy::Enemy(){}
 Enemy::~Enemy(){}
+
+void Enemy::draw(){
+
+    glColor4f(0.8, 0.8, 0.8, 0.1);
+    
+    glPushMatrix();
+        glTranslatef(pos_X, pos_Y, pos_Z);
+        glutWireCube(2); // Box.
+
+    glPopMatrix();
+
+}
+void Enemy::setPosition(float X, float Y, float Z){
+    this->pos_X = X;
+    this->pos_Y = Y;
+    this->pos_Z = Z;
+}
+
+float Enemy::getX(){
+    return this->pos_X;
+}
+float Enemy::getY(){
+    return this->pos_Y;
+}
+float Enemy::getZ(){
+    return this->pos_Z;
+}
+unsigned int Enemy::getTexture(){
+    return this->texture;
+}
 // OTHER FUNCTIONS
 
 float groundSegments[5];

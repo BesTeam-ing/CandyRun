@@ -73,14 +73,18 @@ WeatherEffects part;
 Road road;
 Camera camera = Camera(ecX, 3.0f, ecZ + 20, ecX + 0.0, 2.0f, 0.0 - 1.0f, 0.0f, 1.0f, 0.0f);
 Server server;
+vector<Enemy> enemy;
+
 irrklang::ISoundEngine* engine;
 
 GLdouble fovy = 45.0;
 GLdouble aspectRatio = (GLdouble)DEF_WINDOW_WIDTH / (GLdouble)DEF_WINDOW_HEIGHT;
 GLdouble zNear = 0.1;
 GLdouble zFar = 700;
+
 float rotateAngle = 0.0;
 float x_sphere = 0.0;
+int Z_z = -70;
 
 Game::Game(int argc, char **argv){
     this->argc = argc;
@@ -89,7 +93,9 @@ Game::Game(int argc, char **argv){
 
 Game::~Game(){};
 
-void Game::init(){    
+void Game::init(){
+    srand(time(NULL));
+    
     engine = irrklang::createIrrKlangDevice();
     
     engine->play2D("sounds/sound.wav", true);
@@ -104,6 +110,7 @@ void Game::init(){
     glutReshapeFunc(this->displayReshape);
     glutKeyboardFunc(this->windowKey);
     glutSpecialFunc(this->windowSpecial);
+    initEnemy();
     initializeGround();
     
     //server.getWeather();
@@ -146,12 +153,71 @@ void Game::drawScene(){
         glutWireSphere(0.5, 20, 20);
     glPopMatrix();
     
+    gameEngine();
+    
     rotateAngle += 1;
     
     redisplayAll();
 
     glFlush();
     glutSwapBuffers();
+}
+void Game::initEnemy(){
+    Enemy e;
+    e.setPosition(3, 0, -50);
+    enemy.push_back(e);
+    e.setPosition(-2, 0, -30);
+    enemy.push_back(e);
+    e.setPosition(0, 0, -10);
+    enemy.push_back(e);
+    e.setPosition(1, 0, 10);
+    enemy.push_back(e);
+    
+}
+    
+void Game::gameEngine(){
+    
+    float my_Z = road.getZ();
+    
+    for (int i=0; i < enemy.size(); i++){
+    glPushMatrix();
+        //glTranslatef(0, 0, my_Z);
+        enemy[i].setPosition(enemy[i].getX(), enemy[i].getY(),my_Z);
+        enemy[i].draw();
+        std::cout<<enemy[i].getZ()<<std::endl;
+    glPopMatrix();
+    }
+    
+    
+    /*
+    int n = rand()%10-5;
+    
+    std::cout<<Z_z<<std::endl;
+    
+    Z_z = road.getZ() - 65;
+
+        
+    if (Z_z%10 == 0){
+        std::cout<<"ENTRATO"<<std::endl;
+        Enemy e;
+        e.setPosition(n, 0, Z_z+10);
+        enemy.push_back(e);
+    }
+    
+    for (int i=0; i < enemy.size(); i++){
+        glPushMatrix();
+            //glTranslatef(0, 0, rotateAngle*0.1);
+        enemy[i].setPosition(enemy[i].getX(), enemy[i].getY(),enemy[i].getZ());
+            enemy[i].draw();
+        
+        glPopMatrix();
+        
+        if (enemy[i].getZ() > 30){
+            enemy.pop_back();
+        }
+    }
+    */
+    
 }
 
 void Game::windowSpecial(int key,int x,int y){

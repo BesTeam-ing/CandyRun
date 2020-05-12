@@ -13,7 +13,7 @@
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
-#include "irrKlang.h"
+#include <irrklang/irrKlang.h>
 
 #include "../SkyBox/skybox.hpp"
 #include "../WeatherEffects/w_effects.hpp"
@@ -42,6 +42,9 @@ private:
     static void displayProject(double fov, double asp, double dim);
     static void displayReshape(int width,int height);
     static void redisplayAll(void);
+    
+    static void gameEngine();
+    static void initEnemy();
 };
 
 #endif /* Game_hpp */

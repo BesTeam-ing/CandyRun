@@ -126,8 +126,31 @@ public:
 
 
 class Enemy{
+
+public:
     Enemy();
     ~Enemy();
+
+    void draw();
+    void setPosition(float X,float Y,float Z);
+    float getX();
+    float getY();
+    float getZ();
+    unsigned int getTexture();
+    
+private:
+    unsigned int texture;
+    float start_X = -1;
+    float start_Y = -1;
+    float start_Z = -1;
+    
+    float end_X = 1;
+    float end_Y = 1;
+    float end_Z = 1;
+    
+    float pos_X = 0;
+    float pos_Y = 2;
+    float pos_Z = -30;
 };
 //OTHER FUNCTIONS
 
