@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4002E281246AAF90007157C3 /* Jump.wav */; };
+		4002E286246AB525007157C3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4002E284246AB525007157C3 /* Game.cpp */; };
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
@@ -75,13 +76,12 @@
 
 /* Begin PBXFileReference section */
 		4002E281246AAF90007157C3 /* Jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Jump.wav; sourceTree = "<group>"; };
+		4002E284246AB525007157C3 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		4002E285246AB525007157C3 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
 		402B6064245B20F300A4DE19 /* CandyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyRun.entitlements; sourceTree = "<group>"; };
-		4070F11D2461D06A00500C06 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
-		40CCC3FD246486FF00156FA6 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
-		40CCC41924648C4300156FA6 /* display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
 		40E0382D2469E4C400F1EDC2 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "../../../../../Downloads/irrKlang-64bit-1.5.0/bin/macosx-gcc/libirrklang.dylib"; sourceTree = "<group>"; };
 		40E038312469E54900F1EDC2 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		40F68AED2469828100538F5B /* Server.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
@@ -143,6 +143,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4002E283246AB500007157C3 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4002E284246AB525007157C3 /* Game.cpp */,
+				4002E285246AB525007157C3 /* Game.hpp */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		402B605D245B20C300A4DE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,10 +209,8 @@
 				6396F1682465EF8600B72597 /* WeatherEffects */,
 				40CCC3FC246486D400156FA6 /* SkyBox */,
 				6396F16E24670E9100B72597 /* Objects */,
-				40CCC3FD246486FF00156FA6 /* global.h */,
-				40CCC41924648C4300156FA6 /* display.h */,
+				4002E283246AB500007157C3 /* Game */,
 				6311931D245B174500FE95F7 /* main.cpp */,
-				4070F11D2461D06A00500C06 /* header.h */,
 			);
 			path = CandyRun;
 			sourceTree = "<group>";
@@ -338,6 +345,7 @@
 				40F68AEF2469828100538F5B /* Server.cpp in Sources */,
 				40F68AF32469878400538F5B /* jsoncpp.cpp in Sources */,
 				6396F1512464A62400B72597 /* etc1_utils.c in Sources */,
+				4002E286246AB525007157C3 /* Game.cpp in Sources */,
 				6311931E245B174500FE95F7 /* main.cpp in Sources */,
 				6396F17124670EBA00B72597 /* objects.cpp in Sources */,
 				6396F1672465B47E00B72597 /* skybox.cpp in Sources */,
