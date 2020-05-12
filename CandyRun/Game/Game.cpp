@@ -162,62 +162,33 @@ void Game::drawScene(){
     glFlush();
     glutSwapBuffers();
 }
+
 void Game::initEnemy(){
     Enemy e;
-    e.setPosition(3, 0, -50);
-    enemy.push_back(e);
-    e.setPosition(-2, 0, -30);
-    enemy.push_back(e);
-    e.setPosition(0, 0, -10);
-    enemy.push_back(e);
-    e.setPosition(1, 0, 10);
-    enemy.push_back(e);
     
+    float beginning = -60.0;
+    for(int i=0; i<4; i++){
+        int n = rand()%10-5;
+        e.setPosition(n, 1.0f, beginning);
+        enemy.push_back(e);
+        
+        beginning += 20;
+    }
 }
     
 void Game::gameEngine(){
-    
-    float my_Z = road.getZ();
-    
-    for (int i=0; i < enemy.size(); i++){
-    glPushMatrix();
-        //glTranslatef(0, 0, my_Z);
-        enemy[i].setPosition(enemy[i].getX(), enemy[i].getY(),my_Z);
-        enemy[i].draw();
-        std::cout<<enemy[i].getZ()<<std::endl;
-    glPopMatrix();
-    }
-    
-    
-    /*
     int n = rand()%10-5;
     
-    std::cout<<Z_z<<std::endl;
-    
-    Z_z = road.getZ() - 65;
-
-        
-    if (Z_z%10 == 0){
-        std::cout<<"ENTRATO"<<std::endl;
-        Enemy e;
-        e.setPosition(n, 0, Z_z+10);
-        enemy.push_back(e);
-    }
-    
     for (int i=0; i < enemy.size(); i++){
-        glPushMatrix();
-            //glTranslatef(0, 0, rotateAngle*0.1);
-        enemy[i].setPosition(enemy[i].getX(), enemy[i].getY(),enemy[i].getZ());
-            enemy[i].draw();
-        
-        glPopMatrix();
-        
-        if (enemy[i].getZ() > 30){
-            enemy.pop_back();
+        if(enemy[i].getZ() > 30.0){
+            enemy[i].setPosition(n, 1, -60);
         }
+        
+        glPushMatrix();
+        enemy[i].setPosition(enemy[i].getX(), enemy[i].getY(), enemy[i].getZ() + 0.1);
+            enemy[i].draw();
+        glPopMatrix();
     }
-    */
-    
 }
 
 void Game::windowSpecial(int key,int x,int y){

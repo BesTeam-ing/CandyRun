@@ -67,8 +67,7 @@ void Enemy::draw(){
     
     glPushMatrix();
         glTranslatef(pos_X, pos_Y, pos_Z);
-        glutWireCube(2); // Box.
-
+    glutWireCube(1.0); // Box.
     glPopMatrix();
 
 }
