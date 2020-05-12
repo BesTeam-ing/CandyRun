@@ -22,8 +22,8 @@
 #include "../WeatherEffects/Server.hpp"
 
 #include <iostream>
-#include <string.h>
 #include <math.h>
+#include <string>
 
 using namespace std;
 
@@ -36,8 +36,7 @@ private:
     int argc;
     char **argv;
 
-    static void initGlobals(void);
-    static void resize(int w, int h);
+    //static void resize(int w, int h);
     static void drawScene();
     static void windowSpecial(int key,int x,int y);
     static void windowKey(unsigned char key,int x,int y);

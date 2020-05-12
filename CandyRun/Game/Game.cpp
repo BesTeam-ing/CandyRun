@@ -48,11 +48,6 @@
 #define SKY_UP 4
 #define SKY_DOWN 5
 
-#include <string>
-
-/*  ID-used to keep screencasts separate  */
-int screencastID = 0;
-
 /*  WINDOW  */
 char const *windowName="Candy Run";
 int windowHeight=DEF_WINDOW_HEIGHT;
@@ -94,9 +89,7 @@ Game::Game(int argc, char **argv){
 
 Game::~Game(){};
 
-void Game::init(){
-    this->initGlobals();
-    
+void Game::init(){    
     engine = irrklang::createIrrKlangDevice();
     
     engine->play2D("sounds/sound.wav", true);
@@ -225,26 +218,11 @@ void Game::windowKey(unsigned char key,int x,int y){
     redisplayAll();
 }
 
-// OpenGL window reshape routine.
+/* OpenGL window reshape routine.
 void Game::resize(int w, int h){
     glutReshapeWindow(1280, 720);
 }
-
-void Game::initGlobals(void){
-    windowHeight=DEF_WINDOW_HEIGHT;
-    windowWidth=DEF_WINDOW_WIDTH;
-    windowPosHeight=DEF_WINDOW_POS_H;
-    windowPosWidth=DEF_WINDOW_POS_W;
-
-    dim=DEF_DIM;
-    th=DEF_TH;
-    ph=DEF_PH;
-    fov=DEF_FOV;
-    asp=DEF_ASP;
-    ecX=DEF_ECX;
-    ecY=DEF_ECY;
-    ecZ=DEF_ECZ;
-}
+*/
 
 void Game::displayProject(double fov, double asp, double dim){
     glMatrixMode(GL_PROJECTION);
@@ -254,16 +232,13 @@ void Game::displayProject(double fov, double asp, double dim){
     glLoadIdentity();
 }
 
-void Game::displayReshape(int width,int height)
-{
+void Game::displayReshape(int width,int height){
   asp = (height>0) ? (double)width/height : 1;
   glViewport(0,0, width,height);
   displayProject(fov,asp,dim);
 }
 
-
-void Game::redisplayAll(void)
-{
+void Game::redisplayAll(void){
   displayProject(fov,asp,dim);
   glutPostRedisplay();
 }
