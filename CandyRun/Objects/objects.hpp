@@ -124,6 +124,11 @@ public:
     unsigned int getTexture();
 };
 
+
+class Enemy{
+    Enemy();
+    ~Enemy();
+};
 //OTHER FUNCTIONS
 
 

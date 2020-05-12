@@ -58,6 +58,10 @@ unsigned int Road::getTexture(){
     return this->texture;
 }
 
+Enemy::Enemy(){}
+Enemy::~Enemy(){}
+// OTHER FUNCTIONS
+
 float groundSegments[5];
 int sceneMotion = 0;
 
