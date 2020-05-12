@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4002E281246AAF90007157C3 /* Jump.wav */; };
 		4002E286246AB525007157C3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4002E284246AB525007157C3 /* Game.cpp */; };
+		4002E57D246B1C82007157C3 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E577246B1BA3007157C3 /* ikpFLAC.dylib */; };
+		4002E57E246B1C82007157C3 /* ikpMP3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E578246B1BA3007157C3 /* ikpMP3.dylib */; };
+		4002E57F246B1C82007157C3 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E579246B1BA3007157C3 /* libirrklang.dylib */; };
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
@@ -17,9 +20,6 @@
 		40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F68AF02469829B00538F5B /* libcurl.4.tbd */; };
 		40F68AF32469878400538F5B /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AF22469878400538F5B /* jsoncpp.cpp */; };
 		6311931E245B174500FE95F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6311931D245B174500FE95F7 /* main.cpp */; };
-		6312EFDD246B193A0003CC58 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312ED75246B191E0003CC58 /* ikpFLAC.dylib */; };
-		6312EFDF246B193A0003CC58 /* ikpMP3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312ED5A246B191E0003CC58 /* ikpMP3.dylib */; };
-		6312EFE1246B193A0003CC58 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312ED46246B191E0003CC58 /* libirrklang.dylib */; };
 		6396F14E2464A62400B72597 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1392464A51900B72597 /* image_helper.c */; };
 		6396F14F2464A62400B72597 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13C2464A51900B72597 /* image_DXT.c */; };
 		6396F1502464A62400B72597 /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13F2464A51900B72597 /* SOIL2.c */; };
@@ -118,6 +118,9 @@
 		4002E281246AAF90007157C3 /* Jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Jump.wav; sourceTree = "<group>"; };
 		4002E284246AB525007157C3 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		4002E285246AB525007157C3 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		4002E577246B1BA3007157C3 /* ikpFLAC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = ikpFLAC.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/ikpFLAC.dylib"; sourceTree = "<group>"; };
+		4002E578246B1BA3007157C3 /* ikpMP3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = ikpMP3.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/ikpMP3.dylib"; sourceTree = "<group>"; };
+		4002E579246B1BA3007157C3 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/libirrklang.dylib"; sourceTree = "<group>"; };
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
@@ -190,7 +193,7 @@
 		6312ED46246B191E0003CC58 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libirrklang.dylib; sourceTree = "<group>"; };
 		6312ED48246B191E0003CC58 /* 1abf791ade86c7fe9aa59799f4c682cd-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1abf791ade86c7fe9aa59799f4c682cd-manifest.xcbuild"; sourceTree = "<group>"; };
 		6312ED49246B191E0003CC58 /* c67131698faa198885e543522ddbbbba-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "c67131698faa198885e543522ddbbbba-desc.xcbuild"; sourceTree = "<group>"; };
-		6312ED4A246B191E0003CC58 /* BuildDescriptionCacheIndex-4f31081c621f3c45ba021b654ca7a6ca */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BuildDescriptionCacheIndex-4f31081c621f3c45ba021b654ca7a6ca"; sourceTree = "<group>"; };
+		6312ED4A246B191E0003CC58 /* BuildDescriptionCacheIndex-4f31081c621f3c45ba021b654ca7a6ca */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BuildDescriptionCacheIndex-4f31081c621f3c45ba021b654ca7a6ca"; sourceTree = "<group>"; };
 		6312ED4B246B191E0003CC58 /* 9502fc0e3cb0591372c1e9306bba2315-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "9502fc0e3cb0591372c1e9306bba2315-desc.xcbuild"; sourceTree = "<group>"; };
 		6312ED4C246B191E0003CC58 /* c67131698faa198885e543522ddbbbba-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "c67131698faa198885e543522ddbbbba-manifest.xcbuild"; sourceTree = "<group>"; };
 		6312ED4D246B191E0003CC58 /* 9502fc0e3cb0591372c1e9306bba2315-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "9502fc0e3cb0591372c1e9306bba2315-manifest.xcbuild"; sourceTree = "<group>"; };
@@ -199,7 +202,7 @@
 		6312ED50246B191E0003CC58 /* build.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = build.db; sourceTree = "<group>"; };
 		6312ED51246B191E0003CC58 /* 1abf791ade86c7fe9aa59799f4c682cd-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1abf791ade86c7fe9aa59799f4c682cd-desc.xcbuild"; sourceTree = "<group>"; };
 		6312ED52246B191E0003CC58 /* 112cee2f85fdc610a84454cc0ef43611-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "112cee2f85fdc610a84454cc0ef43611-manifest.xcbuild"; sourceTree = "<group>"; };
-		6312ED53246B191E0003CC58 /* BuildDescriptionCacheIndex-f8413ef0cd43ad7b673184d07e409c9f */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BuildDescriptionCacheIndex-f8413ef0cd43ad7b673184d07e409c9f"; sourceTree = "<group>"; };
+		6312ED53246B191E0003CC58 /* BuildDescriptionCacheIndex-f8413ef0cd43ad7b673184d07e409c9f */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BuildDescriptionCacheIndex-f8413ef0cd43ad7b673184d07e409c9f"; sourceTree = "<group>"; };
 		6312ED54246B191E0003CC58 /* b43db281a7c7a48d9f6ffa9593170157-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "b43db281a7c7a48d9f6ffa9593170157-desc.xcbuild"; sourceTree = "<group>"; };
 		6312ED55246B191E0003CC58 /* run_01_Helloworld.sh.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_01_Helloworld.sh.command; sourceTree = "<group>"; };
 		6312ED56246B191E0003CC58 /* 03.MemoryPlayback */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 03.MemoryPlayback; sourceTree = "<group>"; };
@@ -841,11 +844,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4002E57D246B1C82007157C3 /* ikpFLAC.dylib in Frameworks */,
+				4002E57E246B1C82007157C3 /* ikpMP3.dylib in Frameworks */,
+				4002E57F246B1C82007157C3 /* libirrklang.dylib in Frameworks */,
 				40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */,
 				402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */,
-				6312EFDF246B193A0003CC58 /* ikpMP3.dylib in Frameworks */,
-				6312EFDD246B193A0003CC58 /* ikpFLAC.dylib in Frameworks */,
-				6312EFE1246B193A0003CC58 /* libirrklang.dylib in Frameworks */,
 				402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */,
 				402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */,
 			);
@@ -866,6 +869,9 @@
 		402B605D245B20C300A4DE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4002E577246B1BA3007157C3 /* ikpFLAC.dylib */,
+				4002E578246B1BA3007157C3 /* ikpMP3.dylib */,
+				4002E579246B1BA3007157C3 /* libirrklang.dylib */,
 				6312ED01246B191E0003CC58 /* 1.5.0 */,
 				40E0382D2469E4C400F1EDC2 /* libirrklang.dylib */,
 				6312ECFD246B17590003CC58 /* libirrklang.dylib */,
@@ -2263,12 +2269,9 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include,
-					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/include",
-				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/freeglut/3.2.1/lib,
@@ -2284,12 +2287,9 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include,
-					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/include",
-				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/freeglut/3.2.1/lib,

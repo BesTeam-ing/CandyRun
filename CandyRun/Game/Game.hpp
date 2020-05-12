@@ -15,7 +15,6 @@
 #include <SOIL2/SOIL2.h>
 #include "irrKlang.h"
 
-
 #include "../SkyBox/skybox.hpp"
 #include "../WeatherEffects/w_effects.hpp"
 #include "../Objects/objects.hpp"
