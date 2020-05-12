@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4002E281246AAF90007157C3 /* Jump.wav */; };
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
@@ -39,6 +40,7 @@
 			dstPath = sounds;
 			dstSubfolderSpec = 16;
 			files = (
+				4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */,
 				40E038322469E54E00F1EDC2 /* sound.wav in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4002E281246AAF90007157C3 /* Jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Jump.wav; sourceTree = "<group>"; };
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		40E038302469E53200F1EDC2 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				4002E281246AAF90007157C3 /* Jump.wav */,
 				40E038312469E54900F1EDC2 /* sound.wav */,
 			);
 			path = sounds;

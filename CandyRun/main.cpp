@@ -5,7 +5,7 @@ WeatherEffects part;
 Road road;
 Camera camera = Camera(ecX, 3.0f, ecZ + 20, ecX + 0.0, 2.0f, 0.0 - 1.0f, 0.0f, 1.0f, 0.0f);
 Server server;
-irrklang::ISoundEngine* engine;
+irrklang::ISoundEngine* engine = irrklang::createIrrKlangDevice();
 
 GLdouble fovy = 45.0;
 GLdouble aspectRatio = (GLdouble)DEF_WINDOW_WIDTH / (GLdouble)DEF_WINDOW_HEIGHT;
@@ -46,11 +46,11 @@ void windowKey(unsigned char key,int x,int y)
     }
     
     /*  Change field of view angle */
-    else if (key == '-' && key>1)
-        fov--;
+    //else if (key == '-' && key>1)
+    //    fov--;
     
-    else if (key == '+' && key<179)
-        fov++;
+    //else if (key == '+' && key<179)
+    //    fov++;
     else if (key == 'p'){ //1st person
         camera.eye.x = 20;
         camera.eye.y = 4;
@@ -78,20 +78,24 @@ float x_sphere = 0.0;
 void windowSpecial(int key,int x,int y)
 {
     /*  Right/Left - rotate */
-    if (key == GLUT_KEY_RIGHT)
+    if (key == GLUT_KEY_RIGHT){
         //th += 5;
         //ecX += 1.0;
+        engine->play2D("sounds/Jump.wav");
         x_sphere+=0.5;
-    else if (key == GLUT_KEY_LEFT)
+    }
+    else if (key == GLUT_KEY_LEFT){
         //th -= 5;
         //ecX -= 1.0;
+        engine->play2D("sounds/Jump.wav");
         x_sphere-=0.5;
+    }
     /*  Up/Down - elevation */
     else if (key == GLUT_KEY_UP){
         // ph -= 5;
         //camera.moveZ(0.1);
-        glRotatef(90, 0, 90, 0);
-        road.draw();
+        //glRotatef(90, 0, 90, 0);
+        //road.draw();
         //road.setPosition(road.getX(), road.getY(), camera.center.z);
         //camera.rotateY(90);
     }
@@ -150,12 +154,6 @@ void drawScene()
 int main(int argc, char **argv)
 {
     initGlobals();
-    engine = irrklang::createIrrKlangDevice();
-    
-    if (!engine){
-        printf("Could not startup engine\n");
-        return 0; // error starting up the engine
-    }
     
     engine->play2D("sounds/sound.wav", true);
     
@@ -174,7 +172,7 @@ int main(int argc, char **argv)
     glutSpecialFunc(windowSpecial);
     initializeGround();
     
-    //server.getWeather();
+    server.getWeather();
     
     sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
     
@@ -186,5 +184,3 @@ int main(int argc, char **argv)
     
     return 0;
 }
-
-

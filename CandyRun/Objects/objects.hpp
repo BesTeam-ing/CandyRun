@@ -115,7 +115,7 @@ public:
     Road();
     ~Road();
     
-    void init(char* t);
+    void init(const char* t);
     void draw();
     void setPosition(float X,float Y,float Z);
     float getX();

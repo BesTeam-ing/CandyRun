@@ -12,7 +12,7 @@
 Road::Road(){}
 Road::~Road(){}
 
-void Road::init(char *t){
+void Road::init(const char *t){
     texture = SOIL_load_OGL_texture(t, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
 }
 
