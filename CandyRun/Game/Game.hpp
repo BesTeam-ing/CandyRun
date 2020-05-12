@@ -13,7 +13,7 @@
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
-#include <irrKlang.h>
+#include "irrKlang.h"
 
 
 #include "../SkyBox/skybox.hpp"

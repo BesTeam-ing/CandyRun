@@ -12,12 +12,14 @@
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
-		40E0382E2469E4C400F1EDC2 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E0382D2469E4C400F1EDC2 /* libirrklang.dylib */; };
 		40E038322469E54E00F1EDC2 /* sound.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40E038312469E54900F1EDC2 /* sound.wav */; };
 		40F68AEF2469828100538F5B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AED2469828100538F5B /* Server.cpp */; };
 		40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F68AF02469829B00538F5B /* libcurl.4.tbd */; };
 		40F68AF32469878400538F5B /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AF22469878400538F5B /* jsoncpp.cpp */; };
 		6311931E245B174500FE95F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6311931D245B174500FE95F7 /* main.cpp */; };
+		6312EFDD246B193A0003CC58 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312ED75246B191E0003CC58 /* ikpFLAC.dylib */; };
+		6312EFDF246B193A0003CC58 /* ikpMP3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312ED5A246B191E0003CC58 /* ikpMP3.dylib */; };
+		6312EFE1246B193A0003CC58 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312ED46246B191E0003CC58 /* libirrklang.dylib */; };
 		6396F14E2464A62400B72597 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1392464A51900B72597 /* image_helper.c */; };
 		6396F14F2464A62400B72597 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13C2464A51900B72597 /* image_DXT.c */; };
 		6396F1502464A62400B72597 /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13F2464A51900B72597 /* SOIL2.c */; };
@@ -33,6 +35,44 @@
 		6396F1862467558E00B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17F246754E300B72597 /* txStormydays_front.bmp */; };
 		6396F1872467559700B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F180246754E700B72597 /* road.jpg */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6312EFCF246B19200003CC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6312EDA2246B191E0003CC58 /* 01.HelloWorld.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76F6C0486A84900D96B5E;
+			remoteInfo = macosx_xcode;
+		};
+		6312EFD2246B19200003CC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6312EDB7246B191E0003CC58 /* 02.3DSound.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76F6C0486A84900D96B5E;
+			remoteInfo = macosx_xcode;
+		};
+		6312EFD5246B19200003CC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6312EDAA246B191E0003CC58 /* 03.MemoryPlayback.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76F6C0486A84900D96B5E;
+			remoteInfo = macosx_xcode;
+		};
+		6312EFD8246B19200003CC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6312EDCB246B191E0003CC58 /* 04.OverrideFileAccess.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76F6C0486A84900D96B5E;
+			remoteInfo = macosx_xcode;
+		};
+		6312EFDB246B19200003CC58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6312EDBE246B191E0003CC58 /* 05.Effects.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76F6C0486A84900D96B5E;
+			remoteInfo = macosx_xcode;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		40E0382F2469E52B00F1EDC2 /* CopyFiles */ = {
@@ -90,6 +130,675 @@
 		40F68AF22469878400538F5B /* jsoncpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
 		6311931A245B174500FE95F7 /* CandyRun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CandyRun; sourceTree = BUILT_PRODUCTS_DIR; };
 		6311931D245B174500FE95F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6312ECFD246B17590003CC58 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/libirrklang.dylib"; sourceTree = "<group>"; };
+		6312ED04246B191E0003CC58 /* AssemblyInfo.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		6312ED05246B191E0003CC58 /* CSharp.03.MemoryPlayback_vs2013.csproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CSharp.03.MemoryPlayback_vs2013.csproj; sourceTree = "<group>"; };
+		6312ED06246B191E0003CC58 /* app.config */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = app.config; sourceTree = "<group>"; };
+		6312ED07246B191E0003CC58 /* App.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = App.ico; sourceTree = "<group>"; };
+		6312ED08246B191E0003CC58 /* Class1.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Class1.cs; sourceTree = "<group>"; };
+		6312ED09246B191E0003CC58 /* CSharp.03.MemoryPlayback_vs2013.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = CSharp.03.MemoryPlayback_vs2013.sln; sourceTree = "<group>"; };
+		6312ED0B246B191E0003CC58 /* AssemblyInfo.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		6312ED0C246B191E0003CC58 /* app.config */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = app.config; sourceTree = "<group>"; };
+		6312ED0D246B191E0003CC58 /* CSharp.02.3DSound_vs2013.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = CSharp.02.3DSound_vs2013.sln; sourceTree = "<group>"; };
+		6312ED0E246B191E0003CC58 /* App.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = App.ico; sourceTree = "<group>"; };
+		6312ED0F246B191E0003CC58 /* Class1.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Class1.cs; sourceTree = "<group>"; };
+		6312ED10246B191E0003CC58 /* CSharp.02.3DSound_vs2013.csproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CSharp.02.3DSound_vs2013.csproj; sourceTree = "<group>"; };
+		6312ED12246B191E0003CC58 /* AssemblyInfo.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		6312ED13246B191E0003CC58 /* app.config */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = app.config; sourceTree = "<group>"; };
+		6312ED14246B191E0003CC58 /* App.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = App.ico; sourceTree = "<group>"; };
+		6312ED15246B191E0003CC58 /* CSharp.04.OverrideFileAccess_vs2013.csproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CSharp.04.OverrideFileAccess_vs2013.csproj; sourceTree = "<group>"; };
+		6312ED16246B191E0003CC58 /* Class1.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Class1.cs; sourceTree = "<group>"; };
+		6312ED17246B191E0003CC58 /* CSharp.04.OverrideFileAccess_vs2013.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = CSharp.04.OverrideFileAccess_vs2013.sln; sourceTree = "<group>"; };
+		6312ED19246B191E0003CC58 /* AssemblyInfo.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		6312ED1A246B191E0003CC58 /* app.config */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = app.config; sourceTree = "<group>"; };
+		6312ED1B246B191E0003CC58 /* App.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = App.ico; sourceTree = "<group>"; };
+		6312ED1C246B191E0003CC58 /* Class1.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Class1.cs; sourceTree = "<group>"; };
+		6312ED1E246B191E0003CC58 /* AssemblyInfo.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		6312ED1F246B191E0003CC58 /* CSharp.01.HelloWorld_vs2013.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = CSharp.01.HelloWorld_vs2013.sln; sourceTree = "<group>"; };
+		6312ED20246B191E0003CC58 /* CSharp.01.HelloWorld_vs2013.csproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CSharp.01.HelloWorld_vs2013.csproj; sourceTree = "<group>"; };
+		6312ED21246B191E0003CC58 /* app.config */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = app.config; sourceTree = "<group>"; };
+		6312ED22246B191E0003CC58 /* App.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = App.ico; sourceTree = "<group>"; };
+		6312ED23246B191E0003CC58 /* Class1.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Class1.cs; sourceTree = "<group>"; };
+		6312ED25246B191E0003CC58 /* AssemblyInfo.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		6312ED26246B191E0003CC58 /* Form1.resx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Form1.resx; sourceTree = "<group>"; };
+		6312ED27246B191E0003CC58 /* Form1.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = Form1.cs; sourceTree = "<group>"; };
+		6312ED28246B191E0003CC58 /* app.config */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = app.config; sourceTree = "<group>"; };
+		6312ED29246B191E0003CC58 /* CSharp.Winforms.Musicplayer_vs2013.csproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CSharp.Winforms.Musicplayer_vs2013.csproj; sourceTree = "<group>"; };
+		6312ED2A246B191E0003CC58 /* App.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = App.ico; sourceTree = "<group>"; };
+		6312ED2B246B191E0003CC58 /* CSharp.Winforms.Musicplayer_vs2013.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = CSharp.Winforms.Musicplayer_vs2013.sln; sourceTree = "<group>"; };
+		6312ED2E246B191E0003CC58 /* CSharp.04.OverrideFileAccess.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = CSharp.04.OverrideFileAccess.exe; sourceTree = "<group>"; };
+		6312ED2F246B191E0003CC58 /* irrKlang.NET4.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = irrKlang.NET4.dll; sourceTree = "<group>"; };
+		6312ED30246B191E0003CC58 /* CSharp.03.MemoryPlayback.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = CSharp.03.MemoryPlayback.exe; sourceTree = "<group>"; };
+		6312ED31246B191E0003CC58 /* ikpFlac.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = ikpFlac.dll; sourceTree = "<group>"; };
+		6312ED32246B191E0003CC58 /* CSharp.01.HelloWorld.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = CSharp.01.HelloWorld.exe; sourceTree = "<group>"; };
+		6312ED33246B191E0003CC58 /* ikpMP3.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = ikpMP3.dll; sourceTree = "<group>"; };
+		6312ED34246B191E0003CC58 /* CSharp.02.3DSound.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = CSharp.02.3DSound.exe; sourceTree = "<group>"; };
+		6312ED35246B191E0003CC58 /* CSharp.Winforms.Musicplayer.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = CSharp.Winforms.Musicplayer.exe; sourceTree = "<group>"; };
+		6312ED37246B191E0003CC58 /* 01.HelloWorld.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.HelloWorld.exe; sourceTree = "<group>"; };
+		6312ED38246B191E0003CC58 /* irrKlang.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = irrKlang.dll; sourceTree = "<group>"; };
+		6312ED39246B191E0003CC58 /* ikpFlac.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = ikpFlac.dll; sourceTree = "<group>"; };
+		6312ED3A246B191E0003CC58 /* 06.Recording.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = 06.Recording.exe; sourceTree = "<group>"; };
+		6312ED3B246B191E0003CC58 /* 05.Effects.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05.Effects.exe; sourceTree = "<group>"; };
+		6312ED3C246B191E0003CC58 /* 02.3DSound.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02.3DSound.exe; sourceTree = "<group>"; };
+		6312ED3D246B191E0003CC58 /* ikpMP3.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = ikpMP3.dll; sourceTree = "<group>"; };
+		6312ED3E246B191E0003CC58 /* 03.MemoryPlayback.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = 03.MemoryPlayback.exe; sourceTree = "<group>"; };
+		6312ED3F246B191E0003CC58 /* 04.OverrideFileAccess.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04.OverrideFileAccess.exe; sourceTree = "<group>"; };
+		6312ED41246B191E0003CC58 /* ikpFlac.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = ikpFlac.so; sourceTree = "<group>"; };
+		6312ED42246B191E0003CC58 /* libIrrKlang.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libIrrKlang.so; sourceTree = "<group>"; };
+		6312ED43246B191E0003CC58 /* ikpMP3.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = ikpMP3.so; sourceTree = "<group>"; };
+		6312ED45246B191E0003CC58 /* 01.HelloWorld */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 01.HelloWorld; sourceTree = "<group>"; };
+		6312ED46246B191E0003CC58 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libirrklang.dylib; sourceTree = "<group>"; };
+		6312ED48246B191E0003CC58 /* 1abf791ade86c7fe9aa59799f4c682cd-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1abf791ade86c7fe9aa59799f4c682cd-manifest.xcbuild"; sourceTree = "<group>"; };
+		6312ED49246B191E0003CC58 /* c67131698faa198885e543522ddbbbba-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "c67131698faa198885e543522ddbbbba-desc.xcbuild"; sourceTree = "<group>"; };
+		6312ED4A246B191E0003CC58 /* BuildDescriptionCacheIndex-4f31081c621f3c45ba021b654ca7a6ca */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BuildDescriptionCacheIndex-4f31081c621f3c45ba021b654ca7a6ca"; sourceTree = "<group>"; };
+		6312ED4B246B191E0003CC58 /* 9502fc0e3cb0591372c1e9306bba2315-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "9502fc0e3cb0591372c1e9306bba2315-desc.xcbuild"; sourceTree = "<group>"; };
+		6312ED4C246B191E0003CC58 /* c67131698faa198885e543522ddbbbba-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "c67131698faa198885e543522ddbbbba-manifest.xcbuild"; sourceTree = "<group>"; };
+		6312ED4D246B191E0003CC58 /* 9502fc0e3cb0591372c1e9306bba2315-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "9502fc0e3cb0591372c1e9306bba2315-manifest.xcbuild"; sourceTree = "<group>"; };
+		6312ED4E246B191E0003CC58 /* 112cee2f85fdc610a84454cc0ef43611-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "112cee2f85fdc610a84454cc0ef43611-desc.xcbuild"; sourceTree = "<group>"; };
+		6312ED4F246B191E0003CC58 /* b43db281a7c7a48d9f6ffa9593170157-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "b43db281a7c7a48d9f6ffa9593170157-manifest.xcbuild"; sourceTree = "<group>"; };
+		6312ED50246B191E0003CC58 /* build.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = build.db; sourceTree = "<group>"; };
+		6312ED51246B191E0003CC58 /* 1abf791ade86c7fe9aa59799f4c682cd-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1abf791ade86c7fe9aa59799f4c682cd-desc.xcbuild"; sourceTree = "<group>"; };
+		6312ED52246B191E0003CC58 /* 112cee2f85fdc610a84454cc0ef43611-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "112cee2f85fdc610a84454cc0ef43611-manifest.xcbuild"; sourceTree = "<group>"; };
+		6312ED53246B191E0003CC58 /* BuildDescriptionCacheIndex-f8413ef0cd43ad7b673184d07e409c9f */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BuildDescriptionCacheIndex-f8413ef0cd43ad7b673184d07e409c9f"; sourceTree = "<group>"; };
+		6312ED54246B191E0003CC58 /* b43db281a7c7a48d9f6ffa9593170157-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "b43db281a7c7a48d9f6ffa9593170157-desc.xcbuild"; sourceTree = "<group>"; };
+		6312ED55246B191E0003CC58 /* run_01_Helloworld.sh.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_01_Helloworld.sh.command; sourceTree = "<group>"; };
+		6312ED56246B191E0003CC58 /* 03.MemoryPlayback */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 03.MemoryPlayback; sourceTree = "<group>"; };
+		6312ED57246B191E0003CC58 /* run_03_MemoryPlayback.sh.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_03_MemoryPlayback.sh.command; sourceTree = "<group>"; };
+		6312ED58246B191E0003CC58 /* run_04_OverrideFileAccess.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_04_OverrideFileAccess.command; sourceTree = "<group>"; };
+		6312ED59246B191E0003CC58 /* 02.3DSound */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 02.3DSound; sourceTree = "<group>"; };
+		6312ED5A246B191E0003CC58 /* ikpMP3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = ikpMP3.dylib; sourceTree = "<group>"; };
+		6312ED60246B191E0003CC58 /* main.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = main.o; sourceTree = "<group>"; };
+		6312ED61246B191E0003CC58 /* 01.HelloWorld.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = 01.HelloWorld.LinkFileList; sourceTree = "<group>"; };
+		6312ED62246B191E0003CC58 /* main.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = main.d; sourceTree = "<group>"; };
+		6312ED63246B191E0003CC58 /* 01.HelloWorld_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.HelloWorld_dependency_info.dat; sourceTree = "<group>"; };
+		6312ED64246B191E0003CC58 /* main.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.dia; sourceTree = "<group>"; };
+		6312ED66246B191E0003CC58 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		6312ED67246B191E0003CC58 /* 01.HelloWorld.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.HelloWorld.hmap; sourceTree = "<group>"; };
+		6312ED68246B191E0003CC58 /* 01.HelloWorld-own-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01.HelloWorld-own-target-headers.hmap"; sourceTree = "<group>"; };
+		6312ED69246B191E0003CC58 /* 01.HelloWorld.xcent */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 01.HelloWorld.xcent; sourceTree = "<group>"; };
+		6312ED6A246B191E0003CC58 /* Script-23CDAAE90C51E99B003DA087.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-23CDAAE90C51E99B003DA087.sh"; sourceTree = "<group>"; };
+		6312ED6B246B191E0003CC58 /* 01.HelloWorld-project-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01.HelloWorld-project-headers.hmap"; sourceTree = "<group>"; };
+		6312ED6C246B191E0003CC58 /* 01.HelloWorld-all-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01.HelloWorld-all-target-headers.hmap"; sourceTree = "<group>"; };
+		6312ED6D246B191E0003CC58 /* 01.HelloWorld-all-non-framework-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01.HelloWorld-all-non-framework-target-headers.hmap"; sourceTree = "<group>"; };
+		6312ED6E246B191E0003CC58 /* all-product-headers.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "all-product-headers.yaml"; sourceTree = "<group>"; };
+		6312ED6F246B191E0003CC58 /* 01.HelloWorld-generated-files.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01.HelloWorld-generated-files.hmap"; sourceTree = "<group>"; };
+		6312ED70246B191E0003CC58 /* 05.Effects */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 05.Effects; sourceTree = "<group>"; };
+		6312ED71246B191E0003CC58 /* MusicPlayer */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = MusicPlayer; sourceTree = "<group>"; };
+		6312ED72246B191E0003CC58 /* run_MusicPlayer.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_MusicPlayer.command; sourceTree = "<group>"; };
+		6312ED73246B191E0003CC58 /* 04.OverrideFileAccess */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 04.OverrideFileAccess; sourceTree = "<group>"; };
+		6312ED74246B191E0003CC58 /* run_05_Effects.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_05_Effects.command; sourceTree = "<group>"; };
+		6312ED75246B191E0003CC58 /* ikpFLAC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = ikpFLAC.dylib; sourceTree = "<group>"; };
+		6312ED76246B191E0003CC58 /* run_02_3DSound.sh.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_02_3DSound.sh.command; sourceTree = "<group>"; };
+		6312ED79246B191E0003CC58 /* CIrrKlangAudioStreamLoaderMP3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIrrKlangAudioStreamLoaderMP3.h; sourceTree = "<group>"; };
+		6312ED7A246B191E0003CC58 /* CIrrKlangAudioStreamLoaderMP3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CIrrKlangAudioStreamLoaderMP3.cpp; sourceTree = "<group>"; };
+		6312ED7B246B191E0003CC58 /* CIrrKlangAudioStreamMP3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CIrrKlangAudioStreamMP3.cpp; sourceTree = "<group>"; };
+		6312ED7D246B191E0003CC58 /* mpegaudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mpegaudio.h; sourceTree = "<group>"; };
+		6312ED7E246B191E0003CC58 /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		6312ED7F246B191E0003CC58 /* mpaudec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mpaudec.h; sourceTree = "<group>"; };
+		6312ED80246B191E0003CC58 /* bits.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bits.c; sourceTree = "<group>"; };
+		6312ED81246B191E0003CC58 /* mpaudectab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mpaudectab.h; sourceTree = "<group>"; };
+		6312ED82246B191E0003CC58 /* mpaudec.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mpaudec.c; sourceTree = "<group>"; };
+		6312ED83246B191E0003CC58 /* ikpMP3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ikpMP3.cpp; sourceTree = "<group>"; };
+		6312ED84246B191E0003CC58 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		6312ED85246B191E0003CC58 /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		6312ED86246B191E0003CC58 /* CIrrKlangAudioStreamMP3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIrrKlangAudioStreamMP3.h; sourceTree = "<group>"; };
+		6312ED88246B191E0003CC58 /* ik_EStreamModes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_EStreamModes.h; sourceTree = "<group>"; };
+		6312ED89246B191E0003CC58 /* ik_vec3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_vec3d.h; sourceTree = "<group>"; };
+		6312ED8A246B191E0003CC58 /* ik_IVirtualRefCounted.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_IVirtualRefCounted.h; sourceTree = "<group>"; };
+		6312ED8B246B191E0003CC58 /* ik_ISoundMixedOutputReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ISoundMixedOutputReceiver.h; sourceTree = "<group>"; };
+		6312ED8C246B191E0003CC58 /* ik_IFileReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_IFileReader.h; sourceTree = "<group>"; };
+		6312ED8D246B191E0003CC58 /* ik_IRefCounted.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_IRefCounted.h; sourceTree = "<group>"; };
+		6312ED8E246B191E0003CC58 /* ik_IAudioRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_IAudioRecorder.h; sourceTree = "<group>"; };
+		6312ED8F246B191E0003CC58 /* ik_IAudioStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_IAudioStream.h; sourceTree = "<group>"; };
+		6312ED90246B191E0003CC58 /* ik_ISound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ISound.h; sourceTree = "<group>"; };
+		6312ED91246B191E0003CC58 /* irrKlang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = irrKlang.h; sourceTree = "<group>"; };
+		6312ED92246B191E0003CC58 /* ik_ISoundStopEventReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ISoundStopEventReceiver.h; sourceTree = "<group>"; };
+		6312ED93246B191E0003CC58 /* ik_ESoundOutputDrivers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ESoundOutputDrivers.h; sourceTree = "<group>"; };
+		6312ED94246B191E0003CC58 /* ik_ISoundSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ISoundSource.h; sourceTree = "<group>"; };
+		6312ED95246B191E0003CC58 /* ik_IAudioStreamLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_IAudioStreamLoader.h; sourceTree = "<group>"; };
+		6312ED96246B191E0003CC58 /* ik_ESoundEngineOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ESoundEngineOptions.h; sourceTree = "<group>"; };
+		6312ED97246B191E0003CC58 /* ik_irrKlangTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_irrKlangTypes.h; sourceTree = "<group>"; };
+		6312ED98246B191E0003CC58 /* ik_ISoundEffectControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ISoundEffectControl.h; sourceTree = "<group>"; };
+		6312ED99246B191E0003CC58 /* ik_ISoundDeviceList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ISoundDeviceList.h; sourceTree = "<group>"; };
+		6312ED9A246B191E0003CC58 /* ik_SAudioStreamFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_SAudioStreamFormat.h; sourceTree = "<group>"; };
+		6312ED9B246B191E0003CC58 /* ik_IFileFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_IFileFactory.h; sourceTree = "<group>"; };
+		6312ED9C246B191E0003CC58 /* ik_ISoundEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ik_ISoundEngine.h; sourceTree = "<group>"; };
+		6312ED9D246B191E0003CC58 /* changes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
+		6312EDA0246B191E0003CC58 /* 01.HelloWorld.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = 01.HelloWorld.sln; sourceTree = "<group>"; };
+		6312EDA1246B191E0003CC58 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		6312EDA2246B191E0003CC58 /* 01.HelloWorld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = 01.HelloWorld.xcodeproj; sourceTree = "<group>"; };
+		6312EDA5246B191E0003CC58 /* 01.HelloWorld.cbp */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 01.HelloWorld.cbp; sourceTree = "<group>"; };
+		6312EDA6246B191E0003CC58 /* 01.HelloWorld.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 01.HelloWorld.vcxproj.user; sourceTree = "<group>"; };
+		6312EDA7246B191E0003CC58 /* 01.HelloWorld.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 01.HelloWorld.vcxproj; sourceTree = "<group>"; };
+		6312EDA8246B191E0003CC58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6312EDAA246B191E0003CC58 /* 03.MemoryPlayback.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = 03.MemoryPlayback.xcodeproj; sourceTree = "<group>"; };
+		6312EDAD246B191E0003CC58 /* 03.MemoryPlayback.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 03.MemoryPlayback.vcxproj; sourceTree = "<group>"; };
+		6312EDAE246B191E0003CC58 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		6312EDAF246B191E0003CC58 /* 03.MemoryPlayback.cbp */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 03.MemoryPlayback.cbp; sourceTree = "<group>"; };
+		6312EDB0246B191E0003CC58 /* 03.MemoryPlayback.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = 03.MemoryPlayback.sln; sourceTree = "<group>"; };
+		6312EDB1246B191E0003CC58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6312EDB2246B191E0003CC58 /* 03.MemoryPlayback.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 03.MemoryPlayback.vcxproj.user; sourceTree = "<group>"; };
+		6312EDB4246B191E0003CC58 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		6312EDB5246B191E0003CC58 /* 02.3DSound.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = 02.3DSound.sln; sourceTree = "<group>"; };
+		6312EDB6246B191E0003CC58 /* 02.3DSound.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 02.3DSound.vcxproj.user; sourceTree = "<group>"; };
+		6312EDB7246B191E0003CC58 /* 02.3DSound.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = 02.3DSound.xcodeproj; sourceTree = "<group>"; };
+		6312EDBA246B191E0003CC58 /* 02.3DSound.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 02.3DSound.vcxproj; sourceTree = "<group>"; };
+		6312EDBB246B191E0003CC58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6312EDBC246B191E0003CC58 /* 02.3DSound.cbp */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 02.3DSound.cbp; sourceTree = "<group>"; };
+		6312EDBE246B191E0003CC58 /* 05.Effects.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = 05.Effects.xcodeproj; sourceTree = "<group>"; };
+		6312EDC1246B191E0003CC58 /* 05.Effects.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 05.Effects.vcxproj; sourceTree = "<group>"; };
+		6312EDC2246B191E0003CC58 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		6312EDC3246B191E0003CC58 /* 05.Effects.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 05.Effects.vcxproj.user; sourceTree = "<group>"; };
+		6312EDC4246B191E0003CC58 /* 05.Effects.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = 05.Effects.sln; sourceTree = "<group>"; };
+		6312EDC5246B191E0003CC58 /* 05.Effects.cbp */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 05.Effects.cbp; sourceTree = "<group>"; };
+		6312EDC6246B191E0003CC58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6312EDC8246B191E0003CC58 /* conio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = conio.h; sourceTree = "<group>"; };
+		6312EDCA246B191E0003CC58 /* 04.OverrideFileAccess.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 04.OverrideFileAccess.vcxproj; sourceTree = "<group>"; };
+		6312EDCB246B191E0003CC58 /* 04.OverrideFileAccess.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = 04.OverrideFileAccess.xcodeproj; sourceTree = "<group>"; };
+		6312EDCE246B191E0003CC58 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		6312EDCF246B191E0003CC58 /* 04.OverrideFileAccess.cbp */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 04.OverrideFileAccess.cbp; sourceTree = "<group>"; };
+		6312EDD0246B191E0003CC58 /* 04.OverrideFileAccess.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 04.OverrideFileAccess.vcxproj.user; sourceTree = "<group>"; };
+		6312EDD1246B191E0003CC58 /* 04.OverrideFileAccess.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = 04.OverrideFileAccess.sln; sourceTree = "<group>"; };
+		6312EDD2246B191E0003CC58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6312EDD4246B191E0003CC58 /* 06.Recording.cbp */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 06.Recording.cbp; sourceTree = "<group>"; };
+		6312EDD5246B191E0003CC58 /* 06.Recording.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 06.Recording.vcxproj.user; sourceTree = "<group>"; };
+		6312EDD6246B191E0003CC58 /* 06.Recording.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = 06.Recording.sln; sourceTree = "<group>"; };
+		6312EDD7246B191E0003CC58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6312EDD8246B191E0003CC58 /* 06.Recording.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = 06.Recording.vcxproj; sourceTree = "<group>"; };
+		6312EDDB246B191E0003CC58 /* irrKlang.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = irrKlang.lib; sourceTree = "<group>"; };
+		6312EDDC246B191E0003CC58 /* irrKlang.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; path = irrKlang.exp; sourceTree = "<group>"; };
+		6312EDDF246B191E0003CC58 /* IrrKlang.Vector3D.SetLength.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.SetLength.html; sourceTree = "<group>"; };
+		6312EDE0246B191E0003CC58 /* IrrKlang.ISoundEngine.Finalize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Finalize.html; sourceTree = "<group>"; };
+		6312EDE1246B191E0003CC58 /* IrrKlang.ISound.Velocity.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Velocity.html; sourceTree = "<group>"; };
+		6312EDE2246B191E0003CC58 /* IrrKlang.Vector3D.Equals.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Equals.html; sourceTree = "<group>"; };
+		6312EDE3246B191E0003CC58 /* IrrKlang.EventForwarderMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.EventForwarderMembers.html; sourceTree = "<group>"; };
+		6312EDE4246B191E0003CC58 /* IrrKlang.ISoundEffectControl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.html; sourceTree = "<group>"; };
+		6312EDE5246B191E0003CC58 /* IrrKlang.ISoundDeviceList.Finalize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceList.Finalize.html; sourceTree = "<group>"; };
+		6312EDE6246B191E0003CC58 /* IrrKlang.Vector3DFields.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DFields.html; sourceTree = "<group>"; };
+		6312EDE7246B191E0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_1.html; sourceTree = "<group>"; };
+		6312EDE8246B191E0003CC58 /* IrrKlang.ISoundEffectControlMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControlMethods.html; sourceTree = "<group>"; };
+		6312EDE9246B191E0003CC58 /* IrrKlang.Vector3D.LengthSQ.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.LengthSQ.html; sourceTree = "<group>"; };
+		6312EDEA246B191E0003CC58 /* IrrKlang.Vector3DMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DMembers.html; sourceTree = "<group>"; };
+		6312EDEB246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EDEC246B191E0003CC58 /* IrrKlang.ISoundSource.Name.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.Name.html; sourceTree = "<group>"; };
+		6312EDED246B191E0003CC58 /* treenodeminus.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = treenodeminus.gif; sourceTree = "<group>"; };
+		6312EDEE246B191E0003CC58 /* IrrKlang.ISoundSource.DefaultVolume.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.DefaultVolume.html; sourceTree = "<group>"; };
+		6312EDEF246B191E0003CC58 /* IrrKlang.ISoundEngine.Update.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Update.html; sourceTree = "<group>"; };
+		6312EDF0246B191E0003CC58 /* IrrKlang.ISoundEngine.GetSoundSource_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.GetSoundSource_overloads.html; sourceTree = "<group>"; };
+		6312EDF1246B191E0003CC58 /* IrrKlang.IFileFactory.openFile.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IFileFactory.openFile.html; sourceTree = "<group>"; };
+		6312EDF2246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EDF3246B191E0003CC58 /* treenodeplus.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = treenodeplus.gif; sourceTree = "<group>"; };
+		6312EDF4246B191E0003CC58 /* intevent.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = intevent.gif; sourceTree = "<group>"; };
+		6312EDF5246B191E0003CC58 /* IrrKlang.ISound.MaxDistance.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.MaxDistance.html; sourceTree = "<group>"; };
+		6312EDF6246B191E0003CC58 /* IrrKlang.IAudioRecorder.RecordedAudioData.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.RecordedAudioData.html; sourceTree = "<group>"; };
+		6312EDF7246B191E0003CC58 /* IrrKlang.IAudioRecorderConstructor1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorderConstructor1.html; sourceTree = "<group>"; };
+		6312EDF8246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EDF9246B191E0003CC58 /* IrrKlang.ISound.MinDistance.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.MinDistance.html; sourceTree = "<group>"; };
+		6312EDFA246B191E0003CC58 /* IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overload_1.html; sourceTree = "<group>"; };
+		6312EDFB246B191E0003CC58 /* IrrKlang.ISoundEngineConstructor1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineConstructor1.html; sourceTree = "<group>"; };
+		6312EDFC246B191E0003CC58 /* IrrKlang.Vector3D.GetLengthSQ.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.GetLengthSQ.html; sourceTree = "<group>"; };
+		6312EDFD246B191E0003CC58 /* pubevent.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pubevent.gif; sourceTree = "<group>"; };
+		6312EDFE246B191E0003CC58 /* IrrKlang.ISoundEngine.internalGetNativeEngine.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.internalGetNativeEngine.html; sourceTree = "<group>"; };
+		6312EDFF246B191E0003CC58 /* IrrKlang.Vector3DOperators.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DOperators.html; sourceTree = "<group>"; };
+		6312EE00246B191E0003CC58 /* IrrKlang.ISoundEngine.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.html; sourceTree = "<group>"; };
+		6312EE01246B191E0003CC58 /* IrrKlang.ISoundDeviceList.getDeviceID.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceList.getDeviceID.html; sourceTree = "<group>"; };
+		6312EE02246B191E0003CC58 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		6312EE03246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableEchoSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableEchoSoundEffect.html; sourceTree = "<group>"; };
+		6312EE04246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EE05246B191E0003CC58 /* IrrKlang.ISound.PlayPosition.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.PlayPosition.html; sourceTree = "<group>"; };
+		6312EE06246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableAllEffects.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableAllEffects.html; sourceTree = "<group>"; };
+		6312EE07246B191E0003CC58 /* default.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = default.html; sourceTree = "<group>"; };
+		6312EE08246B191E0003CC58 /* IrrKlang.ISoundEngine.RemoveAllSoundSources.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.RemoveAllSoundSources.html; sourceTree = "<group>"; };
+		6312EE09246B191E0003CC58 /* IrrKlang.ISoundEffectControl.IsFlangerSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsFlangerSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EE0A246B191E0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_6.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play2D_overload_6.html; sourceTree = "<group>"; };
+		6312EE0B246B191E0003CC58 /* protproperty.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = protproperty.gif; sourceTree = "<group>"; };
+		6312EE0C246B191E0003CC58 /* IrrKlang.ISoundMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundMethods.html; sourceTree = "<group>"; };
+		6312EE0D246B191E0003CC58 /* IrrKlang.IAudioRecorderMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorderMethods.html; sourceTree = "<group>"; };
+		6312EE0E246B191E0003CC58 /* privfield.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = privfield.gif; sourceTree = "<group>"; };
+		6312EE0F246B191E0003CC58 /* IrrKlang.ISound.setSoundStopEventReceiver_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.setSoundStopEventReceiver_overload_1.html; sourceTree = "<group>"; };
+		6312EE10246B191E0003CC58 /* IrrKlang.IFileFactoryMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IFileFactoryMembers.html; sourceTree = "<group>"; };
+		6312EE11246B191E0003CC58 /* IrrKlang.ISoundEngine.Play2D_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play2D_overloads.html; sourceTree = "<group>"; };
+		6312EE12246B191E0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromIOStream.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceFromIOStream.html; sourceTree = "<group>"; };
+		6312EE13246B191E0003CC58 /* IrrKlang.SampleFormat.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.SampleFormat.html; sourceTree = "<group>"; };
+		6312EE14246B191E0003CC58 /* IrrKlang.ISoundEngine.GetSoundSource_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.GetSoundSource_overload_1.html; sourceTree = "<group>"; };
+		6312EE15246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EE16246B191E0003CC58 /* IrrKlang.StreamForwarder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.StreamForwarder.html; sourceTree = "<group>"; };
+		6312EE17246B191E0003CC58 /* IrrKlang.ISoundEffectControl.IsCompressorSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsCompressorSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EE18246B191E0003CC58 /* IrrKlang.ISound.Finished.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Finished.html; sourceTree = "<group>"; };
+		6312EE19246B191E0003CC58 /* IrrKlang.ISound.Paused.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Paused.html; sourceTree = "<group>"; };
+		6312EE1A246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableCompressorSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableCompressorSoundEffect.html; sourceTree = "<group>"; };
+		6312EE1B246B191E0003CC58 /* IrrKlang.Vector3D.op_Division.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.op_Division.html; sourceTree = "<group>"; };
+		6312EE1C246B191E0003CC58 /* IrrKlang.ISoundStopEventReceiverMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundStopEventReceiverMembers.html; sourceTree = "<group>"; };
+		6312EE1D246B191E0003CC58 /* IrrKlang.IAudioRecorder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.html; sourceTree = "<group>"; };
+		6312EE1E246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EE1F246B191E0003CC58 /* protoperator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = protoperator.gif; sourceTree = "<group>"; };
+		6312EE20246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE21246B191E0003CC58 /* IrrKlang.AudioFormatConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormatConstructor.html; sourceTree = "<group>"; };
+		6312EE22246B191E0003CC58 /* IrrKlang.IAudioRecorderProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorderProperties.html; sourceTree = "<group>"; };
+		6312EE23246B191E0003CC58 /* IrrKlang.ISoundEffectControl.IsParamEqSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsParamEqSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EE24246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE25246B191E0003CC58 /* IrrKlang.ISoundDeviceListMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceListMethods.html; sourceTree = "<group>"; };
+		6312EE26246B191E0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play2D_overload_1.html; sourceTree = "<group>"; };
+		6312EE27246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EE28246B191E0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromPCMData.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceFromPCMData.html; sourceTree = "<group>"; };
+		6312EE29246B191E0003CC58 /* IrrKlang.Vector3D.GetLength.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.GetLength.html; sourceTree = "<group>"; };
+		6312EE2A246B191E0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetListenerPosition_overload_1.html; sourceTree = "<group>"; };
+		6312EE2B246B191E0003CC58 /* IrrKlang.AudioFormat.FrameCount.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.FrameCount.html; sourceTree = "<group>"; };
+		6312EE2C246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EE2D246B191E0003CC58 /* IrrKlang.IAudioRecorder.ClearRecordedAudioDataBuffer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.ClearRecordedAudioDataBuffer.html; sourceTree = "<group>"; };
+		6312EE2E246B191E0003CC58 /* IrrKlang.EventForwarder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.EventForwarder.html; sourceTree = "<group>"; };
+		6312EE2F246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableChorusSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableChorusSoundEffect.html; sourceTree = "<group>"; };
+		6312EE30246B191E0003CC58 /* IrrKlang.ISound.Finalize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Finalize.html; sourceTree = "<group>"; };
+		6312EE31246B191E0003CC58 /* IrrKlang.ISoundEffectControl.Finalize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.Finalize.html; sourceTree = "<group>"; };
+		6312EE32246B191E0003CC58 /* tree.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = tree.js; sourceTree = "<group>"; };
+		6312EE33246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE34246B191E0003CC58 /* IrrKlang.Vector3D.Normalize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Normalize.html; sourceTree = "<group>"; };
+		6312EE35246B191E0003CC58 /* IrrKlang.ISoundEngine.SetRolloffFactor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetRolloffFactor.html; sourceTree = "<group>"; };
+		6312EE36246B191E0003CC58 /* IrrKlangHierarchy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlangHierarchy.html; sourceTree = "<group>"; };
+		6312EE37246B191E0003CC58 /* IrrKlang.ISoundDeviceListProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceListProperties.html; sourceTree = "<group>"; };
+		6312EE38246B191E0003CC58 /* IrrKlang.ISoundDeviceListConstructor2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceListConstructor2.html; sourceTree = "<group>"; };
+		6312EE39246B191E0003CC58 /* IrrKlang.AudioFormat.Format.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.Format.html; sourceTree = "<group>"; };
+		6312EE3A246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EE3B246B191E0003CC58 /* IrrKlang.ISoundSourceMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSourceMethods.html; sourceTree = "<group>"; };
+		6312EE3C246B191E0003CC58 /* IrrKlang.ISound.Looped.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Looped.html; sourceTree = "<group>"; };
+		6312EE3D246B191E0003CC58 /* IrrKlang.AudioFormatProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormatProperties.html; sourceTree = "<group>"; };
+		6312EE3E246B191E0003CC58 /* privevent.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = privevent.gif; sourceTree = "<group>"; };
+		6312EE3F246B191E0003CC58 /* IrrKlang.ISoundEngine.SoundVolume.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SoundVolume.html; sourceTree = "<group>"; };
+		6312EE40246B191E0003CC58 /* IrrKlang.Vector3D.Invert.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Invert.html; sourceTree = "<group>"; };
+		6312EE41246B191E0003CC58 /* contents.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = contents.html; sourceTree = "<group>"; };
+		6312EE42246B191E0003CC58 /* IrrKlang.ISoundEngine.Play3D_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overloads.html; sourceTree = "<group>"; };
+		6312EE43246B191E0003CC58 /* IrrKlang.Vector3D.X.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.X.html; sourceTree = "<group>"; };
+		6312EE44246B191E0003CC58 /* IrrKlang.AudioFormat.SampleSize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.SampleSize.html; sourceTree = "<group>"; };
+		6312EE45246B191E0003CC58 /* IrrKlang.ISoundSourceProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSourceProperties.html; sourceTree = "<group>"; };
+		6312EE46246B191E0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_7.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_7.html; sourceTree = "<group>"; };
+		6312EE47246B191E0003CC58 /* pubfield.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pubfield.gif; sourceTree = "<group>"; };
+		6312EE48246B191E0003CC58 /* IrrKlang.ISoundDeviceList.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceList.html; sourceTree = "<group>"; };
+		6312EE49246B191E0003CC58 /* IrrKlang.Vector3D.Set_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Set_overload_2.html; sourceTree = "<group>"; };
+		6312EE4A246B191E0003CC58 /* IrrKlang.StreamForwarderMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.StreamForwarderMembers.html; sourceTree = "<group>"; };
+		6312EE4B246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE4C246B191F0003CC58 /* IrrKlang.ISoundStopEventReceiver.OnSoundStopped.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundStopEventReceiver.OnSoundStopped.html; sourceTree = "<group>"; };
+		6312EE4D246B191F0003CC58 /* intfield.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = intfield.gif; sourceTree = "<group>"; };
+		6312EE4E246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_6.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_6.html; sourceTree = "<group>"; };
+		6312EE4F246B191F0003CC58 /* IrrKlang.ISoundEngineMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineMethods.html; sourceTree = "<group>"; };
+		6312EE50246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE51246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceFromFile_overloads.html; sourceTree = "<group>"; };
+		6312EE52246B191F0003CC58 /* IrrKlang.Vector3DConstructor1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DConstructor1.html; sourceTree = "<group>"; };
+		6312EE53246B191F0003CC58 /* IrrKlang.Vector3D.Y.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Y.html; sourceTree = "<group>"; };
+		6312EE54246B191F0003CC58 /* IrrKlang.Vector3D.Set_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Set_overloads.html; sourceTree = "<group>"; };
+		6312EE55246B191F0003CC58 /* IrrKlang.ISound.SoundEffectControl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.SoundEffectControl.html; sourceTree = "<group>"; };
+		6312EE56246B191F0003CC58 /* IrrKlang.ISoundEngine.AddFileFactory.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddFileFactory.html; sourceTree = "<group>"; };
+		6312EE57246B191F0003CC58 /* IrrKlang.SoundDeviceListType.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.SoundDeviceListType.html; sourceTree = "<group>"; };
+		6312EE58246B191F0003CC58 /* IrrKlang.ISound.Dispose.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Dispose.html; sourceTree = "<group>"; };
+		6312EE59246B191F0003CC58 /* IrrKlang.StreamMode.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.StreamMode.html; sourceTree = "<group>"; };
+		6312EE5A246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE5B246B191F0003CC58 /* IrrKlang.IAudioRecorder.AudioFormat.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.AudioFormat.html; sourceTree = "<group>"; };
+		6312EE5C246B191F0003CC58 /* IrrKlang.IAudioRecorder.IsRecording.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.IsRecording.html; sourceTree = "<group>"; };
+		6312EE5D246B191F0003CC58 /* IrrKlang.Vector3D.op_Multiply_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.op_Multiply_overload_1.html; sourceTree = "<group>"; };
+		6312EE5E246B191F0003CC58 /* IrrKlang.ISoundSource.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.html; sourceTree = "<group>"; };
+		6312EE5F246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableGargleSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableGargleSoundEffect.html; sourceTree = "<group>"; };
+		6312EE60246B191F0003CC58 /* IrrKlang.IFileFactory.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IFileFactory.html; sourceTree = "<group>"; };
+		6312EE61246B191F0003CC58 /* IrrKlang.AudioFormat.FrameSize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.FrameSize.html; sourceTree = "<group>"; };
+		6312EE62246B191F0003CC58 /* IrrKlang.Vector3DConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DConstructor.html; sourceTree = "<group>"; };
+		6312EE63246B191F0003CC58 /* pubmethod.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pubmethod.gif; sourceTree = "<group>"; };
+		6312EE64246B191F0003CC58 /* IrrKlang.ISoundEngine.LoadPlugins.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.LoadPlugins.html; sourceTree = "<group>"; };
+		6312EE65246B191F0003CC58 /* IrrKlang.ISoundStopEventReceiver.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundStopEventReceiver.html; sourceTree = "<group>"; };
+		6312EE66246B191F0003CC58 /* IrrKlang.ISoundSource.Finalize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.Finalize.html; sourceTree = "<group>"; };
+		6312EE67246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE68246B191F0003CC58 /* IrrKlang.Vector3D.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.html; sourceTree = "<group>"; };
+		6312EE69246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableParamEqSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableParamEqSoundEffect.html; sourceTree = "<group>"; };
+		6312EE6A246B191F0003CC58 /* IrrKlang.ISoundEngine.SetAllSoundsPaused.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetAllSoundsPaused.html; sourceTree = "<group>"; };
+		6312EE6B246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_1.html; sourceTree = "<group>"; };
+		6312EE6C246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsGargleSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsGargleSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EE6D246B191F0003CC58 /* IrrKlang.ISoundEngine.SetDopplerEffectParameters.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetDopplerEffectParameters.html; sourceTree = "<group>"; };
+		6312EE6E246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EE6F246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overloads.html; sourceTree = "<group>"; };
+		6312EE70246B191F0003CC58 /* IrrKlang.Vector3D.op_Multiply_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.op_Multiply_overload_2.html; sourceTree = "<group>"; };
+		6312EE71246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableWavesReverbSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableWavesReverbSoundEffect.html; sourceTree = "<group>"; };
+		6312EE72246B191F0003CC58 /* IrrKlang.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.html; sourceTree = "<group>"; };
+		6312EE73246B191F0003CC58 /* IrrKlang.ISoundDeviceListConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceListConstructor.html; sourceTree = "<group>"; };
+		6312EE74246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableI3DL2ReverbSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableI3DL2ReverbSoundEffect.html; sourceTree = "<group>"; };
+		6312EE75246B191F0003CC58 /* IrrKlang.ISoundEngine.RemoveSoundSource.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.RemoveSoundSource.html; sourceTree = "<group>"; };
+		6312EE76246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromMemory.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceFromMemory.html; sourceTree = "<group>"; };
+		6312EE77246B191F0003CC58 /* static.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = static.gif; sourceTree = "<group>"; };
+		6312EE78246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetListenerPosition_overload_3.html; sourceTree = "<group>"; };
+		6312EE79246B191F0003CC58 /* IrrKlang.Vector3D.GetDistanceFromSQ.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.GetDistanceFromSQ.html; sourceTree = "<group>"; };
+		6312EE7A246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_2.html; sourceTree = "<group>"; };
+		6312EE7B246B191F0003CC58 /* IrrKlang.ISoundEngineMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineMembers.html; sourceTree = "<group>"; };
+		6312EE7C246B191F0003CC58 /* IrrKlang.ISoundEffectControlConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControlConstructor.html; sourceTree = "<group>"; };
+		6312EE7D246B191F0003CC58 /* intoperator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = intoperator.gif; sourceTree = "<group>"; };
+		6312EE7E246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play2D_overload_3.html; sourceTree = "<group>"; };
+		6312EE7F246B191F0003CC58 /* IrrKlang.Vector3D.DotProduct.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.DotProduct.html; sourceTree = "<group>"; };
+		6312EE80246B191F0003CC58 /* IrrKlang.AudioFormat.ChannelCount.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.ChannelCount.html; sourceTree = "<group>"; };
+		6312EE81246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EE82246B191F0003CC58 /* IrrKlang.Vector3D.GetInterpolated.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.GetInterpolated.html; sourceTree = "<group>"; };
+		6312EE83246B191F0003CC58 /* IrrKlang.ISoundSource.StreamMode.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.StreamMode.html; sourceTree = "<group>"; };
+		6312EE84246B191F0003CC58 /* IrrKlang.AudioFormat.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.html; sourceTree = "<group>"; };
+		6312EE85246B191F0003CC58 /* IrrKlang.ISound.Pan.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Pan.html; sourceTree = "<group>"; };
+		6312EE86246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableDistortionSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableDistortionSoundEffect.html; sourceTree = "<group>"; };
+		6312EE87246B191F0003CC58 /* IrrKlang.ISound.Position.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Position.html; sourceTree = "<group>"; };
+		6312EE88246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_5.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_5.html; sourceTree = "<group>"; };
+		6312EE89246B191F0003CC58 /* IrrKlang.Vector3D.op_Multiply_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.op_Multiply_overloads.html; sourceTree = "<group>"; };
+		6312EE8A246B191F0003CC58 /* IrrKlang.ISoundConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundConstructor.html; sourceTree = "<group>"; };
+		6312EE8B246B191F0003CC58 /* IrrKlang.ISoundEngine.Default3DSoundMaxDistance.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Default3DSoundMaxDistance.html; sourceTree = "<group>"; };
+		6312EE8C246B191F0003CC58 /* IrrKlang.IAudioRecorder.Finalize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.Finalize.html; sourceTree = "<group>"; };
+		6312EE8D246B191F0003CC58 /* IrrKlang.StopEventCause.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.StopEventCause.html; sourceTree = "<group>"; };
+		6312EE8E246B191F0003CC58 /* IrrKlang.ISoundSource.DefaultMaxDistance.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.DefaultMaxDistance.html; sourceTree = "<group>"; };
+		6312EE8F246B191F0003CC58 /* IrrKlang.Vector3D.Z.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Z.html; sourceTree = "<group>"; };
+		6312EE90246B191F0003CC58 /* IrrKlang.Vector3DConstructor2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DConstructor2.html; sourceTree = "<group>"; };
+		6312EE91246B191F0003CC58 /* ndoc.log */ = {isa = PBXFileReference; lastKnownFileType = text; path = ndoc.log; sourceTree = "<group>"; };
+		6312EE92246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetListenerPosition_overloads.html; sourceTree = "<group>"; };
+		6312EE93246B191F0003CC58 /* IrrKlang.ISoundEngine.Name.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Name.html; sourceTree = "<group>"; };
+		6312EE94246B191F0003CC58 /* IrrKlang.ISoundSource.DefaultMinDistance.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.DefaultMinDistance.html; sourceTree = "<group>"; };
+		6312EE95246B191F0003CC58 /* intproperty.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = intproperty.gif; sourceTree = "<group>"; };
+		6312EE96246B191F0003CC58 /* IrrKlang.ISound.Volume.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Volume.html; sourceTree = "<group>"; };
+		6312EE97246B191F0003CC58 /* IrrKlang.ISoundEngine.Default3DSoundMinDistance.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Default3DSoundMinDistance.html; sourceTree = "<group>"; };
+		6312EE98246B191F0003CC58 /* IrrKlang.ISoundEngineProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineProperties.html; sourceTree = "<group>"; };
+		6312EE99246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EE9A246B191F0003CC58 /* IrrKlang.ISoundEngine.IsCurrentlyPlaying.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.IsCurrentlyPlaying.html; sourceTree = "<group>"; };
+		6312EE9B246B191F0003CC58 /* IrrKlang.ISoundEngine.IsMultiThreaded.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.IsMultiThreaded.html; sourceTree = "<group>"; };
+		6312EE9C246B191F0003CC58 /* IrrKlang.ISound.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.html; sourceTree = "<group>"; };
+		6312EE9D246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsEchoSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsEchoSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EE9E246B191F0003CC58 /* IrrKlang.ISoundSourceConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSourceConstructor.html; sourceTree = "<group>"; };
+		6312EE9F246B191F0003CC58 /* IrrKlang.FileFactoryForwarderMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.FileFactoryForwarderMembers.html; sourceTree = "<group>"; };
+		6312EEA0246B191F0003CC58 /* IrrKlang.ISoundDeviceList.DeviceCount.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceList.DeviceCount.html; sourceTree = "<group>"; };
+		6312EEA1246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_4.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_4.html; sourceTree = "<group>"; };
+		6312EEA2246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsWavesReverbSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsWavesReverbSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EEA3246B191F0003CC58 /* IrrKlang.Vector3D.Set_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Set_overload_1.html; sourceTree = "<group>"; };
+		6312EEA4246B191F0003CC58 /* IrrKlang.ISoundDeviceListMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceListMembers.html; sourceTree = "<group>"; };
+		6312EEA5246B191F0003CC58 /* IrrKlang.Vector3DProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DProperties.html; sourceTree = "<group>"; };
+		6312EEA6246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsDistortionSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsDistortionSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EEA7246B191F0003CC58 /* IrrKlang.ISound.PlaybackSpeed.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.PlaybackSpeed.html; sourceTree = "<group>"; };
+		6312EEA8246B191F0003CC58 /* protfield.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = protfield.gif; sourceTree = "<group>"; };
+		6312EEA9246B191F0003CC58 /* IrrKlang.Vector3D.GetDistanceFrom.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.GetDistanceFrom.html; sourceTree = "<group>"; };
+		6312EEAA246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_3.html; sourceTree = "<group>"; };
+		6312EEAB246B191F0003CC58 /* IrrKlang.ISoundSource.SampleData.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.SampleData.html; sourceTree = "<group>"; };
+		6312EEAC246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play2D_overload_2.html; sourceTree = "<group>"; };
+		6312EEAD246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EEAE246B191F0003CC58 /* IrrKlang.Vector3D.op_Subtraction.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.op_Subtraction.html; sourceTree = "<group>"; };
+		6312EEAF246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetListenerPosition_overload_2.html; sourceTree = "<group>"; };
+		6312EEB0246B191F0003CC58 /* protmethod.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = protmethod.gif; sourceTree = "<group>"; };
+		6312EEB1246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EEB2246B191F0003CC58 /* IrrKlang.Vector3D.op_Equality.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.op_Equality.html; sourceTree = "<group>"; };
+		6312EEB3246B191F0003CC58 /* IrrKlang.FileFactoryForwarder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.FileFactoryForwarder.html; sourceTree = "<group>"; };
+		6312EEB4246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_8.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_8.html; sourceTree = "<group>"; };
+		6312EEB5246B191F0003CC58 /* IrrKlang.IAudioRecorder.AddSoundSourceFromRecordedAudio.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.AddSoundSourceFromRecordedAudio.html; sourceTree = "<group>"; };
+		6312EEB6246B191F0003CC58 /* IrrKlang.IAudioRecorder.StopRecordingAudio.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.StopRecordingAudio.html; sourceTree = "<group>"; };
+		6312EEB7246B191F0003CC58 /* IrrKlang.ISoundProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundProperties.html; sourceTree = "<group>"; };
+		6312EEB8246B191F0003CC58 /* IrrKlang.ISound.Stop.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.Stop.html; sourceTree = "<group>"; };
+		6312EEB9246B191F0003CC58 /* IrrKlang.ISoundSourceMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSourceMembers.html; sourceTree = "<group>"; };
+		6312EEBA246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor4.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineConstructor4.html; sourceTree = "<group>"; };
+		6312EEBB246B191F0003CC58 /* IrrKlang.ISoundDeviceListConstructor1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceListConstructor1.html; sourceTree = "<group>"; };
+		6312EEBC246B191F0003CC58 /* IrrKlang.ISoundMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundMembers.html; sourceTree = "<group>"; };
+		6312EEBD246B191F0003CC58 /* IrrKlang.IAudioRecorderMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorderMembers.html; sourceTree = "<group>"; };
+		6312EEBE246B191F0003CC58 /* IrrKlang.ISound.setSoundStopEventReceiver_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.setSoundStopEventReceiver_overload_2.html; sourceTree = "<group>"; };
+		6312EEBF246B191F0003CC58 /* IrrKlang.Vector3D.ToString.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.ToString.html; sourceTree = "<group>"; };
+		6312EEC0246B191F0003CC58 /* IrrKlang.ISoundEngine.GetSoundSource_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.GetSoundSource_overload_2.html; sourceTree = "<group>"; };
+		6312EEC1246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_3.html; sourceTree = "<group>"; };
+		6312EEC2246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EEC3246B191F0003CC58 /* privproperty.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = privproperty.gif; sourceTree = "<group>"; };
+		6312EEC4246B191F0003CC58 /* IrrKlang.ISound.PlayLength.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.PlayLength.html; sourceTree = "<group>"; };
+		6312EEC5246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineConstructor.html; sourceTree = "<group>"; };
+		6312EEC6246B191F0003CC58 /* intmethod.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = intmethod.gif; sourceTree = "<group>"; };
+		6312EEC7246B191F0003CC58 /* IrrKlang.ISoundSource.getNativeSoundSource.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.getNativeSoundSource.html; sourceTree = "<group>"; };
+		6312EEC8246B191F0003CC58 /* IrrKlang.SoundEngineOptionFlag.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.SoundEngineOptionFlag.html; sourceTree = "<group>"; };
+		6312EEC9246B191F0003CC58 /* IrrKlang.AudioFormatFields.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormatFields.html; sourceTree = "<group>"; };
+		6312EECA246B191F0003CC58 /* MSDN.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = MSDN.css; sourceTree = "<group>"; };
+		6312EECB246B191F0003CC58 /* protevent.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = protevent.gif; sourceTree = "<group>"; };
+		6312EECC246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overload_1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overload_1.html; sourceTree = "<group>"; };
+		6312EECD246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineConstructor3.html; sourceTree = "<group>"; };
+		6312EECE246B191F0003CC58 /* IrrKlang.AudioFormat.SampleDataSize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.SampleDataSize.html; sourceTree = "<group>"; };
+		6312EECF246B191F0003CC58 /* privoperator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = privoperator.gif; sourceTree = "<group>"; };
+		6312EED0246B191F0003CC58 /* IrrKlang.ISoundStopEventReceiverMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundStopEventReceiverMethods.html; sourceTree = "<group>"; };
+		6312EED1246B191F0003CC58 /* IrrKlang.Vector3D.Length.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.Length.html; sourceTree = "<group>"; };
+		6312EED2246B191F0003CC58 /* IrrKlang.IAudioRecorderConstructor3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorderConstructor3.html; sourceTree = "<group>"; };
+		6312EED3246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EED4246B191F0003CC58 /* IrrKlang.Vector3D.IsBetweenPoints.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.IsBetweenPoints.html; sourceTree = "<group>"; };
+		6312EED5246B191F0003CC58 /* IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overloads.html; sourceTree = "<group>"; };
+		6312EED6246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceAlias.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.AddSoundSourceAlias.html; sourceTree = "<group>"; };
+		6312EED7246B191F0003CC58 /* treenodedot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = treenodedot.gif; sourceTree = "<group>"; };
+		6312EED8246B191F0003CC58 /* IrrKlang.ISoundSource.IsSeekingSupported.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.IsSeekingSupported.html; sourceTree = "<group>"; };
+		6312EED9246B191F0003CC58 /* IrrKlang.SoundOutputDriver.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.SoundOutputDriver.html; sourceTree = "<group>"; };
+		6312EEDA246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_5.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play2D_overload_5.html; sourceTree = "<group>"; };
+		6312EEDB246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableFlangerSoundEffect.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.DisableFlangerSoundEffect.html; sourceTree = "<group>"; };
+		6312EEDC246B191F0003CC58 /* IrrKlang.IFileFactoryMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IFileFactoryMethods.html; sourceTree = "<group>"; };
+		6312EEDD246B191F0003CC58 /* IrrKlang.AudioFormat.SampleRate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.SampleRate.html; sourceTree = "<group>"; };
+		6312EEDE246B191F0003CC58 /* IrrKlang.ISoundEffectControlProperties.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControlProperties.html; sourceTree = "<group>"; };
+		6312EEDF246B191F0003CC58 /* IrrKlang.Vector3DMethods.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3DMethods.html; sourceTree = "<group>"; };
+		6312EEE0246B191F0003CC58 /* IrrKlang.ISound.setSoundStopEventReceiver_overloads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISound.setSoundStopEventReceiver_overloads.html; sourceTree = "<group>"; };
+		6312EEE1246B191F0003CC58 /* IrrKlang.IAudioRecorderConstructor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorderConstructor.html; sourceTree = "<group>"; };
+		6312EEE2246B191F0003CC58 /* IrrKlang.Vector3D.op_Addition.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.op_Addition.html; sourceTree = "<group>"; };
+		6312EEE3246B191F0003CC58 /* IrrKlang.ISoundEngine.StopAllSounds.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.StopAllSounds.html; sourceTree = "<group>"; };
+		6312EEE4246B191F0003CC58 /* IrrKlang.ISoundSource.AudioFormat.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.AudioFormat.html; sourceTree = "<group>"; };
+		6312EEE5246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_4.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play2D_overload_4.html; sourceTree = "<group>"; };
+		6312EEE6246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_4.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.SetListenerPosition_overload_4.html; sourceTree = "<group>"; };
+		6312EEE7246B191F0003CC58 /* privmethod.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = privmethod.gif; sourceTree = "<group>"; };
+		6312EEE8246B191F0003CC58 /* IrrKlang.ISoundSource.ForcedStreamingThreshold.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.ForcedStreamingThreshold.html; sourceTree = "<group>"; };
+		6312EEE9246B191F0003CC58 /* IrrKlang.ISoundEffectControlMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControlMembers.html; sourceTree = "<group>"; };
+		6312EEEA246B191F0003CC58 /* pubproperty.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pubproperty.gif; sourceTree = "<group>"; };
+		6312EEEB246B191F0003CC58 /* IrrKlang.ISoundDeviceList.getDeviceDescription.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundDeviceList.getDeviceDescription.html; sourceTree = "<group>"; };
+		6312EEEC246B191F0003CC58 /* IrrKlang.AudioFormatMembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormatMembers.html; sourceTree = "<group>"; };
+		6312EEED246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EEEE246B191F0003CC58 /* IrrKlang.IAudioRecorderConstructor2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorderConstructor2.html; sourceTree = "<group>"; };
+		6312EEEF246B191F0003CC58 /* tree.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = tree.css; sourceTree = "<group>"; };
+		6312EEF0246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsChorusSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsChorusSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EEF1246B191F0003CC58 /* IrrKlang.AudioFormat.BytesPerSecond.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.AudioFormat.BytesPerSecond.html; sourceTree = "<group>"; };
+		6312EEF2246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngineConstructor2.html; sourceTree = "<group>"; };
+		6312EEF3246B191F0003CC58 /* IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overload_2.html; sourceTree = "<group>"; };
+		6312EEF4246B191F0003CC58 /* IrrKlang.ISoundSource.PlayLength.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.PlayLength.html; sourceTree = "<group>"; };
+		6312EEF5246B191F0003CC58 /* IrrKlang.ISoundSource.ForceReloadAtNextUse.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.ForceReloadAtNextUse.html; sourceTree = "<group>"; };
+		6312EEF6246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEngine.Play3D_overload_2.html; sourceTree = "<group>"; };
+		6312EEF7246B191F0003CC58 /* puboperator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = puboperator.gif; sourceTree = "<group>"; };
+		6312EEF8246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsI3DL2ReverbSoundEffectEnabled.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.IsI3DL2ReverbSoundEffectEnabled.html; sourceTree = "<group>"; };
+		6312EEF9246B191F0003CC58 /* IrrKlang.Vector3D.CrossProduct.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.Vector3D.CrossProduct.html; sourceTree = "<group>"; };
+		6312EEFA246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overload_2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overload_2.html; sourceTree = "<group>"; };
+		6312EEFB246B191F0003CC58 /* IrrKlang.ISoundSource.Dispose.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IrrKlang.ISoundSource.Dispose.html; sourceTree = "<group>"; };
+		6312EEFD246B191F0003CC58 /* classirrklang_1_1_i_sound_mixed_output_receiver-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_sound_mixed_output_receiver-members.html"; sourceTree = "<group>"; };
+		6312EEFE246B191F0003CC58 /* classirrklang_1_1_i_audio_stream.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_audio_stream.html; sourceTree = "<group>"; };
+		6312EEFF246B191F0003CC58 /* functions_0x69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x69.html; sourceTree = "<group>"; };
+		6312EF00246B191F0003CC58 /* classirrklang_1_1_i_ref_counted.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_ref_counted.html; sourceTree = "<group>"; };
+		6312EF01246B191F0003CC58 /* namespacemembers_enum.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespacemembers_enum.html; sourceTree = "<group>"; };
+		6312EF02246B191F0003CC58 /* namespacemembers_vars.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespacemembers_vars.html; sourceTree = "<group>"; };
+		6312EF03246B191F0003CC58 /* structirrklang_1_1_s_internal_audio_interface.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = structirrklang_1_1_s_internal_audio_interface.html; sourceTree = "<group>"; };
+		6312EF04246B191F0003CC58 /* ik___i_sound_device_list_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_device_list_8h.html"; sourceTree = "<group>"; };
+		6312EF05246B191F0003CC58 /* structirrklang_1_1_s_audio_stream_format.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = structirrklang_1_1_s_audio_stream_format.html; sourceTree = "<group>"; };
+		6312EF06246B191F0003CC58 /* doxygen.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = doxygen.css; sourceTree = "<group>"; };
+		6312EF07246B191F0003CC58 /* functions_0x73.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x73.html; sourceTree = "<group>"; };
+		6312EF08246B191F0003CC58 /* tab_l.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tab_l.gif; sourceTree = "<group>"; };
+		6312EF09246B191F0003CC58 /* classirrklang_1_1_i_file_factory.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_file_factory.html; sourceTree = "<group>"; };
+		6312EF0A246B191F0003CC58 /* functions_0x65.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x65.html; sourceTree = "<group>"; };
+		6312EF0B246B191F0003CC58 /* ik___e_sound_engine_options_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___e_sound_engine_options_8h_source.html"; sourceTree = "<group>"; };
+		6312EF0C246B191F0003CC58 /* classirrklang_1_1_i_captured_audio_data_receiver.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_captured_audio_data_receiver.gif; sourceTree = "<group>"; };
+		6312EF0D246B191F0003CC58 /* ik___i_file_reader_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_file_reader_8h.html"; sourceTree = "<group>"; };
+		6312EF0E246B191F0003CC58 /* installdox */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = installdox; sourceTree = "<group>"; };
+		6312EF0F246B191F0003CC58 /* ik___i_virtual_ref_counted_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_virtual_ref_counted_8h_source.html"; sourceTree = "<group>"; };
+		6312EF10246B191F0003CC58 /* ik___i_sound_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_8h.html"; sourceTree = "<group>"; };
+		6312EF11246B191F0003CC58 /* classirrklang_1_1vec3d.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1vec3d.html; sourceTree = "<group>"; };
+		6312EF12246B191F0003CC58 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		6312EF13246B191F0003CC58 /* functions.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions.html; sourceTree = "<group>"; };
+		6312EF14246B191F0003CC58 /* ik___i_sound_effect_control_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_effect_control_8h.html"; sourceTree = "<group>"; };
+		6312EF15246B191F0003CC58 /* classirrklang_1_1_i_captured_audio_data_receiver-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_captured_audio_data_receiver-members.html"; sourceTree = "<group>"; };
+		6312EF16246B191F0003CC58 /* functions_0x64.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x64.html; sourceTree = "<group>"; };
+		6312EF17246B191F0003CC58 /* functions_0x72.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x72.html; sourceTree = "<group>"; };
+		6312EF18246B191F0003CC58 /* ik___i_ref_counted_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_ref_counted_8h_source.html"; sourceTree = "<group>"; };
+		6312EF19246B191F0003CC58 /* classirrklang_1_1_i_sound.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_sound.html; sourceTree = "<group>"; };
+		6312EF1A246B191F0003CC58 /* namespacemembers_func.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespacemembers_func.html; sourceTree = "<group>"; };
+		6312EF1B246B191F0003CC58 /* ik___i_audio_recorder_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_audio_recorder_8h_source.html"; sourceTree = "<group>"; };
+		6312EF1C246B191F0003CC58 /* classirrklang_1_1_i_audio_stream_loader.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_audio_stream_loader.html; sourceTree = "<group>"; };
+		6312EF1D246B191F0003CC58 /* classirrklang_1_1_i_sound_engine.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_sound_engine.html; sourceTree = "<group>"; };
+		6312EF1E246B191F0003CC58 /* ik__irr_klang_types_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ik__irr_klang_types_8h_source.html; sourceTree = "<group>"; };
+		6312EF1F246B191F0003CC58 /* ik___i_sound_source_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_source_8h.html"; sourceTree = "<group>"; };
+		6312EF20246B191F0003CC58 /* functions_0x6c.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x6c.html; sourceTree = "<group>"; };
+		6312EF21246B191F0003CC58 /* classirrklang_1_1_i_sound_stop_event_receiver-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_sound_stop_event_receiver-members.html"; sourceTree = "<group>"; };
+		6312EF22246B191F0003CC58 /* classirrklang_1_1_i_sound.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_sound.gif; sourceTree = "<group>"; };
+		6312EF23246B191F0003CC58 /* classirrklang_1_1_i_captured_audio_data_receiver.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_captured_audio_data_receiver.html; sourceTree = "<group>"; };
+		6312EF24246B191F0003CC58 /* functions_0x7e.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x7e.html; sourceTree = "<group>"; };
+		6312EF25246B191F0003CC58 /* annotated.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = annotated.html; sourceTree = "<group>"; };
+		6312EF26246B191F0003CC58 /* ik___i_sound_engine_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_engine_8h.html"; sourceTree = "<group>"; };
+		6312EF27246B191F0003CC58 /* classirrklang_1_1_i_sound_source.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_sound_source.gif; sourceTree = "<group>"; };
+		6312EF28246B191F0003CC58 /* classirrklang_1_1_i_sound_effect_control-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_sound_effect_control-members.html"; sourceTree = "<group>"; };
+		6312EF29246B191F0003CC58 /* ik___e_stream_modes_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___e_stream_modes_8h.html"; sourceTree = "<group>"; };
+		6312EF2A246B191F0003CC58 /* classirrklang_1_1_i_audio_recorder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_audio_recorder.gif; sourceTree = "<group>"; };
+		6312EF2B246B191F0003CC58 /* ik___i_audio_recorder_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_audio_recorder_8h.html"; sourceTree = "<group>"; };
+		6312EF2C246B191F0003CC58 /* hierarchy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hierarchy.html; sourceTree = "<group>"; };
+		6312EF2D246B191F0003CC58 /* classirrklang_1_1_i_file_reader-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_file_reader-members.html"; sourceTree = "<group>"; };
+		6312EF2E246B191F0003CC58 /* classirrklang_1_1_i_sound_device_list.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_sound_device_list.html; sourceTree = "<group>"; };
+		6312EF2F246B191F0003CC58 /* functions_0x75.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x75.html; sourceTree = "<group>"; };
+		6312EF30246B191F0003CC58 /* functions_0x63.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x63.html; sourceTree = "<group>"; };
+		6312EF31246B191F0003CC58 /* ik__irr_klang_types_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ik__irr_klang_types_8h.html; sourceTree = "<group>"; };
+		6312EF32246B191F0003CC58 /* ik___i_sound_stop_event_receiver_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_stop_event_receiver_8h.html"; sourceTree = "<group>"; };
+		6312EF33246B191F0003CC58 /* ik___s_audio_stream_format_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___s_audio_stream_format_8h.html"; sourceTree = "<group>"; };
+		6312EF34246B191F0003CC58 /* ik___i_sound_engine_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_engine_8h_source.html"; sourceTree = "<group>"; };
+		6312EF35246B191F0003CC58 /* ik___i_file_reader_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_file_reader_8h_source.html"; sourceTree = "<group>"; };
+		6312EF36246B191F0003CC58 /* tabs.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = tabs.css; sourceTree = "<group>"; };
+		6312EF37246B191F0003CC58 /* classirrklang_1_1_i_file_reader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_file_reader.gif; sourceTree = "<group>"; };
+		6312EF38246B191F0003CC58 /* classirrklang_1_1_i_audio_stream-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_audio_stream-members.html"; sourceTree = "<group>"; };
+		6312EF39246B191F0003CC58 /* classirrklang_1_1_i_audio_stream.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_audio_stream.gif; sourceTree = "<group>"; };
+		6312EF3A246B191F0003CC58 /* functions_0x79.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x79.html; sourceTree = "<group>"; };
+		6312EF3B246B191F0003CC58 /* classirrklang_1_1_i_sound_device_list.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_sound_device_list.gif; sourceTree = "<group>"; };
+		6312EF3C246B191F0003CC58 /* doxygen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doxygen.png; sourceTree = "<group>"; };
+		6312EF3D246B191F0003CC58 /* ik___e_sound_engine_options_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___e_sound_engine_options_8h.html"; sourceTree = "<group>"; };
+		6312EF3E246B191F0003CC58 /* functions_vars.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_vars.html; sourceTree = "<group>"; };
+		6312EF3F246B191F0003CC58 /* ik___s_audio_stream_format_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___s_audio_stream_format_8h_source.html"; sourceTree = "<group>"; };
+		6312EF40246B191F0003CC58 /* classirrklang_1_1_i_audio_recorder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_audio_recorder.html; sourceTree = "<group>"; };
+		6312EF41246B191F0003CC58 /* classirrklang_1_1_i_sound_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_sound_source.html; sourceTree = "<group>"; };
+		6312EF42246B191F0003CC58 /* ik___i_sound_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_8h_source.html"; sourceTree = "<group>"; };
+		6312EF43246B191F0003CC58 /* logobig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logobig.png; sourceTree = "<group>"; };
+		6312EF44246B191F0003CC58 /* files.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = files.html; sourceTree = "<group>"; };
+		6312EF45246B191F0003CC58 /* ik___i_audio_stream_loader_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_audio_stream_loader_8h.html"; sourceTree = "<group>"; };
+		6312EF46246B191F0003CC58 /* functions_0x6e.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x6e.html; sourceTree = "<group>"; };
+		6312EF47246B191F0003CC58 /* functions_0x78.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x78.html; sourceTree = "<group>"; };
+		6312EF48246B191F0003CC58 /* functions_func.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_func.html; sourceTree = "<group>"; };
+		6312EF49246B191F0003CC58 /* classirrklang_1_1_i_audio_stream_loader-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_audio_stream_loader-members.html"; sourceTree = "<group>"; };
+		6312EF4A246B191F0003CC58 /* classirrklang_1_1_i_virtual_ref_counted-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_virtual_ref_counted-members.html"; sourceTree = "<group>"; };
+		6312EF4B246B191F0003CC58 /* namespaceirrklang.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespaceirrklang.html; sourceTree = "<group>"; };
+		6312EF4C246B191F0003CC58 /* namespaces.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespaces.html; sourceTree = "<group>"; };
+		6312EF4D246B191F0003CC58 /* classirrklang_1_1_i_ref_counted.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_ref_counted.gif; sourceTree = "<group>"; };
+		6312EF4E246B191F0003CC58 /* irr_klang_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = irr_klang_8h_source.html; sourceTree = "<group>"; };
+		6312EF4F246B191F0003CC58 /* ik___i_sound_stop_event_receiver_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_stop_event_receiver_8h_source.html"; sourceTree = "<group>"; };
+		6312EF50246B191F0003CC58 /* classirrklang_1_1_i_file_factory.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_file_factory.gif; sourceTree = "<group>"; };
+		6312EF51246B191F0003CC58 /* structirrklang_1_1_s_audio_stream_format-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "structirrklang_1_1_s_audio_stream_format-members.html"; sourceTree = "<group>"; };
+		6312EF52246B191F0003CC58 /* ik___e_stream_modes_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___e_stream_modes_8h_source.html"; sourceTree = "<group>"; };
+		6312EF53246B191F0003CC58 /* classirrklang_1_1_i_file_factory-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_file_factory-members.html"; sourceTree = "<group>"; };
+		6312EF55246B191F0003CC58 /* all_7a.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_7a.html; sourceTree = "<group>"; };
+		6312EF56246B191F0003CC58 /* typedefs_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = typedefs_69.html; sourceTree = "<group>"; };
+		6312EF57246B191F0003CC58 /* all_76.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_76.html; sourceTree = "<group>"; };
+		6312EF58246B191F0003CC58 /* functions_76.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_76.html; sourceTree = "<group>"; };
+		6312EF59246B191F0003CC58 /* variables_70.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_70.html; sourceTree = "<group>"; };
+		6312EF5A246B191F0003CC58 /* variables_66.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_66.html; sourceTree = "<group>"; };
+		6312EF5B246B191F0003CC58 /* functions_61.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_61.html; sourceTree = "<group>"; };
+		6312EF5C246B191F0003CC58 /* all_61.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_61.html; sourceTree = "<group>"; };
+		6312EF5D246B191F0003CC58 /* functions_6f.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_6f.html; sourceTree = "<group>"; };
+		6312EF5E246B191F0003CC58 /* search.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = search.css; sourceTree = "<group>"; };
+		6312EF5F246B191F0003CC58 /* all_6f.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_6f.html; sourceTree = "<group>"; };
+		6312EF60246B191F0003CC58 /* classes_76.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classes_76.html; sourceTree = "<group>"; };
+		6312EF61246B191F0003CC58 /* all_66.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_66.html; sourceTree = "<group>"; };
+		6312EF62246B191F0003CC58 /* enums_65.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = enums_65.html; sourceTree = "<group>"; };
+		6312EF63246B191F0003CC58 /* all_70.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_70.html; sourceTree = "<group>"; };
+		6312EF64246B191F0003CC58 /* namespaces_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespaces_69.html; sourceTree = "<group>"; };
+		6312EF65246B191F0003CC58 /* functions_70.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_70.html; sourceTree = "<group>"; };
+		6312EF66246B191F0003CC58 /* functions_66.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_66.html; sourceTree = "<group>"; };
+		6312EF67246B191F0003CC58 /* variables_7a.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_7a.html; sourceTree = "<group>"; };
+		6312EF68246B191F0003CC58 /* functions_67.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_67.html; sourceTree = "<group>"; };
+		6312EF69246B191F0003CC58 /* all_67.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_67.html; sourceTree = "<group>"; };
+		6312EF6A246B191F0003CC58 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		6312EF6B246B191F0003CC58 /* functions_64.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_64.html; sourceTree = "<group>"; };
+		6312EF6C246B191F0003CC58 /* functions_72.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_72.html; sourceTree = "<group>"; };
+		6312EF6D246B191F0003CC58 /* classes_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classes_69.html; sourceTree = "<group>"; };
+		6312EF6E246B191F0003CC58 /* all_72.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_72.html; sourceTree = "<group>"; };
+		6312EF6F246B191F0003CC58 /* all_64.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_64.html; sourceTree = "<group>"; };
+		6312EF70246B191F0003CC58 /* enumvalues_65.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = enumvalues_65.html; sourceTree = "<group>"; };
+		6312EF71246B191F0003CC58 /* functions_6c.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_6c.html; sourceTree = "<group>"; };
+		6312EF72246B191F0003CC58 /* defines_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = defines_69.html; sourceTree = "<group>"; };
+		6312EF73246B191F0003CC58 /* variables_78.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_78.html; sourceTree = "<group>"; };
+		6312EF74246B191F0003CC58 /* functions_7e.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_7e.html; sourceTree = "<group>"; };
+		6312EF75246B191F0003CC58 /* all_7e.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_7e.html; sourceTree = "<group>"; };
+		6312EF76246B191F0003CC58 /* all_6c.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_6c.html; sourceTree = "<group>"; };
+		6312EF77246B191F0003CC58 /* classes_73.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classes_73.html; sourceTree = "<group>"; };
+		6312EF78246B191F0003CC58 /* all_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_69.html; sourceTree = "<group>"; };
+		6312EF79246B191F0003CC58 /* variables_79.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_79.html; sourceTree = "<group>"; };
+		6312EF7A246B191F0003CC58 /* files_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = files_69.html; sourceTree = "<group>"; };
+		6312EF7B246B191F0003CC58 /* functions_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_69.html; sourceTree = "<group>"; };
+		6312EF7C246B191F0003CC58 /* all_65.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_65.html; sourceTree = "<group>"; };
+		6312EF7D246B191F0003CC58 /* all_73.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_73.html; sourceTree = "<group>"; };
+		6312EF7E246B191F0003CC58 /* functions_73.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_73.html; sourceTree = "<group>"; };
+		6312EF7F246B191F0003CC58 /* typedefs_76.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = typedefs_76.html; sourceTree = "<group>"; };
+		6312EF80246B191F0003CC58 /* functions_65.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_65.html; sourceTree = "<group>"; };
+		6312EF81246B191F0003CC58 /* variables_63.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_63.html; sourceTree = "<group>"; };
+		6312EF82246B191F0003CC58 /* functions_6e.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_6e.html; sourceTree = "<group>"; };
+		6312EF83246B191F0003CC58 /* all_78.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_78.html; sourceTree = "<group>"; };
+		6312EF84246B191F0003CC58 /* all_6e.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_6e.html; sourceTree = "<group>"; };
+		6312EF85246B191F0003CC58 /* search.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = search.js; sourceTree = "<group>"; };
+		6312EF86246B191F0003CC58 /* all_63.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_63.html; sourceTree = "<group>"; };
+		6312EF87246B191F0003CC58 /* all_75.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_75.html; sourceTree = "<group>"; };
+		6312EF88246B191F0003CC58 /* functions_75.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_75.html; sourceTree = "<group>"; };
+		6312EF89246B191F0003CC58 /* variables_73.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_73.html; sourceTree = "<group>"; };
+		6312EF8A246B191F0003CC58 /* functions_63.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_63.html; sourceTree = "<group>"; };
+		6312EF8B246B191F0003CC58 /* nomatches.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = nomatches.html; sourceTree = "<group>"; };
+		6312EF8C246B191F0003CC58 /* all_6d.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_6d.html; sourceTree = "<group>"; };
+		6312EF8D246B191F0003CC58 /* all_79.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = all_79.html; sourceTree = "<group>"; };
+		6312EF8E246B191F0003CC58 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		6312EF8F246B191F0003CC58 /* variables_69.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = variables_69.html; sourceTree = "<group>"; };
+		6312EF90246B191F0003CC58 /* functions_6d.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_6d.html; sourceTree = "<group>"; };
+		6312EF91246B191F0003CC58 /* namespacemembers_eval.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespacemembers_eval.html; sourceTree = "<group>"; };
+		6312EF92246B191F0003CC58 /* classirrklang_1_1_i_file_reader.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_file_reader.html; sourceTree = "<group>"; };
+		6312EF93246B191F0003CC58 /* classirrklang_1_1_i_virtual_ref_counted.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_virtual_ref_counted.html; sourceTree = "<group>"; };
+		6312EF94246B191F0003CC58 /* classirrklang_1_1_i_audio_stream_loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_audio_stream_loader.gif; sourceTree = "<group>"; };
+		6312EF95246B191F0003CC58 /* ik___i_audio_stream_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_audio_stream_8h_source.html"; sourceTree = "<group>"; };
+		6312EF96246B191F0003CC58 /* classirrklang_1_1_i_sound_stop_event_receiver.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_sound_stop_event_receiver.html; sourceTree = "<group>"; };
+		6312EF97246B191F0003CC58 /* ik___i_sound_device_list_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_device_list_8h_source.html"; sourceTree = "<group>"; };
+		6312EF98246B191F0003CC58 /* namespacemembers_type.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespacemembers_type.html; sourceTree = "<group>"; };
+		6312EF99246B191F0003CC58 /* ik___i_sound_source_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_source_8h_source.html"; sourceTree = "<group>"; };
+		6312EF9A246B191F0003CC58 /* ik__vec3d_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ik__vec3d_8h_source.html; sourceTree = "<group>"; };
+		6312EF9B246B191F0003CC58 /* namespacemembers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = namespacemembers.html; sourceTree = "<group>"; };
+		6312EF9C246B191F0003CC58 /* functions_0x6f.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x6f.html; sourceTree = "<group>"; };
+		6312EF9D246B191F0003CC58 /* ik___i_audio_stream_loader_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_audio_stream_loader_8h_source.html"; sourceTree = "<group>"; };
+		6312EF9E246B191F0003CC58 /* ik___i_file_factory_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_file_factory_8h.html"; sourceTree = "<group>"; };
+		6312EF9F246B191F0003CC58 /* functions_0x7a.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x7a.html; sourceTree = "<group>"; };
+		6312EFA0246B191F0003CC58 /* ik___e_sound_output_drivers_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___e_sound_output_drivers_8h.html"; sourceTree = "<group>"; };
+		6312EFA1246B191F0003CC58 /* ik___i_audio_stream_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_audio_stream_8h.html"; sourceTree = "<group>"; };
+		6312EFA2246B191F0003CC58 /* classirrklang_1_1_i_sound_source-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_sound_source-members.html"; sourceTree = "<group>"; };
+		6312EFA3246B191F0003CC58 /* functions_0x76.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x76.html; sourceTree = "<group>"; };
+		6312EFA4246B191F0003CC58 /* classes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classes.html; sourceTree = "<group>"; };
+		6312EFA5246B19200003CC58 /* classirrklang_1_1_i_sound_engine-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_sound_engine-members.html"; sourceTree = "<group>"; };
+		6312EFA6246B19200003CC58 /* classirrklang_1_1_i_sound_mixed_output_receiver.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_sound_mixed_output_receiver.html; sourceTree = "<group>"; };
+		6312EFA7246B19200003CC58 /* ik___i_sound_effect_control_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_effect_control_8h_source.html"; sourceTree = "<group>"; };
+		6312EFA8246B19200003CC58 /* classirrklang_1_1_i_virtual_ref_counted.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_virtual_ref_counted.gif; sourceTree = "<group>"; };
+		6312EFA9246B19200003CC58 /* classirrklang_1_1_i_sound_effect_control.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = classirrklang_1_1_i_sound_effect_control.html; sourceTree = "<group>"; };
+		6312EFAA246B19200003CC58 /* ik___i_sound_mixed_output_receiver_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_mixed_output_receiver_8h_source.html"; sourceTree = "<group>"; };
+		6312EFAB246B19200003CC58 /* classirrklang_1_1_i_sound_device_list-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_sound_device_list-members.html"; sourceTree = "<group>"; };
+		6312EFAC246B19200003CC58 /* ik___i_sound_mixed_output_receiver_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_sound_mixed_output_receiver_8h.html"; sourceTree = "<group>"; };
+		6312EFAD246B19200003CC58 /* globals_defs.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = globals_defs.html; sourceTree = "<group>"; };
+		6312EFAE246B19200003CC58 /* structirrklang_1_1_s_internal_audio_interface-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "structirrklang_1_1_s_internal_audio_interface-members.html"; sourceTree = "<group>"; };
+		6312EFAF246B19200003CC58 /* tab_r.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tab_r.gif; sourceTree = "<group>"; };
+		6312EFB0246B19200003CC58 /* classirrklang_1_1_i_audio_recorder-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_audio_recorder-members.html"; sourceTree = "<group>"; };
+		6312EFB1246B19200003CC58 /* functions_0x67.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x67.html; sourceTree = "<group>"; };
+		6312EFB2246B19200003CC58 /* ik__vec3d_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ik__vec3d_8h.html; sourceTree = "<group>"; };
+		6312EFB3246B19200003CC58 /* functions_0x70.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x70.html; sourceTree = "<group>"; };
+		6312EFB4246B19200003CC58 /* classirrklang_1_1vec3d-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1vec3d-members.html"; sourceTree = "<group>"; };
+		6312EFB5246B19200003CC58 /* functions_0x66.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = functions_0x66.html; sourceTree = "<group>"; };
+		6312EFB6246B19200003CC58 /* classirrklang_1_1_i_sound-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_sound-members.html"; sourceTree = "<group>"; };
+		6312EFB7246B19200003CC58 /* classirrklang_1_1_i_ref_counted-members.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "classirrklang_1_1_i_ref_counted-members.html"; sourceTree = "<group>"; };
+		6312EFB8246B19200003CC58 /* ik___i_virtual_ref_counted_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_virtual_ref_counted_8h.html"; sourceTree = "<group>"; };
+		6312EFB9246B19200003CC58 /* globals.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = globals.html; sourceTree = "<group>"; };
+		6312EFBA246B19200003CC58 /* classirrklang_1_1_i_sound_engine.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = classirrklang_1_1_i_sound_engine.gif; sourceTree = "<group>"; };
+		6312EFBB246B19200003CC58 /* ik___i_ref_counted_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_ref_counted_8h.html"; sourceTree = "<group>"; };
+		6312EFBC246B19200003CC58 /* irrklang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = irrklang.png; sourceTree = "<group>"; };
+		6312EFBD246B19200003CC58 /* ik___i_file_factory_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___i_file_factory_8h_source.html"; sourceTree = "<group>"; };
+		6312EFBE246B19200003CC58 /* irr_klang_8h.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = irr_klang_8h.html; sourceTree = "<group>"; };
+		6312EFBF246B19200003CC58 /* tab_b.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tab_b.gif; sourceTree = "<group>"; };
+		6312EFC0246B19200003CC58 /* ik___e_sound_output_drivers_8h_source.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "ik___e_sound_output_drivers_8h_source.html"; sourceTree = "<group>"; };
+		6312EFC1246B19200003CC58 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		6312EFC2246B19200003CC58 /* doc_cpp.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = doc_cpp.html; sourceTree = "<group>"; };
+		6312EFC3246B19200003CC58 /* doc_dotnet.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = doc_dotnet.html; sourceTree = "<group>"; };
+		6312EFC4246B19200003CC58 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		6312EFC6246B19200003CC58 /* MF-W-90.XM */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MF-W-90.XM"; sourceTree = "<group>"; };
+		6312EFC7246B19200003CC58 /* bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bell.wav; sourceTree = "<group>"; };
+		6312EFC8246B19200003CC58 /* ophelia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ophelia.mp3; sourceTree = "<group>"; };
+		6312EFC9246B19200003CC58 /* getout.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = getout.ogg; sourceTree = "<group>"; };
+		6312EFCA246B19200003CC58 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
+		6312EFCB246B19200003CC58 /* MF-3DAYS.S3M */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MF-3DAYS.S3M"; sourceTree = "<group>"; };
+		6312EFCC246B19200003CC58 /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		6312EFCD246B19200003CC58 /* MF-PANTS.MOD */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MF-PANTS.MOD"; sourceTree = "<group>"; };
 		6396F1392464A51900B72597 /* image_helper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
 		6396F13A2464A51900B72597 /* stbi_pkm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stbi_pkm.h; sourceTree = "<group>"; };
 		6396F13B2464A51900B72597 /* jo_jpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jo_jpeg.h; sourceTree = "<group>"; };
@@ -132,9 +841,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E0382E2469E4C400F1EDC2 /* libirrklang.dylib in Frameworks */,
 				40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */,
 				402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */,
+				6312EFDF246B193A0003CC58 /* ikpMP3.dylib in Frameworks */,
+				6312EFDD246B193A0003CC58 /* ikpFLAC.dylib in Frameworks */,
+				6312EFE1246B193A0003CC58 /* libirrklang.dylib in Frameworks */,
 				402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */,
 				402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */,
 			);
@@ -155,7 +866,9 @@
 		402B605D245B20C300A4DE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6312ED01246B191E0003CC58 /* 1.5.0 */,
 				40E0382D2469E4C400F1EDC2 /* libirrklang.dylib */,
+				6312ECFD246B17590003CC58 /* libirrklang.dylib */,
 				40F68AF02469829B00538F5B /* libcurl.4.tbd */,
 				402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */,
 				402B6060245B20C700A4DE19 /* GLUT.framework */,
@@ -213,6 +926,1026 @@
 				6311931D245B174500FE95F7 /* main.cpp */,
 			);
 			path = CandyRun;
+			sourceTree = "<group>";
+		};
+		6312ED01246B191E0003CC58 /* 1.5.0 */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED02246B191E0003CC58 /* examples.net */,
+				6312ED2C246B191E0003CC58 /* bin */,
+				6312ED77246B191E0003CC58 /* plugins */,
+				6312ED87246B191E0003CC58 /* include */,
+				6312ED9D246B191E0003CC58 /* changes.txt */,
+				6312ED9E246B191E0003CC58 /* examples */,
+				6312EDD9246B191E0003CC58 /* lib */,
+				6312EDDD246B191E0003CC58 /* doc */,
+				6312EFC4246B19200003CC58 /* readme.txt */,
+				6312EFC5246B19200003CC58 /* media */,
+			);
+			name = 1.5.0;
+			path = ../../../../../usr/local/Cellar/irrklang/1.5.0;
+			sourceTree = "<group>";
+		};
+		6312ED02246B191E0003CC58 /* examples.net */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED03246B191E0003CC58 /* CSharp.03.MemoryPlayback */,
+				6312ED0A246B191E0003CC58 /* CSharp.02.3DSound */,
+				6312ED11246B191E0003CC58 /* CSharp.04.OverrideFileAccess */,
+				6312ED18246B191E0003CC58 /* CSharp.05.SoundEffects */,
+				6312ED1D246B191E0003CC58 /* CSharp.01.HelloWorld */,
+				6312ED24246B191E0003CC58 /* CSharp.Winforms.Musicplayer */,
+			);
+			path = examples.net;
+			sourceTree = "<group>";
+		};
+		6312ED03246B191E0003CC58 /* CSharp.03.MemoryPlayback */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED04246B191E0003CC58 /* AssemblyInfo.cs */,
+				6312ED05246B191E0003CC58 /* CSharp.03.MemoryPlayback_vs2013.csproj */,
+				6312ED06246B191E0003CC58 /* app.config */,
+				6312ED07246B191E0003CC58 /* App.ico */,
+				6312ED08246B191E0003CC58 /* Class1.cs */,
+				6312ED09246B191E0003CC58 /* CSharp.03.MemoryPlayback_vs2013.sln */,
+			);
+			path = CSharp.03.MemoryPlayback;
+			sourceTree = "<group>";
+		};
+		6312ED0A246B191E0003CC58 /* CSharp.02.3DSound */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED0B246B191E0003CC58 /* AssemblyInfo.cs */,
+				6312ED0C246B191E0003CC58 /* app.config */,
+				6312ED0D246B191E0003CC58 /* CSharp.02.3DSound_vs2013.sln */,
+				6312ED0E246B191E0003CC58 /* App.ico */,
+				6312ED0F246B191E0003CC58 /* Class1.cs */,
+				6312ED10246B191E0003CC58 /* CSharp.02.3DSound_vs2013.csproj */,
+			);
+			path = CSharp.02.3DSound;
+			sourceTree = "<group>";
+		};
+		6312ED11246B191E0003CC58 /* CSharp.04.OverrideFileAccess */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED12246B191E0003CC58 /* AssemblyInfo.cs */,
+				6312ED13246B191E0003CC58 /* app.config */,
+				6312ED14246B191E0003CC58 /* App.ico */,
+				6312ED15246B191E0003CC58 /* CSharp.04.OverrideFileAccess_vs2013.csproj */,
+				6312ED16246B191E0003CC58 /* Class1.cs */,
+				6312ED17246B191E0003CC58 /* CSharp.04.OverrideFileAccess_vs2013.sln */,
+			);
+			path = CSharp.04.OverrideFileAccess;
+			sourceTree = "<group>";
+		};
+		6312ED18246B191E0003CC58 /* CSharp.05.SoundEffects */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED19246B191E0003CC58 /* AssemblyInfo.cs */,
+				6312ED1A246B191E0003CC58 /* app.config */,
+				6312ED1B246B191E0003CC58 /* App.ico */,
+				6312ED1C246B191E0003CC58 /* Class1.cs */,
+			);
+			path = CSharp.05.SoundEffects;
+			sourceTree = "<group>";
+		};
+		6312ED1D246B191E0003CC58 /* CSharp.01.HelloWorld */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED1E246B191E0003CC58 /* AssemblyInfo.cs */,
+				6312ED1F246B191E0003CC58 /* CSharp.01.HelloWorld_vs2013.sln */,
+				6312ED20246B191E0003CC58 /* CSharp.01.HelloWorld_vs2013.csproj */,
+				6312ED21246B191E0003CC58 /* app.config */,
+				6312ED22246B191E0003CC58 /* App.ico */,
+				6312ED23246B191E0003CC58 /* Class1.cs */,
+			);
+			path = CSharp.01.HelloWorld;
+			sourceTree = "<group>";
+		};
+		6312ED24246B191E0003CC58 /* CSharp.Winforms.Musicplayer */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED25246B191E0003CC58 /* AssemblyInfo.cs */,
+				6312ED26246B191E0003CC58 /* Form1.resx */,
+				6312ED27246B191E0003CC58 /* Form1.cs */,
+				6312ED28246B191E0003CC58 /* app.config */,
+				6312ED29246B191E0003CC58 /* CSharp.Winforms.Musicplayer_vs2013.csproj */,
+				6312ED2A246B191E0003CC58 /* App.ico */,
+				6312ED2B246B191E0003CC58 /* CSharp.Winforms.Musicplayer_vs2013.sln */,
+			);
+			path = CSharp.Winforms.Musicplayer;
+			sourceTree = "<group>";
+		};
+		6312ED2C246B191E0003CC58 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED2D246B191E0003CC58 /* dotnet-4-64 */,
+				6312ED36246B191E0003CC58 /* winx64-visualStudio */,
+				6312ED40246B191E0003CC58 /* linux-gcc-64 */,
+				6312ED44246B191E0003CC58 /* macosx-gcc */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		6312ED2D246B191E0003CC58 /* dotnet-4-64 */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED2E246B191E0003CC58 /* CSharp.04.OverrideFileAccess.exe */,
+				6312ED2F246B191E0003CC58 /* irrKlang.NET4.dll */,
+				6312ED30246B191E0003CC58 /* CSharp.03.MemoryPlayback.exe */,
+				6312ED31246B191E0003CC58 /* ikpFlac.dll */,
+				6312ED32246B191E0003CC58 /* CSharp.01.HelloWorld.exe */,
+				6312ED33246B191E0003CC58 /* ikpMP3.dll */,
+				6312ED34246B191E0003CC58 /* CSharp.02.3DSound.exe */,
+				6312ED35246B191E0003CC58 /* CSharp.Winforms.Musicplayer.exe */,
+			);
+			path = "dotnet-4-64";
+			sourceTree = "<group>";
+		};
+		6312ED36246B191E0003CC58 /* winx64-visualStudio */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED37246B191E0003CC58 /* 01.HelloWorld.exe */,
+				6312ED38246B191E0003CC58 /* irrKlang.dll */,
+				6312ED39246B191E0003CC58 /* ikpFlac.dll */,
+				6312ED3A246B191E0003CC58 /* 06.Recording.exe */,
+				6312ED3B246B191E0003CC58 /* 05.Effects.exe */,
+				6312ED3C246B191E0003CC58 /* 02.3DSound.exe */,
+				6312ED3D246B191E0003CC58 /* ikpMP3.dll */,
+				6312ED3E246B191E0003CC58 /* 03.MemoryPlayback.exe */,
+				6312ED3F246B191E0003CC58 /* 04.OverrideFileAccess.exe */,
+			);
+			path = "winx64-visualStudio";
+			sourceTree = "<group>";
+		};
+		6312ED40246B191E0003CC58 /* linux-gcc-64 */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED41246B191E0003CC58 /* ikpFlac.so */,
+				6312ED42246B191E0003CC58 /* libIrrKlang.so */,
+				6312ED43246B191E0003CC58 /* ikpMP3.so */,
+			);
+			path = "linux-gcc-64";
+			sourceTree = "<group>";
+		};
+		6312ED44246B191E0003CC58 /* macosx-gcc */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED45246B191E0003CC58 /* 01.HelloWorld */,
+				6312ED46246B191E0003CC58 /* libirrklang.dylib */,
+				6312ED47246B191E0003CC58 /* XCBuildData */,
+				6312ED55246B191E0003CC58 /* run_01_Helloworld.sh.command */,
+				6312ED56246B191E0003CC58 /* 03.MemoryPlayback */,
+				6312ED57246B191E0003CC58 /* run_03_MemoryPlayback.sh.command */,
+				6312ED58246B191E0003CC58 /* run_04_OverrideFileAccess.command */,
+				6312ED59246B191E0003CC58 /* 02.3DSound */,
+				6312ED5A246B191E0003CC58 /* ikpMP3.dylib */,
+				6312ED5B246B191E0003CC58 /* 01.HelloWorld.build */,
+				6312ED70246B191E0003CC58 /* 05.Effects */,
+				6312ED71246B191E0003CC58 /* MusicPlayer */,
+				6312ED72246B191E0003CC58 /* run_MusicPlayer.command */,
+				6312ED73246B191E0003CC58 /* 04.OverrideFileAccess */,
+				6312ED74246B191E0003CC58 /* run_05_Effects.command */,
+				6312ED75246B191E0003CC58 /* ikpFLAC.dylib */,
+				6312ED76246B191E0003CC58 /* run_02_3DSound.sh.command */,
+			);
+			path = "macosx-gcc";
+			sourceTree = "<group>";
+		};
+		6312ED47246B191E0003CC58 /* XCBuildData */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED48246B191E0003CC58 /* 1abf791ade86c7fe9aa59799f4c682cd-manifest.xcbuild */,
+				6312ED49246B191E0003CC58 /* c67131698faa198885e543522ddbbbba-desc.xcbuild */,
+				6312ED4A246B191E0003CC58 /* BuildDescriptionCacheIndex-4f31081c621f3c45ba021b654ca7a6ca */,
+				6312ED4B246B191E0003CC58 /* 9502fc0e3cb0591372c1e9306bba2315-desc.xcbuild */,
+				6312ED4C246B191E0003CC58 /* c67131698faa198885e543522ddbbbba-manifest.xcbuild */,
+				6312ED4D246B191E0003CC58 /* 9502fc0e3cb0591372c1e9306bba2315-manifest.xcbuild */,
+				6312ED4E246B191E0003CC58 /* 112cee2f85fdc610a84454cc0ef43611-desc.xcbuild */,
+				6312ED4F246B191E0003CC58 /* b43db281a7c7a48d9f6ffa9593170157-manifest.xcbuild */,
+				6312ED50246B191E0003CC58 /* build.db */,
+				6312ED51246B191E0003CC58 /* 1abf791ade86c7fe9aa59799f4c682cd-desc.xcbuild */,
+				6312ED52246B191E0003CC58 /* 112cee2f85fdc610a84454cc0ef43611-manifest.xcbuild */,
+				6312ED53246B191E0003CC58 /* BuildDescriptionCacheIndex-f8413ef0cd43ad7b673184d07e409c9f */,
+				6312ED54246B191E0003CC58 /* b43db281a7c7a48d9f6ffa9593170157-desc.xcbuild */,
+			);
+			path = XCBuildData;
+			sourceTree = "<group>";
+		};
+		6312ED5B246B191E0003CC58 /* 01.HelloWorld.build */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED5C246B191E0003CC58 /* Debug */,
+			);
+			path = 01.HelloWorld.build;
+			sourceTree = "<group>";
+		};
+		6312ED5C246B191E0003CC58 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED5D246B191E0003CC58 /* macosx_xcode.build */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		6312ED5D246B191E0003CC58 /* macosx_xcode.build */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED5E246B191E0003CC58 /* Objects-normal */,
+				6312ED65246B191E0003CC58 /* DerivedSources */,
+				6312ED67246B191E0003CC58 /* 01.HelloWorld.hmap */,
+				6312ED68246B191E0003CC58 /* 01.HelloWorld-own-target-headers.hmap */,
+				6312ED69246B191E0003CC58 /* 01.HelloWorld.xcent */,
+				6312ED6A246B191E0003CC58 /* Script-23CDAAE90C51E99B003DA087.sh */,
+				6312ED6B246B191E0003CC58 /* 01.HelloWorld-project-headers.hmap */,
+				6312ED6C246B191E0003CC58 /* 01.HelloWorld-all-target-headers.hmap */,
+				6312ED6D246B191E0003CC58 /* 01.HelloWorld-all-non-framework-target-headers.hmap */,
+				6312ED6E246B191E0003CC58 /* all-product-headers.yaml */,
+				6312ED6F246B191E0003CC58 /* 01.HelloWorld-generated-files.hmap */,
+			);
+			path = macosx_xcode.build;
+			sourceTree = "<group>";
+		};
+		6312ED5E246B191E0003CC58 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED5F246B191E0003CC58 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		6312ED5F246B191E0003CC58 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED60246B191E0003CC58 /* main.o */,
+				6312ED61246B191E0003CC58 /* 01.HelloWorld.LinkFileList */,
+				6312ED62246B191E0003CC58 /* main.d */,
+				6312ED63246B191E0003CC58 /* 01.HelloWorld_dependency_info.dat */,
+				6312ED64246B191E0003CC58 /* main.dia */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		6312ED65246B191E0003CC58 /* DerivedSources */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED66246B191E0003CC58 /* Entitlements.plist */,
+			);
+			path = DerivedSources;
+			sourceTree = "<group>";
+		};
+		6312ED77246B191E0003CC58 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED78246B191E0003CC58 /* ikpMP3 */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		6312ED78246B191E0003CC58 /* ikpMP3 */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED79246B191E0003CC58 /* CIrrKlangAudioStreamLoaderMP3.h */,
+				6312ED7A246B191E0003CC58 /* CIrrKlangAudioStreamLoaderMP3.cpp */,
+				6312ED7B246B191E0003CC58 /* CIrrKlangAudioStreamMP3.cpp */,
+				6312ED7C246B191E0003CC58 /* decoder */,
+				6312ED83246B191E0003CC58 /* ikpMP3.cpp */,
+				6312ED84246B191E0003CC58 /* readme.txt */,
+				6312ED85246B191E0003CC58 /* license.txt */,
+				6312ED86246B191E0003CC58 /* CIrrKlangAudioStreamMP3.h */,
+			);
+			path = ikpMP3;
+			sourceTree = "<group>";
+		};
+		6312ED7C246B191E0003CC58 /* decoder */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED7D246B191E0003CC58 /* mpegaudio.h */,
+				6312ED7E246B191E0003CC58 /* internal.h */,
+				6312ED7F246B191E0003CC58 /* mpaudec.h */,
+				6312ED80246B191E0003CC58 /* bits.c */,
+				6312ED81246B191E0003CC58 /* mpaudectab.h */,
+				6312ED82246B191E0003CC58 /* mpaudec.c */,
+			);
+			path = decoder;
+			sourceTree = "<group>";
+		};
+		6312ED87246B191E0003CC58 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED88246B191E0003CC58 /* ik_EStreamModes.h */,
+				6312ED89246B191E0003CC58 /* ik_vec3d.h */,
+				6312ED8A246B191E0003CC58 /* ik_IVirtualRefCounted.h */,
+				6312ED8B246B191E0003CC58 /* ik_ISoundMixedOutputReceiver.h */,
+				6312ED8C246B191E0003CC58 /* ik_IFileReader.h */,
+				6312ED8D246B191E0003CC58 /* ik_IRefCounted.h */,
+				6312ED8E246B191E0003CC58 /* ik_IAudioRecorder.h */,
+				6312ED8F246B191E0003CC58 /* ik_IAudioStream.h */,
+				6312ED90246B191E0003CC58 /* ik_ISound.h */,
+				6312ED91246B191E0003CC58 /* irrKlang.h */,
+				6312ED92246B191E0003CC58 /* ik_ISoundStopEventReceiver.h */,
+				6312ED93246B191E0003CC58 /* ik_ESoundOutputDrivers.h */,
+				6312ED94246B191E0003CC58 /* ik_ISoundSource.h */,
+				6312ED95246B191E0003CC58 /* ik_IAudioStreamLoader.h */,
+				6312ED96246B191E0003CC58 /* ik_ESoundEngineOptions.h */,
+				6312ED97246B191E0003CC58 /* ik_irrKlangTypes.h */,
+				6312ED98246B191E0003CC58 /* ik_ISoundEffectControl.h */,
+				6312ED99246B191E0003CC58 /* ik_ISoundDeviceList.h */,
+				6312ED9A246B191E0003CC58 /* ik_SAudioStreamFormat.h */,
+				6312ED9B246B191E0003CC58 /* ik_IFileFactory.h */,
+				6312ED9C246B191E0003CC58 /* ik_ISoundEngine.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		6312ED9E246B191E0003CC58 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				6312ED9F246B191E0003CC58 /* 01.HelloWorld */,
+				6312EDA9246B191E0003CC58 /* 03.MemoryPlayback */,
+				6312EDB3246B191E0003CC58 /* 02.3DSound */,
+				6312EDBD246B191E0003CC58 /* 05.Effects */,
+				6312EDC7246B191E0003CC58 /* common */,
+				6312EDC9246B191E0003CC58 /* 04.OverrideFileAccess */,
+				6312EDD3246B191E0003CC58 /* 06.Recording */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		6312ED9F246B191E0003CC58 /* 01.HelloWorld */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDA0246B191E0003CC58 /* 01.HelloWorld.sln */,
+				6312EDA1246B191E0003CC58 /* Makefile */,
+				6312EDA2246B191E0003CC58 /* 01.HelloWorld.xcodeproj */,
+				6312EDA5246B191E0003CC58 /* 01.HelloWorld.cbp */,
+				6312EDA6246B191E0003CC58 /* 01.HelloWorld.vcxproj.user */,
+				6312EDA7246B191E0003CC58 /* 01.HelloWorld.vcxproj */,
+				6312EDA8246B191E0003CC58 /* main.cpp */,
+			);
+			path = 01.HelloWorld;
+			sourceTree = "<group>";
+		};
+		6312EDA3246B191E0003CC58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6312EFD0246B19200003CC58 /* 01.HelloWorld */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6312EDA9246B191E0003CC58 /* 03.MemoryPlayback */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDAA246B191E0003CC58 /* 03.MemoryPlayback.xcodeproj */,
+				6312EDAD246B191E0003CC58 /* 03.MemoryPlayback.vcxproj */,
+				6312EDAE246B191E0003CC58 /* Makefile */,
+				6312EDAF246B191E0003CC58 /* 03.MemoryPlayback.cbp */,
+				6312EDB0246B191E0003CC58 /* 03.MemoryPlayback.sln */,
+				6312EDB1246B191E0003CC58 /* main.cpp */,
+				6312EDB2246B191E0003CC58 /* 03.MemoryPlayback.vcxproj.user */,
+			);
+			path = 03.MemoryPlayback;
+			sourceTree = "<group>";
+		};
+		6312EDAB246B191E0003CC58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6312EFD6246B19200003CC58 /* 03.MemoryPlayback */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6312EDB3246B191E0003CC58 /* 02.3DSound */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDB4246B191E0003CC58 /* Makefile */,
+				6312EDB5246B191E0003CC58 /* 02.3DSound.sln */,
+				6312EDB6246B191E0003CC58 /* 02.3DSound.vcxproj.user */,
+				6312EDB7246B191E0003CC58 /* 02.3DSound.xcodeproj */,
+				6312EDBA246B191E0003CC58 /* 02.3DSound.vcxproj */,
+				6312EDBB246B191E0003CC58 /* main.cpp */,
+				6312EDBC246B191E0003CC58 /* 02.3DSound.cbp */,
+			);
+			path = 02.3DSound;
+			sourceTree = "<group>";
+		};
+		6312EDB8246B191E0003CC58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6312EFD3246B19200003CC58 /* 02.3DSound */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6312EDBD246B191E0003CC58 /* 05.Effects */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDBE246B191E0003CC58 /* 05.Effects.xcodeproj */,
+				6312EDC1246B191E0003CC58 /* 05.Effects.vcxproj */,
+				6312EDC2246B191E0003CC58 /* Makefile */,
+				6312EDC3246B191E0003CC58 /* 05.Effects.vcxproj.user */,
+				6312EDC4246B191E0003CC58 /* 05.Effects.sln */,
+				6312EDC5246B191E0003CC58 /* 05.Effects.cbp */,
+				6312EDC6246B191E0003CC58 /* main.cpp */,
+			);
+			path = 05.Effects;
+			sourceTree = "<group>";
+		};
+		6312EDBF246B191E0003CC58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6312EFDC246B19200003CC58 /* 05.Effects */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6312EDC7246B191E0003CC58 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDC8246B191E0003CC58 /* conio.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		6312EDC9246B191E0003CC58 /* 04.OverrideFileAccess */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDCA246B191E0003CC58 /* 04.OverrideFileAccess.vcxproj */,
+				6312EDCB246B191E0003CC58 /* 04.OverrideFileAccess.xcodeproj */,
+				6312EDCE246B191E0003CC58 /* Makefile */,
+				6312EDCF246B191E0003CC58 /* 04.OverrideFileAccess.cbp */,
+				6312EDD0246B191E0003CC58 /* 04.OverrideFileAccess.vcxproj.user */,
+				6312EDD1246B191E0003CC58 /* 04.OverrideFileAccess.sln */,
+				6312EDD2246B191E0003CC58 /* main.cpp */,
+			);
+			path = 04.OverrideFileAccess;
+			sourceTree = "<group>";
+		};
+		6312EDCC246B191E0003CC58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6312EFD9246B19200003CC58 /* 04.OverrideFileAccess */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6312EDD3246B191E0003CC58 /* 06.Recording */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDD4246B191E0003CC58 /* 06.Recording.cbp */,
+				6312EDD5246B191E0003CC58 /* 06.Recording.vcxproj.user */,
+				6312EDD6246B191E0003CC58 /* 06.Recording.sln */,
+				6312EDD7246B191E0003CC58 /* main.cpp */,
+				6312EDD8246B191E0003CC58 /* 06.Recording.vcxproj */,
+			);
+			path = 06.Recording;
+			sourceTree = "<group>";
+		};
+		6312EDD9246B191E0003CC58 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDDA246B191E0003CC58 /* Winx64-visualStudio */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		6312EDDA246B191E0003CC58 /* Winx64-visualStudio */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDDB246B191E0003CC58 /* irrKlang.lib */,
+				6312EDDC246B191E0003CC58 /* irrKlang.exp */,
+			);
+			path = "Winx64-visualStudio";
+			sourceTree = "<group>";
+		};
+		6312EDDD246B191E0003CC58 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDDE246B191E0003CC58 /* dotnet */,
+				6312EEFC246B191F0003CC58 /* cpp */,
+				6312EFC1246B19200003CC58 /* readme.txt */,
+				6312EFC2246B19200003CC58 /* doc_cpp.html */,
+				6312EFC3246B19200003CC58 /* doc_dotnet.html */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		6312EDDE246B191E0003CC58 /* dotnet */ = {
+			isa = PBXGroup;
+			children = (
+				6312EDDF246B191E0003CC58 /* IrrKlang.Vector3D.SetLength.html */,
+				6312EDE0246B191E0003CC58 /* IrrKlang.ISoundEngine.Finalize.html */,
+				6312EDE1246B191E0003CC58 /* IrrKlang.ISound.Velocity.html */,
+				6312EDE2246B191E0003CC58 /* IrrKlang.Vector3D.Equals.html */,
+				6312EDE3246B191E0003CC58 /* IrrKlang.EventForwarderMembers.html */,
+				6312EDE4246B191E0003CC58 /* IrrKlang.ISoundEffectControl.html */,
+				6312EDE5246B191E0003CC58 /* IrrKlang.ISoundDeviceList.Finalize.html */,
+				6312EDE6246B191E0003CC58 /* IrrKlang.Vector3DFields.html */,
+				6312EDE7246B191E0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_1.html */,
+				6312EDE8246B191E0003CC58 /* IrrKlang.ISoundEffectControlMethods.html */,
+				6312EDE9246B191E0003CC58 /* IrrKlang.Vector3D.LengthSQ.html */,
+				6312EDEA246B191E0003CC58 /* IrrKlang.Vector3DMembers.html */,
+				6312EDEB246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overload_1.html */,
+				6312EDEC246B191E0003CC58 /* IrrKlang.ISoundSource.Name.html */,
+				6312EDED246B191E0003CC58 /* treenodeminus.gif */,
+				6312EDEE246B191E0003CC58 /* IrrKlang.ISoundSource.DefaultVolume.html */,
+				6312EDEF246B191E0003CC58 /* IrrKlang.ISoundEngine.Update.html */,
+				6312EDF0246B191E0003CC58 /* IrrKlang.ISoundEngine.GetSoundSource_overloads.html */,
+				6312EDF1246B191E0003CC58 /* IrrKlang.IFileFactory.openFile.html */,
+				6312EDF2246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overloads.html */,
+				6312EDF3246B191E0003CC58 /* treenodeplus.gif */,
+				6312EDF4246B191E0003CC58 /* intevent.gif */,
+				6312EDF5246B191E0003CC58 /* IrrKlang.ISound.MaxDistance.html */,
+				6312EDF6246B191E0003CC58 /* IrrKlang.IAudioRecorder.RecordedAudioData.html */,
+				6312EDF7246B191E0003CC58 /* IrrKlang.IAudioRecorderConstructor1.html */,
+				6312EDF8246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overload_1.html */,
+				6312EDF9246B191E0003CC58 /* IrrKlang.ISound.MinDistance.html */,
+				6312EDFA246B191E0003CC58 /* IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overload_1.html */,
+				6312EDFB246B191E0003CC58 /* IrrKlang.ISoundEngineConstructor1.html */,
+				6312EDFC246B191E0003CC58 /* IrrKlang.Vector3D.GetLengthSQ.html */,
+				6312EDFD246B191E0003CC58 /* pubevent.gif */,
+				6312EDFE246B191E0003CC58 /* IrrKlang.ISoundEngine.internalGetNativeEngine.html */,
+				6312EDFF246B191E0003CC58 /* IrrKlang.Vector3DOperators.html */,
+				6312EE00246B191E0003CC58 /* IrrKlang.ISoundEngine.html */,
+				6312EE01246B191E0003CC58 /* IrrKlang.ISoundDeviceList.getDeviceID.html */,
+				6312EE02246B191E0003CC58 /* index.html */,
+				6312EE03246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableEchoSoundEffect.html */,
+				6312EE04246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overload_1.html */,
+				6312EE05246B191E0003CC58 /* IrrKlang.ISound.PlayPosition.html */,
+				6312EE06246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableAllEffects.html */,
+				6312EE07246B191E0003CC58 /* default.html */,
+				6312EE08246B191E0003CC58 /* IrrKlang.ISoundEngine.RemoveAllSoundSources.html */,
+				6312EE09246B191E0003CC58 /* IrrKlang.ISoundEffectControl.IsFlangerSoundEffectEnabled.html */,
+				6312EE0A246B191E0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_6.html */,
+				6312EE0B246B191E0003CC58 /* protproperty.gif */,
+				6312EE0C246B191E0003CC58 /* IrrKlang.ISoundMethods.html */,
+				6312EE0D246B191E0003CC58 /* IrrKlang.IAudioRecorderMethods.html */,
+				6312EE0E246B191E0003CC58 /* privfield.gif */,
+				6312EE0F246B191E0003CC58 /* IrrKlang.ISound.setSoundStopEventReceiver_overload_1.html */,
+				6312EE10246B191E0003CC58 /* IrrKlang.IFileFactoryMembers.html */,
+				6312EE11246B191E0003CC58 /* IrrKlang.ISoundEngine.Play2D_overloads.html */,
+				6312EE12246B191E0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromIOStream.html */,
+				6312EE13246B191E0003CC58 /* IrrKlang.SampleFormat.html */,
+				6312EE14246B191E0003CC58 /* IrrKlang.ISoundEngine.GetSoundSource_overload_1.html */,
+				6312EE15246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overload_1.html */,
+				6312EE16246B191E0003CC58 /* IrrKlang.StreamForwarder.html */,
+				6312EE17246B191E0003CC58 /* IrrKlang.ISoundEffectControl.IsCompressorSoundEffectEnabled.html */,
+				6312EE18246B191E0003CC58 /* IrrKlang.ISound.Finished.html */,
+				6312EE19246B191E0003CC58 /* IrrKlang.ISound.Paused.html */,
+				6312EE1A246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableCompressorSoundEffect.html */,
+				6312EE1B246B191E0003CC58 /* IrrKlang.Vector3D.op_Division.html */,
+				6312EE1C246B191E0003CC58 /* IrrKlang.ISoundStopEventReceiverMembers.html */,
+				6312EE1D246B191E0003CC58 /* IrrKlang.IAudioRecorder.html */,
+				6312EE1E246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overload_2.html */,
+				6312EE1F246B191E0003CC58 /* protoperator.gif */,
+				6312EE20246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overloads.html */,
+				6312EE21246B191E0003CC58 /* IrrKlang.AudioFormatConstructor.html */,
+				6312EE22246B191E0003CC58 /* IrrKlang.IAudioRecorderProperties.html */,
+				6312EE23246B191E0003CC58 /* IrrKlang.ISoundEffectControl.IsParamEqSoundEffectEnabled.html */,
+				6312EE24246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overloads.html */,
+				6312EE25246B191E0003CC58 /* IrrKlang.ISoundDeviceListMethods.html */,
+				6312EE26246B191E0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_1.html */,
+				6312EE27246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overload_2.html */,
+				6312EE28246B191E0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromPCMData.html */,
+				6312EE29246B191E0003CC58 /* IrrKlang.Vector3D.GetLength.html */,
+				6312EE2A246B191E0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_1.html */,
+				6312EE2B246B191E0003CC58 /* IrrKlang.AudioFormat.FrameCount.html */,
+				6312EE2C246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overload_1.html */,
+				6312EE2D246B191E0003CC58 /* IrrKlang.IAudioRecorder.ClearRecordedAudioDataBuffer.html */,
+				6312EE2E246B191E0003CC58 /* IrrKlang.EventForwarder.html */,
+				6312EE2F246B191E0003CC58 /* IrrKlang.ISoundEffectControl.DisableChorusSoundEffect.html */,
+				6312EE30246B191E0003CC58 /* IrrKlang.ISound.Finalize.html */,
+				6312EE31246B191E0003CC58 /* IrrKlang.ISoundEffectControl.Finalize.html */,
+				6312EE32246B191E0003CC58 /* tree.js */,
+				6312EE33246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overloads.html */,
+				6312EE34246B191E0003CC58 /* IrrKlang.Vector3D.Normalize.html */,
+				6312EE35246B191E0003CC58 /* IrrKlang.ISoundEngine.SetRolloffFactor.html */,
+				6312EE36246B191E0003CC58 /* IrrKlangHierarchy.html */,
+				6312EE37246B191E0003CC58 /* IrrKlang.ISoundDeviceListProperties.html */,
+				6312EE38246B191E0003CC58 /* IrrKlang.ISoundDeviceListConstructor2.html */,
+				6312EE39246B191E0003CC58 /* IrrKlang.AudioFormat.Format.html */,
+				6312EE3A246B191E0003CC58 /* IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overload_1.html */,
+				6312EE3B246B191E0003CC58 /* IrrKlang.ISoundSourceMethods.html */,
+				6312EE3C246B191E0003CC58 /* IrrKlang.ISound.Looped.html */,
+				6312EE3D246B191E0003CC58 /* IrrKlang.AudioFormatProperties.html */,
+				6312EE3E246B191E0003CC58 /* privevent.gif */,
+				6312EE3F246B191E0003CC58 /* IrrKlang.ISoundEngine.SoundVolume.html */,
+				6312EE40246B191E0003CC58 /* IrrKlang.Vector3D.Invert.html */,
+				6312EE41246B191E0003CC58 /* contents.html */,
+				6312EE42246B191E0003CC58 /* IrrKlang.ISoundEngine.Play3D_overloads.html */,
+				6312EE43246B191E0003CC58 /* IrrKlang.Vector3D.X.html */,
+				6312EE44246B191E0003CC58 /* IrrKlang.AudioFormat.SampleSize.html */,
+				6312EE45246B191E0003CC58 /* IrrKlang.ISoundSourceProperties.html */,
+				6312EE46246B191E0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_7.html */,
+				6312EE47246B191E0003CC58 /* pubfield.gif */,
+				6312EE48246B191E0003CC58 /* IrrKlang.ISoundDeviceList.html */,
+				6312EE49246B191E0003CC58 /* IrrKlang.Vector3D.Set_overload_2.html */,
+				6312EE4A246B191E0003CC58 /* IrrKlang.StreamForwarderMembers.html */,
+				6312EE4B246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overloads.html */,
+				6312EE4C246B191F0003CC58 /* IrrKlang.ISoundStopEventReceiver.OnSoundStopped.html */,
+				6312EE4D246B191F0003CC58 /* intfield.gif */,
+				6312EE4E246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_6.html */,
+				6312EE4F246B191F0003CC58 /* IrrKlang.ISoundEngineMethods.html */,
+				6312EE50246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overloads.html */,
+				6312EE51246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overloads.html */,
+				6312EE52246B191F0003CC58 /* IrrKlang.Vector3DConstructor1.html */,
+				6312EE53246B191F0003CC58 /* IrrKlang.Vector3D.Y.html */,
+				6312EE54246B191F0003CC58 /* IrrKlang.Vector3D.Set_overloads.html */,
+				6312EE55246B191F0003CC58 /* IrrKlang.ISound.SoundEffectControl.html */,
+				6312EE56246B191F0003CC58 /* IrrKlang.ISoundEngine.AddFileFactory.html */,
+				6312EE57246B191F0003CC58 /* IrrKlang.SoundDeviceListType.html */,
+				6312EE58246B191F0003CC58 /* IrrKlang.ISound.Dispose.html */,
+				6312EE59246B191F0003CC58 /* IrrKlang.StreamMode.html */,
+				6312EE5A246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overloads.html */,
+				6312EE5B246B191F0003CC58 /* IrrKlang.IAudioRecorder.AudioFormat.html */,
+				6312EE5C246B191F0003CC58 /* IrrKlang.IAudioRecorder.IsRecording.html */,
+				6312EE5D246B191F0003CC58 /* IrrKlang.Vector3D.op_Multiply_overload_1.html */,
+				6312EE5E246B191F0003CC58 /* IrrKlang.ISoundSource.html */,
+				6312EE5F246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableGargleSoundEffect.html */,
+				6312EE60246B191F0003CC58 /* IrrKlang.IFileFactory.html */,
+				6312EE61246B191F0003CC58 /* IrrKlang.AudioFormat.FrameSize.html */,
+				6312EE62246B191F0003CC58 /* IrrKlang.Vector3DConstructor.html */,
+				6312EE63246B191F0003CC58 /* pubmethod.gif */,
+				6312EE64246B191F0003CC58 /* IrrKlang.ISoundEngine.LoadPlugins.html */,
+				6312EE65246B191F0003CC58 /* IrrKlang.ISoundStopEventReceiver.html */,
+				6312EE66246B191F0003CC58 /* IrrKlang.ISoundSource.Finalize.html */,
+				6312EE67246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overloads.html */,
+				6312EE68246B191F0003CC58 /* IrrKlang.Vector3D.html */,
+				6312EE69246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableParamEqSoundEffect.html */,
+				6312EE6A246B191F0003CC58 /* IrrKlang.ISoundEngine.SetAllSoundsPaused.html */,
+				6312EE6B246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_1.html */,
+				6312EE6C246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsGargleSoundEffectEnabled.html */,
+				6312EE6D246B191F0003CC58 /* IrrKlang.ISoundEngine.SetDopplerEffectParameters.html */,
+				6312EE6E246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overload_2.html */,
+				6312EE6F246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overloads.html */,
+				6312EE70246B191F0003CC58 /* IrrKlang.Vector3D.op_Multiply_overload_2.html */,
+				6312EE71246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableWavesReverbSoundEffect.html */,
+				6312EE72246B191F0003CC58 /* IrrKlang.html */,
+				6312EE73246B191F0003CC58 /* IrrKlang.ISoundDeviceListConstructor.html */,
+				6312EE74246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableI3DL2ReverbSoundEffect.html */,
+				6312EE75246B191F0003CC58 /* IrrKlang.ISoundEngine.RemoveSoundSource.html */,
+				6312EE76246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromMemory.html */,
+				6312EE77246B191F0003CC58 /* static.gif */,
+				6312EE78246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_3.html */,
+				6312EE79246B191F0003CC58 /* IrrKlang.Vector3D.GetDistanceFromSQ.html */,
+				6312EE7A246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_2.html */,
+				6312EE7B246B191F0003CC58 /* IrrKlang.ISoundEngineMembers.html */,
+				6312EE7C246B191F0003CC58 /* IrrKlang.ISoundEffectControlConstructor.html */,
+				6312EE7D246B191F0003CC58 /* intoperator.gif */,
+				6312EE7E246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_3.html */,
+				6312EE7F246B191F0003CC58 /* IrrKlang.Vector3D.DotProduct.html */,
+				6312EE80246B191F0003CC58 /* IrrKlang.AudioFormat.ChannelCount.html */,
+				6312EE81246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableWavesReverbSoundEffect_overload_1.html */,
+				6312EE82246B191F0003CC58 /* IrrKlang.Vector3D.GetInterpolated.html */,
+				6312EE83246B191F0003CC58 /* IrrKlang.ISoundSource.StreamMode.html */,
+				6312EE84246B191F0003CC58 /* IrrKlang.AudioFormat.html */,
+				6312EE85246B191F0003CC58 /* IrrKlang.ISound.Pan.html */,
+				6312EE86246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableDistortionSoundEffect.html */,
+				6312EE87246B191F0003CC58 /* IrrKlang.ISound.Position.html */,
+				6312EE88246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_5.html */,
+				6312EE89246B191F0003CC58 /* IrrKlang.Vector3D.op_Multiply_overloads.html */,
+				6312EE8A246B191F0003CC58 /* IrrKlang.ISoundConstructor.html */,
+				6312EE8B246B191F0003CC58 /* IrrKlang.ISoundEngine.Default3DSoundMaxDistance.html */,
+				6312EE8C246B191F0003CC58 /* IrrKlang.IAudioRecorder.Finalize.html */,
+				6312EE8D246B191F0003CC58 /* IrrKlang.StopEventCause.html */,
+				6312EE8E246B191F0003CC58 /* IrrKlang.ISoundSource.DefaultMaxDistance.html */,
+				6312EE8F246B191F0003CC58 /* IrrKlang.Vector3D.Z.html */,
+				6312EE90246B191F0003CC58 /* IrrKlang.Vector3DConstructor2.html */,
+				6312EE91246B191F0003CC58 /* ndoc.log */,
+				6312EE92246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overloads.html */,
+				6312EE93246B191F0003CC58 /* IrrKlang.ISoundEngine.Name.html */,
+				6312EE94246B191F0003CC58 /* IrrKlang.ISoundSource.DefaultMinDistance.html */,
+				6312EE95246B191F0003CC58 /* intproperty.gif */,
+				6312EE96246B191F0003CC58 /* IrrKlang.ISound.Volume.html */,
+				6312EE97246B191F0003CC58 /* IrrKlang.ISoundEngine.Default3DSoundMinDistance.html */,
+				6312EE98246B191F0003CC58 /* IrrKlang.ISoundEngineProperties.html */,
+				6312EE99246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableCompressorSoundEffect_overload_2.html */,
+				6312EE9A246B191F0003CC58 /* IrrKlang.ISoundEngine.IsCurrentlyPlaying.html */,
+				6312EE9B246B191F0003CC58 /* IrrKlang.ISoundEngine.IsMultiThreaded.html */,
+				6312EE9C246B191F0003CC58 /* IrrKlang.ISound.html */,
+				6312EE9D246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsEchoSoundEffectEnabled.html */,
+				6312EE9E246B191F0003CC58 /* IrrKlang.ISoundSourceConstructor.html */,
+				6312EE9F246B191F0003CC58 /* IrrKlang.FileFactoryForwarderMembers.html */,
+				6312EEA0246B191F0003CC58 /* IrrKlang.ISoundDeviceList.DeviceCount.html */,
+				6312EEA1246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_4.html */,
+				6312EEA2246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsWavesReverbSoundEffectEnabled.html */,
+				6312EEA3246B191F0003CC58 /* IrrKlang.Vector3D.Set_overload_1.html */,
+				6312EEA4246B191F0003CC58 /* IrrKlang.ISoundDeviceListMembers.html */,
+				6312EEA5246B191F0003CC58 /* IrrKlang.Vector3DProperties.html */,
+				6312EEA6246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsDistortionSoundEffectEnabled.html */,
+				6312EEA7246B191F0003CC58 /* IrrKlang.ISound.PlaybackSpeed.html */,
+				6312EEA8246B191F0003CC58 /* protfield.gif */,
+				6312EEA9246B191F0003CC58 /* IrrKlang.Vector3D.GetDistanceFrom.html */,
+				6312EEAA246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceFromFile_overload_3.html */,
+				6312EEAB246B191F0003CC58 /* IrrKlang.ISoundSource.SampleData.html */,
+				6312EEAC246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_2.html */,
+				6312EEAD246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableDistortionSoundEffect_overload_1.html */,
+				6312EEAE246B191F0003CC58 /* IrrKlang.Vector3D.op_Subtraction.html */,
+				6312EEAF246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_2.html */,
+				6312EEB0246B191F0003CC58 /* protmethod.gif */,
+				6312EEB1246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableFlangerSoundEffect_overload_2.html */,
+				6312EEB2246B191F0003CC58 /* IrrKlang.Vector3D.op_Equality.html */,
+				6312EEB3246B191F0003CC58 /* IrrKlang.FileFactoryForwarder.html */,
+				6312EEB4246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_8.html */,
+				6312EEB5246B191F0003CC58 /* IrrKlang.IAudioRecorder.AddSoundSourceFromRecordedAudio.html */,
+				6312EEB6246B191F0003CC58 /* IrrKlang.IAudioRecorder.StopRecordingAudio.html */,
+				6312EEB7246B191F0003CC58 /* IrrKlang.ISoundProperties.html */,
+				6312EEB8246B191F0003CC58 /* IrrKlang.ISound.Stop.html */,
+				6312EEB9246B191F0003CC58 /* IrrKlang.ISoundSourceMembers.html */,
+				6312EEBA246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor4.html */,
+				6312EEBB246B191F0003CC58 /* IrrKlang.ISoundDeviceListConstructor1.html */,
+				6312EEBC246B191F0003CC58 /* IrrKlang.ISoundMembers.html */,
+				6312EEBD246B191F0003CC58 /* IrrKlang.IAudioRecorderMembers.html */,
+				6312EEBE246B191F0003CC58 /* IrrKlang.ISound.setSoundStopEventReceiver_overload_2.html */,
+				6312EEBF246B191F0003CC58 /* IrrKlang.Vector3D.ToString.html */,
+				6312EEC0246B191F0003CC58 /* IrrKlang.ISoundEngine.GetSoundSource_overload_2.html */,
+				6312EEC1246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_3.html */,
+				6312EEC2246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableGargleSoundEffect_overload_2.html */,
+				6312EEC3246B191F0003CC58 /* privproperty.gif */,
+				6312EEC4246B191F0003CC58 /* IrrKlang.ISound.PlayLength.html */,
+				6312EEC5246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor.html */,
+				6312EEC6246B191F0003CC58 /* intmethod.gif */,
+				6312EEC7246B191F0003CC58 /* IrrKlang.ISoundSource.getNativeSoundSource.html */,
+				6312EEC8246B191F0003CC58 /* IrrKlang.SoundEngineOptionFlag.html */,
+				6312EEC9246B191F0003CC58 /* IrrKlang.AudioFormatFields.html */,
+				6312EECA246B191F0003CC58 /* MSDN.css */,
+				6312EECB246B191F0003CC58 /* protevent.gif */,
+				6312EECC246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableChorusSoundEffect_overload_1.html */,
+				6312EECD246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor3.html */,
+				6312EECE246B191F0003CC58 /* IrrKlang.AudioFormat.SampleDataSize.html */,
+				6312EECF246B191F0003CC58 /* privoperator.gif */,
+				6312EED0246B191F0003CC58 /* IrrKlang.ISoundStopEventReceiverMethods.html */,
+				6312EED1246B191F0003CC58 /* IrrKlang.Vector3D.Length.html */,
+				6312EED2246B191F0003CC58 /* IrrKlang.IAudioRecorderConstructor3.html */,
+				6312EED3246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableI3DL2ReverbSoundEffect_overload_2.html */,
+				6312EED4246B191F0003CC58 /* IrrKlang.Vector3D.IsBetweenPoints.html */,
+				6312EED5246B191F0003CC58 /* IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overloads.html */,
+				6312EED6246B191F0003CC58 /* IrrKlang.ISoundEngine.AddSoundSourceAlias.html */,
+				6312EED7246B191F0003CC58 /* treenodedot.gif */,
+				6312EED8246B191F0003CC58 /* IrrKlang.ISoundSource.IsSeekingSupported.html */,
+				6312EED9246B191F0003CC58 /* IrrKlang.SoundOutputDriver.html */,
+				6312EEDA246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_5.html */,
+				6312EEDB246B191F0003CC58 /* IrrKlang.ISoundEffectControl.DisableFlangerSoundEffect.html */,
+				6312EEDC246B191F0003CC58 /* IrrKlang.IFileFactoryMethods.html */,
+				6312EEDD246B191F0003CC58 /* IrrKlang.AudioFormat.SampleRate.html */,
+				6312EEDE246B191F0003CC58 /* IrrKlang.ISoundEffectControlProperties.html */,
+				6312EEDF246B191F0003CC58 /* IrrKlang.Vector3DMethods.html */,
+				6312EEE0246B191F0003CC58 /* IrrKlang.ISound.setSoundStopEventReceiver_overloads.html */,
+				6312EEE1246B191F0003CC58 /* IrrKlang.IAudioRecorderConstructor.html */,
+				6312EEE2246B191F0003CC58 /* IrrKlang.Vector3D.op_Addition.html */,
+				6312EEE3246B191F0003CC58 /* IrrKlang.ISoundEngine.StopAllSounds.html */,
+				6312EEE4246B191F0003CC58 /* IrrKlang.ISoundSource.AudioFormat.html */,
+				6312EEE5246B191F0003CC58 /* IrrKlang.ISoundEngine.Play2D_overload_4.html */,
+				6312EEE6246B191F0003CC58 /* IrrKlang.ISoundEngine.SetListenerPosition_overload_4.html */,
+				6312EEE7246B191F0003CC58 /* privmethod.gif */,
+				6312EEE8246B191F0003CC58 /* IrrKlang.ISoundSource.ForcedStreamingThreshold.html */,
+				6312EEE9246B191F0003CC58 /* IrrKlang.ISoundEffectControlMembers.html */,
+				6312EEEA246B191F0003CC58 /* pubproperty.gif */,
+				6312EEEB246B191F0003CC58 /* IrrKlang.ISoundDeviceList.getDeviceDescription.html */,
+				6312EEEC246B191F0003CC58 /* IrrKlang.AudioFormatMembers.html */,
+				6312EEED246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableEchoSoundEffect_overload_2.html */,
+				6312EEEE246B191F0003CC58 /* IrrKlang.IAudioRecorderConstructor2.html */,
+				6312EEEF246B191F0003CC58 /* tree.css */,
+				6312EEF0246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsChorusSoundEffectEnabled.html */,
+				6312EEF1246B191F0003CC58 /* IrrKlang.AudioFormat.BytesPerSecond.html */,
+				6312EEF2246B191F0003CC58 /* IrrKlang.ISoundEngineConstructor2.html */,
+				6312EEF3246B191F0003CC58 /* IrrKlang.IAudioRecorder.StartRecordingBufferedAudio_overload_2.html */,
+				6312EEF4246B191F0003CC58 /* IrrKlang.ISoundSource.PlayLength.html */,
+				6312EEF5246B191F0003CC58 /* IrrKlang.ISoundSource.ForceReloadAtNextUse.html */,
+				6312EEF6246B191F0003CC58 /* IrrKlang.ISoundEngine.Play3D_overload_2.html */,
+				6312EEF7246B191F0003CC58 /* puboperator.gif */,
+				6312EEF8246B191F0003CC58 /* IrrKlang.ISoundEffectControl.IsI3DL2ReverbSoundEffectEnabled.html */,
+				6312EEF9246B191F0003CC58 /* IrrKlang.Vector3D.CrossProduct.html */,
+				6312EEFA246B191F0003CC58 /* IrrKlang.ISoundEffectControl.EnableParamEqSoundEffect_overload_2.html */,
+				6312EEFB246B191F0003CC58 /* IrrKlang.ISoundSource.Dispose.html */,
+			);
+			path = dotnet;
+			sourceTree = "<group>";
+		};
+		6312EEFC246B191F0003CC58 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				6312EEFD246B191F0003CC58 /* classirrklang_1_1_i_sound_mixed_output_receiver-members.html */,
+				6312EEFE246B191F0003CC58 /* classirrklang_1_1_i_audio_stream.html */,
+				6312EEFF246B191F0003CC58 /* functions_0x69.html */,
+				6312EF00246B191F0003CC58 /* classirrklang_1_1_i_ref_counted.html */,
+				6312EF01246B191F0003CC58 /* namespacemembers_enum.html */,
+				6312EF02246B191F0003CC58 /* namespacemembers_vars.html */,
+				6312EF03246B191F0003CC58 /* structirrklang_1_1_s_internal_audio_interface.html */,
+				6312EF04246B191F0003CC58 /* ik___i_sound_device_list_8h.html */,
+				6312EF05246B191F0003CC58 /* structirrklang_1_1_s_audio_stream_format.html */,
+				6312EF06246B191F0003CC58 /* doxygen.css */,
+				6312EF07246B191F0003CC58 /* functions_0x73.html */,
+				6312EF08246B191F0003CC58 /* tab_l.gif */,
+				6312EF09246B191F0003CC58 /* classirrklang_1_1_i_file_factory.html */,
+				6312EF0A246B191F0003CC58 /* functions_0x65.html */,
+				6312EF0B246B191F0003CC58 /* ik___e_sound_engine_options_8h_source.html */,
+				6312EF0C246B191F0003CC58 /* classirrklang_1_1_i_captured_audio_data_receiver.gif */,
+				6312EF0D246B191F0003CC58 /* ik___i_file_reader_8h.html */,
+				6312EF0E246B191F0003CC58 /* installdox */,
+				6312EF0F246B191F0003CC58 /* ik___i_virtual_ref_counted_8h_source.html */,
+				6312EF10246B191F0003CC58 /* ik___i_sound_8h.html */,
+				6312EF11246B191F0003CC58 /* classirrklang_1_1vec3d.html */,
+				6312EF12246B191F0003CC58 /* index.html */,
+				6312EF13246B191F0003CC58 /* functions.html */,
+				6312EF14246B191F0003CC58 /* ik___i_sound_effect_control_8h.html */,
+				6312EF15246B191F0003CC58 /* classirrklang_1_1_i_captured_audio_data_receiver-members.html */,
+				6312EF16246B191F0003CC58 /* functions_0x64.html */,
+				6312EF17246B191F0003CC58 /* functions_0x72.html */,
+				6312EF18246B191F0003CC58 /* ik___i_ref_counted_8h_source.html */,
+				6312EF19246B191F0003CC58 /* classirrklang_1_1_i_sound.html */,
+				6312EF1A246B191F0003CC58 /* namespacemembers_func.html */,
+				6312EF1B246B191F0003CC58 /* ik___i_audio_recorder_8h_source.html */,
+				6312EF1C246B191F0003CC58 /* classirrklang_1_1_i_audio_stream_loader.html */,
+				6312EF1D246B191F0003CC58 /* classirrklang_1_1_i_sound_engine.html */,
+				6312EF1E246B191F0003CC58 /* ik__irr_klang_types_8h_source.html */,
+				6312EF1F246B191F0003CC58 /* ik___i_sound_source_8h.html */,
+				6312EF20246B191F0003CC58 /* functions_0x6c.html */,
+				6312EF21246B191F0003CC58 /* classirrklang_1_1_i_sound_stop_event_receiver-members.html */,
+				6312EF22246B191F0003CC58 /* classirrklang_1_1_i_sound.gif */,
+				6312EF23246B191F0003CC58 /* classirrklang_1_1_i_captured_audio_data_receiver.html */,
+				6312EF24246B191F0003CC58 /* functions_0x7e.html */,
+				6312EF25246B191F0003CC58 /* annotated.html */,
+				6312EF26246B191F0003CC58 /* ik___i_sound_engine_8h.html */,
+				6312EF27246B191F0003CC58 /* classirrklang_1_1_i_sound_source.gif */,
+				6312EF28246B191F0003CC58 /* classirrklang_1_1_i_sound_effect_control-members.html */,
+				6312EF29246B191F0003CC58 /* ik___e_stream_modes_8h.html */,
+				6312EF2A246B191F0003CC58 /* classirrklang_1_1_i_audio_recorder.gif */,
+				6312EF2B246B191F0003CC58 /* ik___i_audio_recorder_8h.html */,
+				6312EF2C246B191F0003CC58 /* hierarchy.html */,
+				6312EF2D246B191F0003CC58 /* classirrklang_1_1_i_file_reader-members.html */,
+				6312EF2E246B191F0003CC58 /* classirrklang_1_1_i_sound_device_list.html */,
+				6312EF2F246B191F0003CC58 /* functions_0x75.html */,
+				6312EF30246B191F0003CC58 /* functions_0x63.html */,
+				6312EF31246B191F0003CC58 /* ik__irr_klang_types_8h.html */,
+				6312EF32246B191F0003CC58 /* ik___i_sound_stop_event_receiver_8h.html */,
+				6312EF33246B191F0003CC58 /* ik___s_audio_stream_format_8h.html */,
+				6312EF34246B191F0003CC58 /* ik___i_sound_engine_8h_source.html */,
+				6312EF35246B191F0003CC58 /* ik___i_file_reader_8h_source.html */,
+				6312EF36246B191F0003CC58 /* tabs.css */,
+				6312EF37246B191F0003CC58 /* classirrklang_1_1_i_file_reader.gif */,
+				6312EF38246B191F0003CC58 /* classirrklang_1_1_i_audio_stream-members.html */,
+				6312EF39246B191F0003CC58 /* classirrklang_1_1_i_audio_stream.gif */,
+				6312EF3A246B191F0003CC58 /* functions_0x79.html */,
+				6312EF3B246B191F0003CC58 /* classirrklang_1_1_i_sound_device_list.gif */,
+				6312EF3C246B191F0003CC58 /* doxygen.png */,
+				6312EF3D246B191F0003CC58 /* ik___e_sound_engine_options_8h.html */,
+				6312EF3E246B191F0003CC58 /* functions_vars.html */,
+				6312EF3F246B191F0003CC58 /* ik___s_audio_stream_format_8h_source.html */,
+				6312EF40246B191F0003CC58 /* classirrklang_1_1_i_audio_recorder.html */,
+				6312EF41246B191F0003CC58 /* classirrklang_1_1_i_sound_source.html */,
+				6312EF42246B191F0003CC58 /* ik___i_sound_8h_source.html */,
+				6312EF43246B191F0003CC58 /* logobig.png */,
+				6312EF44246B191F0003CC58 /* files.html */,
+				6312EF45246B191F0003CC58 /* ik___i_audio_stream_loader_8h.html */,
+				6312EF46246B191F0003CC58 /* functions_0x6e.html */,
+				6312EF47246B191F0003CC58 /* functions_0x78.html */,
+				6312EF48246B191F0003CC58 /* functions_func.html */,
+				6312EF49246B191F0003CC58 /* classirrklang_1_1_i_audio_stream_loader-members.html */,
+				6312EF4A246B191F0003CC58 /* classirrklang_1_1_i_virtual_ref_counted-members.html */,
+				6312EF4B246B191F0003CC58 /* namespaceirrklang.html */,
+				6312EF4C246B191F0003CC58 /* namespaces.html */,
+				6312EF4D246B191F0003CC58 /* classirrklang_1_1_i_ref_counted.gif */,
+				6312EF4E246B191F0003CC58 /* irr_klang_8h_source.html */,
+				6312EF4F246B191F0003CC58 /* ik___i_sound_stop_event_receiver_8h_source.html */,
+				6312EF50246B191F0003CC58 /* classirrklang_1_1_i_file_factory.gif */,
+				6312EF51246B191F0003CC58 /* structirrklang_1_1_s_audio_stream_format-members.html */,
+				6312EF52246B191F0003CC58 /* ik___e_stream_modes_8h_source.html */,
+				6312EF53246B191F0003CC58 /* classirrklang_1_1_i_file_factory-members.html */,
+				6312EF54246B191F0003CC58 /* search */,
+				6312EF91246B191F0003CC58 /* namespacemembers_eval.html */,
+				6312EF92246B191F0003CC58 /* classirrklang_1_1_i_file_reader.html */,
+				6312EF93246B191F0003CC58 /* classirrklang_1_1_i_virtual_ref_counted.html */,
+				6312EF94246B191F0003CC58 /* classirrklang_1_1_i_audio_stream_loader.gif */,
+				6312EF95246B191F0003CC58 /* ik___i_audio_stream_8h_source.html */,
+				6312EF96246B191F0003CC58 /* classirrklang_1_1_i_sound_stop_event_receiver.html */,
+				6312EF97246B191F0003CC58 /* ik___i_sound_device_list_8h_source.html */,
+				6312EF98246B191F0003CC58 /* namespacemembers_type.html */,
+				6312EF99246B191F0003CC58 /* ik___i_sound_source_8h_source.html */,
+				6312EF9A246B191F0003CC58 /* ik__vec3d_8h_source.html */,
+				6312EF9B246B191F0003CC58 /* namespacemembers.html */,
+				6312EF9C246B191F0003CC58 /* functions_0x6f.html */,
+				6312EF9D246B191F0003CC58 /* ik___i_audio_stream_loader_8h_source.html */,
+				6312EF9E246B191F0003CC58 /* ik___i_file_factory_8h.html */,
+				6312EF9F246B191F0003CC58 /* functions_0x7a.html */,
+				6312EFA0246B191F0003CC58 /* ik___e_sound_output_drivers_8h.html */,
+				6312EFA1246B191F0003CC58 /* ik___i_audio_stream_8h.html */,
+				6312EFA2246B191F0003CC58 /* classirrklang_1_1_i_sound_source-members.html */,
+				6312EFA3246B191F0003CC58 /* functions_0x76.html */,
+				6312EFA4246B191F0003CC58 /* classes.html */,
+				6312EFA5246B19200003CC58 /* classirrklang_1_1_i_sound_engine-members.html */,
+				6312EFA6246B19200003CC58 /* classirrklang_1_1_i_sound_mixed_output_receiver.html */,
+				6312EFA7246B19200003CC58 /* ik___i_sound_effect_control_8h_source.html */,
+				6312EFA8246B19200003CC58 /* classirrklang_1_1_i_virtual_ref_counted.gif */,
+				6312EFA9246B19200003CC58 /* classirrklang_1_1_i_sound_effect_control.html */,
+				6312EFAA246B19200003CC58 /* ik___i_sound_mixed_output_receiver_8h_source.html */,
+				6312EFAB246B19200003CC58 /* classirrklang_1_1_i_sound_device_list-members.html */,
+				6312EFAC246B19200003CC58 /* ik___i_sound_mixed_output_receiver_8h.html */,
+				6312EFAD246B19200003CC58 /* globals_defs.html */,
+				6312EFAE246B19200003CC58 /* structirrklang_1_1_s_internal_audio_interface-members.html */,
+				6312EFAF246B19200003CC58 /* tab_r.gif */,
+				6312EFB0246B19200003CC58 /* classirrklang_1_1_i_audio_recorder-members.html */,
+				6312EFB1246B19200003CC58 /* functions_0x67.html */,
+				6312EFB2246B19200003CC58 /* ik__vec3d_8h.html */,
+				6312EFB3246B19200003CC58 /* functions_0x70.html */,
+				6312EFB4246B19200003CC58 /* classirrklang_1_1vec3d-members.html */,
+				6312EFB5246B19200003CC58 /* functions_0x66.html */,
+				6312EFB6246B19200003CC58 /* classirrklang_1_1_i_sound-members.html */,
+				6312EFB7246B19200003CC58 /* classirrklang_1_1_i_ref_counted-members.html */,
+				6312EFB8246B19200003CC58 /* ik___i_virtual_ref_counted_8h.html */,
+				6312EFB9246B19200003CC58 /* globals.html */,
+				6312EFBA246B19200003CC58 /* classirrklang_1_1_i_sound_engine.gif */,
+				6312EFBB246B19200003CC58 /* ik___i_ref_counted_8h.html */,
+				6312EFBC246B19200003CC58 /* irrklang.png */,
+				6312EFBD246B19200003CC58 /* ik___i_file_factory_8h_source.html */,
+				6312EFBE246B19200003CC58 /* irr_klang_8h.html */,
+				6312EFBF246B19200003CC58 /* tab_b.gif */,
+				6312EFC0246B19200003CC58 /* ik___e_sound_output_drivers_8h_source.html */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
+		6312EF54246B191F0003CC58 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				6312EF55246B191F0003CC58 /* all_7a.html */,
+				6312EF56246B191F0003CC58 /* typedefs_69.html */,
+				6312EF57246B191F0003CC58 /* all_76.html */,
+				6312EF58246B191F0003CC58 /* functions_76.html */,
+				6312EF59246B191F0003CC58 /* variables_70.html */,
+				6312EF5A246B191F0003CC58 /* variables_66.html */,
+				6312EF5B246B191F0003CC58 /* functions_61.html */,
+				6312EF5C246B191F0003CC58 /* all_61.html */,
+				6312EF5D246B191F0003CC58 /* functions_6f.html */,
+				6312EF5E246B191F0003CC58 /* search.css */,
+				6312EF5F246B191F0003CC58 /* all_6f.html */,
+				6312EF60246B191F0003CC58 /* classes_76.html */,
+				6312EF61246B191F0003CC58 /* all_66.html */,
+				6312EF62246B191F0003CC58 /* enums_65.html */,
+				6312EF63246B191F0003CC58 /* all_70.html */,
+				6312EF64246B191F0003CC58 /* namespaces_69.html */,
+				6312EF65246B191F0003CC58 /* functions_70.html */,
+				6312EF66246B191F0003CC58 /* functions_66.html */,
+				6312EF67246B191F0003CC58 /* variables_7a.html */,
+				6312EF68246B191F0003CC58 /* functions_67.html */,
+				6312EF69246B191F0003CC58 /* all_67.html */,
+				6312EF6A246B191F0003CC58 /* search.png */,
+				6312EF6B246B191F0003CC58 /* functions_64.html */,
+				6312EF6C246B191F0003CC58 /* functions_72.html */,
+				6312EF6D246B191F0003CC58 /* classes_69.html */,
+				6312EF6E246B191F0003CC58 /* all_72.html */,
+				6312EF6F246B191F0003CC58 /* all_64.html */,
+				6312EF70246B191F0003CC58 /* enumvalues_65.html */,
+				6312EF71246B191F0003CC58 /* functions_6c.html */,
+				6312EF72246B191F0003CC58 /* defines_69.html */,
+				6312EF73246B191F0003CC58 /* variables_78.html */,
+				6312EF74246B191F0003CC58 /* functions_7e.html */,
+				6312EF75246B191F0003CC58 /* all_7e.html */,
+				6312EF76246B191F0003CC58 /* all_6c.html */,
+				6312EF77246B191F0003CC58 /* classes_73.html */,
+				6312EF78246B191F0003CC58 /* all_69.html */,
+				6312EF79246B191F0003CC58 /* variables_79.html */,
+				6312EF7A246B191F0003CC58 /* files_69.html */,
+				6312EF7B246B191F0003CC58 /* functions_69.html */,
+				6312EF7C246B191F0003CC58 /* all_65.html */,
+				6312EF7D246B191F0003CC58 /* all_73.html */,
+				6312EF7E246B191F0003CC58 /* functions_73.html */,
+				6312EF7F246B191F0003CC58 /* typedefs_76.html */,
+				6312EF80246B191F0003CC58 /* functions_65.html */,
+				6312EF81246B191F0003CC58 /* variables_63.html */,
+				6312EF82246B191F0003CC58 /* functions_6e.html */,
+				6312EF83246B191F0003CC58 /* all_78.html */,
+				6312EF84246B191F0003CC58 /* all_6e.html */,
+				6312EF85246B191F0003CC58 /* search.js */,
+				6312EF86246B191F0003CC58 /* all_63.html */,
+				6312EF87246B191F0003CC58 /* all_75.html */,
+				6312EF88246B191F0003CC58 /* functions_75.html */,
+				6312EF89246B191F0003CC58 /* variables_73.html */,
+				6312EF8A246B191F0003CC58 /* functions_63.html */,
+				6312EF8B246B191F0003CC58 /* nomatches.html */,
+				6312EF8C246B191F0003CC58 /* all_6d.html */,
+				6312EF8D246B191F0003CC58 /* all_79.html */,
+				6312EF8E246B191F0003CC58 /* close.png */,
+				6312EF8F246B191F0003CC58 /* variables_69.html */,
+				6312EF90246B191F0003CC58 /* functions_6d.html */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		6312EFC5246B19200003CC58 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				6312EFC6246B19200003CC58 /* MF-W-90.XM */,
+				6312EFC7246B19200003CC58 /* bell.wav */,
+				6312EFC8246B19200003CC58 /* ophelia.mp3 */,
+				6312EFC9246B19200003CC58 /* getout.ogg */,
+				6312EFCA246B19200003CC58 /* explosion.wav */,
+				6312EFCB246B19200003CC58 /* MF-3DAYS.S3M */,
+				6312EFCC246B19200003CC58 /* license.txt */,
+				6312EFCD246B19200003CC58 /* MF-PANTS.MOD */,
+			);
+			path = media;
 			sourceTree = "<group>";
 		};
 		6396F1382464A51900B72597 /* SOIL2 */ = {
@@ -326,12 +2059,72 @@
 			mainGroup = 63119311245B174500FE95F7;
 			productRefGroup = 6311931B245B174500FE95F7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6312EDA3246B191E0003CC58 /* Products */;
+					ProjectRef = 6312EDA2246B191E0003CC58 /* 01.HelloWorld.xcodeproj */;
+				},
+				{
+					ProductGroup = 6312EDB8246B191E0003CC58 /* Products */;
+					ProjectRef = 6312EDB7246B191E0003CC58 /* 02.3DSound.xcodeproj */;
+				},
+				{
+					ProductGroup = 6312EDAB246B191E0003CC58 /* Products */;
+					ProjectRef = 6312EDAA246B191E0003CC58 /* 03.MemoryPlayback.xcodeproj */;
+				},
+				{
+					ProductGroup = 6312EDCC246B191E0003CC58 /* Products */;
+					ProjectRef = 6312EDCB246B191E0003CC58 /* 04.OverrideFileAccess.xcodeproj */;
+				},
+				{
+					ProductGroup = 6312EDBF246B191E0003CC58 /* Products */;
+					ProjectRef = 6312EDBE246B191E0003CC58 /* 05.Effects.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				63119319245B174500FE95F7 /* CandyRun */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6312EFD0246B19200003CC58 /* 01.HelloWorld */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = 01.HelloWorld;
+			remoteRef = 6312EFCF246B19200003CC58 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6312EFD3246B19200003CC58 /* 02.3DSound */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = 02.3DSound;
+			remoteRef = 6312EFD2246B19200003CC58 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6312EFD6246B19200003CC58 /* 03.MemoryPlayback */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = 03.MemoryPlayback;
+			remoteRef = 6312EFD5246B19200003CC58 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6312EFD9246B19200003CC58 /* 04.OverrideFileAccess */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = 04.OverrideFileAccess;
+			remoteRef = 6312EFD8246B19200003CC58 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6312EFDC246B19200003CC58 /* 05.Effects */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = 05.Effects;
+			remoteRef = 6312EFDB246B19200003CC58 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63119316245B174500FE95F7 /* Sources */ = {
@@ -470,7 +2263,7 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
@@ -479,7 +2272,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/freeglut/3.2.1/lib,
-					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/bin/macosx-gcc",
+					"/usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -491,7 +2284,7 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
@@ -500,7 +2293,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/freeglut/3.2.1/lib,
-					"/Users/ciro/Downloads/irrKlang-64bit-1.5.0/bin/macosx-gcc",
+					"/usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
