@@ -20,6 +20,7 @@ Server server;
 Road road;
 Object obj;
 Character character;
+Menu menu;
 irrklang::ISoundEngine* engine;
 
 GLdouble fovy = 45.0;
@@ -29,6 +30,8 @@ GLdouble zFar = 700;
 double asp;
 double dim = 15;
 double fov = 60;
+
+bool isStart = false;
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -49,6 +52,7 @@ void Game::init(){
     glutReshapeFunc(this->displayReshape);
     glutKeyboardFunc(this->windowKey);
     glutSpecialFunc(this->windowSpecial);
+    glutMouseFunc(this->mouseInput);
     
     this->initAll();
         
@@ -68,8 +72,8 @@ void Game::initAll(){
     
     engine = irrklang::createIrrKlangDevice();
     
-    engine->play2D("sounds/sound.wav", true);
-    engine->setSoundVolume(0.3f);
+    //engine->play2D("sounds/sound.wav", true);
+    //engine->setSoundVolume(0.3f);
 }
 
 void Game::drawScene(){
@@ -77,36 +81,45 @@ void Game::drawScene(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     glMatrixMode(GL_MODELVIEW);
-
+    
     glLoadIdentity();
-
-    camera.look();
-
-    sky.drawSkyBox(3.5*dim);
     
-    part.drawRain();
-    
-    road.drawRoad();
-    
-    character.drawCharacter();
-    
-    obj.drawObject();
-    obj.handleCollision(character.getX(), character.getY(), character.getZ());
+    if(isStart){
+        camera.look();
         
+        sky.drawSkyBox(3.5*dim);
+        
+        part.drawRain();
+        
+        road.drawRoad();
+        
+        character.drawCharacter();
+        
+        obj.drawObject();
+        obj.handleCollision(character.getX(), character.getY(), character.getZ());
+    }
+    else{
+        menu.initMenu();
+        
+        menu.drawMenu();
+    }
+    
     redisplayAll();
-
+    
     glFlush();
     glutSwapBuffers();
 }
 
 void Game::windowSpecial(int key,int x,int y){
-    if (key == GLUT_KEY_RIGHT){
-        engine->play2D("sounds/Jump.wav");
-        character.setX(0.5);
-    }
-    else if (key == GLUT_KEY_LEFT){
-        engine->play2D("sounds/Jump.wav");
-        character.setX(-0.5);
+    if(isStart){
+        if (key == GLUT_KEY_RIGHT){
+            engine->play2D("sounds/Jump.wav");
+            character.setX(0.5);
+        }
+        else if (key == GLUT_KEY_LEFT){
+            engine->play2D("sounds/Jump.wav");
+            character.setX(-0.5);
+        }
     }
 
     redisplayAll();
@@ -116,6 +129,13 @@ void Game::windowKey(unsigned char key,int x,int y){
     if (key == 27){
         engine->drop();
         exit(0);
+    }
+    else if(key == 'R'){
+        if(isStart)
+            isStart = false;
+        else{
+            isStart = true;
+        }
     }
     
     redisplayAll();
@@ -140,3 +160,9 @@ void Game::redisplayAll(void){
     glutPostRedisplay();
 }
 
+void Game::mouseInput(GLint button, GLint state, GLint x, GLint y)
+{
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        std::cout<<x<<" "<<y<<std::endl;
+    }
+}

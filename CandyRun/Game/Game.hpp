@@ -22,6 +22,7 @@
 #include "../Camera/Camera.hpp"
 #include "../Objects/objects.hpp"
 #include "../Character/character.hpp"
+#include "../Menu/menu.hpp"
 
 #include <iostream>
 #include <math.h>
@@ -35,15 +36,17 @@ public:
     ~Game();
     
     void init();
-    
 private:
     int argc;
     char **argv;
     const char *windowName;
 
     static void drawScene();
+    
     static void windowSpecial(int key,int x,int y);
     static void windowKey(unsigned char key,int x,int y);
+    static void mouseInput(GLint button, GLint state, GLint x, GLint y);
+    
     static void displayProject(double fov, double asp, double dim);
     static void displayReshape(int width,int height);
     static void redisplayAll(void);
