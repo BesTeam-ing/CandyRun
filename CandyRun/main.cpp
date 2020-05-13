@@ -2,7 +2,9 @@
 
 int main(int argc, char **argv)
 {
-    Game game(argc,argv);
+    srand(int(time(NULL)));
+    
+    Game game(argc,argv, "Candy Run");
     game.init();
     
     return 0;

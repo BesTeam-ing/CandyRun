@@ -15,6 +15,7 @@
 #include <OpenGL/glext.h>
 
 #define MAX_PARTICLES 1000
+
 class WeatherEffects{
     
 public:
@@ -30,24 +31,23 @@ public:
 private:
     void init(int i);
     
-    typedef struct
-    {
-      // Life
-          bool alive;    // is the particle alive?
-          float life;    // particle lifespan
-          float fade; // decay
-          // color
-          float red;
-          float green;
-          float blue;
-          // Position/direction
-          float xpos;
-          float ypos;
-          float zpos;
-          // Velocity/Direction, only goes down in y dir
-          float vel;
-          // Gravity
-          float gravity;
+    typedef struct{
+        // Life
+        bool alive;    // is the particle alive?
+        float life;    // particle lifespan
+        float fade; // decay
+        // color
+        float red;
+        float green;
+        float blue;
+        // Position/direction
+        float xpos;
+        float ypos;
+        float zpos;
+        // Velocity/Direction, only goes down in y dir
+        float vel;
+        // Gravity
+        float gravity;
     }particles;
     
     particles par_sys[MAX_PARTICLES];

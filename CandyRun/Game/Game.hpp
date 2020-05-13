@@ -17,8 +17,11 @@
 
 #include "../SkyBox/skybox.hpp"
 #include "../WeatherEffects/w_effects.hpp"
+#include "../Server/Server.hpp"
+#include "../Road/Road.hpp"
+#include "../Camera/Camera.hpp"
 #include "../Objects/objects.hpp"
-#include "../WeatherEffects/Server.hpp"
+#include "../Character/character.hpp"
 
 #include <iostream>
 #include <math.h>
@@ -28,14 +31,16 @@ using namespace std;
 
 class Game{
 public:
-    Game(int argc, char **argv);
+    Game(int argc, char **argv, const char *windowName);
     ~Game();
+    
     void init();
+    
 private:
     int argc;
     char **argv;
+    const char *windowName;
 
-    //static void resize(int w, int h);
     static void drawScene();
     static void windowSpecial(int key,int x,int y);
     static void windowKey(unsigned char key,int x,int y);
@@ -43,8 +48,7 @@ private:
     static void displayReshape(int width,int height);
     static void redisplayAll(void);
     
-    static void gameEngine();
-    static void initEnemy();
+    void initAll();
 };
 
 #endif /* Game_hpp */
