@@ -14,6 +14,8 @@
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
 #include <math.h>
+#include <vector>
+#include <iomanip>
 
 #include "Vector3f.h"
 
@@ -137,6 +139,8 @@ public:
     float getY();
     float getZ();
     unsigned int getTexture();
+    bool getEnemy();
+    void setEnemy(bool obj);
     
 private:
     unsigned int texture;
@@ -151,6 +155,8 @@ private:
     float pos_X = 0;
     float pos_Y = 2;
     float pos_Z = -30;
+    
+    bool isEnemy = true;
 };
 //OTHER FUNCTIONS
 

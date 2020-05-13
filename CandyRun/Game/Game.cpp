@@ -98,7 +98,7 @@ void Game::init(){
     
     engine = irrklang::createIrrKlangDevice();
     
-    engine->play2D("sounds/sound.wav", true);
+    //engine->play2D("sounds/sound.wav", true);
         
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
@@ -118,9 +118,7 @@ void Game::init(){
     sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
     
     part.initParticles();
-    
-    road.init("textures/road.jpg");
-    
+        
     glutMainLoop();
 }
 
@@ -170,6 +168,7 @@ void Game::initEnemy(){
     for(int i=0; i<4; i++){
         int n = rand()%10-5;
         e.setPosition(n, 1.0f, beginning);
+        e.setEnemy(true);
         enemy.push_back(e);
         
         beginning += 20;
@@ -185,9 +184,14 @@ void Game::gameEngine(){
         }
         
         glPushMatrix();
-        enemy[i].setPosition(enemy[i].getX(), enemy[i].getY(), enemy[i].getZ() + 0.1);
+            enemy[i].setPosition(enemy[i].getX(), enemy[i].getY(), enemy[i].getZ() + 0.1);
             enemy[i].draw();
         glPopMatrix();
+        
+        if((enemy[i].getZ() <= 15.0f && enemy[i].getZ() >= 14.9f) && (enemy[i].getX() <= x_sphere + 0.5 && enemy[i].getX() >= x_sphere - 0.5)){
+            if(enemy[i].getEnemy())
+                std::cout<<"Collision"<<std::endl;
+        }
     }
 }
 

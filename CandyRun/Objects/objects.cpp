@@ -67,7 +67,7 @@ void Enemy::draw(){
     
     glPushMatrix();
         glTranslatef(pos_X, pos_Y, pos_Z);
-    glutWireCube(1.0); // Box.
+        glutWireCube(1.0); // Box.
     glPopMatrix();
 
 }
@@ -89,29 +89,40 @@ float Enemy::getZ(){
 unsigned int Enemy::getTexture(){
     return this->texture;
 }
+
+
+bool Enemy::getEnemy(){
+    return this->isEnemy;
+}
+
+void Enemy::setEnemy(bool obj){
+    this->isEnemy = obj;
+}
+
 // OTHER FUNCTIONS
 
-float groundSegments[5];
-int sceneMotion = 0;
+std::vector<Road> roads;
 
 void initializeGround(){
+    Road r;
+    
     float beginning = -90.0;
-    for (int i = 0; i < 5; i++){
-        groundSegments[i] = beginning;
-        beginning += 30.0;
+    for(int i=0; i<4; i++){
+        r.init("textures/road.jpg");
+        r.setPosition(0.0f, 0.0f, beginning);
+        roads.push_back(r);
+        beginning += 30;
     }
 }
 
 void drawRoad(Road &road){
-    if(road.getZ()>=27.0)
-        road.setPosition(0.0, 0.0, 0.0);
-    else
-        road.setPosition(road.getX(), road.getY(), road.getZ()+0.1);
-    
-    for (int i = 0; i < 5; i++){
+    for (int i=0; i < roads.size(); i++){
+        if(roads[i].getZ() >= 30.0f)
+            roads[i].setPosition(0.0f, 0.0f, -89.9f);
+        
         glPushMatrix();
-            glTranslatef( 0, 0,groundSegments[i]);
-            road.draw();
+            roads[i].setPosition(0.0f, 0.0f, roundf((roads[i].getZ() + 0.1f)*100)/100);
+            roads[i].draw();
         glPopMatrix();
     }
 }
