@@ -137,13 +137,6 @@ void Game::windowKey(unsigned char key,int x,int y){
         engine->drop();
         exit(0);
     }
-    else if(key == 'r' or key == 'R'){
-        if(isStart)
-            isStart = false;
-        else{
-            isStart = true;
-        }
-    }
     
     redisplayAll();
 }
