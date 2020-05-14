@@ -52,6 +52,8 @@ private:
     static void redisplayAll(void);
     
     void initAll();
+    
+    static void drawGame();
 };
 
 #endif /* Game_hpp */

@@ -23,13 +23,9 @@ Character character;
 Menu menu;
 irrklang::ISoundEngine* engine;
 
-GLdouble fovy = 45.0;
-GLdouble aspectRatio = (GLdouble)DEF_WINDOW_WIDTH / (GLdouble)DEF_WINDOW_HEIGHT;
-GLdouble zNear = 0.1;
-GLdouble zFar = 700;
-double asp;
-double dim = 15;
-double fov = 60;
+GLdouble asp;
+GLdouble dim = 15.0f;
+GLdouble fov = 60.0f;
 
 bool isStart = false;
 
@@ -84,33 +80,33 @@ void Game::initAll(){
     engine->setSoundVolume(0.3f);
 }
 
+void Game::drawGame(){
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+    
+    camera.look();
+        
+    sky.drawSkyBox(9.5*dim);
+        
+    road.drawRoad();
+    
+    glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_COLOR_MATERIAL);
+        part.drawRain();
+        
+        character.drawCharacter();
+        
+        obj.drawObject();
+        obj.handleCollision(character.getX(), character.getY(), character.getZ());
+    glDisable(GL_LIGHTING);
+}
+
 void Game::drawScene(){
-    if(isStart){
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-        glEnable(GL_DEPTH_TEST);
-        
-        camera.look();
-            
-        sky.drawSkyBox(9.5*dim);
-            
-        road.drawRoad();
-        
-        glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
-        glEnable(GL_LIGHTING);
-        glEnable(GL_COLOR_MATERIAL);
-        
-            part.drawRain();
-            
-            character.drawCharacter();
-            
-            obj.drawObject();
-            obj.handleCollision(character.getX(), character.getY(), character.getZ());
-        
-        glDisable(GL_LIGHTING);
-    }
-    else{
+    if(isStart)
+        drawGame();
+    else
         menu.drawMenu();
-    }
     
     redisplayAll();
     
