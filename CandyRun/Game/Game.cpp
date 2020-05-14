@@ -63,16 +63,10 @@ void Game::init(){
 
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
-    glEnable(GL_DEPTH_TEST);
-    
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    
-    gluPerspective(fov,asp,dim/16,16*dim);
-    
-    glMatrixMode(GL_MODELVIEW);
     
     glEnable(GL_LIGHT0);
+    
+    menu.initMenu();
     
     obj.initObject();
     
@@ -86,14 +80,15 @@ void Game::initAll(){
     
     engine = irrklang::createIrrKlangDevice();
     
-    //engine->play2D("sounds/sound.wav", true);
-    //engine->setSoundVolume(0.3f);
+    engine->play2D("sounds/sound.wav", true);
+    engine->setSoundVolume(0.3f);
 }
 
 void Game::drawScene(){
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-    
     if(isStart){
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        glEnable(GL_DEPTH_TEST);
+        
         camera.look();
             
         sky.drawSkyBox(9.5*dim);
@@ -114,8 +109,6 @@ void Game::drawScene(){
         glDisable(GL_LIGHTING);
     }
     else{
-        menu.initMenu();
-        
         menu.drawMenu();
     }
     
@@ -180,7 +173,16 @@ void Game::redisplayAll(void){
 
 void Game::mouseInput(GLint button, GLint state, GLint x, GLint y)
 {
-    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        std::cout<<x<<" "<<y<<std::endl;
+    if(!isStart){
+        if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+            int select = menu.select(x,y);
+            
+            if(select == 1)
+                isStart = true;
+            else if(select == 2){
+                engine->drop();
+                exit(0);
+            }
+        }
     }
 }

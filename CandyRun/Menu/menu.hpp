@@ -12,6 +12,7 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
+#include <SOIL2/SOIL2.h>
 
 #include <stdio.h>
 
@@ -22,8 +23,9 @@ public:
     
     void drawMenu();
     void initMenu();
+    int select(GLint x, GLint y);
 private:
-    
+    void DrawText(float x,float y, const char *text);
 };
 
 #endif /* menu_hpp */
