@@ -33,6 +33,8 @@ double fov = 60;
 
 bool isStart = false;
 
+GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
+
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
     this->argv = argv;
@@ -60,6 +62,18 @@ void Game::init(){
 }
 
 void Game::initAll(){
+    glClearColor(0.0,0.0,0.0,0.0);
+    glEnable(GL_DEPTH_TEST);
+    
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    gluPerspective(fov,asp,dim/16,16*dim);
+    
+    glMatrixMode(GL_MODELVIEW);
+    
+    glEnable(GL_LIGHT0);
+    
     obj.initObject();
     
     road.initializeGround();
@@ -77,26 +91,27 @@ void Game::initAll(){
 }
 
 void Game::drawScene(){
-    glClearColor(0.0,0.0,0.0,0.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
-    glMatrixMode(GL_MODELVIEW);
-    
-    glLoadIdentity();
     
     if(isStart){
         camera.look();
-        
-        sky.drawSkyBox(3.5*dim);
-        
-        part.drawRain();
-        
+            
+        sky.drawSkyBox(9.5*dim);
+            
         road.drawRoad();
         
-        character.drawCharacter();
+        glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+        glEnable(GL_LIGHTING);
+        glEnable(GL_COLOR_MATERIAL);
         
-        obj.drawObject();
-        obj.handleCollision(character.getX(), character.getY(), character.getZ());
+            part.drawRain();
+            
+            character.drawCharacter();
+            
+            obj.drawObject();
+            obj.handleCollision(character.getX(), character.getY(), character.getZ());
+        
+        glDisable(GL_LIGHTING);
     }
     else{
         menu.initMenu();
@@ -121,6 +136,9 @@ void Game::windowSpecial(int key,int x,int y){
             character.setX(-0.5);
         }
     }
+    else{
+        std::cout<<"Do nothing"<<std::endl;
+    }
 
     redisplayAll();
 }
@@ -130,7 +148,7 @@ void Game::windowKey(unsigned char key,int x,int y){
         engine->drop();
         exit(0);
     }
-    else if(key == 'R'){
+    else if(key == 'r' or key == 'R'){
         if(isStart)
             isStart = false;
         else{

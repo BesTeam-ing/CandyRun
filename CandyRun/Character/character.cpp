@@ -37,9 +37,9 @@ void Character::setZ(float z){
 }
 
 void Character::drawCharacter(){
-    glColor3f(1.0f, 1.0f, 0.0f);
     this->rotateAngle += 1;
     
+    glColor3f(1.0f, 1.0f, 0.0f);
     glPushMatrix();
         glTranslatef(this->x, this->y, this->z);
         glRotatef(this->rotateAngle, -1, 0, 0);

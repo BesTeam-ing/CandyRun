@@ -8,6 +8,7 @@
 
 #include "objects.hpp"
 
+Object o;
 std::vector<Object> objects;
 
 Object::Object(){}
@@ -44,18 +45,16 @@ void Object::setObject(bool obj){
 }
 
 void Object::draw(){
-    glColor4f(0.8, 0.8, 0.8, 0.1);
+    glColor3f(0.0f, 0.0f, 1.0f);
     
     glPushMatrix();
-        glTranslatef(pos_X, pos_Y, pos_Z);
-        glutWireCube(1.0); // Box.
+        glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+        glutSolidCube(1);
     glPopMatrix();
 
 }
 
 void Object::initObject(){
-    Object o;
-    
     float beginning = -60.0;
     for(int i=0; i<4; i++){
         int n = rand()%10-5;
