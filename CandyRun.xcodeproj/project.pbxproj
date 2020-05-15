@@ -16,7 +16,7 @@
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
 		40A80392246EB60200241D87 /* game_over.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80391246EB5F600241D87 /* game_over.wav */; };
-		40A8039A246ED62600241D87 /* highscore.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80398246ED60100241D87 /* highscore.txt */; };
+		40A8039C246EDC2000241D87 /* highscore in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A8039B246EDB9D00241D87 /* highscore */; };
 		40AD83C6246C846D00BB0EEE /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40AD83C4246C846D00BB0EEE /* menu.cpp */; };
 		40D691AB246C02E000C40301 /* Road.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40D691A9246C02E000C40301 /* Road.cpp */; };
 		40D691B0246C0D7000C40301 /* character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40D691AE246C0D7000C40301 /* character.cpp */; };
@@ -86,7 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				40A8039A246ED62600241D87 /* highscore.txt in CopyFiles */,
+				40A8039C246EDC2000241D87 /* highscore in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +142,7 @@
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
 		402B6064245B20F300A4DE19 /* CandyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyRun.entitlements; sourceTree = "<group>"; };
 		40A80391246EB5F600241D87 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
-		40A80398246ED60100241D87 /* highscore.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = highscore.txt; sourceTree = "<group>"; };
+		40A8039B246EDB9D00241D87 /* highscore */ = {isa = PBXFileReference; lastKnownFileType = text; path = highscore; sourceTree = "<group>"; };
 		40AD83C4246C846D00BB0EEE /* menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
 		40AD83C5246C846D00BB0EEE /* menu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = menu.hpp; sourceTree = "<group>"; };
 		40D691A9246C02E000C40301 /* Road.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Road.cpp; sourceTree = "<group>"; };
@@ -929,9 +929,9 @@
 		40D691AD246C0D4300C40301 /* Character */ = {
 			isa = PBXGroup;
 			children = (
-				40A80398246ED60100241D87 /* highscore.txt */,
 				40D691AE246C0D7000C40301 /* character.cpp */,
 				40D691AF246C0D7000C40301 /* character.hpp */,
+				40A8039B246EDB9D00241D87 /* highscore */,
 			);
 			path = Character;
 			sourceTree = "<group>";

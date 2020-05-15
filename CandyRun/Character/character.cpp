@@ -60,7 +60,7 @@ int Character::getLife(){
 }
 
 int Character::ReadHighScore() {
-    std::ifstream fin("highscore.txt");
+    std::ifstream fin("highscore");
 
     if (!fin.is_open()) {
         std::cout << "Impossibile aprire il file!" << std::endl;
@@ -75,19 +75,18 @@ int Character::ReadHighScore() {
 }
 
 void Character::SaveHighScore(int new_score) {
-    if (new_score < this->score) {
-        return;
+    if(new_score > this->score){
+        std::ofstream myfile;
+        myfile.open("highscore");
+
+        if (!myfile.is_open()) {
+            std::cout << "Unable to update highscore" << std::endl;
+            return;
+        }
+
+        myfile << new_score;
+        myfile.close();
     }
-
-    std::ofstream fout("highscore.txt");
-
-    if (!fout.is_open()) {
-        std::cout << "GAME::ERROR: Unable to update highscore" << std::endl;
-        return;
-    }
-
-    fout << new_score;
-    fout.close();
 }
 
 void Character::drawCharacter(){
