@@ -25,6 +25,12 @@ public:
     void setY(float y);
     void setZ(float z);
     
+    void setScore(int x);
+    void setLife(int x);
+    
+    int getScore();
+    int getLife();
+    
     void drawCharacter();
 private:
     float x = 0.0f;
@@ -32,6 +38,9 @@ private:
     float z = 15.0f;
     float size = 0.5f;
     float rotateAngle = 0.0f;
+    
+    int score;
+    int lifes =3;
 };
 
 #endif /* character_hpp */

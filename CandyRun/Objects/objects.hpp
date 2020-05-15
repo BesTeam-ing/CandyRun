@@ -31,13 +31,15 @@ public:
     float getZ();
     
     unsigned int getTexture();
+    void setDimension(float f);
+    void setColor(GLfloat r, GLfloat g, GLfloat b);
     
     bool getObject();
     void setObject(bool obj);
     
-    void initObject();
+    void initObject(float dim, GLfloat r, GLfloat g, GLfloat b);
     void drawObject();
-    void handleCollision(float x, float y, float z);
+    bool handleCollision(float x, float y, float z);
     
 private:
     unsigned int texture;
@@ -50,10 +52,15 @@ private:
     float end_Z = 1;
     
     float pos_X = 0;
-    float pos_Y = 2;
+    float pos_Y = 1;
     float pos_Z = -30;
     
+    GLfloat r = 0.0;
+    GLfloat g = 0.0;
+    GLfloat b = 0.0;
+    
     bool isEnemy = true;
+    std::vector<Object> objects;
     
     void draw();
 };

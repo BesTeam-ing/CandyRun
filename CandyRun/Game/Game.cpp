@@ -18,7 +18,7 @@ WeatherEffects part;
 Camera camera = Camera(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
 Server server;
 Road road;
-Object obj;
+Object obj,obj2,obj3, coin;
 Character character;
 Menu menu;
 irrklang::ISoundEngine* engine;
@@ -64,7 +64,12 @@ void Game::initAll(){
     
     menu.initMenu();
     
-    obj.initObject();
+    obj.initObject(1,1.0, 0.0, 0.0);
+    obj2.initObject(1,1.0, 0.0, 0.0);
+    obj3.initObject(1,1.0, 0.0, 0.0);
+
+    coin.initObject(1,0.0, 1.0, 0.0);
+
     
     road.initializeGround();
     
@@ -90,6 +95,7 @@ void Game::drawGame(){
         
     road.drawRoad();
     
+    
     glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
     glEnable(GL_LIGHTING);
     glEnable(GL_COLOR_MATERIAL);
@@ -98,7 +104,12 @@ void Game::drawGame(){
         character.drawCharacter();
         
         obj.drawObject();
-        obj.handleCollision(character.getX(), character.getY(), character.getZ());
+        obj2.drawObject();
+        obj3.drawObject();
+        coin.drawObject();
+        if(obj.handleCollision(character.getX(), character.getY(), character.getZ()))
+            std::cout<<"Collision"<<endl;
+        
     glDisable(GL_LIGHTING);
 }
 

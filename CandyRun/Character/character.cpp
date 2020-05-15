@@ -36,6 +36,21 @@ void Character::setZ(float z){
     this->z += z;
 }
 
+void Character::setScore(int x){
+    this->score = x;
+}
+int Character::getScore(){
+    return this->score;
+}
+
+void Character::setLife(int x){
+    this->lifes = x;
+}
+
+int Character::getLife(){
+    return this->lifes;
+}
+
 void Character::drawCharacter(){
     this->rotateAngle += 1;
     

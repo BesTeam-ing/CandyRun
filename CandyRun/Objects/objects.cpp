@@ -9,7 +9,7 @@
 #include "objects.hpp"
 
 Object o;
-std::vector<Object> objects;
+
 
 Object::Object(){}
 Object::~Object(){}
@@ -40,25 +40,45 @@ void Object::setPosition(float X, float Y, float Z){
     this->pos_Z = Z;
 }
 
+void Object::setDimension(float f){
+
+    this-> start_X = -f;
+    this-> start_Y = -f;
+    this-> start_Z = -f;
+    
+    this-> end_X = f;
+    this-> end_Y = f;
+    this-> end_Z = f;
+}
+
+void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
+    this->r = r;
+    this->g = g;
+    this->b = b;
+}
+
 void Object::setObject(bool obj){
     this->isEnemy = obj;
 }
 
 void Object::draw(){
-    glColor3f(0.0f, 0.0f, 1.0f);
+    glColor3f(this->r, this->g, this->b);
     
     glPushMatrix();
         glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-        glutSolidCube(1);
+        //glutSolidCube(1);
+        glutSolidCube(this->end_X);
     glPopMatrix();
 
 }
 
-void Object::initObject(){
+void Object::initObject(float dim, GLfloat r, GLfloat g, GLfloat b){
     float beginning = -60.0;
     for(int i=0; i<4; i++){
         int n = rand()%10-5;
-        o.setPosition(n, 1.0f, beginning);
+        o.setColor(r, g, b);
+        o.setDimension(dim);
+        o.setPosition(n, 0.5f, beginning);
         objects.push_back(o);
         
         beginning += 20;
@@ -67,24 +87,32 @@ void Object::initObject(){
 
 void Object::drawObject(){
     int n = rand()%10-5;
-    
+
     for (int i=0; i < objects.size(); i++){
         if(objects[i].getZ() > 30.0){
-            objects[i].setPosition(n, 1, -60);
+
+                objects[i].setPosition(n, 1, -60);
+            
         }
+
+            glPushMatrix();
+                objects[i].setPosition(objects[i].getX(), objects[i].getY(), objects[i].getZ() + 0.4);
+                objects[i].draw();
+            glPopMatrix();
+
         
-        glPushMatrix();
-            objects[i].setPosition(objects[i].getX(), objects[i].getY(), objects[i].getZ() + 0.1);
-            objects[i].draw();
-        glPopMatrix();
     }
 }
 
-void Object::handleCollision(float x, float y, float z){
+bool Object::handleCollision(float x, float y, float z){
     for (int i=0; i < objects.size(); i++){
         if((objects[i].getZ() <= 15.0f && objects[i].getZ() >= 14.9f) && (objects[i].getX() <= x + 0.5 && objects[i].getX() >= x - 0.5)){
-            if(objects[i].getObject())
+            if(objects[i].getObject()){
                 std::cout<<"Collision"<<std::endl;
+                return true;
+                }
+                
         }
     }
+    return false;
 }
