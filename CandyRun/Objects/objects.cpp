@@ -8,9 +8,6 @@
 
 #include "objects.hpp"
 
-Object o;
-
-
 Object::Object(){}
 Object::~Object(){}
 
@@ -28,10 +25,6 @@ float Object::getZ(){
 
 unsigned int Object::getTexture(){
     return this->texture;
-}
-
-bool Object::getObject(){
-    return this->isEnemy;
 }
 
 void Object::setPosition(float X, float Y, float Z){
@@ -57,62 +50,79 @@ void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
     this->b = b;
 }
 
-void Object::setObject(bool obj){
-    this->isEnemy = obj;
-}
-
 void Object::draw(){
     glColor3f(this->r, this->g, this->b);
     
     glPushMatrix();
         glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-        //glutSolidCube(1);
         glutSolidCube(this->end_X);
     glPopMatrix();
 
 }
 
-void Object::initObject(float dim, GLfloat r, GLfloat g, GLfloat b){
+bool Object::getEnemy(){
+    return this->isEnemy;
+}
+
+void Object::setEnemy(bool obj){
+    this->isEnemy = obj;
+}
+
+std::vector< std::vector<Object> > objects(4);
+Object o;
+
+void Object::initObject(){
+    objects.clear();
+    
     float beginning = -60.0;
-    for(int i=0; i<4; i++){
-        int n = rand()%10-5;
-        o.setColor(r, g, b);
-        o.setDimension(dim);
-        o.setPosition(n, 0.5f, beginning);
-        objects.push_back(o);
-        
+    for (int i=0; i<4; i++) {
+        std::vector<Object> v1;
+        for(int j=0; j<3; j++){
+            int n = rand()%10-5;
+            bool e;
+            if (rand() % 2 == 0)
+                e = true;
+            else
+                e = false;
+            o.setEnemy(e);
+            if(!e)
+                o.setColor(0.0, 1.0, 0.0);
+            else
+                o.setColor(1.0, 0.0, 0.0);
+            o.setPosition(n, 0.5f, beginning);
+            v1.push_back(o);
+        }
+        objects.push_back(v1);
         beginning += 20;
     }
 }
 
 void Object::drawObject(){
-    int n = rand()%10-5;
-
-    for (int i=0; i < objects.size(); i++){
-        if(objects[i].getZ() > 30.0){
-
-                objects[i].setPosition(n, 1, -60);
-            
-        }
-
+    for (int i=0; i<objects.size(); i++) {
+        for(int j=0; j<objects[i].size(); j++){
+            int n = rand()%10-5;
+            if(objects[i][j].getZ() > 30.0)
+                objects[i][j].setPosition(n, 1, -60);
+           
             glPushMatrix();
-                objects[i].setPosition(objects[i].getX(), objects[i].getY(), objects[i].getZ() + 0.4);
-                objects[i].draw();
+            objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), objects[i][j].getZ() + 0.1);
+                objects[i][j].draw();
             glPopMatrix();
-
-        
+        }
     }
 }
 
-bool Object::handleCollision(float x, float y, float z){
-    for (int i=0; i < objects.size(); i++){
-        if((objects[i].getZ() <= 15.0f && objects[i].getZ() >= 14.9f) && (objects[i].getX() <= x + 0.5 && objects[i].getX() >= x - 0.5)){
-            if(objects[i].getObject()){
-                std::cout<<"Collision"<<std::endl;
-                return true;
-                }
-                
+int Object::handleCollision(float x, float y, float z){
+    for (int i=0; i<objects.size(); i++) {
+        for(int j=0; j<objects[i].size(); j++){
+            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.9f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5)){
+                if(objects[i][j].isEnemy)
+                    return OSTACOLO;
+                else
+                    return PREMIO;
+            }
         }
     }
-    return false;
+    
+    return VUOTO;
 }

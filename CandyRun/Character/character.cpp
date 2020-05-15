@@ -12,6 +12,12 @@ Character::Character(){};
 
 Character::~Character(){};
 
+void Character::initialPosition(){
+    this->x = 0.0f;
+    this->y = 0.5f;
+    this->z = 15.0f;
+}
+
 float Character::getX(){
     return this->x;
 }

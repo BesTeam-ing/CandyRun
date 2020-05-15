@@ -18,7 +18,7 @@ WeatherEffects part;
 Camera camera = Camera(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
 Server server;
 Road road;
-Object obj,obj2,obj3, coin;
+Object obj;
 Character character;
 Menu menu;
 irrklang::ISoundEngine* engine;
@@ -28,6 +28,7 @@ GLdouble dim = 15.0f;
 GLdouble fov = 60.0f;
 
 bool isStart = false;
+bool isPaused = false;
 
 GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 
@@ -64,13 +65,8 @@ void Game::initAll(){
     
     menu.initMenu();
     
-    obj.initObject(1,1.0, 0.0, 0.0);
-    obj2.initObject(1,1.0, 0.0, 0.0);
-    obj3.initObject(1,1.0, 0.0, 0.0);
+    obj.initObject();
 
-    coin.initObject(1,0.0, 1.0, 0.0);
-
-    
     road.initializeGround();
     
     //server.getWeather();
@@ -81,36 +77,39 @@ void Game::initAll(){
     
     engine = irrklang::createIrrKlangDevice();
     
-    engine->play2D("sounds/sound.wav", true);
-    engine->setSoundVolume(0.3f);
+    //engine->play2D("sounds/sound.wav", true);
+    //engine->setSoundVolume(0.3f);
 }
 
 void Game::drawGame(){
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
-    
-    camera.look();
+    if(isPaused){
+        //std::cout<<"PAUSED"<<std::endl;
+    }
+    else{
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        glEnable(GL_DEPTH_TEST);
         
-    sky.drawSkyBox(9.5*dim);
+        camera.look();
+            
+        sky.drawSkyBox(9.5*dim);
+            
+        road.drawRoad();
         
-    road.drawRoad();
-    
-    
-    glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_COLOR_MATERIAL);
+        glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+        glEnable(GL_LIGHTING);
+        glEnable(GL_COLOR_MATERIAL);
+        
         part.drawRain();
-        
         character.drawCharacter();
-        
         obj.drawObject();
-        obj2.drawObject();
-        obj3.drawObject();
-        coin.drawObject();
-        if(obj.handleCollision(character.getX(), character.getY(), character.getZ()))
-            std::cout<<"Collision"<<endl;
         
-    glDisable(GL_LIGHTING);
+        if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1)
+            gameOver();
+        else if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 2)
+            std::cout<<"Premio +1"<<std::endl;
+            
+        glDisable(GL_LIGHTING);
+    }
 }
 
 void Game::drawScene(){
@@ -123,6 +122,14 @@ void Game::drawScene(){
     
     glFlush();
     glutSwapBuffers();
+}
+
+void Game::gameOver(){
+    engine->play2D("sounds/game_over.wav");
+    obj.initObject();
+    character.initialPosition();
+    std::cout<<"Game Over"<<std::endl;
+    isPaused = true;
 }
 
 void Game::windowSpecial(int key,int x,int y){
@@ -145,9 +152,23 @@ void Game::windowSpecial(int key,int x,int y){
 
 void Game::windowKey(unsigned char key,int x,int y){
     if (key == 27){
-        engine->drop();
-        exit(0);
+        if(isStart){
+            if(isPaused){
+                obj.initObject();
+                character.initialPosition();
+                isStart = false;
+                isPaused = false;
+            }
+        }
+        else{
+            engine->drop();
+            exit(0);
+        }
     }
+    
+    else if(key == 'p' or key == 'P')
+        if(isStart)
+            isPaused = !isPaused;
     
     redisplayAll();
 }

@@ -18,6 +18,12 @@
 #include <iomanip>
 #include <iostream>
 
+enum OBJECT{
+    VUOTO,
+    OSTACOLO,
+    PREMIO
+};
+
 class Object{
 
 public:
@@ -34,12 +40,12 @@ public:
     void setDimension(float f);
     void setColor(GLfloat r, GLfloat g, GLfloat b);
     
-    bool getObject();
-    void setObject(bool obj);
+    bool getEnemy();
+    void setEnemy(bool obj);
     
-    void initObject(float dim, GLfloat r, GLfloat g, GLfloat b);
+    void initObject();
     void drawObject();
-    bool handleCollision(float x, float y, float z);
+    int handleCollision(float x, float y, float z);
     
 private:
     unsigned int texture;
@@ -60,7 +66,6 @@ private:
     GLfloat b = 0.0;
     
     bool isEnemy = true;
-    std::vector<Object> objects;
     
     void draw();
 };

@@ -54,6 +54,7 @@ private:
     void initAll();
     
     static void drawGame();
+    static void gameOver();
 };
 
 #endif /* Game_hpp */

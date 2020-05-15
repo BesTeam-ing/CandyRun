@@ -32,6 +32,7 @@ public:
     int getLife();
     
     void drawCharacter();
+    void initialPosition();
 private:
     float x = 0.0f;
     float y = 0.5f;
