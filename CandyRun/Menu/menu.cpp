@@ -88,8 +88,11 @@ int Menu::select(GLint x, GLint y){
     if((x>=350 && x<=950) && (y>=180 && y<=240))
         return 1;
     
+    else if((x>=350 && x<=950) && (y>=300 && y<=360))
+        return 2;
+    
     else if((x>=350 && x<=950) && (y>=410 && y<=470))
-         return 2;
+         return 3;
     
     return -1;
 }

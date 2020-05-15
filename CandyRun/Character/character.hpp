@@ -13,6 +13,9 @@
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
 
+#include <fstream>
+#include <iostream>
+
 class Character{
 public:
     Character();
@@ -30,6 +33,8 @@ public:
     
     int getScore();
     int getLife();
+    int ReadHighScore();
+    void SaveHighScore(int new_score);
     
     void drawCharacter();
     void initialPosition();

@@ -55,6 +55,7 @@ private:
     
     static void drawGame();
     static void gameOver();
+    static int ReadHighScore();
 };
 
 #endif /* Game_hpp */

@@ -13,6 +13,8 @@ Character::Character(){};
 Character::~Character(){};
 
 void Character::initialPosition(){
+    this->score = ReadHighScore();
+    
     this->x = 0.0f;
     this->y = 0.5f;
     this->z = 15.0f;
@@ -55,6 +57,37 @@ void Character::setLife(int x){
 
 int Character::getLife(){
     return this->lifes;
+}
+
+int Character::ReadHighScore() {
+    std::ifstream fin("highscore.txt");
+
+    if (!fin.is_open()) {
+        std::cout << "Impossibile aprire il file!" << std::endl;
+        return -1;
+    }
+
+    int score = 0;
+    fin >> score;
+    fin.close();
+
+    return score;
+}
+
+void Character::SaveHighScore(int new_score) {
+    if (new_score < this->score) {
+        return;
+    }
+
+    std::ofstream fout("highscore.txt");
+
+    if (!fout.is_open()) {
+        std::cout << "GAME::ERROR: Unable to update highscore" << std::endl;
+        return;
+    }
+
+    fout << new_score;
+    fout.close();
 }
 
 void Character::drawCharacter(){

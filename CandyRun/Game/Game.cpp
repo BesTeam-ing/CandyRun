@@ -128,6 +128,7 @@ void Game::gameOver(){
     engine->play2D("sounds/game_over.wav");
     obj.initObject();
     character.initialPosition();
+    character.SaveHighScore(30);
     std::cout<<"Game Over"<<std::endl;
     isPaused = true;
 }
@@ -201,6 +202,9 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y)
             if(select == 1)
                 isStart = true;
             else if(select == 2){
+                std::cout<<character.ReadHighScore()<<std::endl;
+            }
+            else if(select == 3){
                 engine->drop();
                 exit(0);
             }
