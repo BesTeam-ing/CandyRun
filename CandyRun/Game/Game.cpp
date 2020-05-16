@@ -81,7 +81,7 @@ void Game::initAll(){
     part.initParticles();
     glMatrixMode(GL_MODELVIEW);
     
-    loadObj = loader.load("/Users/gennaromellone/Downloads/bb/bb8.obj","/Users/gennaromellone/Downloads/bb/bb8.mtl");
+    loadObj = loader.load("textures/bb8.obj","textures/bb8.mtl");
     
     engine = irrklang::createIrrKlangDevice();
     

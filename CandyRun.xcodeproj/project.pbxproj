@@ -42,6 +42,8 @@
 		63BAD63024704F130032F6EF /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63BAD62E24704F130032F6EF /* objloader.cpp */; };
 		63BAD63224704F7C0032F6EF /* libSDL-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; };
 		63BAD63324704F7C0032F6EF /* libSDL-1.2.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		63BAD651247065840032F6EF /* bb8.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD650247065740032F6EF /* bb8.mtl */; };
+		63BAD652247065840032F6EF /* bb8.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD64F247065740032F6EF /* bb8.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				63BAD651247065840032F6EF /* bb8.mtl in Copy Files */,
+				63BAD652247065840032F6EF /* bb8.obj in Copy Files */,
 				6396F1872467559700B72597 /* road.jpg in Copy Files */,
 				6396F1812467558E00B72597 /* txStormydays_down.bmp in Copy Files */,
 				6396F1822467558E00B72597 /* txStormydays_back.bmp in Copy Files */,
@@ -879,6 +883,8 @@
 		63BAD62E24704F130032F6EF /* objloader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objloader.cpp; sourceTree = "<group>"; };
 		63BAD62F24704F130032F6EF /* objloader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objloader.hpp; sourceTree = "<group>"; };
 		63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL-1.2.0.dylib"; path = "../../../../../usr/local/Cellar/sdl/1.2.15_1/lib/libSDL-1.2.0.dylib"; sourceTree = "<group>"; };
+		63BAD64F247065740032F6EF /* bb8.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8.obj; sourceTree = "<group>"; };
+		63BAD650247065740032F6EF /* bb8.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8.mtl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2101,6 +2107,8 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				63BAD650247065740032F6EF /* bb8.mtl */,
+				63BAD64F247065740032F6EF /* bb8.obj */,
 				6396F180246754E700B72597 /* road.jpg */,
 				6396F17F246754E300B72597 /* txStormydays_front.bmp */,
 				6396F17A246754E300B72597 /* txStormydays_down.bmp */,
