@@ -23,6 +23,7 @@
 #include "../Objects/objects.hpp"
 #include "../Character/character.hpp"
 #include "../Menu/menu.hpp"
+#include "../OBJLoader/objloader.hpp"
 
 #include <iostream>
 #include <math.h>

@@ -19,6 +19,7 @@ Camera camera = Camera(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
 Server server;
 Road road;
 Object obj;
+objloader loader;
 Character character;
 Menu menu;
 irrklang::ISoundEngine* engine;
@@ -27,10 +28,14 @@ GLdouble asp;
 GLdouble dim = 15.0f;
 GLdouble fov = 60.0f;
 
+int loadObj;
+
 bool isStart = false;
 bool isPaused = false;
 
+//GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
+
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -74,6 +79,9 @@ void Game::initAll(){
     sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
     
     part.initParticles();
+    glMatrixMode(GL_MODELVIEW);
+    
+    loadObj = loader.load("/Users/gennaromellone/Downloads/bb/bb8.obj","/Users/gennaromellone/Downloads/bb/bb8.mtl");
     
     engine = irrklang::createIrrKlangDevice();
     
@@ -87,7 +95,9 @@ void Game::drawGame(){
     }
     else{
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        glLoadIdentity(); //NEW
         glEnable(GL_DEPTH_TEST);
+        
         
         camera.look();
             
@@ -97,7 +107,17 @@ void Game::drawGame(){
         
         glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
         glEnable(GL_LIGHTING);
+        
+        glPushMatrix();
         glEnable(GL_COLOR_MATERIAL);
+            glColor3f(0, 0, 0);
+            glTranslatef(0, 2, 10);
+            glScalef(0.15, 0.15, 0.15);
+            
+            glCallList(loadObj);
+        
+        glPopMatrix();
+        
         
         part.drawRain();
         character.drawCharacter();
