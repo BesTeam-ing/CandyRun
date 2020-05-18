@@ -9,7 +9,7 @@
 #include "character.hpp"
 
 
-GLfloat blu[]         = { 0.0f, 0.0f, 1.0f, 1.0f };
+GLfloat lp[] = { 0.0, 0.0, 0.1, 0.0f };
 GLfloat bianco[]      = { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat bluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
 
@@ -20,7 +20,7 @@ Character::Character(){};
 Character::~Character(){};
 
 void Character::init(){
-    this->loadObj = loader.load("/Users/ciro/Downloads/bb8_body2/bb8_body2.obj","/Users/ciro/Downloads/bb8_body2/bb8_body2.mtl");
+    this->loadObj = loader.load("/Users/gennaromellone/Downloads/bb8_body2/bb8_body2.obj","/Users/gennaromellone/Downloads/bb8_body2/bb8_body2.mtl");
 }
 
 void Character::initialPosition(){
@@ -105,12 +105,15 @@ void Character::drawCharacter(){
     this->rotateAngle += 1;
     
     std::cout<<rotateAngle<<std::endl;
-    
+    //glLightfv(GL_LIGHT0,GL_POSITION,lp);
     glPushMatrix();
+
         glTranslatef(this->x, this->y, this->z);
         glRotatef(this->rotateAngle, -1, 0, 0);
+        glLightfv(GL_LIGHT0,GL_POSITION,lp);
         glCallList(this->loadObj);
     glPopMatrix();
+    
     
     /*
     glMaterialfv( GL_FRONT, GL_AMBIENT,  bluTenue );

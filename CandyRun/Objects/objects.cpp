@@ -18,6 +18,8 @@ GLfloat RossoTenue[]  = { 0.3f, 0.1f, 0.1f, 1.0f };
 GLfloat BluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
 GLfloat GialloTenue[] = { 0.6f, 0.6f, 0.0f, 1.0f };
 
+GLfloat lp1[] = { 0.0, 0.0, 0.1, 0.1f };
+
 Object::Object(){}
 Object::~Object(){}
 
@@ -76,6 +78,7 @@ void Object::draw(bool isEnemy){
     
     glPushMatrix();
         glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+    glLightfv(GL_LIGHT0,GL_POSITION,lp1);
         glutSolidCube(this->end_X);
     glPopMatrix();
 
