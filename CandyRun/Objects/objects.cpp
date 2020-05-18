@@ -18,7 +18,9 @@ GLfloat RossoTenue[]  = { 0.3f, 0.1f, 0.1f, 1.0f };
 GLfloat BluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
 GLfloat GialloTenue[] = { 0.6f, 0.6f, 0.0f, 1.0f };
 
-GLfloat lp1[] = { 0.0, 0.0, 0.1, 0.1f };
+//GLfloat lp1[] = { 0.0, 0.0, 0.1, 0.1f };
+GLfloat lp1[] = { 1.0f, 0.7f, -0.6f, 0.0f };
+
 
 Object::Object(){}
 Object::~Object(){}

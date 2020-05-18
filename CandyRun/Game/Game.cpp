@@ -112,9 +112,8 @@ void Game::drawGame(){
         part.drawRain();
 
         //create light
-        
         glEnable(GL_LIGHTING);
-        //glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+        glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
         
         character.drawCharacter();
         obj.drawObject();
