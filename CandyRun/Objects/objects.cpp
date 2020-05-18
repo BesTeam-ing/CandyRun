@@ -8,6 +8,16 @@
 
 #include "objects.hpp"
 
+GLfloat Rosso[]       = { 1.0f, 0.0f, 0.0f, 1.0f };
+GLfloat Verde[]       = { 0.0f, 1.0f, 0.0f, 1.0f };
+GLfloat Blu[]         = { 0.0f, 0.0f, 1.0f, 1.0f };
+GLfloat Nero[]        = { 0.0f, 0.0f, 0.0f, 1.0f };
+GLfloat Bianco[]      = { 1.0f, 1.0f, 1.0f, 1.0f };
+GLfloat Giallo[]      = { 1.0f, 1.0f, 0.0f, 1.0f };
+GLfloat RossoTenue[]  = { 0.3f, 0.1f, 0.1f, 1.0f };
+GLfloat BluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
+GLfloat GialloTenue[] = { 0.6f, 0.6f, 0.0f, 1.0f };
+
 Object::Object(){}
 Object::~Object(){}
 
@@ -51,7 +61,10 @@ void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
 }
 
 void Object::draw(){
-    glColor3f(this->r, this->g, this->b);
+    glMaterialfv( GL_FRONT, GL_AMBIENT,  RossoTenue );
+    glMaterialfv( GL_FRONT, GL_DIFFUSE,  Rosso );
+    glMaterialfv( GL_FRONT, GL_SPECULAR, Verde );
+    glMaterialf(  GL_FRONT, GL_SHININESS, 128.0f);
     
     glPushMatrix();
         glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
@@ -85,10 +98,13 @@ void Object::initObject(){
             else
                 e = false;
             o.setEnemy(e);
-            if(!e)
+            /*
+            if(!e){
                 o.setColor(0.0, 1.0, 0.0);
-            else
+            }
+            else{
                 o.setColor(1.0, 0.0, 0.0);
+            }*/
             o.setPosition(n, 0.5f, beginning);
             v1.push_back(o);
         }
@@ -105,7 +121,7 @@ void Object::drawObject(){
                 objects[i][j].setPosition(n, 1, -60);
            
             glPushMatrix();
-            objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), objects[i][j].getZ() + 0.1);
+                objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), objects[i][j].getZ() + 0.1);
                 objects[i][j].draw();
             glPopMatrix();
         }

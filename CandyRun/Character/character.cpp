@@ -8,6 +8,12 @@
 
 #include "character.hpp"
 
+
+GLfloat blu[]         = { 0.0f, 0.0f, 1.0f, 1.0f };
+GLfloat bianco[]      = { 1.0f, 1.0f, 1.0f, 1.0f };
+GLfloat bluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
+
+
 Character::Character(){};
 
 Character::~Character(){};
@@ -92,7 +98,12 @@ void Character::SaveHighScore(int new_score) {
 void Character::drawCharacter(){
     this->rotateAngle += 1;
     
-    glColor3f(1.0f, 1.0f, 0.0f);
+    //glColor3f(1.0f, 1.0f, 0.0f);
+    glMaterialfv( GL_FRONT, GL_AMBIENT,  bluTenue );
+    glMaterialfv( GL_FRONT, GL_DIFFUSE,  blu );
+    glMaterialfv( GL_FRONT, GL_SPECULAR, bianco );
+    glMaterialf( GL_FRONT, GL_SHININESS, 20.0f );
+    
     glPushMatrix();
         glTranslatef(this->x, this->y, this->z);
         glRotatef(this->rotateAngle, -1, 0, 0);

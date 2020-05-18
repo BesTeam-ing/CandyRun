@@ -35,7 +35,7 @@ bool isPaused = false;
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
-
+GLfloat luce[] = { 1.0f, 1.0f, 1.0f, 1.0f};
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -66,6 +66,8 @@ void Game::init(){
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
     
+    glPushMatrix();
+    
     glEnable(GL_LIGHT0);
     
     menu.initMenu();
@@ -81,12 +83,15 @@ void Game::initAll(){
     part.initParticles();
     glMatrixMode(GL_MODELVIEW);
     
-    loadObj = loader.load("textures/bb8.obj","textures/bb8.mtl");
+    //loadObj = loader.load("textures/bb8.obj","textures/bb8.mtl");
+    loadObj = loader.load("/Users/ciro/Downloads/tedR/tedR.obj","/Users/ciro/Downloads/tedR/tedR.mtl");
     
     engine = irrklang::createIrrKlangDevice();
     
     //engine->play2D("sounds/sound.wav", true);
     //engine->setSoundVolume(0.3f);
+    
+    glPopMatrix();
 }
 
 void Game::drawGame(){
@@ -96,6 +101,7 @@ void Game::drawGame(){
     else{
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
         glLoadIdentity(); //NEW
+        
         glEnable(GL_DEPTH_TEST);
         
         camera.look();
@@ -103,13 +109,13 @@ void Game::drawGame(){
         sky.drawSkyBox(9.5*dim);
             
         road.drawRoad();
-        
+
+
+        //create light
         glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
         glEnable(GL_LIGHTING);
         
         glPushMatrix();
-        glEnable(GL_COLOR_MATERIAL);
-            glColor3f(0, 0, 0);
             glTranslatef(0, 2, 10);
             glScalef(0.15, 0.15, 0.15);
             glCallList(loadObj);
