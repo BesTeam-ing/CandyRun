@@ -18,7 +18,6 @@ GLfloat RossoTenue[]  = { 0.3f, 0.1f, 0.1f, 1.0f };
 GLfloat BluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
 GLfloat GialloTenue[] = { 0.6f, 0.6f, 0.0f, 1.0f };
 
-//GLfloat lp1[] = { 0.0, 0.0, 0.1, 0.1f };
 GLfloat lp1[] = { 0.0f, 1.0f, -1.0f, 0.0f };
 
 
@@ -80,7 +79,7 @@ void Object::draw(bool isEnemy){
     
     glPushMatrix();
         glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-    glLightfv(GL_LIGHT0,GL_POSITION,lp1);
+        glLightfv(GL_LIGHT0,GL_POSITION,lp1);
         glutSolidCube(this->end_X);
     glPopMatrix();
 
@@ -103,21 +102,23 @@ void Object::initObject(){
     float beginning = -60.0;
     for (int i=0; i<4; i++) {
         std::vector<Object> v1;
+        int x = 0;
         for(int j=0; j<3; j++){
             int n = rand()%10-5;
             bool e;
-            if (rand() % 2 == 0)
-                e = true;
-            else
-                e = false;
-            o.setEnemy(e);
-            /*
-            if(!e){
-                o.setColor(0.0, 1.0, 0.0);
+            if(x<1){
+                if (rand() % 2 == 0)
+                    e = true;
+                else{
+                    e = false;
+                    x++;
+                }
             }
             else{
-                o.setColor(1.0, 0.0, 0.0);
-            }*/
+                e = true;
+            }
+            
+            o.setEnemy(e);
             o.setPosition(n, 0.5f, beginning);
             v1.push_back(o);
         }
@@ -134,7 +135,7 @@ void Object::drawObject(){
                 objects[i][j].setPosition(n, 1, -60);
            
             glPushMatrix();
-                objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), objects[i][j].getZ() + 0.1);
+                objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), roundf((objects[i][j].getZ() + 0.1f)*100)/100);
                 objects[i][j].draw(objects[i][j].isEnemy);
             glPopMatrix();
         }
