@@ -17,6 +17,7 @@
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
 		408D954424728E490080D9E5 /* background.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 408D954324728E3F0080D9E5 /* background.jpg */; };
+		408D95502472B81E0080D9E5 /* starwars.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408D954F2472B8040080D9E5 /* starwars.wav */; };
 		40A80392246EB60200241D87 /* game_over.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80391246EB5F600241D87 /* game_over.wav */; };
 		40A8039C246EDC2000241D87 /* highscore in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A8039B246EDB9D00241D87 /* highscore */; };
 		40AD83C6246C846D00BB0EEE /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40AD83C4246C846D00BB0EEE /* menu.cpp */; };
@@ -102,6 +103,7 @@
 			dstPath = sounds;
 			dstSubfolderSpec = 16;
 			files = (
+				408D95502472B81E0080D9E5 /* starwars.wav in CopyFiles */,
 				40A80392246EB60200241D87 /* game_over.wav in CopyFiles */,
 				4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */,
 				40E038322469E54E00F1EDC2 /* sound.wav in CopyFiles */,
@@ -153,6 +155,7 @@
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
 		402B6064245B20F300A4DE19 /* CandyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyRun.entitlements; sourceTree = "<group>"; };
 		408D954324728E3F0080D9E5 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		408D954F2472B8040080D9E5 /* starwars.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = starwars.wav; sourceTree = "<group>"; };
 		40A80391246EB5F600241D87 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
 		40A8039B246EDB9D00241D87 /* highscore */ = {isa = PBXFileReference; lastKnownFileType = text; path = highscore; sourceTree = "<group>"; };
 		40AD83C4246C846D00BB0EEE /* menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
@@ -986,6 +989,7 @@
 		40E038302469E53200F1EDC2 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				408D954F2472B8040080D9E5 /* starwars.wav */,
 				4002E281246AAF90007157C3 /* Jump.wav */,
 				40E038312469E54900F1EDC2 /* sound.wav */,
 				40A80391246EB5F600241D87 /* game_over.wav */,

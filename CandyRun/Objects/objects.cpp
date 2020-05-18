@@ -60,11 +60,19 @@ void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
     this->b = b;
 }
 
-void Object::draw(){
-    glMaterialfv( GL_FRONT, GL_AMBIENT,  RossoTenue );
-    glMaterialfv( GL_FRONT, GL_DIFFUSE,  Rosso );
-    glMaterialfv( GL_FRONT, GL_SPECULAR, Verde );
-    glMaterialf(  GL_FRONT, GL_SHININESS, 128.0f);
+void Object::draw(bool isEnemy){
+    if(isEnemy){
+        glMaterialfv( GL_FRONT, GL_AMBIENT,  RossoTenue );
+        glMaterialfv( GL_FRONT, GL_DIFFUSE,  Rosso );
+        glMaterialfv( GL_FRONT, GL_SPECULAR, Verde );
+        glMaterialf(  GL_FRONT, GL_SHININESS, 128.0f);
+    }
+    else{
+        glMaterialfv( GL_FRONT, GL_AMBIENT,  BluTenue );
+        glMaterialfv( GL_FRONT, GL_DIFFUSE,  Blu );
+        glMaterialfv( GL_FRONT, GL_SPECULAR, Bianco );
+        glMaterialf( GL_FRONT, GL_SHININESS, 128.0f );
+    }
     
     glPushMatrix();
         glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
@@ -122,7 +130,7 @@ void Object::drawObject(){
            
             glPushMatrix();
                 objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), objects[i][j].getZ() + 0.1);
-                objects[i][j].draw();
+                objects[i][j].draw(objects[i][j].isEnemy);
             glPopMatrix();
         }
     }

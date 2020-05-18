@@ -88,8 +88,8 @@ void Game::initAll(){
     
     engine = irrklang::createIrrKlangDevice();
     
-    //engine->play2D("sounds/sound.wav", true);
-    //engine->setSoundVolume(0.3f);
+    engine->play2D("sounds/starwars.wav", true);
+    engine->setSoundVolume(0.3f);
     
     glPopMatrix();
 }

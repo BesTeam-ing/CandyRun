@@ -67,7 +67,7 @@ private:
     
     bool isEnemy = true;
     
-    void draw();
+    void draw(bool isEnemy);
 };
 
 #endif /* objects_hpp */
