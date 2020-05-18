@@ -78,17 +78,16 @@ void Game::initAll(){
     
     //server.getWeather();
     
-    sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
+    //sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
+    sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
     
     part.initParticles();
     glMatrixMode(GL_MODELVIEW);
-    
-    //loadObj = loader.load("textures/bb8.obj","textures/bb8.mtl");
-    
+        
     engine = irrklang::createIrrKlangDevice();
     
-    //engine->play2D("sounds/starwars.wav", true);
-    //engine->setSoundVolume(0.3f);
+    engine->play2D("sounds/starwars.wav", true);
+    engine->setSoundVolume(0.3f);
     
     glPopMatrix();
 }

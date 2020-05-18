@@ -105,6 +105,8 @@ void Character::SaveHighScore(int new_score) {
 
 void Character::drawCharacter(){
     this->rotateAngle += 1;
+    if(this->rotateAngle > 360.0f)
+        this->rotateAngle -= 360.0f;
     
     //glLightfv(GL_LIGHT0,GL_POSITION,lp);
     glPushMatrix();

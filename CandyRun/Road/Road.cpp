@@ -68,7 +68,7 @@ void Road::initializeGround(){
     
     float beginning = -90.0;
     for(int i=0; i<4; i++){
-        r.init("textures/road.jpg");
+        r.init("textures/road_grey.jpg");
         r.setPosition(0.0f, 0.0f, beginning);
         roads.push_back(r);
         beginning += 30;
