@@ -98,7 +98,6 @@ void Game::drawGame(){
         glLoadIdentity(); //NEW
         glEnable(GL_DEPTH_TEST);
         
-        
         camera.look();
             
         sky.drawSkyBox(9.5*dim);
@@ -113,11 +112,8 @@ void Game::drawGame(){
             glColor3f(0, 0, 0);
             glTranslatef(0, 2, 10);
             glScalef(0.15, 0.15, 0.15);
-            
             glCallList(loadObj);
-        
         glPopMatrix();
-        
         
         part.drawRain();
         character.drawCharacter();
@@ -200,6 +196,7 @@ void Game::displayProject(double fov, double asp, double dim){
     gluPerspective(fov,asp,dim/16,16*dim);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+    glutReshapeWindow( DEF_WINDOW_WIDTH, DEF_WINDOW_HEIGHT);
 }
 
 void Game::displayReshape(int width,int height){
@@ -213,8 +210,7 @@ void Game::redisplayAll(void){
     glutPostRedisplay();
 }
 
-void Game::mouseInput(GLint button, GLint state, GLint x, GLint y)
-{
+void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
     if(!isStart){
         if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
             int select = menu.select(x,y);

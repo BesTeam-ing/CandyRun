@@ -12,9 +12,11 @@
 		4002E57D246B1C82007157C3 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E577246B1BA3007157C3 /* ikpFLAC.dylib */; };
 		4002E57E246B1C82007157C3 /* ikpMP3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E578246B1BA3007157C3 /* ikpMP3.dylib */; };
 		4002E57F246B1C82007157C3 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E579246B1BA3007157C3 /* libirrklang.dylib */; };
+		4018AE79247162F5004F720F /* menu_item.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 4018AE78247162A1004F720F /* menu_item.jpg */; };
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
+		408D954424728E490080D9E5 /* background.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 408D954324728E3F0080D9E5 /* background.jpg */; };
 		40A80392246EB60200241D87 /* game_over.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80391246EB5F600241D87 /* game_over.wav */; };
 		40A8039C246EDC2000241D87 /* highscore in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A8039B246EDB9D00241D87 /* highscore */; };
 		40AD83C6246C846D00BB0EEE /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40AD83C4246C846D00BB0EEE /* menu.cpp */; };
@@ -41,7 +43,6 @@
 		6396F1872467559700B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F180246754E700B72597 /* road.jpg */; };
 		63BAD63024704F130032F6EF /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63BAD62E24704F130032F6EF /* objloader.cpp */; };
 		63BAD63224704F7C0032F6EF /* libSDL-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; };
-		63BAD63324704F7C0032F6EF /* libSDL-1.2.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		63BAD651247065840032F6EF /* bb8.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD650247065740032F6EF /* bb8.mtl */; };
 		63BAD652247065840032F6EF /* bb8.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD64F247065740032F6EF /* bb8.obj */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,8 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				408D954424728E490080D9E5 /* background.jpg in Copy Files */,
+				4018AE79247162F5004F720F /* menu_item.jpg in Copy Files */,
 				63BAD651247065840032F6EF /* bb8.mtl in Copy Files */,
 				63BAD652247065840032F6EF /* bb8.obj in Copy Files */,
 				6396F1872467559700B72597 /* road.jpg in Copy Files */,
@@ -135,17 +138,6 @@
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63BAD63424704F7C0032F6EF /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				63BAD63324704F7C0032F6EF /* libSDL-1.2.0.dylib in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -155,10 +147,12 @@
 		4002E577246B1BA3007157C3 /* ikpFLAC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = ikpFLAC.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/ikpFLAC.dylib"; sourceTree = "<group>"; };
 		4002E578246B1BA3007157C3 /* ikpMP3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = ikpMP3.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/ikpMP3.dylib"; sourceTree = "<group>"; };
 		4002E579246B1BA3007157C3 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/libirrklang.dylib"; sourceTree = "<group>"; };
+		4018AE78247162A1004F720F /* menu_item.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu_item.jpg; sourceTree = "<group>"; };
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
 		402B6064245B20F300A4DE19 /* CandyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyRun.entitlements; sourceTree = "<group>"; };
+		408D954324728E3F0080D9E5 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		40A80391246EB5F600241D87 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
 		40A8039B246EDB9D00241D87 /* highscore */ = {isa = PBXFileReference; lastKnownFileType = text; path = highscore; sourceTree = "<group>"; };
 		40AD83C4246C846D00BB0EEE /* menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
@@ -2107,6 +2101,8 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				408D954324728E3F0080D9E5 /* background.jpg */,
+				4018AE78247162A1004F720F /* menu_item.jpg */,
 				63BAD650247065740032F6EF /* bb8.mtl */,
 				63BAD64F247065740032F6EF /* bb8.obj */,
 				6396F180246754E700B72597 /* road.jpg */,
@@ -2142,7 +2138,6 @@
 				6396F1582464AFDB00B72597 /* Copy Files */,
 				40E0382F2469E52B00F1EDC2 /* CopyFiles */,
 				40A80399246ED61700241D87 /* CopyFiles */,
-				63BAD63424704F7C0032F6EF /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -2386,7 +2381,7 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -2405,7 +2400,7 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
