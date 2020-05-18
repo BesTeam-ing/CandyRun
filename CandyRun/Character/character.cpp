@@ -13,10 +13,15 @@ GLfloat blu[]         = { 0.0f, 0.0f, 1.0f, 1.0f };
 GLfloat bianco[]      = { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat bluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
 
+objloader loader;
 
 Character::Character(){};
 
 Character::~Character(){};
+
+void Character::init(){
+    this->loadObj = loader.load("/Users/ciro/Downloads/bb8_body2/bb8_body2.obj","/Users/ciro/Downloads/bb8_body2/bb8_body2.mtl");
+}
 
 void Character::initialPosition(){
     this->score = ReadHighScore();
@@ -24,6 +29,7 @@ void Character::initialPosition(){
     this->x = 0.0f;
     this->y = 0.5f;
     this->z = 15.0f;
+    this->rotateAngle = 0.0f;
 }
 
 float Character::getX(){
@@ -98,15 +104,23 @@ void Character::SaveHighScore(int new_score) {
 void Character::drawCharacter(){
     this->rotateAngle += 1;
     
-    //glColor3f(1.0f, 1.0f, 0.0f);
-    glMaterialfv( GL_FRONT, GL_AMBIENT,  bluTenue );
-    glMaterialfv( GL_FRONT, GL_DIFFUSE,  blu );
-    glMaterialfv( GL_FRONT, GL_SPECULAR, bianco );
-    glMaterialf( GL_FRONT, GL_SHININESS, 20.0f );
+    std::cout<<rotateAngle<<std::endl;
     
     glPushMatrix();
         glTranslatef(this->x, this->y, this->z);
         glRotatef(this->rotateAngle, -1, 0, 0);
+        glCallList(this->loadObj);
+    glPopMatrix();
+    
+    /*
+    glMaterialfv( GL_FRONT, GL_AMBIENT,  bluTenue );
+    glMaterialfv( GL_FRONT, GL_DIFFUSE,  blu );
+    glMaterialfv( GL_FRONT, GL_SPECULAR, bianco );
+    glMaterialf( GL_FRONT, GL_SHININESS, 20.0f );
+    glPushMatrix();
+        glTranslatef(this->x, this->y, this->z-3);
+        glRotatef(this->rotateAngle, -1, 0, 0);
         glutWireSphere(this->size, 20, 20);
     glPopMatrix();
+    */
 }

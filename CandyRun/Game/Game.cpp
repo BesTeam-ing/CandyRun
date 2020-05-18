@@ -19,7 +19,6 @@ Camera camera = Camera(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
 Server server;
 Road road;
 Object obj;
-objloader loader;
 Character character;
 Menu menu;
 irrklang::ISoundEngine* engine;
@@ -35,7 +34,6 @@ bool isPaused = false;
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
-GLfloat luce[] = { 1.0f, 1.0f, 1.0f, 1.0f};
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -73,6 +71,8 @@ void Game::initAll(){
     menu.initMenu();
     
     obj.initObject();
+    
+    character.init();
 
     road.initializeGround();
     
@@ -84,12 +84,11 @@ void Game::initAll(){
     glMatrixMode(GL_MODELVIEW);
     
     //loadObj = loader.load("textures/bb8.obj","textures/bb8.mtl");
-    loadObj = loader.load("/Users/ciro/Downloads/tedR/tedR.obj","/Users/ciro/Downloads/tedR/tedR.mtl");
     
     engine = irrklang::createIrrKlangDevice();
     
-    engine->play2D("sounds/starwars.wav", true);
-    engine->setSoundVolume(0.3f);
+    //engine->play2D("sounds/starwars.wav", true);
+    //engine->setSoundVolume(0.3f);
     
     glPopMatrix();
 }
@@ -109,19 +108,13 @@ void Game::drawGame(){
         sky.drawSkyBox(9.5*dim);
             
         road.drawRoad();
-
+        
+        part.drawRain();
 
         //create light
         glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
         glEnable(GL_LIGHTING);
         
-        glPushMatrix();
-            glTranslatef(0, 2, 10);
-            glScalef(0.15, 0.15, 0.15);
-            glCallList(loadObj);
-        glPopMatrix();
-        
-        part.drawRain();
         character.drawCharacter();
         obj.drawObject();
         

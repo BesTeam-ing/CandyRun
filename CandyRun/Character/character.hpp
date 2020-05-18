@@ -16,6 +16,8 @@
 #include <fstream>
 #include <iostream>
 
+#include "../OBJLoader/objloader.hpp"
+
 class Character{
 public:
     Character();
@@ -38,6 +40,7 @@ public:
     
     void drawCharacter();
     void initialPosition();
+    void init();
 private:
     float x = 0.0f;
     float y = 0.5f;
@@ -47,6 +50,7 @@ private:
     
     int score;
     int lifes =3;
+    int loadObj;
 };
 
 #endif /* character_hpp */
