@@ -9,9 +9,8 @@
 #include "character.hpp"
 
 
-GLfloat lp[] = { 1.0, 0.7, 0.6, 0.0f };
-//GLfloat lp[] = { 1.0f, 0.7f, -0.6f, 0.0f };
-
+//GLfloat lp[] = { 1.0, 0.7, 0.6, 0.0f };
+GLfloat lp[] = {0.5, 0.5, 0.9, 0.4};
 GLfloat bianco[]      = { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat bluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
 

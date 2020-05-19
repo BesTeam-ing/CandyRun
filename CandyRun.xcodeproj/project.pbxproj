@@ -49,6 +49,11 @@
 		6396F1852467558E00B72597 /* txStormydays_right.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17E246754E300B72597 /* txStormydays_right.bmp */; };
 		6396F1862467558E00B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17F246754E300B72597 /* txStormydays_front.bmp */; };
 		6396F1872467559700B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F180246754E700B72597 /* road.jpg */; };
+		63988121247413A100224E63 /* pila_tex.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811F247410CE00224E63 /* pila_tex.bmp */; };
+		63988122247413A100224E63 /* pila.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63988120247410CE00224E63 /* pila.mtl */; };
+		63988123247413A100224E63 /* pila.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811C247410CD00224E63 /* pila.obj */; };
+		63988124247413A100224E63 /* wall.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811D247410CD00224E63 /* wall.mtl */; };
+		63988125247413A100224E63 /* wall.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811E247410CD00224E63 /* wall.obj */; };
 		63BAD63024704F130032F6EF /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63BAD62E24704F130032F6EF /* objloader.cpp */; };
 		63BAD63224704F7C0032F6EF /* libSDL-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; };
 		63BAD651247065840032F6EF /* bb8.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD650247065740032F6EF /* bb8.mtl */; };
@@ -132,6 +137,11 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				63988121247413A100224E63 /* pila_tex.bmp in Copy Files */,
+				63988122247413A100224E63 /* pila.mtl in Copy Files */,
+				63988123247413A100224E63 /* pila.obj in Copy Files */,
+				63988124247413A100224E63 /* wall.mtl in Copy Files */,
+				63988125247413A100224E63 /* wall.obj in Copy Files */,
 				4027E330247337980036F5B7 /* road_grey.jpg in Copy Files */,
 				4027E3292473362D0036F5B7 /* skybk.bmp in Copy Files */,
 				4027E32A2473362D0036F5B7 /* skydn.bmp in Copy Files */,

@@ -9,6 +9,7 @@
 #include "Road.hpp"
 
 std::vector<Road> roads;
+GLfloat lp3[] = {0.9, 0.9, 0.9, 0.0};
 
 Road::Road(){}
 
@@ -49,6 +50,7 @@ void Road::draw(){
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
     //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_REPEAT);
     glPushMatrix();
+    glLightfv(GL_LIGHT0,GL_POSITION,lp3);
     glBegin(GL_QUADS);
         glTexCoord2f(0.0f,0.0f);
         glVertex3f(pos_X + start_X, pos_Y + start_Y, start_Z + pos_Z);

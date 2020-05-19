@@ -34,7 +34,7 @@ bool isStart = false;
 bool isPaused = false;
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
-GLfloat lightPosition[] = { 1.0, 0.7, 0.6, 0.0f };
+GLfloat lightPosition[] = { 0.1, 0.5, 0.5, 0.1};
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -76,7 +76,7 @@ void Game::initAll(){
     character.init();
 
     road.initializeGround();
-    l = objload.load("/Users/gennaromellone/Desktop/gioco/pila.obj","/Users/gennaromellone/Desktop/gioco/pila.mtl");
+    l = objload.load("textures/wall.obj","textures/wall.mtl");
     
     //server.getWeather();
     
@@ -108,20 +108,22 @@ void Game::drawGame(){
             
         sky.drawSkyBox(9.5*dim);
             
-        road.drawRoad();
+  
         
         part.drawRain();
-
+        road.drawRoad();
         //create light
         glEnable(GL_LIGHTING);
+        
         
         character.drawCharacter();
         obj.drawObject();
         
         glPushMatrix();
         glTranslatef(0.0, 1, 10);
-        glScalef(1, 1, 1);
-            //glRotatef(180, -1, 0, 0);
+        //glScalef(0.1, 0.1, 0.1);
+        
+            //glRotatef(45, 1, 1, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
             glCallList(l);
         glPopMatrix();
