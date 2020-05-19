@@ -898,6 +898,11 @@
 		6396F17F246754E300B72597 /* txStormydays_front.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_front.bmp; sourceTree = "<group>"; };
 		6396F180246754E700B72597 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = road.jpg; sourceTree = "<group>"; };
 		6396F188246836C600B72597 /* Vector3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3f.h; sourceTree = "<group>"; };
+		6398811C247410CD00224E63 /* pila.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pila.obj; sourceTree = "<group>"; };
+		6398811D247410CD00224E63 /* wall.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wall.mtl; sourceTree = "<group>"; };
+		6398811E247410CD00224E63 /* wall.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wall.obj; sourceTree = "<group>"; };
+		6398811F247410CE00224E63 /* pila_tex.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = pila_tex.bmp; sourceTree = "<group>"; };
+		63988120247410CE00224E63 /* pila.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pila.mtl; sourceTree = "<group>"; };
 		63BAD62E24704F130032F6EF /* objloader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objloader.cpp; sourceTree = "<group>"; };
 		63BAD62F24704F130032F6EF /* objloader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objloader.hpp; sourceTree = "<group>"; };
 		63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL-1.2.0.dylib"; path = "../../../../../usr/local/Cellar/sdl/1.2.15_1/lib/libSDL-1.2.0.dylib"; sourceTree = "<group>"; };
@@ -2126,6 +2131,11 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				6398811F247410CE00224E63 /* pila_tex.bmp */,
+				63988120247410CE00224E63 /* pila.mtl */,
+				6398811C247410CD00224E63 /* pila.obj */,
+				6398811D247410CD00224E63 /* wall.mtl */,
+				6398811E247410CD00224E63 /* wall.obj */,
 				4027E32F2473378B0036F5B7 /* road_grey.jpg */,
 				4027E326247335A20036F5B7 /* skybk.bmp */,
 				4027E327247335A20036F5B7 /* skydn.bmp */,
