@@ -8,21 +8,19 @@
 
 #include "objects.hpp"
 
-GLfloat Rosso[]       = { 1.0f, 0.0f, 0.0f, 1.0f };
-GLfloat Verde[]       = { 0.0f, 1.0f, 0.0f, 1.0f };
-GLfloat Blu[]         = { 0.0f, 0.0f, 1.0f, 1.0f };
-GLfloat Nero[]        = { 0.0f, 0.0f, 0.0f, 1.0f };
-GLfloat Bianco[]      = { 1.0f, 1.0f, 1.0f, 1.0f };
-GLfloat Giallo[]      = { 1.0f, 1.0f, 0.0f, 1.0f };
-GLfloat RossoTenue[]  = { 0.3f, 0.1f, 0.1f, 1.0f };
-GLfloat BluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
-GLfloat GialloTenue[] = { 0.6f, 0.6f, 0.0f, 1.0f };
-
 GLfloat lp1[] = { 0.0f, 1.0f, -1.0f, 0.0f };
-
+std::vector< std::vector<Object> > objects(4);
+Object o;
 
 Object::Object(){}
 Object::~Object(){}
+
+int wall, battery;
+
+void Object::load(const char *path_obj, const char *path_mtl){
+    battery = objload1.load("textures/pila.obj","textures/pila.mtl");;
+    wall = objload.load("textures/wall.obj","textures/wall.mtl");
+}
 
 float Object::getX(){
     return this->pos_X;
@@ -65,24 +63,20 @@ void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
 
 void Object::draw(bool isEnemy){
     if(isEnemy){
-        glMaterialfv( GL_FRONT, GL_AMBIENT,  RossoTenue );
-        glMaterialfv( GL_FRONT, GL_DIFFUSE,  Rosso );
-        glMaterialfv( GL_FRONT, GL_SPECULAR, Verde );
-        glMaterialf(  GL_FRONT, GL_SHININESS, 128.0f);
+        glPushMatrix();
+        glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+            glScalef(1, 1, 0.1);
+            glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+            glCallList(wall);
+        glPopMatrix();
     }
     else{
-        glMaterialfv( GL_FRONT, GL_AMBIENT,  BluTenue );
-        glMaterialfv( GL_FRONT, GL_DIFFUSE,  Blu );
-        glMaterialfv( GL_FRONT, GL_SPECULAR, Bianco );
-        glMaterialf( GL_FRONT, GL_SHININESS, 128.0f );
+        glPushMatrix();
+            glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+            glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+            glCallList(battery);
+        glPopMatrix();
     }
-    
-    glPushMatrix();
-        glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-        glLightfv(GL_LIGHT0,GL_POSITION,lp1);
-        glutSolidCube(this->end_X);
-    glPopMatrix();
-
 }
 
 bool Object::getEnemy(){
@@ -93,9 +87,6 @@ void Object::setEnemy(bool obj){
     this->isEnemy = obj;
 }
 
-std::vector< std::vector<Object> > objects(4);
-Object o;
-
 void Object::initObject(){
     objects.clear();
     
@@ -103,23 +94,27 @@ void Object::initObject(){
     for (int i=0; i<4; i++) {
         std::vector<Object> v1;
         int x = 0;
-        for(int j=0; j<3; j++){
+        for(int j=0; j<2; j++){
             int n = rand()%10-5;
             bool e;
             if(x<1){
-                if (rand() % 2 == 0)
+                if (rand() % 2 == 0){
                     e = true;
+                    o.setPosition(n, 0.5f, beginning+7);
+                }
                 else{
                     e = false;
                     x++;
+                    o.setPosition(n, 0.5f, beginning);
                 }
             }
             else{
                 e = true;
+                o.setPosition(n, 0.5f, beginning+7);
             }
             
             o.setEnemy(e);
-            o.setPosition(n, 0.5f, beginning);
+            
             v1.push_back(o);
         }
         objects.push_back(v1);
@@ -145,14 +140,14 @@ void Object::drawObject(){
 int Object::handleCollision(float x, float y, float z){
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
-            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.9f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5)){
-                if(objects[i][j].isEnemy)
-                    return OSTACOLO;
-                else
-                    return PREMIO;
+            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.9f) && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].isEnemy)
+                return OSTACOLO;
+            else if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && !objects[i][j].isEnemy){
+                //objects[i][j].setPosition(0, 0, 30);
+                return PREMIO;
             }
         }
     }
-    
+
     return VUOTO;
 }

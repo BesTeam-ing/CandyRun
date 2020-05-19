@@ -27,11 +27,9 @@ GLdouble asp;
 GLdouble dim = 15.0f;
 GLdouble fov = 60.0f;
 
-int l;
-objloader objload;
-
 bool isStart = false;
 bool isPaused = false;
+bool isAudio = false;
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 0.1, 0.5, 0.5, 0.1};
@@ -74,12 +72,12 @@ void Game::initAll(){
     
     menu.initMenu();
     
-    obj.initObject();
-    
     character.init();
+    
+    obj.load("textures/wall.obj","textures/wall.mtl");
+    obj.initObject();
 
     road.initializeGround();
-    l = objload.load("textures/wall.obj","textures/wall.mtl");
     
     //server.getWeather();
     
@@ -92,7 +90,7 @@ void Game::initAll(){
     engine = irrklang::createIrrKlangDevice();
     
     engine->play2D("sounds/starwars.wav", true);
-    engine->setSoundVolume(0.3f);
+    engine->setSoundVolume(0.0f);
     
     glPopMatrix();
 }
@@ -108,29 +106,14 @@ void Game::drawGame(){
         glEnable(GL_DEPTH_TEST);
         
         camera.look();
-            
         sky.drawSkyBox(9.5*dim);
-            
-  
-        
         part.drawRain();
         road.drawRoad();
         //create light
         glEnable(GL_LIGHTING);
         
-        
         character.drawCharacter();
         obj.drawObject();
-        // WALL
-        /*
-        glPushMatrix();
-            glTranslatef(0.0, 1, 10);
-            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
-            glCallList(l);
-        glPopMatrix();
-        */
-        // LUCE
-        
         
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1)
             gameOver();
@@ -165,11 +148,13 @@ void Game::gameOver(){
 void Game::windowSpecial(int key,int x,int y){
     if(isStart){
         if (key == GLUT_KEY_RIGHT){
-            engine->play2D("sounds/Jump.wav");
+            if(isAudio)
+                engine->play2D("sounds/Jump.wav");
             character.setX(0.5);
         }
         else if (key == GLUT_KEY_LEFT){
-            engine->play2D("sounds/Jump.wav");
+            if(isAudio)
+                engine->play2D("sounds/Jump.wav");
             character.setX(-0.5);
         }
     }
@@ -196,9 +181,21 @@ void Game::windowKey(unsigned char key,int x,int y){
         }
     }
     
-    else if(key == 'p' or key == 'P')
+    else if(key == 'p' or key == 'P'){
         if(isStart)
-            isPaused = !isPaused;
+        isPaused = !isPaused;
+    }
+    
+    else if(key == 'm' or key == 'M'){
+        if(isAudio){
+            engine->setSoundVolume(0.0f);
+            isAudio = false;
+        }
+        else{
+            engine->setSoundVolume(0.3f);
+            isAudio = true;
+        }
+    }
     
     redisplayAll();
 }

@@ -13,6 +13,9 @@
 #include <GL/freeglut.h>
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
+
+#include "../OBJLoader/objloader.hpp"
+
 #include <math.h>
 #include <vector>
 #include <iomanip>
@@ -36,6 +39,7 @@ public:
     float getY();
     float getZ();
     
+    void load(const char *path_obj, const char *path_mtl);
     unsigned int getTexture();
     void setDimension(float f);
     void setColor(GLfloat r, GLfloat g, GLfloat b);
@@ -66,6 +70,10 @@ private:
     GLfloat b = 0.0;
     
     bool isEnemy = true;
+    
+    objloader objload, objload1;
+    
+    const GLfloat lightWall[4] = { 0.1, 0.5, 0.5, 0.1};
     
     void draw(bool isEnemy);
 };
