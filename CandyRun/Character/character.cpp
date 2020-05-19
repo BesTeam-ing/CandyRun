@@ -22,7 +22,7 @@ Character::Character(){};
 Character::~Character(){};
 
 void Character::init(){
-    this->loadObj = loader.load("/Users/ciro/Downloads/bb8_body2/bb8_body2.obj","/Users/ciro/Downloads/bb8_body2/bb8_body2.mtl");
+    this->loadObj = loader.load("/Users/gennaromellone/Downloads/bb8_body2/bb8_body2.obj","/Users/gennaromellone/Downloads/bb8_body2/bb8_body2.mtl");
 }
 
 void Character::initialPosition(){

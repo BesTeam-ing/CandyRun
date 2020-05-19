@@ -27,13 +27,14 @@ GLdouble asp;
 GLdouble dim = 15.0f;
 GLdouble fov = 60.0f;
 
-int loadObj;
+int l;
+objloader objload;
 
 bool isStart = false;
 bool isPaused = false;
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
-GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
+GLfloat lightPosition[] = { 1.0, 0.7, 0.6, 0.0f };
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -75,6 +76,7 @@ void Game::initAll(){
     character.init();
 
     road.initializeGround();
+    l = objload.load("/Users/gennaromellone/Desktop/gioco/pila.obj","/Users/gennaromellone/Desktop/gioco/pila.mtl");
     
     //server.getWeather();
     
@@ -112,10 +114,17 @@ void Game::drawGame(){
 
         //create light
         glEnable(GL_LIGHTING);
-        glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
         
         character.drawCharacter();
         obj.drawObject();
+        
+        glPushMatrix();
+        glTranslatef(0.0, 1, 10);
+        glScalef(1, 1, 1);
+            //glRotatef(180, -1, 0, 0);
+            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+            glCallList(l);
+        glPopMatrix();
         
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1)
             gameOver();
