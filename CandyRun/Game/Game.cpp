@@ -30,6 +30,12 @@ GLdouble fov = 60.0f;
 bool isStart = false;
 bool isPaused = false;
 bool isAudio = false;
+bool isGameOver = false;
+
+int lifes = 3;
+int _score = 0;
+char score[20];
+char vite[20];
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 0.1, 0.5, 0.5, 0.1};
@@ -65,63 +71,105 @@ void Game::init(){
 
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
-    
-    glPushMatrix();
-    
     glEnable(GL_LIGHT0);
     
-    menu.initMenu();
-    
-    character.init();
-    
-    obj.load("textures/wall.obj","textures/wall.mtl");
-    obj.initObject();
-
-    road.initializeGround();
-    
-    //server.getWeather();
-    
-    //sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
-    sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
-    
-    part.initParticles();
-    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
         
-    engine = irrklang::createIrrKlangDevice();
-    
-    engine->play2D("sounds/starwars.wav", true);
-    engine->setSoundVolume(0.0f);
+        menu.initMenu();
+        character.init();
+        obj.load("textures/wall.obj","textures/wall.mtl");
+        obj.initObject();
+        road.initializeGround();
+        //server.getWeather();
+        //sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
+        sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
+        part.initParticles();
+        
+        glMatrixMode(GL_MODELVIEW);
+            
+        engine = irrklang::createIrrKlangDevice();
+        engine->play2D("sounds/starwars.wav", true);
+        engine->setSoundVolume(0.0f);
     
     glPopMatrix();
 }
 
 void Game::drawGame(){
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    glClearColor(0.0,0.0,0.0,1.0);
+    glLoadIdentity();
+    glEnable(GL_DEPTH_TEST);
+    
+    camera.look();
+    sky.drawSkyBox(9.5*dim);
+    
     if(isPaused){
-        //std::cout<<"PAUSED"<<std::endl;
+        const char* text;
+        int x;
+        if(isGameOver){
+            text = "GAME OVER";
+            x = -20;
+        }
+            
+        else{
+            text = "PAUSE";
+            x = -10;
+        }
+        
+        glPushMatrix();
+            glColor4f(1.0, 1.0, 1.0, 0.0);
+            glTranslatef(x, 0, 0);
+            glScalef(0.05,0.05,0.05);
+            for( const char* p = text; *p; p++){
+                glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
+            }
+        glPopMatrix();
     }
     else{
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-        glLoadIdentity(); //NEW
-        
-        glEnable(GL_DEPTH_TEST);
-        
-        camera.look();
-        sky.drawSkyBox(9.5*dim);
+        isGameOver = false;
+
         part.drawRain();
         road.drawRoad();
+        
         //create light
         glEnable(GL_LIGHTING);
         
         character.drawCharacter();
         obj.drawObject();
-        
-        if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1)
-            gameOver();
+        if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
+            std::cout<<"Collision"<<std::endl;
+            lifes--;
+            if(lifes == 0)
+                gameOver();
+        }
         else if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 2)
             std::cout<<"Premio +1"<<std::endl;
+        
+        sprintf(score,"Score: %d", _score);
+        sprintf(vite,"Lives: %d", lifes);
+        
+        glPushMatrix();
+            glColor4f(1.0, 1.0, 1.0, 0.0);
+            glTranslatef(-20, 12, 0);
+            glScalef(0.01,0.01,0.01);
+            for( const char* p = score; *p; p++){
+                glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
+            }
+        glPopMatrix();
+        glPushMatrix();
+            glColor4f(1.0, 1.0, 1.0, 0.0);
+        glTranslatef(-20, 10.5, 0);
+            glScalef(0.01,0.01,0.01);
+            for( const char* p = vite; *p; p++){
+                glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
+            }
+        glPopMatrix();
             
         glDisable(GL_LIGHTING);
     }
+    
+    glFlush();
+    glutSwapBuffers();
 }
 
 void Game::drawScene(){
@@ -131,9 +179,6 @@ void Game::drawScene(){
         menu.drawMenu();
     
     redisplayAll();
-    
-    glFlush();
-    glutSwapBuffers();
 }
 
 void Game::gameOver(){
@@ -143,6 +188,8 @@ void Game::gameOver(){
     character.SaveHighScore(30);
     std::cout<<"Game Over"<<std::endl;
     isPaused = true;
+    isGameOver = true;
+    lifes = 3;
 }
 
 void Game::windowSpecial(int key,int x,int y){

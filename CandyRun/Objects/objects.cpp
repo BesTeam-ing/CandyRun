@@ -140,7 +140,7 @@ void Object::drawObject(){
 int Object::handleCollision(float x, float y, float z){
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
-            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.9f) && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].isEnemy)
+            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].isEnemy)
                 return OSTACOLO;
             else if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && !objects[i][j].isEnemy){
                 //objects[i][j].setPosition(0, 0, 30);

@@ -15,6 +15,7 @@
 #include <SOIL2/SOIL2.h>
 
 #include <stdio.h>
+#include <iostream>
 
 class Menu{
 public:

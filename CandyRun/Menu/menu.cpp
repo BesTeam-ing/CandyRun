@@ -67,8 +67,8 @@ void Menu::drawMenu(){
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texture_road);
     
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 
     glPushMatrix();
     glColor3f(1.0, 1.0, 1.0);
@@ -112,6 +112,9 @@ void Menu::drawMenu(){
     DrawText(-0.35,1.5,"Start");
     DrawText(-0.95,0.25,"High Score");
     DrawText(-0.35,-1,"Exit");
+    
+    glFlush();
+    glutSwapBuffers();
 }
 
 void Menu::DrawText(float x,float y, const char *text){
