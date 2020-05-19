@@ -14,9 +14,11 @@
 #include <OpenGL/glext.h>
 
 #include <fstream>
+#include <cmath>
 #include <iostream>
 
 #include "../OBJLoader/objloader.hpp"
+#define PI 3.14159265358979324
 
 class Character{
 public:
@@ -39,12 +41,13 @@ public:
     void SaveHighScore(int new_score);
     
     void drawCharacter();
+    void drawShadow(float R, float X, float Y, int vert);
     void initialPosition();
     void init();
 private:
     float x = 0.0f;
     float y = 0.5f;
-    float z = 15.0f;
+    float z = 14.2f;
     float size = 0.5f;
     float rotateAngle = 0.0f;
     

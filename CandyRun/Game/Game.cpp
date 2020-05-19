@@ -35,6 +35,9 @@ bool isPaused = false;
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 0.1, 0.5, 0.5, 0.1};
+GLfloat g[]      = { 1.0f, 1.0f, 0.0f, 1.0f };
+GLfloat n[]        = { 0.0f, 0.0f, 0.0f, 1.0f };
+GLfloat gt[] = { 0.6f, 0.6f, 0.0f, 1.0f };
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -118,15 +121,16 @@ void Game::drawGame(){
         
         character.drawCharacter();
         obj.drawObject();
-        
+        // WALL
+        /*
         glPushMatrix();
-        glTranslatef(0.0, 1, 10);
-        //glScalef(0.1, 0.1, 0.1);
-        
-            //glRotatef(45, 1, 1, 0);
+            glTranslatef(0.0, 1, 10);
             glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
             glCallList(l);
         glPopMatrix();
+        */
+        // LUCE
+        
         
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1)
             gameOver();

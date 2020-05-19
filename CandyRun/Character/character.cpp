@@ -114,8 +114,36 @@ void Character::drawCharacter(){
         glLightfv(GL_LIGHT0,GL_POSITION,lp);
         glCallList(this->loadObj);
     glPopMatrix();
-    
-    
+    glPushMatrix();
+    drawShadow(0.5, this->x, this->y, 15);
+    glPopMatrix();
+}
+
+void Character::drawShadow(float R, float X, float Y, int vert){
+        glColor4f(0.3, 0.3, 0.3, 0.9);
+        glDisable(GL_LIGHTING);
+        
+        glRotatef(90, 1, 0, 0);
+        GLfloat xOffset = X;
+        GLfloat yOffset = this->z +0.6;
+        glBegin(GL_POLYGON);
+
+        for(float t = -10 * PI; t <= 10 * PI; t += PI/20.0)
+            glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
+        glEnd();
+        glEnable(GL_LIGHTING);
+        /*float t = 0;
+        
+        glBegin(GL_LINE_LOOP);
+        
+           for(int i = 0; i < vert; ++i)
+           {
+              glColor3f((float)rand()/(float)RAND_MAX, (float)rand()/(float)RAND_MAX, (float)rand()/(float)RAND_MAX);
+              glVertex3f(X + R * cos(t), Y + R * sin(t), 0.0);
+              t += 2 * PI / vert;
+           }
+        glEnd();*/
+    }
     /*
     glMaterialfv( GL_FRONT, GL_AMBIENT,  bluTenue );
     glMaterialfv( GL_FRONT, GL_DIFFUSE,  blu );
@@ -127,4 +155,3 @@ void Character::drawCharacter(){
         glutWireSphere(this->size, 20, 20);
     glPopMatrix();
     */
-}
