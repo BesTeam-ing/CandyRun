@@ -25,12 +25,12 @@ void Character::init(){
 }
 
 void Character::initialPosition(){
-    this->score = ReadHighScore();
-    
     this->x = 0.0f;
     this->y = 0.5f;
     this->z = 15.0f;
     this->rotateAngle = 0.0f;
+    this->lifes = 3;
+    this->score = 0;
 }
 
 float Character::getX(){
@@ -46,7 +46,10 @@ float Character::getZ(){
 }
 
 void Character::setX(float x){
-    this->x += x;
+    if((this->x + x) > 7 || (this->x + x) < -7)
+        return;
+    else
+        this->x += x;
 }
 
 void Character::setY(float y){
@@ -58,14 +61,15 @@ void Character::setZ(float z){
 }
 
 void Character::setScore(int x){
-    this->score = x;
+    this->score += x;
 }
+
 int Character::getScore(){
     return this->score;
 }
 
 void Character::setLife(int x){
-    this->lifes = x;
+    this->lifes += x;
 }
 
 int Character::getLife(){
@@ -87,8 +91,10 @@ int Character::ReadHighScore() {
     return score;
 }
 
-void Character::SaveHighScore(int new_score) {
-    if(new_score > this->score){
+void Character::SaveHighScore() {
+    std::cout<<ReadHighScore()<<" versus "<<this->score<<std::endl;
+    
+    if(ReadHighScore() < this->score){
         std::ofstream myfile;
         myfile.open("highscore");
 
@@ -97,7 +103,7 @@ void Character::SaveHighScore(int new_score) {
             return;
         }
 
-        myfile << new_score;
+        myfile << this->score;
         myfile.close();
     }
 }

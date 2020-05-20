@@ -38,7 +38,7 @@ public:
     int getScore();
     int getLife();
     int ReadHighScore();
-    void SaveHighScore(int new_score);
+    void SaveHighScore();
     
     void drawCharacter();
     void drawShadow(float R, float X, float Y, int vert);

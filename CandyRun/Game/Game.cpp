@@ -32,16 +32,13 @@ bool isPaused = false;
 bool isAudio = false;
 bool isGameOver = false;
 
-int lifes = 3;
-int _score = 0;
 char score[20];
 char vite[20];
 
+float velocity = 0.1;
+
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 0.1, 0.5, 0.5, 0.1};
-GLfloat g[]      = { 1.0f, 1.0f, 0.0f, 1.0f };
-GLfloat n[]        = { 0.0f, 0.0f, 0.0f, 1.0f };
-GLfloat gt[] = { 0.6f, 0.6f, 0.0f, 1.0f };
 
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
@@ -51,13 +48,26 @@ Game::Game(int argc, char **argv, const char *name){
 
 Game::~Game(){};
 
+void Timer(int value)
+{
+    if(isStart && !isPaused){
+        if((velocity + 0.1) <= 1.5)
+            velocity += 0.1;
+        else
+            return;
+        glutPostRedisplay();
+        std::cout<<velocity<<std::endl;
+    }
+    glutTimerFunc(4000, Timer, 0);
+}
+
 void Game::init(){
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(DEF_WINDOW_WIDTH, DEF_WINDOW_HEIGHT);
     glutInitWindowPosition(DEF_WINDOW_POS_W, DEF_WINDOW_POS_H);
     glutCreateWindow(this->windowName);
-
+    
     glutDisplayFunc(this->drawScene);
     glutReshapeFunc(this->displayReshape);
     glutKeyboardFunc(this->windowKey);
@@ -66,6 +76,7 @@ void Game::init(){
     
     this->initAll();
         
+    Timer(0);
     glutMainLoop();
 }
 
@@ -138,15 +149,18 @@ void Game::drawGame(){
         obj.drawObject();
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
             std::cout<<"Collision"<<std::endl;
-            lifes--;
-            if(lifes == 0)
+            character.setLife(-1);
+            if(character.getLife() == 0)
                 gameOver();
         }
-        else if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 2)
+        else if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 2){
             std::cout<<"Premio +1"<<std::endl;
-        
-        sprintf(score,"Score: %d", _score);
-        sprintf(vite,"Lives: %d", lifes);
+            character.setScore(10);
+            engine->play2D("sounds/score.wav");
+        }
+            
+        sprintf(score,"Score: %d", character.getScore());
+        sprintf(vite,"Lives: %d", character.getLife());
         
         glPushMatrix();
             glColor4f(1.0, 1.0, 1.0, 0.0);
@@ -184,12 +198,12 @@ void Game::drawScene(){
 void Game::gameOver(){
     engine->play2D("sounds/game_over.wav");
     obj.initObject();
+    character.SaveHighScore();
     character.initialPosition();
-    character.SaveHighScore(30);
     std::cout<<"Game Over"<<std::endl;
     isPaused = true;
     isGameOver = true;
-    lifes = 3;
+    velocity = 0.1;
 }
 
 void Game::windowSpecial(int key,int x,int y){
@@ -197,11 +211,13 @@ void Game::windowSpecial(int key,int x,int y){
         if (key == GLUT_KEY_RIGHT){
             if(isAudio)
                 engine->play2D("sounds/Jump.wav");
+            
             character.setX(0.5);
         }
         else if (key == GLUT_KEY_LEFT){
             if(isAudio)
                 engine->play2D("sounds/Jump.wav");
+            
             character.setX(-0.5);
         }
     }
