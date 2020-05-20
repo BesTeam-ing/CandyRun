@@ -21,13 +21,13 @@ Character::Character(){};
 Character::~Character(){};
 
 void Character::init(){
-    this->loadObj = loader.load("/Users/ciro/Downloads/bb8_body2/bb8_body2.obj","/Users/ciro/Downloads/bb8_body2/bb8_body2.mtl");
+    this->loadObj = loader.load("/Users/gennaromellone/Downloads/bb8_body2/bb8_body2.obj","/Users/gennaromellone/Downloads/bb8_body2/bb8_body2.mtl");
 }
 
 void Character::initialPosition(){
     this->x = 0.0f;
     this->y = 0.5f;
-    this->z = 15.0f;
+    this->z = 14.2f;
     this->rotateAngle = 0.0f;
     this->lifes = 3;
     this->score = 0;

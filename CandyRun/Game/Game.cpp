@@ -21,6 +21,7 @@ Road road;
 Object obj;
 Character character;
 Menu menu;
+GUI gui;
 irrklang::ISoundEngine* engine;
 
 GLdouble asp;
@@ -32,8 +33,8 @@ bool isPaused = false;
 bool isAudio = false;
 bool isGameOver = false;
 
-char score[20];
-char vite[20];
+char* score;
+char* vite;
 
 float velocity = 0.1;
 
@@ -138,12 +139,13 @@ void Game::drawGame(){
     }
     else{
         isGameOver = false;
-
+        
         part.drawRain();
         road.drawRoad();
         
         //create light
         glEnable(GL_LIGHTING);
+         gui.draw(character.getScore(), character.getLife());
         
         character.drawCharacter();
         obj.drawObject();
@@ -158,26 +160,8 @@ void Game::drawGame(){
             character.setScore(10);
             engine->play2D("sounds/score.wav");
         }
-            
-        sprintf(score,"Score: %d", character.getScore());
-        sprintf(vite,"Lives: %d", character.getLife());
+       
         
-        glPushMatrix();
-            glColor4f(1.0, 1.0, 1.0, 0.0);
-            glTranslatef(-20, 12, 0);
-            glScalef(0.01,0.01,0.01);
-            for( const char* p = score; *p; p++){
-                glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
-            }
-        glPopMatrix();
-        glPushMatrix();
-            glColor4f(1.0, 1.0, 1.0, 0.0);
-        glTranslatef(-20, 10.5, 0);
-            glScalef(0.01,0.01,0.01);
-            for( const char* p = vite; *p; p++){
-                glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
-            }
-        glPopMatrix();
             
         glDisable(GL_LIGHTING);
     }

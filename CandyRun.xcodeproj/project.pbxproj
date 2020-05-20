@@ -55,6 +55,7 @@
 		63988123247413A100224E63 /* pila.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811C247410CD00224E63 /* pila.obj */; };
 		63988124247413A100224E63 /* wall.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811D247410CD00224E63 /* wall.mtl */; };
 		63988125247413A100224E63 /* wall.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811E247410CD00224E63 /* wall.obj */; };
+		639881332475DDCD00224E63 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 639881312475DDCD00224E63 /* GUI.cpp */; };
 		63BAD63024704F130032F6EF /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63BAD62E24704F130032F6EF /* objloader.cpp */; };
 		63BAD63224704F7C0032F6EF /* libSDL-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; };
 		63BAD651247065840032F6EF /* bb8.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD650247065740032F6EF /* bb8.mtl */; };
@@ -916,6 +917,8 @@
 		6398811E247410CD00224E63 /* wall.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wall.obj; sourceTree = "<group>"; };
 		6398811F247410CE00224E63 /* pila_tex.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = pila_tex.bmp; sourceTree = "<group>"; };
 		63988120247410CE00224E63 /* pila.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pila.mtl; sourceTree = "<group>"; };
+		639881312475DDCD00224E63 /* GUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
+		639881322475DDCD00224E63 /* GUI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUI.hpp; sourceTree = "<group>"; };
 		63BAD62E24704F130032F6EF /* objloader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objloader.cpp; sourceTree = "<group>"; };
 		63BAD62F24704F130032F6EF /* objloader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objloader.hpp; sourceTree = "<group>"; };
 		63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL-1.2.0.dylib"; path = "../../../../../usr/local/Cellar/sdl/1.2.15_1/lib/libSDL-1.2.0.dylib"; sourceTree = "<group>"; };
@@ -1057,6 +1060,7 @@
 		6311931C245B174500FE95F7 /* CandyRun */ = {
 			isa = PBXGroup;
 			children = (
+				639881302475DDBA00224E63 /* GUI */,
 				63BAD62D24704EFF0032F6EF /* OBJLoader */,
 				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
 				6396F1382464A51900B72597 /* SOIL2 */,
@@ -2172,6 +2176,15 @@
 			path = textures;
 			sourceTree = "<group>";
 		};
+		639881302475DDBA00224E63 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				639881312475DDCD00224E63 /* GUI.cpp */,
+				639881322475DDCD00224E63 /* GUI.hpp */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
 		63BAD62D24704EFF0032F6EF /* OBJLoader */ = {
 			isa = PBXGroup;
 			children = (
@@ -2314,6 +2327,7 @@
 				4002E286246AB525007157C3 /* Game.cpp in Sources */,
 				6311931E245B174500FE95F7 /* main.cpp in Sources */,
 				6396F17124670EBA00B72597 /* objects.cpp in Sources */,
+				639881332475DDCD00224E63 /* GUI.cpp in Sources */,
 				63BAD63024704F130032F6EF /* objloader.cpp in Sources */,
 				6396F1672465B47E00B72597 /* skybox.cpp in Sources */,
 			);
@@ -2437,7 +2451,7 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -2456,7 +2470,7 @@
 				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
