@@ -24,7 +24,6 @@ void GUI::draw(int score, int life){
     glColor4f(0.0, 0.1, 0.7, 0.0);
     glPushMatrix();
     glBegin(GL_POLYGON);
-    
         glVertex3f(-19.0f, 12, 1);
         glVertex3f(-10, 12, 1);
         glVertex3f(-10, 10, 1);
@@ -70,7 +69,6 @@ void GUI::draw(int score, int life){
     glColor4f(0.0, 0.1, 0.7, 0.0);
     glPushMatrix();
     glBegin(GL_POLYGON);
-    
         glVertex3f(-19.0f, 6.7, 1);
         glVertex3f(-15, 6.7, 1);
         glVertex3f(-15, 4, 1);

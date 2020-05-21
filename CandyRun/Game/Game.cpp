@@ -49,7 +49,7 @@ Game::Game(int argc, char **argv, const char *name){
 
 Game::~Game(){};
 
-void Timer(int value)
+void Game::Timer(int value)
 {
     if(isStart && !isPaused){
         if((velocity + 0.1) <= 1.5)
@@ -77,7 +77,7 @@ void Game::init(){
     
     this->initAll();
         
-    Timer(0);
+    this->Timer(0);
     glutMainLoop();
 }
 
@@ -145,8 +145,7 @@ void Game::drawGame(){
         
         //create light
         glEnable(GL_LIGHTING);
-         gui.draw(character.getScore(), character.getLife());
-        
+        gui.draw(character.getScore(), character.getLife());
         character.drawCharacter();
         obj.drawObject();
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
@@ -161,8 +160,6 @@ void Game::drawGame(){
             engine->play2D("sounds/score.wav");
         }
        
-        
-            
         glDisable(GL_LIGHTING);
     }
     
