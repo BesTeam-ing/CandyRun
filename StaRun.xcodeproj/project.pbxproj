@@ -187,7 +187,7 @@
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
-		402B6064245B20F300A4DE19 /* CandyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyRun.entitlements; sourceTree = "<group>"; };
+		40702C66247695070056D275 /* StaRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StaRun.entitlements; sourceTree = "<group>"; };
 		408D954324728E3F0080D9E5 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		408D954F2472B8040080D9E5 /* starwars.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = starwars.wav; sourceTree = "<group>"; };
 		40A80391246EB5F600241D87 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		40F68AEE2469828100538F5B /* Server.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Server.hpp; sourceTree = "<group>"; };
 		40F68AF02469829B00538F5B /* libcurl.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.4.tbd; path = usr/lib/libcurl.4.tbd; sourceTree = SDKROOT; };
 		40F68AF22469878400538F5B /* jsoncpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
-		6311931A245B174500FE95F7 /* CandyRun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CandyRun; sourceTree = BUILT_PRODUCTS_DIR; };
+		6311931A245B174500FE95F7 /* StaRun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StaRun; sourceTree = BUILT_PRODUCTS_DIR; };
 		6311931D245B174500FE95F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6312ECFD246B17590003CC58 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/libirrklang.dylib"; sourceTree = "<group>"; };
 		6312ED04246B191E0003CC58 /* AssemblyInfo.cs */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyInfo.cs; sourceTree = "<group>"; };
@@ -1043,7 +1043,7 @@
 		63119311245B174500FE95F7 = {
 			isa = PBXGroup;
 			children = (
-				6311931C245B174500FE95F7 /* CandyRun */,
+				6311931C245B174500FE95F7 /* StaRun */,
 				6311931B245B174500FE95F7 /* Products */,
 				402B605D245B20C300A4DE19 /* Frameworks */,
 			);
@@ -1052,15 +1052,15 @@
 		6311931B245B174500FE95F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6311931A245B174500FE95F7 /* CandyRun */,
+				6311931A245B174500FE95F7 /* StaRun */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6311931C245B174500FE95F7 /* CandyRun */ = {
+		6311931C245B174500FE95F7 /* StaRun */ = {
 			isa = PBXGroup;
 			children = (
-				402B6064245B20F300A4DE19 /* CandyRun.entitlements */,
+				40702C66247695070056D275 /* StaRun.entitlements */,
 				6396F1382464A51900B72597 /* SOIL2 */,
 				6396F179246754E300B72597 /* textures */,
 				40E038302469E53200F1EDC2 /* sounds */,
@@ -1077,7 +1077,7 @@
 				40D691AD246C0D4300C40301 /* Character */,
 				6311931D245B174500FE95F7 /* main.cpp */,
 			);
-			path = CandyRun;
+			path = StaRun;
 			sourceTree = "<group>";
 		};
 		6312ED01246B191E0003CC58 /* 1.5.0 */ = {
@@ -2197,9 +2197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		63119319245B174500FE95F7 /* CandyRun */ = {
+		63119319245B174500FE95F7 /* StaRun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63119321245B174500FE95F7 /* Build configuration list for PBXNativeTarget "CandyRun" */;
+			buildConfigurationList = 63119321245B174500FE95F7 /* Build configuration list for PBXNativeTarget "StaRun" */;
 			buildPhases = (
 				63119316245B174500FE95F7 /* Sources */,
 				63119317245B174500FE95F7 /* Frameworks */,
@@ -2212,9 +2212,9 @@
 			);
 			dependencies = (
 			);
-			name = CandyRun;
+			name = StaRun;
 			productName = CandyRun;
-			productReference = 6311931A245B174500FE95F7 /* CandyRun */;
+			productReference = 6311931A245B174500FE95F7 /* StaRun */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -2231,7 +2231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 63119315245B174500FE95F7 /* Build configuration list for PBXProject "CandyRun" */;
+			buildConfigurationList = 63119315245B174500FE95F7 /* Build configuration list for PBXProject "StaRun" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -2266,7 +2266,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				63119319245B174500FE95F7 /* CandyRun */,
+				63119319245B174500FE95F7 /* StaRun */,
 			);
 		};
 /* End PBXProject section */
@@ -2448,7 +2448,7 @@
 		63119322245B174500FE95F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
+				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73L5SW73XX;
@@ -2467,7 +2467,7 @@
 		63119323245B174500FE95F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CandyRun/CandyRun.entitlements;
+				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73L5SW73XX;
@@ -2486,7 +2486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63119315245B174500FE95F7 /* Build configuration list for PBXProject "CandyRun" */ = {
+		63119315245B174500FE95F7 /* Build configuration list for PBXProject "StaRun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6311931F245B174500FE95F7 /* Debug */,
@@ -2495,7 +2495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63119321245B174500FE95F7 /* Build configuration list for PBXNativeTarget "CandyRun" */ = {
+		63119321245B174500FE95F7 /* Build configuration list for PBXNativeTarget "StaRun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63119322245B174500FE95F7 /* Debug */,
