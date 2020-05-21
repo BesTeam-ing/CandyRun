@@ -1,4 +1,4 @@
-# CandyRun
+# StaRun
 Computer Graphics Project 2020 - Made by Gennaro Mellone and Ciro Giuseppe De Vita.
 University of Naples "Parthenope"
 
