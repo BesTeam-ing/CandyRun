@@ -16,7 +16,6 @@
 SkyBox sky;
 WeatherEffects part;
 Camera camera = Camera(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
-Server server;
 Road road;
 Object obj;
 Character character;
@@ -32,11 +31,21 @@ bool isStart = false;
 bool isPaused = false;
 bool isAudio = false;
 bool isGameOver = false;
+bool isDay = true;
+
+enum weather{
+    CLEAR,
+    RAIN,
+    SNOW
+};
+int weather_condition = CLEAR;
 
 char* score;
 char* vite;
 
 float velocity = 0.1;
+
+int background_chosen = 0;
 
 //GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
 GLfloat lightPosition[] = { 0.1, 0.5, 0.5, 0.1};
@@ -88,14 +97,10 @@ void Game::initAll(){
     glPushMatrix();
         
         menu.initMenu();
-        character.init();
-        obj.load("textures/wall.obj","textures/wall.mtl");
+        
+        obj.load();
         obj.initObject();
         road.initializeGround();
-        //server.getWeather();
-        //sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
-        sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
-        part.initParticles();
         
         glMatrixMode(GL_MODELVIEW);
             
@@ -139,8 +144,22 @@ void Game::drawGame(){
     }
     else{
         isGameOver = false;
+                
+        //WEATHER CONDITION
+        switch (weather_condition) {
+            case CLEAR:
+                break;
+            case RAIN:
+                part.drawRain();
+                break;
+            case SNOW:
+                part.drawSnow();
+                break;
+                
+            default:
+                break;
+        }
         
-        part.drawRain();
         road.drawRoad();
         
         //create light
@@ -203,7 +222,7 @@ void Game::windowSpecial(int key,int x,int y){
         }
     }
     else{
-        std::cout<<"Do nothing"<<std::endl;
+        menu.drawBackground(key);
     }
 
     redisplayAll();
@@ -227,7 +246,7 @@ void Game::windowKey(unsigned char key,int x,int y){
     
     else if(key == 'p' or key == 'P'){
         if(isStart)
-        isPaused = !isPaused;
+            isPaused = !isPaused;
     }
     
     else if(key == 'm' or key == 'M'){
@@ -269,8 +288,31 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
         if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
             int select = menu.select(x,y);
             
-            if(select == 1)
+            if(select == 1){
                 isStart = true;
+                character.init();
+                part.initParticles();
+                switch (menu.getBackground()) {
+                    case 0: //GIORNO SERENO
+                        sky.initSkyBox("textures/sky191ft.bmp", "textures/sky191rt.bmp", "textures/sky191lf.bmp", "textures/sky191bk.bmp", "textures/sky191up.bmp", "textures/sky191dn.bmp");
+                        weather_condition = CLEAR;
+                        break;
+                    
+                    case 1: //SERA SERENO
+                        std::cout<<"SERA"<<std::endl;
+                        sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
+                        weather_condition = CLEAR;
+                        break;
+                    case 2: //GIORNO PIOGGIA
+                        sky.initSkyBox("textures/sky303ft.bmp", "textures/sky303rt.bmp", "textures/sky303lf.bmp", "textures/sky303bk.bmp", "textures/sky303up.bmp", "textures/sky303dn.bmp");
+                        weather_condition = RAIN;
+                        break;
+                        
+                    default: //GIORNO SERENO
+                        sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
+                        weather_condition = CLEAR;
+                }
+            }
             else if(select == 2){
                 std::cout<<character.ReadHighScore()<<std::endl;
             }

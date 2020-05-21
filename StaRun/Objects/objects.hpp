@@ -39,7 +39,7 @@ public:
     float getY();
     float getZ();
     
-    void load(const char *path_obj, const char *path_mtl);
+    void load();
     unsigned int getTexture();
     void setDimension(float f);
     void setColor(GLfloat r, GLfloat g, GLfloat b);

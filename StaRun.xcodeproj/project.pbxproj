@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40003E992476D93D0057F96A /* sky303bk.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003E982476D91C0057F96A /* sky303bk.bmp */; };
+		40003EA22476F58A0057F96A /* sky303dn.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003E9E2476F5590057F96A /* sky303dn.bmp */; };
+		40003EA32476F58A0057F96A /* sky303ft.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA12476F55A0057F96A /* sky303ft.bmp */; };
+		40003EA42476F58A0057F96A /* sky303lf.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003E9D2476F5590057F96A /* sky303lf.bmp */; };
+		40003EA52476F58A0057F96A /* sky303rt.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003E9F2476F55A0057F96A /* sky303rt.bmp */; };
+		40003EA62476F58A0057F96A /* sky303up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA02476F55A0057F96A /* sky303up.bmp */; };
+		40003EAD2476F6E20057F96A /* sky191bk.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EAA2476F68A0057F96A /* sky191bk.bmp */; };
+		40003EAE2476F6E20057F96A /* sky191dn.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EAC2476F68A0057F96A /* sky191dn.bmp */; };
+		40003EAF2476F6E20057F96A /* sky191ft.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EAB2476F68A0057F96A /* sky191ft.bmp */; };
+		40003EB02476F6E20057F96A /* sky191lf.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA92476F68A0057F96A /* sky191lf.bmp */; };
+		40003EB12476F6E20057F96A /* sky191rt.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA72476F6890057F96A /* sky191rt.bmp */; };
+		40003EB22476F6E20057F96A /* sky191up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA82476F6890057F96A /* sky191up.bmp */; };
 		4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4002E281246AAF90007157C3 /* Jump.wav */; };
 		4002E286246AB525007157C3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4002E284246AB525007157C3 /* Game.cpp */; };
 		4002E57D246B1C82007157C3 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E577246B1BA3007157C3 /* ikpFLAC.dylib */; };
@@ -43,12 +55,6 @@
 		6396F1672465B47E00B72597 /* skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1652465B47E00B72597 /* skybox.cpp */; };
 		6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1692465EFB600B72597 /* w_effects.cpp */; };
 		6396F17124670EBA00B72597 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F16F24670EBA00B72597 /* objects.cpp */; };
-		6396F1812467558E00B72597 /* txStormydays_down.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17A246754E300B72597 /* txStormydays_down.bmp */; };
-		6396F1822467558E00B72597 /* txStormydays_back.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17B246754E300B72597 /* txStormydays_back.bmp */; };
-		6396F1832467558E00B72597 /* txStormydays_up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17C246754E300B72597 /* txStormydays_up.bmp */; };
-		6396F1842467558E00B72597 /* txStormydays_left.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17D246754E300B72597 /* txStormydays_left.bmp */; };
-		6396F1852467558E00B72597 /* txStormydays_right.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17E246754E300B72597 /* txStormydays_right.bmp */; };
-		6396F1862467558E00B72597 /* txStormydays_front.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F17F246754E300B72597 /* txStormydays_front.bmp */; };
 		6396F1872467559700B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F180246754E700B72597 /* road.jpg */; };
 		63988121247413A100224E63 /* pila_tex.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811F247410CE00224E63 /* pila_tex.bmp */; };
 		63988122247413A100224E63 /* pila.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63988120247410CE00224E63 /* pila.mtl */; };
@@ -140,6 +146,18 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				40003EAD2476F6E20057F96A /* sky191bk.bmp in Copy Files */,
+				40003EAE2476F6E20057F96A /* sky191dn.bmp in Copy Files */,
+				40003EAF2476F6E20057F96A /* sky191ft.bmp in Copy Files */,
+				40003EB02476F6E20057F96A /* sky191lf.bmp in Copy Files */,
+				40003EB12476F6E20057F96A /* sky191rt.bmp in Copy Files */,
+				40003EB22476F6E20057F96A /* sky191up.bmp in Copy Files */,
+				40003EA22476F58A0057F96A /* sky303dn.bmp in Copy Files */,
+				40003EA32476F58A0057F96A /* sky303ft.bmp in Copy Files */,
+				40003EA42476F58A0057F96A /* sky303lf.bmp in Copy Files */,
+				40003EA52476F58A0057F96A /* sky303rt.bmp in Copy Files */,
+				40003EA62476F58A0057F96A /* sky303up.bmp in Copy Files */,
+				40003E992476D93D0057F96A /* sky303bk.bmp in Copy Files */,
 				63988121247413A100224E63 /* pila_tex.bmp in Copy Files */,
 				63988122247413A100224E63 /* pila.mtl in Copy Files */,
 				63988123247413A100224E63 /* pila.obj in Copy Files */,
@@ -157,12 +175,6 @@
 				63BAD651247065840032F6EF /* bb8.mtl in Copy Files */,
 				63BAD652247065840032F6EF /* bb8.obj in Copy Files */,
 				6396F1872467559700B72597 /* road.jpg in Copy Files */,
-				6396F1812467558E00B72597 /* txStormydays_down.bmp in Copy Files */,
-				6396F1822467558E00B72597 /* txStormydays_back.bmp in Copy Files */,
-				6396F1832467558E00B72597 /* txStormydays_up.bmp in Copy Files */,
-				6396F1842467558E00B72597 /* txStormydays_left.bmp in Copy Files */,
-				6396F1852467558E00B72597 /* txStormydays_right.bmp in Copy Files */,
-				6396F1862467558E00B72597 /* txStormydays_front.bmp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +182,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		40003E982476D91C0057F96A /* sky303bk.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky303bk.bmp; sourceTree = "<group>"; };
+		40003E9D2476F5590057F96A /* sky303lf.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky303lf.bmp; sourceTree = "<group>"; };
+		40003E9E2476F5590057F96A /* sky303dn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky303dn.bmp; sourceTree = "<group>"; };
+		40003E9F2476F55A0057F96A /* sky303rt.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky303rt.bmp; sourceTree = "<group>"; };
+		40003EA02476F55A0057F96A /* sky303up.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky303up.bmp; sourceTree = "<group>"; };
+		40003EA12476F55A0057F96A /* sky303ft.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky303ft.bmp; sourceTree = "<group>"; };
+		40003EA72476F6890057F96A /* sky191rt.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191rt.bmp; sourceTree = "<group>"; };
+		40003EA82476F6890057F96A /* sky191up.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191up.bmp; sourceTree = "<group>"; };
+		40003EA92476F68A0057F96A /* sky191lf.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191lf.bmp; sourceTree = "<group>"; };
+		40003EAA2476F68A0057F96A /* sky191bk.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191bk.bmp; sourceTree = "<group>"; };
+		40003EAB2476F68A0057F96A /* sky191ft.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191ft.bmp; sourceTree = "<group>"; };
+		40003EAC2476F68A0057F96A /* sky191dn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191dn.bmp; sourceTree = "<group>"; };
 		4002E281246AAF90007157C3 /* Jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Jump.wav; sourceTree = "<group>"; };
 		4002E284246AB525007157C3 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		4002E285246AB525007157C3 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
@@ -904,12 +928,6 @@
 		6396F16A2465EFB600B72597 /* w_effects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = w_effects.hpp; sourceTree = "<group>"; };
 		6396F16F24670EBA00B72597 /* objects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objects.cpp; sourceTree = "<group>"; };
 		6396F17024670EBA00B72597 /* objects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
-		6396F17A246754E300B72597 /* txStormydays_down.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_down.bmp; sourceTree = "<group>"; };
-		6396F17B246754E300B72597 /* txStormydays_back.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_back.bmp; sourceTree = "<group>"; };
-		6396F17C246754E300B72597 /* txStormydays_up.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_up.bmp; sourceTree = "<group>"; };
-		6396F17D246754E300B72597 /* txStormydays_left.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_left.bmp; sourceTree = "<group>"; };
-		6396F17E246754E300B72597 /* txStormydays_right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_right.bmp; sourceTree = "<group>"; };
-		6396F17F246754E300B72597 /* txStormydays_front.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = txStormydays_front.bmp; sourceTree = "<group>"; };
 		6396F180246754E700B72597 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = road.jpg; sourceTree = "<group>"; };
 		6396F188246836C600B72597 /* Vector3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3f.h; sourceTree = "<group>"; };
 		6398811C247410CD00224E63 /* pila.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pila.obj; sourceTree = "<group>"; };
@@ -2149,6 +2167,18 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				40003EAA2476F68A0057F96A /* sky191bk.bmp */,
+				40003EAC2476F68A0057F96A /* sky191dn.bmp */,
+				40003EAB2476F68A0057F96A /* sky191ft.bmp */,
+				40003EA92476F68A0057F96A /* sky191lf.bmp */,
+				40003EA72476F6890057F96A /* sky191rt.bmp */,
+				40003EA82476F6890057F96A /* sky191up.bmp */,
+				40003E982476D91C0057F96A /* sky303bk.bmp */,
+				40003E9E2476F5590057F96A /* sky303dn.bmp */,
+				40003EA12476F55A0057F96A /* sky303ft.bmp */,
+				40003E9D2476F5590057F96A /* sky303lf.bmp */,
+				40003E9F2476F55A0057F96A /* sky303rt.bmp */,
+				40003EA02476F55A0057F96A /* sky303up.bmp */,
 				6398811F247410CE00224E63 /* pila_tex.bmp */,
 				63988120247410CE00224E63 /* pila.mtl */,
 				6398811C247410CD00224E63 /* pila.obj */,
@@ -2166,12 +2196,6 @@
 				63BAD650247065740032F6EF /* bb8.mtl */,
 				63BAD64F247065740032F6EF /* bb8.obj */,
 				6396F180246754E700B72597 /* road.jpg */,
-				6396F17F246754E300B72597 /* txStormydays_front.bmp */,
-				6396F17A246754E300B72597 /* txStormydays_down.bmp */,
-				6396F17B246754E300B72597 /* txStormydays_back.bmp */,
-				6396F17C246754E300B72597 /* txStormydays_up.bmp */,
-				6396F17D246754E300B72597 /* txStormydays_left.bmp */,
-				6396F17E246754E300B72597 /* txStormydays_right.bmp */,
 			);
 			path = textures;
 			sourceTree = "<group>";

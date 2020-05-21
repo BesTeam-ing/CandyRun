@@ -25,8 +25,12 @@ public:
     void drawMenu();
     void initMenu();
     int select(GLint x, GLint y);
+    void drawBackground(int key);
+    
+    int getBackground();
 private:
     void DrawText(float x,float y, const char *text);
+    int background = 0;
 };
 
 #endif /* menu_hpp */

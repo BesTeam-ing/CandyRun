@@ -17,7 +17,7 @@ Object::~Object(){}
 
 int wall, battery;
 
-void Object::load(const char *path_obj, const char *path_mtl){
+void Object::load(){
     battery = objload1.load("textures/pila.obj","textures/pila.mtl");;
     wall = objload.load("textures/wall.obj","textures/wall.mtl");
 }
