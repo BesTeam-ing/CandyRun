@@ -19,6 +19,10 @@
 		40003EB02476F6E20057F96A /* sky191lf.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA92476F68A0057F96A /* sky191lf.bmp */; };
 		40003EB12476F6E20057F96A /* sky191rt.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA72476F6890057F96A /* sky191rt.bmp */; };
 		40003EB22476F6E20057F96A /* sky191up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA82476F6890057F96A /* sky191up.bmp */; };
+		40003EB724771DF10057F96A /* bb8_body.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB324771DE60057F96A /* bb8_body.mtl */; };
+		40003EB824771DF10057F96A /* bb8_body.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB524771DE60057F96A /* bb8_body.obj */; };
+		40003EB924771DF10057F96A /* bb8_head.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB624771DE60057F96A /* bb8_head.mtl */; };
+		40003EBA24771DF10057F96A /* bb8_head.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB424771DE60057F96A /* bb8_head.obj */; };
 		4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4002E281246AAF90007157C3 /* Jump.wav */; };
 		4002E286246AB525007157C3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4002E284246AB525007157C3 /* Game.cpp */; };
 		4002E57D246B1C82007157C3 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E577246B1BA3007157C3 /* ikpFLAC.dylib */; };
@@ -35,7 +39,6 @@
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
-		408D954424728E490080D9E5 /* background.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 408D954324728E3F0080D9E5 /* background.jpg */; };
 		408D95502472B81E0080D9E5 /* starwars.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408D954F2472B8040080D9E5 /* starwars.wav */; };
 		40A80392246EB60200241D87 /* game_over.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80391246EB5F600241D87 /* game_over.wav */; };
 		40A8039C246EDC2000241D87 /* highscore in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A8039B246EDB9D00241D87 /* highscore */; };
@@ -55,7 +58,6 @@
 		6396F1672465B47E00B72597 /* skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1652465B47E00B72597 /* skybox.cpp */; };
 		6396F16B2465EFB600B72597 /* w_effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1692465EFB600B72597 /* w_effects.cpp */; };
 		6396F17124670EBA00B72597 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396F16F24670EBA00B72597 /* objects.cpp */; };
-		6396F1872467559700B72597 /* road.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 6396F180246754E700B72597 /* road.jpg */; };
 		63988121247413A100224E63 /* pila_tex.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811F247410CE00224E63 /* pila_tex.bmp */; };
 		63988122247413A100224E63 /* pila.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63988120247410CE00224E63 /* pila.mtl */; };
 		63988123247413A100224E63 /* pila.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811C247410CD00224E63 /* pila.obj */; };
@@ -64,8 +66,6 @@
 		639881332475DDCD00224E63 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 639881312475DDCD00224E63 /* GUI.cpp */; };
 		63BAD63024704F130032F6EF /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63BAD62E24704F130032F6EF /* objloader.cpp */; };
 		63BAD63224704F7C0032F6EF /* libSDL-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; };
-		63BAD651247065840032F6EF /* bb8.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD650247065740032F6EF /* bb8.mtl */; };
-		63BAD652247065840032F6EF /* bb8.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 63BAD64F247065740032F6EF /* bb8.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +146,10 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				40003EB724771DF10057F96A /* bb8_body.mtl in Copy Files */,
+				40003EB824771DF10057F96A /* bb8_body.obj in Copy Files */,
+				40003EB924771DF10057F96A /* bb8_head.mtl in Copy Files */,
+				40003EBA24771DF10057F96A /* bb8_head.obj in Copy Files */,
 				40003EAD2476F6E20057F96A /* sky191bk.bmp in Copy Files */,
 				40003EAE2476F6E20057F96A /* sky191dn.bmp in Copy Files */,
 				40003EAF2476F6E20057F96A /* sky191ft.bmp in Copy Files */,
@@ -170,11 +174,7 @@
 				4027E32C2473362D0036F5B7 /* skylf.bmp in Copy Files */,
 				4027E32D2473362D0036F5B7 /* skyrt.bmp in Copy Files */,
 				4027E32E2473362D0036F5B7 /* skyup.bmp in Copy Files */,
-				408D954424728E490080D9E5 /* background.jpg in Copy Files */,
 				4018AE79247162F5004F720F /* menu_item.jpg in Copy Files */,
-				63BAD651247065840032F6EF /* bb8.mtl in Copy Files */,
-				63BAD652247065840032F6EF /* bb8.obj in Copy Files */,
-				6396F1872467559700B72597 /* road.jpg in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +194,10 @@
 		40003EAA2476F68A0057F96A /* sky191bk.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191bk.bmp; sourceTree = "<group>"; };
 		40003EAB2476F68A0057F96A /* sky191ft.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191ft.bmp; sourceTree = "<group>"; };
 		40003EAC2476F68A0057F96A /* sky191dn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191dn.bmp; sourceTree = "<group>"; };
+		40003EB324771DE60057F96A /* bb8_body.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.mtl; sourceTree = "<group>"; };
+		40003EB424771DE60057F96A /* bb8_head.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.obj; sourceTree = "<group>"; };
+		40003EB524771DE60057F96A /* bb8_body.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.obj; sourceTree = "<group>"; };
+		40003EB624771DE60057F96A /* bb8_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.mtl; sourceTree = "<group>"; };
 		4002E281246AAF90007157C3 /* Jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Jump.wav; sourceTree = "<group>"; };
 		4002E284246AB525007157C3 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		4002E285246AB525007157C3 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
@@ -212,7 +216,6 @@
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
 		40702C66247695070056D275 /* StaRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StaRun.entitlements; sourceTree = "<group>"; };
-		408D954324728E3F0080D9E5 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		408D954F2472B8040080D9E5 /* starwars.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = starwars.wav; sourceTree = "<group>"; };
 		40A80391246EB5F600241D87 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
 		40A8039B246EDB9D00241D87 /* highscore */ = {isa = PBXFileReference; lastKnownFileType = text; path = highscore; sourceTree = "<group>"; };
@@ -928,7 +931,6 @@
 		6396F16A2465EFB600B72597 /* w_effects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = w_effects.hpp; sourceTree = "<group>"; };
 		6396F16F24670EBA00B72597 /* objects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objects.cpp; sourceTree = "<group>"; };
 		6396F17024670EBA00B72597 /* objects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
-		6396F180246754E700B72597 /* road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = road.jpg; sourceTree = "<group>"; };
 		6396F188246836C600B72597 /* Vector3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3f.h; sourceTree = "<group>"; };
 		6398811C247410CD00224E63 /* pila.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pila.obj; sourceTree = "<group>"; };
 		6398811D247410CD00224E63 /* wall.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wall.mtl; sourceTree = "<group>"; };
@@ -940,8 +942,6 @@
 		63BAD62E24704F130032F6EF /* objloader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objloader.cpp; sourceTree = "<group>"; };
 		63BAD62F24704F130032F6EF /* objloader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objloader.hpp; sourceTree = "<group>"; };
 		63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL-1.2.0.dylib"; path = "../../../../../usr/local/Cellar/sdl/1.2.15_1/lib/libSDL-1.2.0.dylib"; sourceTree = "<group>"; };
-		63BAD64F247065740032F6EF /* bb8.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8.obj; sourceTree = "<group>"; };
-		63BAD650247065740032F6EF /* bb8.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8.mtl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2167,6 +2167,10 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				40003EB324771DE60057F96A /* bb8_body.mtl */,
+				40003EB524771DE60057F96A /* bb8_body.obj */,
+				40003EB624771DE60057F96A /* bb8_head.mtl */,
+				40003EB424771DE60057F96A /* bb8_head.obj */,
 				40003EAA2476F68A0057F96A /* sky191bk.bmp */,
 				40003EAC2476F68A0057F96A /* sky191dn.bmp */,
 				40003EAB2476F68A0057F96A /* sky191ft.bmp */,
@@ -2191,11 +2195,7 @@
 				4027E323247335A20036F5B7 /* skylf.bmp */,
 				4027E324247335A20036F5B7 /* skyrt.bmp */,
 				4027E325247335A20036F5B7 /* skyup.bmp */,
-				408D954324728E3F0080D9E5 /* background.jpg */,
 				4018AE78247162A1004F720F /* menu_item.jpg */,
-				63BAD650247065740032F6EF /* bb8.mtl */,
-				63BAD64F247065740032F6EF /* bb8.obj */,
-				6396F180246754E700B72597 /* road.jpg */,
 			);
 			path = textures;
 			sourceTree = "<group>";

@@ -48,12 +48,11 @@ private:
     float x = 0.0f;
     float y = 0.5f;
     float z = 14.2f;
-    float size = 0.5f;
     float rotateAngle = 0.0f;
     
     int score;
     int lifes =3;
-    int loadObj;
+    int body, head;
 };
 
 #endif /* character_hpp */

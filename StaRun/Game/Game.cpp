@@ -299,7 +299,6 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                         break;
                     
                     case 1: //SERA SERENO
-                        std::cout<<"SERA"<<std::endl;
                         sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
                         weather_condition = CLEAR;
                         break;
@@ -311,6 +310,18 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                     default: //GIORNO SERENO
                         sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
                         weather_condition = CLEAR;
+                }
+                
+                switch (menu.getCharacter()) {
+                    case 0:
+                        std::cout<<"BB8"<<std::endl;
+                        break;
+                    case 1:
+                        std::cout<<"D0"<<std::endl;
+                        break;
+                        
+                    default:
+                        break;
                 }
             }
             else if(select == 2){

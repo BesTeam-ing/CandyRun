@@ -8,11 +8,8 @@
 
 #include "character.hpp"
 
-
 //GLfloat lp[] = { 1.0, 0.7, 0.6, 0.0f };
 GLfloat lp[] = {0.5, 0.5, 0.9, 0.4};
-GLfloat bianco[]      = { 1.0f, 1.0f, 1.0f, 1.0f };
-GLfloat bluTenue[]    = { 0.1f, 0.1f, 0.3f, 1.0f };
 
 objloader loader;
 
@@ -21,7 +18,8 @@ Character::Character(){};
 Character::~Character(){};
 
 void Character::init(){
-    this->loadObj = loader.load("/Users/ciro/Downloads/bb8_body2/bb8_body2.obj","/Users/ciro/Downloads/bb8_body2/bb8_body2.mtl");
+    this->body = loader.load("textures/bb8_body.obj","textures/bb8_body.mtl");
+    this->head = loader.load("textures/bb8_head.obj", "textures/bb8_head.mtl");
 }
 
 void Character::initialPosition(){
@@ -118,10 +116,20 @@ void Character::drawCharacter(){
         glTranslatef(this->x, this->y, this->z);
         glRotatef(this->rotateAngle, -1, 0, 0);
         glLightfv(GL_LIGHT0,GL_POSITION,lp);
-        glCallList(this->loadObj);
+        glCallList(this->body);
     glPopMatrix();
+    
     glPushMatrix();
-    drawShadow(0.5, this->x, this->y, 15);
+        glTranslatef(this->x, this->y, this->z);
+        glRotatef(180, 0, -1, 0);
+        //glRotatef(10, 0, 0, 1); TESTA A DESTRA
+        glRotatef(10, 1, 0, 0);
+        glLightfv(GL_LIGHT0,GL_POSITION,lp);
+        glCallList(this->head);
+    glPopMatrix();
+    
+    glPushMatrix();
+        drawShadow(0.5, this->x, this->y, 15);
     glPopMatrix();
 }
 
@@ -149,7 +157,7 @@ void Character::drawShadow(float R, float X, float Y, int vert){
               t += 2 * PI / vert;
            }
         glEnd();*/
-    }
+}
     /*
     glMaterialfv( GL_FRONT, GL_AMBIENT,  bluTenue );
     glMaterialfv( GL_FRONT, GL_DIFFUSE,  blu );

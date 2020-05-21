@@ -21,19 +21,15 @@ const char* BACKGROUND[] = {
     "textures/skyup.bmp",
     "textures/sky303up.bmp"
 };
-int texture, texture_back[BACKGROUND_COUNT];
 
-/*
+int j = 0;
 const int CHARACTER_COUNT = 2;
-const char* CHARACTER_OBJ[] = {
+const char* CHARACTER[] = {
     "textures/txStormydays_front.bmp",
     "textures/skyrt.bmp"
 };
-const char* CHARACTER_MTL[] = {
-    "textures/txStormydays_front.bmp",
-    "textures/skyrt.bmp"
-};
- */
+
+int texture, texture_back[BACKGROUND_COUNT], texture_character[CHARACTER_COUNT];
 
 Menu::Menu(){}
 
@@ -41,6 +37,10 @@ Menu::~Menu(){}
 
 int Menu::getBackground(){
     return this->background;
+}
+
+int Menu::getCharacter(){
+    return this->character;
 }
 
 void Menu::initMenu(){
@@ -94,10 +94,17 @@ void Menu::initMenu(){
     polygons[8].y1=-1.75;
     polygons[8].y2=-3.25;
     
+    //TEXTURE MENU ITEMS
     texture = SOIL_load_OGL_texture("textures/menu_item.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     
+    //TEXTURE WEATHER BACKGROUND
     for(int j=0; j<BACKGROUND_COUNT; j++){
         texture_back[j] = SOIL_load_OGL_texture(BACKGROUND[j], SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    }
+    
+    //TEXTURE CHARACTERS
+    for (int j=0; j<CHARACTER_COUNT; j++){
+        texture_character[j] = texture_character[j] = SOIL_load_OGL_texture(CHARACTER[j], SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     }
 }
 
@@ -226,5 +233,13 @@ void Menu::drawBackground(int key){
     else if(key == GLUT_KEY_LEFT){
         i--;
         this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
+    }
+    else if(key == GLUT_KEY_UP){
+        j++;
+        this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
+    }
+    else if(key == GLUT_KEY_DOWN){
+        j--;
+        this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
     }
 }

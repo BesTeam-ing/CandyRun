@@ -28,9 +28,11 @@ public:
     void drawBackground(int key);
     
     int getBackground();
+    int getCharacter();
 private:
     void DrawText(float x,float y, const char *text);
     int background = 0;
+    int character = 0;
 };
 
 #endif /* menu_hpp */
