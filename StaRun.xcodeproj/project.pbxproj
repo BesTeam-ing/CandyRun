@@ -39,6 +39,10 @@
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
+		40664F4924773DC4005921D4 /* d0_body.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F4624773D94005921D4 /* d0_body.mtl */; };
+		40664F4A24773DC4005921D4 /* d0_body.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F4524773D94005921D4 /* d0_body.obj */; };
+		40664F4B24773DC4005921D4 /* d0_head.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F4724773D94005921D4 /* d0_head.mtl */; };
+		40664F4C24773DC4005921D4 /* d0_head.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F4824773D95005921D4 /* d0_head.obj */; };
 		408D95502472B81E0080D9E5 /* starwars.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408D954F2472B8040080D9E5 /* starwars.wav */; };
 		40A80392246EB60200241D87 /* game_over.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80391246EB5F600241D87 /* game_over.wav */; };
 		40A8039C246EDC2000241D87 /* highscore in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A8039B246EDB9D00241D87 /* highscore */; };
@@ -146,6 +150,10 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				40664F4924773DC4005921D4 /* d0_body.mtl in Copy Files */,
+				40664F4A24773DC4005921D4 /* d0_body.obj in Copy Files */,
+				40664F4B24773DC4005921D4 /* d0_head.mtl in Copy Files */,
+				40664F4C24773DC4005921D4 /* d0_head.obj in Copy Files */,
 				40003EB724771DF10057F96A /* bb8_body.mtl in Copy Files */,
 				40003EB824771DF10057F96A /* bb8_body.obj in Copy Files */,
 				40003EB924771DF10057F96A /* bb8_head.mtl in Copy Files */,
@@ -215,6 +223,10 @@
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
+		40664F4524773D94005921D4 /* d0_body.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_body.obj; sourceTree = "<group>"; };
+		40664F4624773D94005921D4 /* d0_body.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_body.mtl; sourceTree = "<group>"; };
+		40664F4724773D94005921D4 /* d0_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_head.mtl; sourceTree = "<group>"; };
+		40664F4824773D95005921D4 /* d0_head.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_head.obj; sourceTree = "<group>"; };
 		40702C66247695070056D275 /* StaRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StaRun.entitlements; sourceTree = "<group>"; };
 		408D954F2472B8040080D9E5 /* starwars.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = starwars.wav; sourceTree = "<group>"; };
 		40A80391246EB5F600241D87 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
@@ -2167,6 +2179,10 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				40664F4624773D94005921D4 /* d0_body.mtl */,
+				40664F4524773D94005921D4 /* d0_body.obj */,
+				40664F4724773D94005921D4 /* d0_head.mtl */,
+				40664F4824773D95005921D4 /* d0_head.obj */,
 				40003EB324771DE60057F96A /* bb8_body.mtl */,
 				40003EB524771DE60057F96A /* bb8_body.obj */,
 				40003EB624771DE60057F96A /* bb8_head.mtl */,

@@ -18,8 +18,8 @@ Character::Character(){};
 Character::~Character(){};
 
 void Character::init(){
-    this->body = loader.load("textures/bb8_body.obj","textures/bb8_body.mtl");
-    this->head = loader.load("textures/bb8_head.obj", "textures/bb8_head.mtl");
+    this->body = loader.load("textures/d0_body.obj","textures/d0_body.mtl");
+    this->head = loader.load("textures/d0_head.obj", "textures/d0_head.mtl");
 }
 
 void Character::initialPosition(){
@@ -115,6 +115,7 @@ void Character::drawCharacter(){
     glPushMatrix();
         glTranslatef(this->x, this->y, this->z);
         glRotatef(this->rotateAngle, -1, 0, 0);
+        glRotatef(90, 0, 1, 0);
         glLightfv(GL_LIGHT0,GL_POSITION,lp);
         glCallList(this->body);
     glPopMatrix();
@@ -123,6 +124,8 @@ void Character::drawCharacter(){
         glTranslatef(this->x, this->y, this->z);
         glRotatef(180, 0, -1, 0);
         //glRotatef(10, 0, 0, 1); TESTA A DESTRA
+        glRotatef(90, 0, -1, 0);
+        glRotatef(10, -1, 0, 0);
         glRotatef(10, 1, 0, 0);
         glLightfv(GL_LIGHT0,GL_POSITION,lp);
         glCallList(this->head);
