@@ -15,7 +15,6 @@ enum character{
     BB8,
     D0
 };
-int c = BB8;
 
 objloader loader;
 
@@ -23,16 +22,10 @@ Character::Character(){};
 
 Character::~Character(){};
 
-void Character::init(int value){
-    c = value;
-    if(value == BB8){
-        this->body = loader.load("textures/bb8_body.obj","textures/bb8_body.mtl");
-        this->head = loader.load("textures/bb8_head.obj", "textures/bb8_head.mtl");
-    }
-    else if (value == D0){
-        this->body = loader.load("textures/d0_body.obj","textures/d0_body.mtl");
-        this->head = loader.load("textures/d0_head.obj", "textures/d0_head.mtl");
-    }
+void Character::init(const char* file_obj_body, const char* file_mtl_body, const char* file_obj_head, const char* file_mtl_head, int value){
+    this->body = loader.load(file_obj_body,file_mtl_body);
+    this->head = loader.load(file_obj_head, file_mtl_head);
+    this->character_choosen = value;
 }
 
 void Character::initialPosition(){
@@ -127,7 +120,7 @@ void Character::drawCharacter(){
     //glLightfv(GL_LIGHT0,GL_POSITION,lp)
     
     //D0
-    if(c == D0){
+    if(this->character_choosen == D0){
         //CORPO
         glPushMatrix();
             glTranslatef(this->x, this->y, this->z);
@@ -148,7 +141,7 @@ void Character::drawCharacter(){
             glCallList(this->head);
         glPopMatrix();
     }
-    else if(c == BB8){ //BB8
+    else if(this->character_choosen == BB8){ //BB8
         //CORPO
         glPushMatrix();
             glTranslatef(this->x, this->y, this->z);

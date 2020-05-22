@@ -43,7 +43,7 @@ public:
     void drawCharacter();
     void drawShadow(float R, float X, float Y, int vert);
     void initialPosition();
-    void init(int value);
+    void init(const char* file_obj_body, const char* file_mtl_body, const char* file_obj_head, const char* file_mtl_head, int value);
 private:
     float x = 0.0f;
     float y = 0.5f;
@@ -53,6 +53,7 @@ private:
     int score;
     int lifes =3;
     int body, head;
+    int character_choosen;
 };
 
 #endif /* character_hpp */

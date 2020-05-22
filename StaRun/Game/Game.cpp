@@ -314,15 +314,15 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                 switch (menu.getCharacter()) {
                     case 0:
                         std::cout<<"BB8"<<std::endl;
-                        character.init(0);
+                        character.init("textures/bb8_body.obj","textures/bb8_body.mtl", "textures/bb8_head.obj", "textures/bb8_head.mtl", 0);
                         break;
                     case 1:
                         std::cout<<"D0"<<std::endl;
-                        character.init(1);
+                        character.init("textures/d0_body.obj","textures/d0_body.mtl", "textures/d0_head.obj", "textures/d0_head.mtl", 1);
                         break;
                         
                     default:
-                        character.init(0);
+                        character.init("textures/bb8_body.obj","textures/bb8_body.mtl", "textures/bb8_head.obj", "textures/bb8_head.mtl", 0);
                         break;
                 }
             }
