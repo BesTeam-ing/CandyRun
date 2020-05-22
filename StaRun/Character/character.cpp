@@ -81,7 +81,7 @@ int Character::getLife(){
 }
 
 int Character::ReadHighScore() {
-    std::ifstream fin("highscore");
+    std::ifstream fin("/Users/ciro/Desktop/Università/Computer Graphics/Progetto/StaRun/StaRun/Character/highscore.txt");
 
     if (!fin.is_open()) {
         std::cout << "Impossibile aprire il file!" << std::endl;
@@ -95,12 +95,10 @@ int Character::ReadHighScore() {
     return score;
 }
 
-void Character::SaveHighScore() {
-    std::cout<<ReadHighScore()<<" versus "<<this->score<<std::endl;
-    
+void Character::SaveHighScore() {    
     if(ReadHighScore() < this->score){
         std::ofstream myfile;
-        myfile.open("highscore");
+        myfile.open("/Users/ciro/Desktop/Università/Computer Graphics/Progetto/StaRun/StaRun/Character/highscore.txt");
 
         if (!myfile.is_open()) {
             std::cout << "Unable to update highscore" << std::endl;

@@ -12,8 +12,9 @@ typedef struct polygon{
      float x1,y1,x2,y2;
 } polygon;
   
-polygon polygons[13];
+polygon polygons[14];
 Server server;
+Character _character;
 
 int temp = 0, temp_night = 6;
 
@@ -49,6 +50,8 @@ const char* WEATHER[] = {
 int texture, texture_back[BACKGROUND_COUNT], texture_character[CHARACTER_COUNT], texture_weather[WEATHER_COUNT], texture2, arrow_left, arrow_right;
 
 bool isFirst = true;
+bool isHighscore = false;
+char _score[20];
 
 Menu::Menu(){}
 
@@ -167,6 +170,12 @@ void Menu::initMenu(){
     polygons[12].y1=-1.75;
     polygons[12].y2=-3.25;
     
+    //HIGHSCORE
+    polygons[13].x1=-2.0;
+    polygons[13].x2=2.0;
+    polygons[13].y1=2.0;
+    polygons[13].y2=-2.0;
+    
     //TEXTURE MENU ITEMS
     texture = SOIL_load_OGL_texture("textures/menu_item.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     arrow_left = SOIL_load_OGL_texture("textures/left-arrow.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
@@ -188,16 +197,25 @@ void Menu::initMenu(){
     }
 }
 
-void Menu::drawMenu(){
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-    
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    
-    glDisable(GL_LIGHTING);
-    glEnable(GL_DEPTH_TEST);
+void Menu::draw(){
+    if(isHighscore){
+        glPushMatrix();
+            glColor3f(0.0, 0.0, 0.0);
+            glBegin(GL_QUADS);
+                glTexCoord2f(0.0f,0.0f);
+                glVertex3f(polygons[13].x1, polygons[13].y1, -3);
+                glTexCoord2f(0.0f,1);
+                glVertex3f(polygons[13].x1, polygons[13].y2, -3);
+                glTexCoord2f(1.0f,1);
+                glVertex3f(polygons[13].x2, polygons[13].y2, -3);
+                glTexCoord2f(1.0f,0.0f);
+                glVertex3f(polygons[13].x2, polygons[13].y1, -3);
+            glEnd();
+        glPopMatrix();
+        
+        sprintf(_score,"Highscore: %d", _character.ReadHighScore());
+        this->DrawText(-1, 0, -4, _score);
+    }
     
     if(this->background == 3 && isFirst){
         isFirst = false;
@@ -218,8 +236,6 @@ void Menu::drawMenu(){
             temp_night = 8;
         }
     }
-    
-    glScalef(0.25,0.25,0.25);
     
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texture_back[this->background]);
@@ -413,21 +429,37 @@ void Menu::drawMenu(){
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     
-    DrawText(-0.40,2.75,"StaRun");
-    DrawText(-2.9,1.25,"Start");
-    DrawText(-3.3,0.0,"High Score");
-    DrawText(-2.9,-1.25,"Exit");
-    DrawText(1.25,1.35,"Character");
-    DrawText(1.35,-1.40,"Weather");
+    DrawText(-0.40,2.75,-2,"StaRun");
+    DrawText(-2.9,1.25,-2,"Start");
+    DrawText(-3.3,0.0,-2,"High Score");
+    DrawText(-2.9,-1.25,-2,"Exit");
+    DrawText(1.25,1.35,-2,"Character");
+    DrawText(1.35,-1.40,-2,"Weather");
+}
+
+void Menu::drawMenu(){
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    
+    glDisable(GL_LIGHTING);
+    glEnable(GL_DEPTH_TEST);
+    
+    glScalef(0.25,0.25,0.25);
+    
+    this->draw();
     
     glFlush();
     glutSwapBuffers();
 }
 
-void Menu::DrawText(float x,float y, const char *text){
+void Menu::DrawText(float x,float y, float z, const char *text){
     glPushMatrix();
         glColor4f(1.0, 1.0, 0.0, 0.0);
-        glTranslatef(x, y, -2);
+        glTranslatef(x, y, z);
         glScalef(0.0025,0.0025,0.0025);
         for( const char* p = text; *p; p++){
             glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
@@ -436,37 +468,43 @@ void Menu::DrawText(float x,float y, const char *text){
 }
 
 int Menu::select(GLint x, GLint y){
-    if((x>=0 && x<=460) && (y>=210 && y<=270))
-        return 1;
-    
-    else if((x>=0 && x<=460) && (y>=320 && y<=380))
-        return 2;
-    
-    else if((x>=0 && x<=460) && (y>=430 && y<=490))
-         return 3;
-    
-    else if((x>=665 && x<=775) && (y>=270 && y<=400)){
-        j--;
-        this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
+    if(isHighscore){
+        isHighscore = false;
     }
-    
-    else if((x>=1145 && x<=1250) && (y>=270 && y<=400)){
-        j++;
-        this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
-    }
-    
-    else if((x>=665 && x<=775) && (y>=515 && y<=650)){
-        i--;
-        this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
-        k--;
-        this->weather = (k % WEATHER_COUNT + WEATHER_COUNT) % WEATHER_COUNT;
-    }
-    
-    else if((x>=1145 && x<=1250) && (y>=515 && y<=650)){
-        i++;
-        this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
-        k++;
-        this->weather = (k % WEATHER_COUNT + WEATHER_COUNT) % WEATHER_COUNT;
+    else{
+        if((x>=0 && x<=460) && (y>=210 && y<=270))
+            return 1;
+        
+        else if((x>=0 && x<=460) && (y>=320 && y<=380)){
+            isHighscore = true;
+        }
+        
+        else if((x>=0 && x<=460) && (y>=430 && y<=490))
+             return 3;
+        
+        else if((x>=665 && x<=775) && (y>=270 && y<=400)){
+            j--;
+            this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
+        }
+        
+        else if((x>=1145 && x<=1250) && (y>=270 && y<=400)){
+            j++;
+            this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
+        }
+        
+        else if((x>=665 && x<=775) && (y>=515 && y<=650)){
+            i--;
+            this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
+            k--;
+            this->weather = (k % WEATHER_COUNT + WEATHER_COUNT) % WEATHER_COUNT;
+        }
+        
+        else if((x>=1145 && x<=1250) && (y>=515 && y<=650)){
+            i++;
+            this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
+            k++;
+            this->weather = (k % WEATHER_COUNT + WEATHER_COUNT) % WEATHER_COUNT;
+        }
     }
     
     return -1;

@@ -284,9 +284,6 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                         break;
                 }
             }
-            else if(select == 2){
-                std::cout<<character.ReadHighScore()<<std::endl;
-            }
             else if(select == 3){
                 engine->drop();
                 exit(0);

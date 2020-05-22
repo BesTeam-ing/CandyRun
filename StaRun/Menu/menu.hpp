@@ -15,6 +15,7 @@
 #include <SOIL2/SOIL2.h>
 
 #include "../Server/Server.hpp"
+#include "../Character/character.hpp"
 
 #include <stdio.h>
 #include <iostream>
@@ -34,7 +35,8 @@ public:
     int getCharacter();
     int getWeather();
 private:
-    void DrawText(float x,float y, const char *text);
+    void DrawText(float x,float y, float z, const char *text);
+    void draw();
     int background = 0;
     int character = 0;
     int weather = 0;
