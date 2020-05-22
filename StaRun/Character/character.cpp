@@ -151,6 +151,7 @@ void Character::drawCharacter(){
         glPopMatrix();
         
         //TESTA
+        /*
         glPushMatrix();
             glTranslatef(this->x, this->y, this->z);
             glRotatef(180, 0, -1, 0);
@@ -159,6 +160,7 @@ void Character::drawCharacter(){
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->head);
         glPopMatrix();
+         */
     }
     
     glPushMatrix();

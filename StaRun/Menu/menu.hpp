@@ -14,8 +14,12 @@
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
 
+#include "../Server/Server.hpp"
+
 #include <stdio.h>
 #include <iostream>
+#include <string>
+#include <time.h>
 
 class Menu{
 public:
@@ -25,14 +29,15 @@ public:
     void drawMenu();
     void initMenu();
     int select(GLint x, GLint y);
-    void drawBackground(int key);
     
     int getBackground();
     int getCharacter();
+    int getWeather();
 private:
     void DrawText(float x,float y, const char *text);
     int background = 0;
     int character = 0;
+    int weather = 0;
 };
 
 #endif /* menu_hpp */

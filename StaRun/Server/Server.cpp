@@ -59,8 +59,8 @@ std::string Server::getWeather(){
 
         if (jsonReader.parse(*httpData.get(), jsonData))
         {
-            std::cout << "Successfully parsed JSON data" << std::endl;
-            std::cout << jsonData["forecast"]["text"]["it"].toStyledString()<< std::endl;
+            //std::cout << "Successfully parsed JSON data" << std::endl;
+            //std::cout << jsonData["forecast"]["text"]["it"].toStyledString()<< std::endl;
             
             return jsonData["forecast"]["text"]["it"].toStyledString();
         }

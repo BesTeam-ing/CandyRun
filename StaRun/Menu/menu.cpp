@@ -12,31 +12,78 @@ typedef struct polygon{
      float x1,y1,x2,y2;
 } polygon;
   
-polygon polygons[9];
+polygon polygons[13];
+Server server;
+
+int temp = 0, temp_night = 6;
 
 int i = 0;
-const int BACKGROUND_COUNT = 3;
+const int BACKGROUND_COUNT = 6;
 const char* BACKGROUND[] = {
     "textures/sky191up.bmp",
-    "textures/skyup.bmp",
-    "textures/sky303up.bmp"
+    "textures/sky303up.bmp",
+    "textures/sky303up.bmp",
+    "",
+    "textures/pinkup.bmp",
+    "textures/spaceup.bmp"
 };
 
 int j = 0;
 const int CHARACTER_COUNT = 2;
 const char* CHARACTER[] = {
-    "textures/txStormydays_front.bmp",
-    "textures/skyrt.bmp"
+    "textures/bb8_icon.png",
+    "textures/d0_icon.png"
 };
 
-int texture, texture_back[BACKGROUND_COUNT], texture_character[CHARACTER_COUNT];
+int k = 0;
+const int WEATHER_COUNT = 6;
+const char* WEATHER[] = {
+    "textures/sun.png",
+    "textures/rainy.png",
+    "textures/snow.png",
+    "textures/meteo.png",
+    "textures/mars.png",
+    "textures/space.png"
+};
+
+int texture, texture_back[BACKGROUND_COUNT], texture_character[CHARACTER_COUNT], texture_weather[WEATHER_COUNT], texture2, arrow_left, arrow_right;
+
+bool isFirst = true;
 
 Menu::Menu(){}
 
 Menu::~Menu(){}
 
 int Menu::getBackground(){
-    return this->background;
+    time_t theTime = time(NULL);
+    struct tm *aTime = localtime(&theTime);
+    
+    int hour=aTime->tm_hour;
+
+    if(hour>=18){
+        switch (this->background) {
+            case 0:
+                return 6;
+                break;
+            case 1:
+                return 7;
+                break;
+            case 2:
+                return 8;
+                break;
+            
+            default:
+                return temp_night;
+                break;
+        }
+    }
+    else{
+        if(this->background == 3){
+            return temp;
+        }
+        else
+            return this->background;
+    }
 }
 
 int Menu::getCharacter(){
@@ -84,18 +131,46 @@ void Menu::initMenu(){
     polygons[6].y2=-4.0;
     
     //z=-2
+    //CHARACTER ICONS
     polygons[7].x1=1.25;
     polygons[7].x2=2.75;
     polygons[7].y1=1.0;
     polygons[7].y2=-0.5;
     
+    //WEATHER ICONS
     polygons[8].x1=1.25;
     polygons[8].x2=2.75;
     polygons[8].y1=-1.75;
     polygons[8].y2=-3.25;
+
+    //ARROW LEFT
+    polygons[9].x1=0.0;
+    polygons[9].x2=1.0;
+    polygons[9].y1=1.0;
+    polygons[9].y2=-0.5;
+    
+    //ARROW RIGHT
+    polygons[10].x1=3.0;
+    polygons[10].x2=4.0;
+    polygons[10].y1=1.0;
+    polygons[10].y2=-0.5;
+    
+    //ARROW LEFT 1
+    polygons[11].x1=0.0;
+    polygons[11].x2=1.0;
+    polygons[11].y1=-1.75;
+    polygons[11].y2=-3.25;
+    
+    //ARROW RIGHT 1
+    polygons[12].x1=3.0;
+    polygons[12].x2=4.0;
+    polygons[12].y1=-1.75;
+    polygons[12].y2=-3.25;
     
     //TEXTURE MENU ITEMS
     texture = SOIL_load_OGL_texture("textures/menu_item.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    arrow_left = SOIL_load_OGL_texture("textures/left-arrow.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    arrow_right = SOIL_load_OGL_texture("textures/right-arrow.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     
     //TEXTURE WEATHER BACKGROUND
     for(int j=0; j<BACKGROUND_COUNT; j++){
@@ -104,7 +179,12 @@ void Menu::initMenu(){
     
     //TEXTURE CHARACTERS
     for (int j=0; j<CHARACTER_COUNT; j++){
-        texture_character[j] = texture_character[j] = SOIL_load_OGL_texture(CHARACTER[j], SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+        texture_character[j] = SOIL_load_OGL_texture(CHARACTER[j], SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    }
+    
+    //WEATHER ICONS
+    for (int j=0; j<WEATHER_COUNT; j++){
+        texture_weather[j] = SOIL_load_OGL_texture(WEATHER[j], SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     }
 }
 
@@ -119,6 +199,26 @@ void Menu::drawMenu(){
     glDisable(GL_LIGHTING);
     glEnable(GL_DEPTH_TEST);
     
+    if(this->background == 3 && isFirst){
+        isFirst = false;
+        std::string api = server.getWeather();
+        if(api.find("Sereno")){
+            texture_back[3] = texture_back[0];
+            temp = 0;
+            temp_night = 6;
+        }
+        else if(api.find("Nuvol") || api.find("Pioggia") || api.find("Neve")){
+            texture_back[3] = texture_back[1];
+            temp = 1;
+            temp_night = 7;
+        }
+        else{
+            texture_back[3] = texture_back[2];
+            temp = 2;
+            temp_night = 8;
+        }
+    }
+    
     glScalef(0.25,0.25,0.25);
     
     glEnable(GL_TEXTURE_2D);
@@ -132,13 +232,13 @@ void Menu::drawMenu(){
     glColor3f(1.0, 1.0, 1.0);
     glBegin(GL_QUADS);
         glTexCoord2f(0.0f,0.0f);
-        glVertex3f(polygons[6].x1 , polygons[6].y1, 2);
+        glVertex3f(polygons[6].x1, polygons[6].y1, 2);
         glTexCoord2f(0.0f,1);
-        glVertex3f(polygons[6].x1 , polygons[6].y2, 2);
+        glVertex3f(polygons[6].x1, polygons[6].y2, 2);
         glTexCoord2f(1.0f,1);
-        glVertex3f(polygons[6].x2  , polygons[6].y2, 2);
+        glVertex3f(polygons[6].x2, polygons[6].y2, 2);
         glTexCoord2f(1.0f,0.0f);
-        glVertex3f(polygons[6].x2  , polygons[6].y1, 2);
+        glVertex3f(polygons[6].x2, polygons[6].y1, 2);
     glEnd();
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
@@ -156,37 +256,162 @@ void Menu::drawMenu(){
         glColor3f(1.0, 1.0, 1.0);
         glBegin(GL_QUADS);
             glTexCoord2f(0.0f,0.0f);
-            glVertex3f(polygons[i].x1 , polygons[i].y1, -1);
+            glVertex3f(polygons[i].x1, polygons[i].y1, -1);
             glTexCoord2f(0.0f,1);
-            glVertex3f(polygons[i].x1 , polygons[i].y2, -1);
+            glVertex3f(polygons[i].x1, polygons[i].y2, -1);
             glTexCoord2f(1.0f,1);
-            glVertex3f(polygons[i].x2  , polygons[i].y2, -1);
+            glVertex3f(polygons[i].x2, polygons[i].y2, -1);
             glTexCoord2f(1.0f,0.0f);
-            glVertex3f(polygons[i].x2  , polygons[i].y1, -1);
+            glVertex3f(polygons[i].x2, polygons[i].y1, -1);
         glEnd();
         glPopMatrix();
         glDisable(GL_TEXTURE_2D);
     }
     
     //Z=-2
-    for(int i=7; i<=8; i++){
-        glPushMatrix();
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        glColor4f(1.0, 1.0, 1.0, 0.5);
-        glBegin(GL_QUADS);
-            //glTexCoord2f(0.0f,0.0f);
-            glVertex3f(polygons[i].x1 , polygons[i].y1, -2);
-            //glTexCoord2f(0.0f,1);
-            glVertex3f(polygons[i].x1 , polygons[i].y2, -2);
-            //glTexCoord2f(1.0f,1);
-            glVertex3f(polygons[i].x2  , polygons[i].y2, -2);
-            //glTexCoord2f(1.0f,0.0f);
-            glVertex3f(polygons[i].x2  , polygons[i].y1, -2);
-        glEnd();
-        glDisable(GL_BLEND);
-        glPopMatrix();
-    }
+    //CHARACTER ICONS
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture_character[this->character]);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(1.0, 1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0.0f,0.0f);
+        glVertex3f(polygons[7].x1, polygons[7].y1, -2);
+        glTexCoord2f(0.0f,1);
+        glVertex3f(polygons[7].x1, polygons[7].y2, -2);
+        glTexCoord2f(1.0f,1);
+        glVertex3f(polygons[7].x2, polygons[7].y2, -2);
+        glTexCoord2f(1.0f,0.0f);
+        glVertex3f(polygons[7].x2, polygons[7].y1, -2);
+    glEnd();
+    glDisable(GL_BLEND);
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    
+    //WEATHER ICONS
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture_weather[this->weather]);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(1.0, 1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0.0f,0.0f);
+        glVertex3f(polygons[8].x1, polygons[8].y1, -2);
+        glTexCoord2f(0.0f,1);
+        glVertex3f(polygons[8].x1, polygons[8].y2, -2);
+        glTexCoord2f(1.0f,1);
+        glVertex3f(polygons[8].x2, polygons[8].y2, -2);
+        glTexCoord2f(1.0f,0.0f);
+        glVertex3f(polygons[8].x2, polygons[8].y1, -2);
+    glEnd();
+    glDisable(GL_BLEND);
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    
+    //ARROW LEFT
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, arrow_left);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(1.0, 1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0.0f,0.0f);
+        glVertex3f(polygons[9].x1, polygons[9].y1, -2);
+        glTexCoord2f(0.0f,1);
+        glVertex3f(polygons[9].x1, polygons[9].y2, -2);
+        glTexCoord2f(1.0f,1);
+        glVertex3f(polygons[9].x2, polygons[9].y2, -2);
+        glTexCoord2f(1.0f,0.0f);
+        glVertex3f(polygons[9].x2, polygons[9].y1, -2);
+    glEnd();
+    glDisable(GL_BLEND);
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    
+    //ARROW RIGTH
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, arrow_right);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(1.0, 1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0.0f,0.0f);
+        glVertex3f(polygons[10].x1, polygons[10].y1, -2);
+        glTexCoord2f(0.0f,1);
+        glVertex3f(polygons[10].x1, polygons[10].y2, -2);
+        glTexCoord2f(1.0f,1);
+        glVertex3f(polygons[10].x2, polygons[10].y2, -2);
+        glTexCoord2f(1.0f,0.0f);
+        glVertex3f(polygons[10].x2, polygons[10].y1, -2);
+    glEnd();
+    glDisable(GL_BLEND);
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    
+    //ARROW LEFT 1
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, arrow_left);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(1.0, 1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0.0f,0.0f);
+        glVertex3f(polygons[11].x1, polygons[11].y1, -2);
+        glTexCoord2f(0.0f,1);
+        glVertex3f(polygons[11].x1, polygons[11].y2, -2);
+        glTexCoord2f(1.0f,1);
+        glVertex3f(polygons[11].x2, polygons[11].y2, -2);
+        glTexCoord2f(1.0f,0.0f);
+        glVertex3f(polygons[11].x2, polygons[11].y1, -2);
+    glEnd();
+    glDisable(GL_BLEND);
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    
+    //ARROW RIGTH 1
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, arrow_right);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(1.0, 1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+        glTexCoord2f(0.0f,0.0f);
+        glVertex3f(polygons[12].x1, polygons[12].y1, -2);
+        glTexCoord2f(0.0f,1);
+        glVertex3f(polygons[12].x1, polygons[12].y2, -2);
+        glTexCoord2f(1.0f,1);
+        glVertex3f(polygons[12].x2, polygons[12].y2, -2);
+        glTexCoord2f(1.0f,0.0f);
+        glVertex3f(polygons[12].x2, polygons[12].y1, -2);
+    glEnd();
+    glDisable(GL_BLEND);
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
     
     DrawText(-0.40,2.75,"StaRun");
     DrawText(-2.9,1.25,"Start");
@@ -211,8 +436,6 @@ void Menu::DrawText(float x,float y, const char *text){
 }
 
 int Menu::select(GLint x, GLint y){
-    std::cout<<x<<" "<<y<<std::endl;
-    
     if((x>=0 && x<=460) && (y>=210 && y<=270))
         return 1;
     
@@ -222,24 +445,29 @@ int Menu::select(GLint x, GLint y){
     else if((x>=0 && x<=460) && (y>=430 && y<=490))
          return 3;
     
-    return -1;
-}
-
-void Menu::drawBackground(int key){
-    if(key == GLUT_KEY_RIGHT){
-        i++;
-        this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
-    }
-    else if(key == GLUT_KEY_LEFT){
-        i--;
-        this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
-    }
-    else if(key == GLUT_KEY_UP){
-        j++;
-        this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
-    }
-    else if(key == GLUT_KEY_DOWN){
+    else if((x>=665 && x<=775) && (y>=270 && y<=400)){
         j--;
         this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
     }
+    
+    else if((x>=1145 && x<=1250) && (y>=270 && y<=400)){
+        j++;
+        this->character = (j % CHARACTER_COUNT + CHARACTER_COUNT) % CHARACTER_COUNT;
+    }
+    
+    else if((x>=665 && x<=775) && (y>=515 && y<=650)){
+        i--;
+        this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
+        k--;
+        this->weather = (k % WEATHER_COUNT + WEATHER_COUNT) % WEATHER_COUNT;
+    }
+    
+    else if((x>=1145 && x<=1250) && (y>=515 && y<=650)){
+        i++;
+        this->background = (i % BACKGROUND_COUNT + BACKGROUND_COUNT) % BACKGROUND_COUNT;
+        k++;
+        this->weather = (k % WEATHER_COUNT + WEATHER_COUNT) % WEATHER_COUNT;
+    }
+    
+    return -1;
 }
