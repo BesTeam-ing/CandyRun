@@ -11,15 +11,28 @@
 //GLfloat lp[] = { 1.0, 0.7, 0.6, 0.0f };
 GLfloat lp[] = {0.5, 0.5, 0.9, 0.4};
 
+enum character{
+    BB8,
+    D0
+};
+int c = BB8;
+
 objloader loader;
 
 Character::Character(){};
 
 Character::~Character(){};
 
-void Character::init(){
-    this->body = loader.load("textures/d0_body.obj","textures/d0_body.mtl");
-    this->head = loader.load("textures/d0_head.obj", "textures/d0_head.mtl");
+void Character::init(int value){
+    c = value;
+    if(value == BB8){
+        this->body = loader.load("textures/bb8_body.obj","textures/bb8_body.mtl");
+        this->head = loader.load("textures/bb8_head.obj", "textures/bb8_head.mtl");
+    }
+    else if (value == D0){
+        this->body = loader.load("textures/d0_body.obj","textures/d0_body.mtl");
+        this->head = loader.load("textures/d0_head.obj", "textures/d0_head.mtl");
+    }
 }
 
 void Character::initialPosition(){
@@ -111,25 +124,49 @@ void Character::drawCharacter(){
     if(this->rotateAngle > 360.0f)
         this->rotateAngle -= 360.0f;
     
-    //glLightfv(GL_LIGHT0,GL_POSITION,lp);
-    glPushMatrix();
-        glTranslatef(this->x, this->y, this->z);
-        glRotatef(this->rotateAngle, -1, 0, 0);
-        glRotatef(90, 0, 1, 0);
-        glLightfv(GL_LIGHT0,GL_POSITION,lp);
-        glCallList(this->body);
-    glPopMatrix();
+    //glLightfv(GL_LIGHT0,GL_POSITION,lp)
     
-    glPushMatrix();
-        glTranslatef(this->x, this->y, this->z);
-        glRotatef(180, 0, -1, 0);
-        //glRotatef(10, 0, 0, 1); TESTA A DESTRA
-        glRotatef(90, 0, -1, 0);
-        glRotatef(10, -1, 0, 0);
-        glRotatef(10, 1, 0, 0);
-        glLightfv(GL_LIGHT0,GL_POSITION,lp);
-        glCallList(this->head);
-    glPopMatrix();
+    //D0
+    if(c == D0){
+        //CORPO
+        glPushMatrix();
+            glTranslatef(this->x, this->y, this->z);
+            glRotatef(this->rotateAngle, -1, 0, 0);
+            glRotatef(90, 0, 1, 0);
+            glLightfv(GL_LIGHT0,GL_POSITION,lp);
+            glCallList(this->body);
+        glPopMatrix();
+        
+        //TESTA
+        glPushMatrix();
+            glTranslatef(this->x, this->y, this->z);
+            glRotatef(180, 0, -1, 0);
+            glRotatef(90, 0, -1, 0);
+            glRotatef(10, -1, 0, 0);
+            glRotatef(10, 1, 0, 0);
+            glLightfv(GL_LIGHT0,GL_POSITION,lp);
+            glCallList(this->head);
+        glPopMatrix();
+    }
+    else if(c == BB8){ //BB8
+        //CORPO
+        glPushMatrix();
+            glTranslatef(this->x, this->y, this->z);
+            glRotatef(this->rotateAngle, -1, 0, 0);
+            glLightfv(GL_LIGHT0,GL_POSITION,lp);
+            glCallList(this->body);
+        glPopMatrix();
+        
+        //TESTA
+        glPushMatrix();
+            glTranslatef(this->x, this->y, this->z);
+            glRotatef(180, 0, -1, 0);
+            //glRotatef(10, 0, 0, 1); TESTA A DESTRA
+            glRotatef(10, 1, 0, 0);
+            glLightfv(GL_LIGHT0,GL_POSITION,lp);
+            glCallList(this->head);
+        glPopMatrix();
+    }
     
     glPushMatrix();
         drawShadow(0.5, this->x, this->y, 15);

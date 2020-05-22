@@ -43,7 +43,7 @@ public:
     void drawCharacter();
     void drawShadow(float R, float X, float Y, int vert);
     void initialPosition();
-    void init();
+    void init(int value);
 private:
     float x = 0.0f;
     float y = 0.5f;

@@ -290,7 +290,6 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
             
             if(select == 1){
                 isStart = true;
-                character.init();
                 part.initParticles();
                 switch (menu.getBackground()) {
                     case 0: //GIORNO SERENO
@@ -315,12 +314,15 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                 switch (menu.getCharacter()) {
                     case 0:
                         std::cout<<"BB8"<<std::endl;
+                        character.init(0);
                         break;
                     case 1:
                         std::cout<<"D0"<<std::endl;
+                        character.init(1);
                         break;
                         
                     default:
+                        character.init(0);
                         break;
                 }
             }
