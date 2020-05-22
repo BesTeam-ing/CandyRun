@@ -10,6 +10,7 @@
 
 GLfloat lp1[] = { 0.0f, 1.0f, -1.0f, 0.0f };
 std::vector< std::vector<Object> > objects(4);
+std::vector< std::vector<Object> > lamp(2);
 Object o;
 
 Object::Object(){}
@@ -89,7 +90,9 @@ void Object::setEnemy(bool obj){
 
 void Object::initObject(){
     objects.clear();
+    lamp.clear();
     
+    //ENEMY OR BATTERY
     float beginning = -60.0;
     for (int i=0; i<4; i++) {
         std::vector<Object> v1;
@@ -120,9 +123,26 @@ void Object::initObject(){
         objects.push_back(v1);
         beginning += 20;
     }
+    
+    //LAMPIONI
+    float beginning_lamp = -60.0;
+    for (int i=0; i<4; i++) {
+        std::vector<Object> v2;
+        o.setPosition(-7.0f, 0.5f, beginning_lamp+3);
+        o.setEnemy(false);
+        v2.push_back(o);
+        
+        o.setPosition(7.0f, 0.5f, beginning_lamp+3);
+        o.setEnemy(false);
+        v2.push_back(o);
+        
+        lamp.push_back(v2);
+        beginning_lamp += 20;
+    }
 }
 
 void Object::drawObject(float speed){
+    //ENEMY OR BATTERY
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
             int n = rand()%10-5;
@@ -132,6 +152,21 @@ void Object::drawObject(float speed){
             glPushMatrix();
                 objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), roundf((objects[i][j].getZ() + speed)*100)/100);
                 objects[i][j].draw(objects[i][j].isEnemy);
+            glPopMatrix();
+        }
+    }
+    
+    //LAMP
+    for (int i=0; i<lamp.size(); i++) {
+        for(int j=0; j<lamp[i].size(); j++){
+            if(lamp[i][j].getZ() > 30.0 && j==0)
+                lamp[i][j].setPosition(-7, 1, -60);
+            else if(lamp[i][j].getZ() > 30.0 && j==1)
+                lamp[i][j].setPosition(7, 1, -60);
+           
+            glPushMatrix();
+                lamp[i][j].setPosition(lamp[i][j].getX(), lamp[i][j].getY(), roundf((lamp[i][j].getZ() + speed)*100)/100);
+                lamp[i][j].draw(lamp[i][j].isEnemy);
             glPopMatrix();
         }
     }

@@ -176,7 +176,7 @@ void Game::drawGame(){
         
         character.drawCharacter();
         
-        obj.drawObject(speed);
+        obj.drawObject(0.1);
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
             std::cout<<"Collision"<<std::endl;
             character.setLife(-1);
