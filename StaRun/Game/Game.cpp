@@ -43,7 +43,8 @@ int weather_condition = CLEAR;
 char* score;
 char* vite;
 
-float velocity = 0.1;
+float update = 0.1;
+float speed = 0.1;
 
 int background_chosen = 0;
 
@@ -61,14 +62,20 @@ Game::~Game(){};
 void Game::Timer(int value)
 {
     if(isStart && !isPaused){
-        if((velocity + 0.1) <= 1.5)
-            velocity += 0.1;
+        if(update <= 1.5){
+            if(10%(int(update*10)) == 0){
+                std::cout<<"QUI: "<<update*10<<std::endl;
+                speed = update;
+                std::cout<<"Velocità: "<<speed<<std::endl;
+            }
+        }
         else
             return;
+        
+        update += 0.1;
         glutPostRedisplay();
-        std::cout<<velocity<<std::endl;
     }
-    glutTimerFunc(4000, Timer, 0);
+    glutTimerFunc(10000, Timer, 0);
 }
 
 void Game::init(){
@@ -169,7 +176,7 @@ void Game::drawGame(){
         
         character.drawCharacter();
         
-        obj.drawObject();
+        obj.drawObject(speed);
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
             std::cout<<"Collision"<<std::endl;
             character.setLife(-1);
@@ -206,7 +213,8 @@ void Game::gameOver(){
     std::cout<<"Game Over"<<std::endl;
     isPaused = true;
     isGameOver = true;
-    velocity = 0.1;
+    speed = 0.1;
+    update = 0.1;
 }
 
 void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){

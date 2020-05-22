@@ -48,7 +48,7 @@ public:
     void setEnemy(bool obj);
     
     void initObject();
-    void drawObject();
+    void drawObject(float speed);
     int handleCollision(float x, float y, float z);
     
 private:

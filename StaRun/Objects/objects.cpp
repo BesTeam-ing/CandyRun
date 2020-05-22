@@ -122,7 +122,7 @@ void Object::initObject(){
     }
 }
 
-void Object::drawObject(){
+void Object::drawObject(float speed){
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
             int n = rand()%10-5;
@@ -130,7 +130,7 @@ void Object::drawObject(){
                 objects[i][j].setPosition(n, 1, -60);
            
             glPushMatrix();
-                objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), roundf((objects[i][j].getZ() + 0.1f)*100)/100);
+                objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), roundf((objects[i][j].getZ() + speed)*100)/100);
                 objects[i][j].draw(objects[i][j].isEnemy);
             glPopMatrix();
         }
