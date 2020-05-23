@@ -42,7 +42,7 @@ const char* WEATHER[] = {
     "textures/sun.png",
     "textures/rainy.png",
     "textures/snow.png",
-    "textures/meteo.png",
+    "textures/meteo_logo.png",
     "textures/mars.png",
     "textures/space.png"
 };
