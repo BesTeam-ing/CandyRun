@@ -3,7 +3,7 @@
 newmtl BOX
 Ka 1 1 1
 Kd 0.80000001192093 0.5821333527565 0.11200000345707
-map_Kd textures/pila_tex.bmp
+map_Kd ./textures/pila_tex.bmp
 Ks 1 1 1
 Ns 50
 illum 7

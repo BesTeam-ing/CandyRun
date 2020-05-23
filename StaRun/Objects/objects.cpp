@@ -16,7 +16,7 @@ Object o;
 Object::Object(){}
 Object::~Object(){}
 
-int wall, battery;
+int wall, battery, light;
 
 enum OBJ{
     WALL,
@@ -26,7 +26,8 @@ enum OBJ{
 
 void Object::load(){
     battery = objload1.load("textures/pila.obj","textures/pila.mtl");;
-    wall = objload.load("textures/wall.obj","textures/wall.mtl");
+    wall = objload.load("/Users/gennaromellone/Desktop/gioco/wall.obj","/Users/gennaromellone/Desktop/gioco/wall.mtl");
+    light = objload.load("/Users/gennaromellone/Desktop/gioco/lampione.obj","/Users/gennaromellone/Desktop/gioco/lampione.mtl");
 }
 
 float Object::getX(){
@@ -72,8 +73,7 @@ void Object::draw(int obj){
     switch (obj) {
         case WALL:
             glPushMatrix();
-            glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-                glScalef(1, 1, 0.1);
+            glTranslatef(this->pos_X, this->pos_Y + 0.2, this->pos_Z);
                 glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
                 glCallList(wall);
             glPopMatrix();
@@ -81,20 +81,21 @@ void Object::draw(int obj){
         
         case BATTERY:
             glPushMatrix();
-                glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+                glTranslatef(this->pos_X, this->pos_Y+0.5, this->pos_Z);
                 glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
                 glCallList(battery);
             glPopMatrix();
+            break;
             
-        /*
+        
         case LAMP:
             glPushMatrix();
                 glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
                 glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
-                //glCallList(_lamp);
+                glCallList(light);
             glPopMatrix();
             break;
-         */
+         
             
         default:
             break;
@@ -149,11 +150,11 @@ void Object::initObject(){
     float beginning_lamp = -60.0;
     for (int i=0; i<4; i++) {
         std::vector<Object> v2;
-        o.setPosition(-7.0f, 0.5f, beginning_lamp+3);
+        o.setPosition(-7.0f, 2.1f, beginning_lamp+3);
         o.setObj(LAMP);
         v2.push_back(o);
         
-        o.setPosition(7.0f, 0.5f, beginning_lamp+3);
+        o.setPosition(7.0f, 2.1f, beginning_lamp+3);
         o.setObj(LAMP);
         v2.push_back(o);
         
