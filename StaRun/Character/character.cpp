@@ -170,6 +170,7 @@ void Character::drawShadow(float R, float X, float Y, int vert){
         glColor4f(0.3, 0.3, 0.3, 0.9);
         glDisable(GL_LIGHTING);
         
+        
         glRotatef(90, 1, 0, 0);
         GLfloat xOffset = X;
         GLfloat yOffset = this->z +0.6;
@@ -178,6 +179,7 @@ void Character::drawShadow(float R, float X, float Y, int vert){
         for(float t = -10 * PI; t <= 10 * PI; t += PI/20.0)
             glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
         glEnd();
+
         glEnable(GL_LIGHTING);
         /*float t = 0;
         
