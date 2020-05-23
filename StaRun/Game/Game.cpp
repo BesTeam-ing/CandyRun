@@ -129,22 +129,48 @@ void Game::drawGame(){
     
     if(isPaused){
         const char* text;
-        int x;
+        const char* text_resume;
+        const char* text_esc;
+        int x, x1;
         if(isGameOver){
             text = "GAME OVER";
+            text_resume = "PRESS 'P' TO RESTART";
+            text_esc = "PRESS 'ESC' TO QUIT";
             x = -20;
+            x1 = -15;
         }
             
         else{
             text = "PAUSE";
+            text_resume = "PRESS 'P' TO RESUME";
+            text_esc = "PRESS 'ESC' TO QUIT";
             x = -10;
+            x1 = -15;
         }
         
         glPushMatrix();
             glColor4f(1.0, 1.0, 1.0, 0.0);
-            glTranslatef(x, 0, 0);
+            glTranslatef(x, 3, 0);
             glScalef(0.05,0.05,0.05);
             for( const char* p = text; *p; p++){
+                glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
+            }
+        glPopMatrix();
+        
+        glPushMatrix();
+            glColor4f(1.0, 1.0, 1.0, 0.0);
+            glTranslatef(x1, -2, 0);
+            glScalef(0.02,0.02,0.02);
+            for( const char* p = text_resume; *p; p++){
+                glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
+            }
+        glPopMatrix();
+        
+        glPushMatrix();
+            glColor4f(1.0, 1.0, 1.0, 0.0);
+            glTranslatef(x1, -7, 0);
+            glScalef(0.02,0.02,0.02);
+            for( const char* p = text_esc; *p; p++){
                 glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
             }
         glPopMatrix();
