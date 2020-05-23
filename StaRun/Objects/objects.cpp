@@ -18,6 +18,12 @@ Object::~Object(){}
 
 int wall, battery;
 
+enum OBJ{
+    WALL,
+    BATTERY,
+    LAMP
+};
+
 void Object::load(){
     battery = objload1.load("textures/pila.obj","textures/pila.mtl");;
     wall = objload.load("textures/wall.obj","textures/wall.mtl");
@@ -62,30 +68,45 @@ void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
     this->b = b;
 }
 
-void Object::draw(bool isEnemy){
-    if(isEnemy){
-        glPushMatrix();
-        glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-            glScalef(1, 1, 0.1);
-            glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
-            glCallList(wall);
-        glPopMatrix();
-    }
-    else{
-        glPushMatrix();
+void Object::draw(int obj){
+    switch (obj) {
+        case WALL:
+            glPushMatrix();
             glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-            glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
-            glCallList(battery);
-        glPopMatrix();
+                glScalef(1, 1, 0.1);
+                glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+                glCallList(wall);
+            glPopMatrix();
+            break;
+        
+        case BATTERY:
+            glPushMatrix();
+                glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+                glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+                glCallList(battery);
+            glPopMatrix();
+            
+        /*
+        case LAMP:
+            glPushMatrix();
+                glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+                glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+                //glCallList(_lamp);
+            glPopMatrix();
+            break;
+         */
+            
+        default:
+            break;
     }
 }
 
-bool Object::getEnemy(){
-    return this->isEnemy;
+int Object::getObj(){
+    return this->obj;
 }
 
-void Object::setEnemy(bool obj){
-    this->isEnemy = obj;
+void Object::setObj(int obj){
+    this->obj = obj;
 }
 
 void Object::initObject(){
@@ -99,24 +120,24 @@ void Object::initObject(){
         int x = 0;
         for(int j=0; j<2; j++){
             int n = rand()%10-5;
-            bool e;
+            int e;
             if(x<1){
                 if (rand() % 2 == 0){
-                    e = true;
+                    e = WALL;
                     o.setPosition(n, 0.5f, beginning+7);
                 }
                 else{
-                    e = false;
+                    e = BATTERY;
                     x++;
                     o.setPosition(n, 0.5f, beginning);
                 }
             }
             else{
-                e = true;
+                e = WALL;
                 o.setPosition(n, 0.5f, beginning+7);
             }
             
-            o.setEnemy(e);
+            o.setObj(e);
             
             v1.push_back(o);
         }
@@ -129,11 +150,11 @@ void Object::initObject(){
     for (int i=0; i<4; i++) {
         std::vector<Object> v2;
         o.setPosition(-7.0f, 0.5f, beginning_lamp+3);
-        o.setEnemy(false);
+        o.setObj(LAMP);
         v2.push_back(o);
         
         o.setPosition(7.0f, 0.5f, beginning_lamp+3);
-        o.setEnemy(false);
+        o.setObj(LAMP);
         v2.push_back(o);
         
         lamp.push_back(v2);
@@ -151,7 +172,7 @@ void Object::drawObject(float speed){
            
             glPushMatrix();
                 objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), roundf((objects[i][j].getZ() + speed)*100)/100);
-                objects[i][j].draw(objects[i][j].isEnemy);
+                objects[i][j].draw(objects[i][j].obj);
             glPopMatrix();
         }
     }
@@ -166,7 +187,7 @@ void Object::drawObject(float speed){
            
             glPushMatrix();
                 lamp[i][j].setPosition(lamp[i][j].getX(), lamp[i][j].getY(), roundf((lamp[i][j].getZ() + speed)*100)/100);
-                lamp[i][j].draw(lamp[i][j].isEnemy);
+            lamp[i][j].draw(lamp[i][j].obj);
             glPopMatrix();
         }
     }
@@ -175,9 +196,9 @@ void Object::drawObject(float speed){
 int Object::handleCollision(float x, float y, float z){
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
-            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].isEnemy)
+            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].obj == WALL)
                 return OSTACOLO;
-            else if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && !objects[i][j].isEnemy){
+            else if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY){
                 //objects[i][j].setPosition(0, 0, 30);
                 return PREMIO;
             }

@@ -44,8 +44,8 @@ public:
     void setDimension(float f);
     void setColor(GLfloat r, GLfloat g, GLfloat b);
     
-    bool getEnemy();
-    void setEnemy(bool obj);
+    int getObj();
+    void setObj(int obj);
     
     void initObject();
     void drawObject(float speed);
@@ -69,13 +69,13 @@ private:
     GLfloat g = 0.0;
     GLfloat b = 0.0;
     
-    bool isEnemy = true;
+    int obj;
     
     objloader objload, objload1;
     
     const GLfloat lightWall[4] = { 0.1, 0.5, 0.5, 0.1};
     
-    void draw(bool isEnemy);
+    void draw(int obj);
 };
 
 #endif /* objects_hpp */
