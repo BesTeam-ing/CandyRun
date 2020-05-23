@@ -91,6 +91,10 @@
 		63988124247413A100224E63 /* wall.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811D247410CD00224E63 /* wall.mtl */; };
 		63988125247413A100224E63 /* wall.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398811E247410CD00224E63 /* wall.obj */; };
 		639881332475DDCD00224E63 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 639881312475DDCD00224E63 /* GUI.cpp */; };
+		6398813E24798B9A00224E63 /* background_button1.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398813D24798B3C00224E63 /* background_button1.png */; };
+		6398813F24798B9A00224E63 /* background_button2.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398813C24798B3C00224E63 /* background_button2.png */; };
+		6398814124798B9A00224E63 /* logo.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398813A24798AFB00224E63 /* logo.png */; };
+		6398814424798C5C00224E63 /* meteo_logo.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398814324798C4E00224E63 /* meteo_logo.png */; };
 		63BAD63024704F130032F6EF /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63BAD62E24704F130032F6EF /* objloader.cpp */; };
 		63BAD63224704F7C0032F6EF /* libSDL-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; };
 /* End PBXBuildFile section */
@@ -163,6 +167,10 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				6398814424798C5C00224E63 /* meteo_logo.png in Copy Files */,
+				6398813E24798B9A00224E63 /* background_button1.png in Copy Files */,
+				6398813F24798B9A00224E63 /* background_button2.png in Copy Files */,
+				6398814124798B9A00224E63 /* logo.png in Copy Files */,
 				40664F8C2477FB1F005921D4 /* highscore.txt in Copy Files */,
 				40664F832477EFF6005921D4 /* spacedn.bmp in Copy Files */,
 				40664F842477EFF6005921D4 /* spaceup.bmp in Copy Files */,
@@ -1011,6 +1019,10 @@
 		63988120247410CE00224E63 /* pila.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pila.mtl; sourceTree = "<group>"; };
 		639881312475DDCD00224E63 /* GUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
 		639881322475DDCD00224E63 /* GUI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GUI.hpp; sourceTree = "<group>"; };
+		6398813A24798AFB00224E63 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		6398813C24798B3C00224E63 /* background_button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_button2.png; sourceTree = "<group>"; };
+		6398813D24798B3C00224E63 /* background_button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_button1.png; sourceTree = "<group>"; };
+		6398814324798C4E00224E63 /* meteo_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteo_logo.png; sourceTree = "<group>"; };
 		63BAD62E24704F130032F6EF /* objloader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objloader.cpp; sourceTree = "<group>"; };
 		63BAD62F24704F130032F6EF /* objloader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objloader.hpp; sourceTree = "<group>"; };
 		63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL-1.2.0.dylib"; path = "../../../../../usr/local/Cellar/sdl/1.2.15_1/lib/libSDL-1.2.0.dylib"; sourceTree = "<group>"; };
@@ -2239,6 +2251,10 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				6398814324798C4E00224E63 /* meteo_logo.png */,
+				6398813D24798B3C00224E63 /* background_button1.png */,
+				6398813C24798B3C00224E63 /* background_button2.png */,
+				6398813A24798AFB00224E63 /* logo.png */,
 				40664F822477EFE5005921D4 /* spacedn.bmp */,
 				40664F812477EFE5005921D4 /* spaceup.bmp */,
 				40664F6F2477DD0A005921D4 /* spacebk.bmp */,
@@ -2573,7 +2589,7 @@
 				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -2592,7 +2608,7 @@
 				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (

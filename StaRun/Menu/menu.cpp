@@ -12,7 +12,7 @@ typedef struct polygon{
      float x1,y1,x2,y2;
 } polygon;
   
-polygon polygons[14];
+polygon polygons[15];
 Server server;
 Character _character;
 
@@ -47,11 +47,13 @@ const char* WEATHER[] = {
     "textures/space.png"
 };
 
-int texture, texture_back[BACKGROUND_COUNT], texture_character[CHARACTER_COUNT], texture_weather[WEATHER_COUNT], texture2, arrow_left, arrow_right;
+int texture, texture_back[BACKGROUND_COUNT], texture_character[CHARACTER_COUNT], texture_weather[WEATHER_COUNT], texture2, arrow_left, arrow_right, background_left,
+    background_right;
 
 bool isFirst = true;
 bool isHighscore = false;
 char _score[20];
+char* connection = "";
 
 Menu::Menu(){}
 
@@ -95,16 +97,18 @@ int Menu::getCharacter(){
 
 void Menu::initMenu(){
     //MENU BUTTONS z=-1
+    
+    //START
     polygons[0].x1=-4.0;
     polygons[0].x2=-1.0;
     polygons[0].y1=1.0;
     polygons[0].y2=1.75;
-    
+    //HIGH SCORE
     polygons[1].x1=-4.0;
     polygons[1].x2=-1.0;
     polygons[1].y1=-0.25;
     polygons[1].y2=0.5;
-    
+    //EXIT
     polygons[2].x1=-4.0;
     polygons[2].x2=-1.0;
     polygons[2].y1=-1.50;
@@ -116,11 +120,7 @@ void Menu::initMenu(){
     polygons[3].y1=2.5;
     polygons[3].y2=3.25;
     
-    //WEATHER AND CHARACTER CHOISE z=-1
-    polygons[4].x1=0.0;
-    polygons[4].x2=4.0;
-    polygons[4].y1=1.75;
-    polygons[4].y2=-0.75;
+    
     
     polygons[5].x1=0.0;
     polygons[5].x2=4.0;
@@ -134,41 +134,52 @@ void Menu::initMenu(){
     polygons[6].y2=-4.0;
     
     //z=-2
+//MENU CHARACTER
+    
+    //NAME
+    polygons[4].x1=0.0;
+    polygons[4].x2=4.0;
+    polygons[4].y1=1.75;
+    polygons[4].y2=-0.75;
+    
     //CHARACTER ICONS
-    polygons[7].x1=1.25;
-    polygons[7].x2=2.75;
+    polygons[7].x1=1.50;
+    polygons[7].x2=2.5;
     polygons[7].y1=1.0;
     polygons[7].y2=-0.5;
     
+    //ARROW LEFT
+    polygons[9].x1=0.25;
+    polygons[9].x2=1.0;
+    polygons[9].y1=1.0;
+    polygons[9].y2=-0.25;
+    
+    //ARROW RIGHT
+    polygons[10].x1=3.25;
+    polygons[10].x2=4.0;
+    polygons[10].y1=1.0;
+    polygons[10].y2=-0.25;
+    
+//MENU WEATHER
     //WEATHER ICONS
-    polygons[8].x1=1.25;
-    polygons[8].x2=2.75;
+    polygons[8].x1=1.5;
+    polygons[8].x2=2.5;
     polygons[8].y1=-1.75;
     polygons[8].y2=-3.25;
 
-    //ARROW LEFT
-    polygons[9].x1=0.0;
-    polygons[9].x2=1.0;
-    polygons[9].y1=1.0;
-    polygons[9].y2=-0.5;
     
-    //ARROW RIGHT
-    polygons[10].x1=3.0;
-    polygons[10].x2=4.0;
-    polygons[10].y1=1.0;
-    polygons[10].y2=-0.5;
     
     //ARROW LEFT 1
-    polygons[11].x1=0.0;
+    polygons[11].x1=0.25;
     polygons[11].x2=1.0;
     polygons[11].y1=-1.75;
-    polygons[11].y2=-3.25;
+    polygons[11].y2=-3.0;
     
     //ARROW RIGHT 1
-    polygons[12].x1=3.0;
+    polygons[12].x1=3.25;
     polygons[12].x2=4.0;
     polygons[12].y1=-1.75;
-    polygons[12].y2=-3.25;
+    polygons[12].y2=-3.0;
     
     //HIGHSCORE
     polygons[13].x1=-2.0;
@@ -176,8 +187,17 @@ void Menu::initMenu(){
     polygons[13].y1=2.0;
     polygons[13].y2=-2.0;
     
+    //METEO
+    polygons[14].x1=-3.8;
+    polygons[14].x2=-2.3;
+    polygons[14].y1=-2.5;
+    polygons[14].y2=-3.5;
+    
+    
     //TEXTURE MENU ITEMS
-    texture = SOIL_load_OGL_texture("textures/menu_item.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    texture = SOIL_load_OGL_texture("textures/logo.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    background_left = SOIL_load_OGL_texture("textures/background_button2.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    background_right = SOIL_load_OGL_texture("textures/background_button1.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     arrow_left = SOIL_load_OGL_texture("textures/left-arrow.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     arrow_right = SOIL_load_OGL_texture("textures/right-arrow.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     
@@ -200,7 +220,7 @@ void Menu::initMenu(){
 void Menu::draw(){
     if(isHighscore){
         glPushMatrix();
-            glColor3f(0.0, 0.0, 0.0);
+        glColor4f(0.0, 0.0, 0.0,0.4);
             glBegin(GL_QUADS);
                 glTexCoord2f(0.0f,0.0f);
                 glVertex3f(polygons[13].x1, polygons[13].y1, -3);
@@ -216,25 +236,32 @@ void Menu::draw(){
         sprintf(_score,"Highscore: %d", _character.ReadHighScore());
         this->DrawText(-1, 0, -4, _score);
     }
-    
-    if(this->background == 3 && isFirst){
+
+//AGGIORNO I DATI METEO IN MODO ASINCRONO
+    if(isFirst){
         isFirst = false;
-        std::string api = server.getWeather();
-        if(api.find("Sereno")){
-            texture_back[3] = texture_back[0];
-            temp = 0;
-            temp_night = 6;
-        }
-        else if(api.find("Nuvol") || api.find("Pioggia") || api.find("Neve")){
-            texture_back[3] = texture_back[1];
-            temp = 1;
-            temp_night = 7;
-        }
-        else{
-            texture_back[3] = texture_back[2];
-            temp = 2;
-            temp_night = 8;
-        }
+        connection = "In Connection ...";
+        texture_back[3] = texture_back[5];
+        std::thread([](){
+            std::string api = server.getWeather();
+            connection = "Connected!";
+            if(api.find("Sereno")){
+                texture_back[3] = texture_back[0];
+                temp = 0;
+                temp_night = 6;
+            }
+            else if(api.find("Nuvol") || api.find("Pioggia") || api.find("Neve")){
+                texture_back[3] = texture_back[1];
+                temp = 1;
+                temp_night = 7;
+            }
+            else{
+                texture_back[3] = texture_back[2];
+                temp = 2;
+                temp_night = 8;
+            }
+            
+        }).detach();
     }
     
     glEnable(GL_TEXTURE_2D);
@@ -246,6 +273,9 @@ void Menu::draw(){
     //SFONDO Z=0
     glPushMatrix();
     glColor3f(1.0, 1.0, 1.0);
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glBegin(GL_QUADS);
         glTexCoord2f(0.0f,0.0f);
         glVertex3f(polygons[6].x1, polygons[6].y1, 2);
@@ -256,20 +286,57 @@ void Menu::draw(){
         glTexCoord2f(1.0f,0.0f);
         glVertex3f(polygons[6].x2, polygons[6].y1, 2);
     glEnd();
+    glDisable(GL_BLEND);
     glPopMatrix();
+    
     glDisable(GL_TEXTURE_2D);
     
     
     //Z = -1
+//DISEGNO METEO ICON
+    
+    DrawText(-3.8,-3.8,-2,connection);
+    
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glPushMatrix();
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glColor3f(1.0, 1.0, 1.0);
+               glBegin(GL_QUADS);
+                   glTexCoord2f(0.0f,0.0f);
+                   glVertex3f(polygons[14].x1, polygons[14].y1, -1);
+                   glTexCoord2f(0.0f,1);
+                   glVertex3f(polygons[14].x1, polygons[14].y2, -1);
+                   glTexCoord2f(1.0f,1);
+                   glVertex3f(polygons[14].x2, polygons[14].y2, -1);
+                   glTexCoord2f(1.0f,0.0f);
+                   glVertex3f(polygons[14].x2, polygons[14].y1, -1);
+               glEnd();
+            glDisable(GL_BLEND);
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    
+    DrawText(-3.8,-2.5,-2,"Powered By:");
+    
+//BACKGROUND PULSANTI
     for(int i=0;i<6;i++){
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, texture);
+        if (i == 0 or i == 1 or i == 2)
+            glBindTexture(GL_TEXTURE_2D, background_left);
+        else
+            glBindTexture(GL_TEXTURE_2D, background_right);
         
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-        //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_REPEAT);
+
         glPushMatrix();
-        glColor3f(1.0, 1.0, 1.0);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glColor4f(1.0, 1.0, 1.0,0.7);
         glBegin(GL_QUADS);
             glTexCoord2f(0.0f,0.0f);
             glVertex3f(polygons[i].x1, polygons[i].y1, -1);
@@ -280,6 +347,7 @@ void Menu::draw(){
             glTexCoord2f(1.0f,0.0f);
             glVertex3f(polygons[i].x2, polygons[i].y1, -1);
         glEnd();
+        glDisable(GL_BLEND);
         glPopMatrix();
         glDisable(GL_TEXTURE_2D);
     }
@@ -357,7 +425,7 @@ void Menu::draw(){
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     
-    //ARROW RIGTH
+    //ARROW RIGHT
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, arrow_right);
     
@@ -433,8 +501,8 @@ void Menu::draw(){
     DrawText(-2.9,1.25,-2,"Start");
     DrawText(-3.3,0.0,-2,"High Score");
     DrawText(-2.9,-1.25,-2,"Exit");
-    DrawText(1.25,1.35,-2,"Character");
-    DrawText(1.35,-1.40,-2,"Weather");
+    DrawText(1.5, 1.20,-2,"Character");
+    DrawText(1.5,-1.50,-2,"Weather");
 }
 
 void Menu::drawMenu(){
@@ -509,3 +577,4 @@ int Menu::select(GLint x, GLint y){
     
     return -1;
 }
+

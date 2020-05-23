@@ -21,6 +21,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include <future>
 
 class Menu{
 public:
@@ -34,6 +35,7 @@ public:
     int getBackground();
     int getCharacter();
     int getWeather();
+    
 private:
     void DrawText(float x,float y, float z, const char *text);
     void draw();
