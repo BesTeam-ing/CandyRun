@@ -26,8 +26,8 @@ enum OBJ{
 
 void Object::load(){
     battery = objload1.load("textures/pila.obj","textures/pila.mtl");;
-    wall = objload.load("/Users/gennaromellone/Desktop/gioco/wall.obj","/Users/gennaromellone/Desktop/gioco/wall.mtl");
-    light = objload.load("/Users/gennaromellone/Desktop/gioco/lampione.obj","/Users/gennaromellone/Desktop/gioco/lampione.mtl");
+    wall = objload.load("textures/wall.obj","textures/wall.mtl");
+    light = objload.load("textures/lampione.obj","textures/lampione.mtl");
 }
 
 float Object::getX(){
@@ -182,9 +182,9 @@ void Object::drawObject(float speed){
     for (int i=0; i<lamp.size(); i++) {
         for(int j=0; j<lamp[i].size(); j++){
             if(lamp[i][j].getZ() > 30.0 && j==0)
-                lamp[i][j].setPosition(-7, 1, -60);
+                lamp[i][j].setPosition(-7, 2.1f, -60);
             else if(lamp[i][j].getZ() > 30.0 && j==1)
-                lamp[i][j].setPosition(7, 1, -60);
+                lamp[i][j].setPosition(7, 2.1f, -60);
            
             glPushMatrix();
                 lamp[i][j].setPosition(lamp[i][j].getX(), lamp[i][j].getY(), roundf((lamp[i][j].getZ() + speed)*100)/100);

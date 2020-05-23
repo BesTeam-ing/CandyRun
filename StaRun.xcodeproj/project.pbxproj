@@ -93,6 +93,10 @@
 		6398813F24798B9A00224E63 /* background_button2.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398813C24798B3C00224E63 /* background_button2.png */; };
 		6398814124798B9A00224E63 /* logo.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398813A24798AFB00224E63 /* logo.png */; };
 		6398814424798C5C00224E63 /* meteo_logo.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398814324798C4E00224E63 /* meteo_logo.png */; };
+		639881532479CC1700224E63 /* lampione.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 639881502479CB7000224E63 /* lampione.mtl */; };
+		639881542479CC1700224E63 /* lampione.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6398814F2479CB7000224E63 /* lampione.obj */; };
+		639881552479CC1700224E63 /* wall.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 639881522479CB7000224E63 /* wall.mtl */; };
+		639881562479CC1700224E63 /* wall.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 639881512479CB7000224E63 /* wall.obj */; };
 		63BAD63024704F130032F6EF /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63BAD62E24704F130032F6EF /* objloader.cpp */; };
 		63BAD63224704F7C0032F6EF /* libSDL-1.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAD63124704F7C0032F6EF /* libSDL-1.2.0.dylib */; };
 /* End PBXBuildFile section */
@@ -165,6 +169,10 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				639881532479CC1700224E63 /* lampione.mtl in Copy Files */,
+				639881542479CC1700224E63 /* lampione.obj in Copy Files */,
+				639881552479CC1700224E63 /* wall.mtl in Copy Files */,
+				639881562479CC1700224E63 /* wall.obj in Copy Files */,
 				6398814424798C5C00224E63 /* meteo_logo.png in Copy Files */,
 				6398813E24798B9A00224E63 /* background_button1.png in Copy Files */,
 				6398813F24798B9A00224E63 /* background_button2.png in Copy Files */,
