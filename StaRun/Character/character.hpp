@@ -52,6 +52,11 @@ private:
     
     int score;
     int lifes =3;
+    
+    int rotate = 0;
+    int rotation = 0;
+    bool start_curve = true;
+    
     int body, head;
     int character_choosen;
 };

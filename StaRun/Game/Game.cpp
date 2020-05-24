@@ -334,13 +334,13 @@ void Game::windowSpecial(int key,int x,int y){
             if(isAudio)
                 engine->play2D("sounds/Jump.wav");
             
-            character.setX(0.5);
+            character.setX(1);
         }
         else if (key == GLUT_KEY_LEFT){
             if(isAudio)
                 engine->play2D("sounds/Jump.wav");
             
-            character.setX(-0.5);
+            character.setX(-1);
         }
     }
 

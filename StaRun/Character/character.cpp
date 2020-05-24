@@ -22,6 +22,7 @@ Character::Character(){};
 
 Character::~Character(){};
 
+
 void Character::init(const char* file_obj_body, const char* file_mtl_body, const char* file_obj_head, const char* file_mtl_head, int value){
     this->body = loader.load(file_obj_body,file_mtl_body);
     this->head = loader.load(file_obj_head, file_mtl_head);
@@ -50,6 +51,13 @@ float Character::getZ(){
 }
 
 void Character::setX(float x){
+    std::cout<<x<<" "<<this->x<<std::endl;
+    if(this->x + x < this->x){ // MI SPOSTO A DESTRA
+        this->rotate = 1;
+    }
+    else{// MI SPOSTO A SINISTRA
+        this->rotate = -1;
+    }
     if((this->x + x) > 7 || (this->x + x) < -7)
         return;
     else
@@ -120,17 +128,20 @@ void Character::drawCharacter(){
     //D0
     if(this->character_choosen == D0){
         //CORPO
+        //std::cout<<this->rotate<<std::endl;
         glPushMatrix();
-            glTranslatef(this->x, this->y, this->z);
+        glTranslatef(this->x-0.1, this->y, this->z+0.5);
+            glRotatef(this->rotation, 0, 0, this->rotate);
             glRotatef(this->rotateAngle, -1, 0, 0);
             glRotatef(90, 0, 1, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->body);
         glPopMatrix();
-        
+            
         //TESTA
         glPushMatrix();
-            glTranslatef(this->x, this->y, this->z);
+            glTranslatef(this->x-0.1, this->y, this->z+0.5);
+            glRotatef(this->rotation, 0, 0, this->rotate);
             glRotatef(180, 0, -1, 0);
             glRotatef(90, 0, -1, 0);
             glRotatef(10, -1, 0, 0);
@@ -143,6 +154,7 @@ void Character::drawCharacter(){
         //CORPO
         glPushMatrix();
             glTranslatef(this->x, this->y, this->z);
+            glRotatef(this->rotation, 0, 0, this->rotate);
             glRotatef(this->rotateAngle, -1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->body);
@@ -159,7 +171,28 @@ void Character::drawCharacter(){
             glCallList(this->head);
         glPopMatrix();
          */
+        
     }
+    // MI PIEGO A DESTRA O SINISTRA
+    if (this->rotate != 0){
+        
+        if (this->rotation < 30 and this->start_curve)
+            this->rotation += 5;
+        else if (this->rotation < 30 and !this->start_curve)
+            this->rotation -= 5;
+        
+        else if(this->rotation == 30){
+            this->rotation -= 5;
+            this->start_curve = false;
+        }
+            
+        if (this->rotation == 0 and !this->start_curve){
+            this->rotation = 0;
+            this->rotate = 0;
+            this->start_curve = true;
+            }
+    }
+    
     
     glPushMatrix();
         drawShadow(0.5, this->x, this->y);
