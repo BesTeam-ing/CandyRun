@@ -47,8 +47,15 @@ const char* WEATHER[] = {
     "textures/space.png"
 };
 
-int texture, texture_back[BACKGROUND_COUNT], texture_character[CHARACTER_COUNT], texture_weather[WEATHER_COUNT], texture2, arrow_left, arrow_right, background_left,
-    background_right;
+int texture,
+    texture_back[BACKGROUND_COUNT],
+    texture_character[CHARACTER_COUNT],
+    texture_weather[WEATHER_COUNT],
+    arrow_left,
+    arrow_right,
+    background_left,
+    background_right,
+    title;
 
 bool isFirst = true;
 bool isHighscore = false;
@@ -115,17 +122,21 @@ void Menu::initMenu(){
     polygons[2].y2=-0.75;
     
     //TITLE z = -1
-    polygons[3].x1=-3.0;
-    polygons[3].x2=3.0;
-    polygons[3].y1=2.5;
-    polygons[3].y2=3.25;
+    polygons[3].x1=0.0;
+    polygons[3].x2=4.0;
+    polygons[3].y1=-1.0;
+    polygons[3].y2=-3.5;
     
+    //NAME
+    polygons[4].x1=0.0;
+    polygons[4].x2=4.0;
+    polygons[4].y1=1.75;
+    polygons[4].y2=-0.75;
     
-    
-    polygons[5].x1=0.0;
-    polygons[5].x2=4.0;
-    polygons[5].y1=-1.0;
-    polygons[5].y2=-3.5;
+    polygons[5].x1=-3.0;
+    polygons[5].x2=3.0;
+    polygons[5].y1=2.5;
+    polygons[5].y2=3.25;
     
     //BACKGROUND z = 0
     polygons[6].x1=-4.0;
@@ -134,14 +145,7 @@ void Menu::initMenu(){
     polygons[6].y2=-4.0;
     
     //z=-2
-//MENU CHARACTER
-    
-    //NAME
-    polygons[4].x1=0.0;
-    polygons[4].x2=4.0;
-    polygons[4].y1=1.75;
-    polygons[4].y2=-0.75;
-    
+    //MENU CHARACTER
     //CHARACTER ICONS
     polygons[7].x1=1.50;
     polygons[7].x2=2.5;
@@ -160,15 +164,13 @@ void Menu::initMenu(){
     polygons[10].y1=1.0;
     polygons[10].y2=-0.25;
     
-//MENU WEATHER
+    //MENU WEATHER
     //WEATHER ICONS
     polygons[8].x1=1.5;
     polygons[8].x2=2.5;
     polygons[8].y1=-1.75;
     polygons[8].y2=-3.25;
 
-    
-    
     //ARROW LEFT 1
     polygons[11].x1=0.25;
     polygons[11].x2=1.0;
@@ -193,6 +195,8 @@ void Menu::initMenu(){
     polygons[14].y1=-2.5;
     polygons[14].y2=-3.5;
     
+    //TITLE
+    //title = _title.load("textures/Starun.obj","textures/Starun.mtl");
     
     //TEXTURE MENU ITEMS
     texture = SOIL_load_OGL_texture("textures/logo.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
@@ -293,7 +297,7 @@ void Menu::draw(){
     
     
     //Z = -1
-//DISEGNO METEO ICON
+    //DISEGNO METEO ICON
     
     DrawText(-3.8,-3.8,-2,connection);
     
@@ -322,7 +326,7 @@ void Menu::draw(){
     
     DrawText(-3.8,-2.5,-2,"Powered By:");
     
-//BACKGROUND PULSANTI
+    //BACKGROUND PULSANTI
     for(int i=0;i<6;i++){
         glEnable(GL_TEXTURE_2D);
         if (i == 0 or i == 1 or i == 2)

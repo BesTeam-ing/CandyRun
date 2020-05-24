@@ -71,6 +71,8 @@
 		40A80392246EB60200241D87 /* game_over.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80391246EB5F600241D87 /* game_over.wav */; };
 		40AD83C6246C846D00BB0EEE /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40AD83C4246C846D00BB0EEE /* menu.cpp */; };
 		40B9D440247531390066D229 /* score.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40B9D43F2475312B0066D229 /* score.wav */; };
+		40C53511247A73B500D2EEC8 /* Starun.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40C5350F247A737900D2EEC8 /* Starun.mtl */; };
+		40C53512247A73B500D2EEC8 /* Starun.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40C53510247A737900D2EEC8 /* Starun.obj */; };
 		40D691AB246C02E000C40301 /* Road.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40D691A9246C02E000C40301 /* Road.cpp */; };
 		40D691B0246C0D7000C40301 /* character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40D691AE246C0D7000C40301 /* character.cpp */; };
 		40E038322469E54E00F1EDC2 /* sound.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40E038312469E54900F1EDC2 /* sound.wav */; };
@@ -169,6 +171,8 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				40C53511247A73B500D2EEC8 /* Starun.mtl in Copy Files */,
+				40C53512247A73B500D2EEC8 /* Starun.obj in Copy Files */,
 				639881532479CC1700224E63 /* lampione.mtl in Copy Files */,
 				639881542479CC1700224E63 /* lampione.obj in Copy Files */,
 				639881552479CC1700224E63 /* wall.mtl in Copy Files */,
@@ -306,6 +310,8 @@
 		40AD83C4246C846D00BB0EEE /* menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
 		40AD83C5246C846D00BB0EEE /* menu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = menu.hpp; sourceTree = "<group>"; };
 		40B9D43F2475312B0066D229 /* score.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = score.wav; sourceTree = "<group>"; };
+		40C5350F247A737900D2EEC8 /* Starun.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Starun.mtl; sourceTree = "<group>"; };
+		40C53510247A737900D2EEC8 /* Starun.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Starun.obj; sourceTree = "<group>"; };
 		40D691A9246C02E000C40301 /* Road.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Road.cpp; sourceTree = "<group>"; };
 		40D691AA246C02E000C40301 /* Road.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Road.hpp; sourceTree = "<group>"; };
 		40D691AC246C058F00C40301 /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
@@ -2257,6 +2263,8 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				40C5350F247A737900D2EEC8 /* Starun.mtl */,
+				40C53510247A737900D2EEC8 /* Starun.obj */,
 				639881502479CB7000224E63 /* lampione.mtl */,
 				6398814F2479CB7000224E63 /* lampione.obj */,
 				639881522479CB7000224E63 /* wall.mtl */,
@@ -2597,7 +2605,7 @@
 				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -2616,7 +2624,7 @@
 				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (

@@ -38,6 +38,8 @@ public:
     float getX();
     float getY();
     float getZ();
+    float getRotation();
+    void setRotation(float angle);
     
     void load();
     unsigned int getTexture();
@@ -70,8 +72,10 @@ private:
     GLfloat b = 0.0;
     
     int obj;
+    objloader objload, objload1, objload2;
     
-    objloader objload, objload1;
+    float angle_rotation = 0.0f;
+    float rotateAngle = 0.0f;
     
     const GLfloat lightWall[4] = { 0.1, 0.5, 0.5, 0.1};
     

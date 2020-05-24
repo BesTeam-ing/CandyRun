@@ -16,6 +16,7 @@
 
 #include "../Server/Server.hpp"
 #include "../Character/character.hpp"
+#include "../OBJLoader/objloader.hpp"
 
 #include <stdio.h>
 #include <iostream>
@@ -42,6 +43,7 @@ private:
     int background = 0;
     int character = 0;
     int weather = 0;
+    objloader _title;
 };
 
 #endif /* menu_hpp */

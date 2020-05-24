@@ -25,9 +25,9 @@ enum OBJ{
 };
 
 void Object::load(){
-    battery = objload1.load("textures/pila.obj","textures/pila.mtl");;
     wall = objload.load("textures/wall.obj","textures/wall.mtl");
-    light = objload.load("textures/lampione.obj","textures/lampione.mtl");
+    battery = objload1.load("textures/pila.obj","textures/pila.mtl");
+    light = objload2.load("textures/lampione.obj","textures/lampione.mtl");
 }
 
 float Object::getX(){
@@ -40,6 +40,14 @@ float Object::getY(){
 
 float Object::getZ(){
     return this->pos_Z;
+}
+
+int Object::getObj(){
+    return this->obj;
+}
+
+float Object::getRotation(){
+    return this->angle_rotation;
 }
 
 unsigned int Object::getTexture(){
@@ -69,6 +77,14 @@ void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
     this->b = b;
 }
 
+void Object::setObj(int obj){
+    this->obj = obj;
+}
+
+void Object::setRotation(float angle){
+    this->angle_rotation = angle;
+}
+
 void Object::draw(int obj){
     switch (obj) {
         case WALL:
@@ -80,9 +96,14 @@ void Object::draw(int obj){
             break;
         
         case BATTERY:
+            this->rotateAngle += 1;
+            if(this->rotateAngle > 360.0f)
+                this->rotateAngle -= 360.0f;
             glPushMatrix();
                 glTranslatef(this->pos_X, this->pos_Y+0.5, this->pos_Z);
                 glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+                glRotatef(this->rotateAngle, 0, -1, 0);
+                glRotatef(this->angle_rotation, -1, 0, 0);
                 glCallList(battery);
             glPopMatrix();
             break;
@@ -92,6 +113,7 @@ void Object::draw(int obj){
             glPushMatrix();
                 glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
                 glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+                glRotatef(this->angle_rotation, 0, -1, 0);
                 glCallList(light);
             glPopMatrix();
             break;
@@ -100,14 +122,6 @@ void Object::draw(int obj){
         default:
             break;
     }
-}
-
-int Object::getObj(){
-    return this->obj;
-}
-
-void Object::setObj(int obj){
-    this->obj = obj;
 }
 
 void Object::initObject(){
@@ -131,6 +145,7 @@ void Object::initObject(){
                     e = BATTERY;
                     x++;
                     o.setPosition(n, 0.5f, beginning);
+                    o.setRotation(45);
                 }
             }
             else{
@@ -152,10 +167,12 @@ void Object::initObject(){
         std::vector<Object> v2;
         o.setPosition(-7.0f, 2.1f, beginning_lamp+3);
         o.setObj(LAMP);
+        o.setRotation(-35);
         v2.push_back(o);
         
         o.setPosition(7.0f, 2.1f, beginning_lamp+3);
         o.setObj(LAMP);
+        o.setRotation(180);
         v2.push_back(o);
         
         lamp.push_back(v2);
@@ -188,7 +205,7 @@ void Object::drawObject(float speed){
            
             glPushMatrix();
                 lamp[i][j].setPosition(lamp[i][j].getX(), lamp[i][j].getY(), roundf((lamp[i][j].getZ() + speed)*100)/100);
-            lamp[i][j].draw(lamp[i][j].obj);
+                lamp[i][j].draw(lamp[i][j].obj);
             glPopMatrix();
         }
     }
