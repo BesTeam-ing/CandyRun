@@ -162,15 +162,13 @@ void Character::drawCharacter(){
     }
     
     glPushMatrix();
-        drawShadow(0.5, this->x, this->y, 15);
+        drawShadow(0.5, this->x, this->y);
     glPopMatrix();
 }
 
-void Character::drawShadow(float R, float X, float Y, int vert){
+void Character::drawShadow(float R, float X, float Y){
         glColor4f(0.3, 0.3, 0.3, 0.9);
         glDisable(GL_LIGHTING);
-        
-        
         glRotatef(90, 1, 0, 0);
         GLfloat xOffset = X;
         GLfloat yOffset = this->z +0.6;
@@ -181,26 +179,5 @@ void Character::drawShadow(float R, float X, float Y, int vert){
         glEnd();
 
         glEnable(GL_LIGHTING);
-        /*float t = 0;
         
-        glBegin(GL_LINE_LOOP);
-        
-           for(int i = 0; i < vert; ++i)
-           {
-              glColor3f((float)rand()/(float)RAND_MAX, (float)rand()/(float)RAND_MAX, (float)rand()/(float)RAND_MAX);
-              glVertex3f(X + R * cos(t), Y + R * sin(t), 0.0);
-              t += 2 * PI / vert;
-           }
-        glEnd();*/
 }
-    /*
-    glMaterialfv( GL_FRONT, GL_AMBIENT,  bluTenue );
-    glMaterialfv( GL_FRONT, GL_DIFFUSE,  blu );
-    glMaterialfv( GL_FRONT, GL_SPECULAR, bianco );
-    glMaterialf( GL_FRONT, GL_SHININESS, 20.0f );
-    glPushMatrix();
-        glTranslatef(this->x, this->y, this->z-3);
-        glRotatef(this->rotateAngle, -1, 0, 0);
-        glutWireSphere(this->size, 20, 20);
-    glPopMatrix();
-    */

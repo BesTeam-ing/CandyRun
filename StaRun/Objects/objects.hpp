@@ -20,6 +20,7 @@
 #include <vector>
 #include <iomanip>
 #include <iostream>
+#define PI 3.14159265358979324
 
 enum OBJECT{
     VUOTO,
@@ -78,6 +79,7 @@ private:
     float rotateAngle = 0.0f;
     
     const GLfloat lightWall[4] = { 0.1, 0.5, 0.5, 0.1};
+    void drawShadow(float R, float X, float Y);
     
     void draw(int obj);
 };

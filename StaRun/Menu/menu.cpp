@@ -15,6 +15,9 @@ typedef struct polygon{
 polygon polygons[15];
 Server server;
 Character _character;
+objloader _title;
+
+GLfloat lp_title[] = {0.5, 0.5, 0.9, 0.4};
 
 int temp = 0, temp_night = 6;
 
@@ -196,7 +199,8 @@ void Menu::initMenu(){
     polygons[14].y2=-3.5;
     
     //TITLE
-    //title = _title.load("textures/Starun.obj","textures/Starun.mtl");
+    
+    title = _title.load("/Users/gennaromellone/Desktop/gioco/Starun.obj","/Users/gennaromellone/Desktop/gioco/Starun.mtl");
     
     //TEXTURE MENU ITEMS
     texture = SOIL_load_OGL_texture("textures/logo.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
@@ -238,7 +242,7 @@ void Menu::draw(){
         glPopMatrix();
         
         sprintf(_score,"Highscore: %d", _character.ReadHighScore());
-        this->DrawText(-1, 0, -4, _score);
+        this->DrawText(-1, 0, -4, _score,25.0);
     }
 
 //AGGIORNO I DATI METEO IN MODO ASINCRONO
@@ -295,11 +299,21 @@ void Menu::draw(){
     
     glDisable(GL_TEXTURE_2D);
     
+//DISEGNO TITOLO
+    glPushMatrix();
+        glColor3f(1.0, 1.0, 0.0);
+        glScalef(0.6, 0.6, 0.6);
+        glTranslatef(0, 0, 0);
+        glRotatef(15, 0, 0, 1);
+        glLightfv(GL_LIGHT0,GL_POSITION,lp_title);
+        glCallList(title);
+    glPopMatrix();
+    
     
     //Z = -1
     //DISEGNO METEO ICON
     
-    DrawText(-3.8,-3.8,-2,connection);
+    DrawText(-3.8,-3.8,-2,connection,15.0);
     
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -324,7 +338,7 @@ void Menu::draw(){
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     
-    DrawText(-3.8,-2.5,-2,"Powered By:");
+    DrawText(-3.8,-2.5,-2,"Powered By:",15.0);
     
     //BACKGROUND PULSANTI
     for(int i=0;i<6;i++){
@@ -501,12 +515,12 @@ void Menu::draw(){
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     
-    DrawText(-0.40,2.75,-2,"StaRun");
-    DrawText(-2.9,1.25,-2,"Start");
-    DrawText(-3.3,0.0,-2,"High Score");
-    DrawText(-2.9,-1.25,-2,"Exit");
-    DrawText(1.5, 1.20,-2,"Character");
-    DrawText(1.5,-1.50,-2,"Weather");
+    DrawText(-2.0,2.75,-2,"StaRun - C. De Vita G. Mellone",20.0);
+    DrawText(-2.9,1.25,-2,"Start",25.0);
+    DrawText(-3.3,0.0,-2,"High Score",25.0);
+    DrawText(-2.9,-1.25,-2,"Exit",25.0);
+    DrawText(1.5, 1.20,-2,"Character",25.0);
+    DrawText(1.5,-1.50,-2,"Weather",25.0);
 }
 
 void Menu::drawMenu(){
@@ -528,11 +542,12 @@ void Menu::drawMenu(){
     glutSwapBuffers();
 }
 
-void Menu::DrawText(float x,float y, float z, const char *text){
-    glPushMatrix();
+void Menu::DrawText(float x,float y, float z, const char *text, int size){
+    float _size = 0.0001*size;
+        glPushMatrix();
         glColor4f(1.0, 1.0, 0.0, 0.0);
         glTranslatef(x, y, z);
-        glScalef(0.0025,0.0025,0.0025);
+        glScalef(_size, _size, _size);
         for( const char* p = text; *p; p++){
             glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
         }

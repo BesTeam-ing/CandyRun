@@ -106,6 +106,9 @@ void Object::draw(int obj){
                 glRotatef(this->angle_rotation, -1, 0, 0);
                 glCallList(battery);
             glPopMatrix();
+            glPushMatrix();
+                this->drawShadow(0.5, this->pos_X, this->pos_Z);
+            glPopMatrix();
             break;
             
         
@@ -224,4 +227,20 @@ int Object::handleCollision(float x, float y, float z){
     }
 
     return VUOTO;
+}
+
+void Object::drawShadow(float R, float X, float Y){
+        glColor4f(0.3, 0.3, 0.3, 0.9);
+        glDisable(GL_LIGHTING);
+        glRotatef(90, 1, 0, 0);
+        GLfloat xOffset = X;
+        GLfloat yOffset = Y +0.6;
+        glBegin(GL_POLYGON);
+
+        for(float t = -10 * PI; t <= 10 * PI; t += PI/20.0)
+            glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
+        glEnd();
+
+        glEnable(GL_LIGHTING);
+        
 }

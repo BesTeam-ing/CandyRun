@@ -41,7 +41,7 @@ public:
     void SaveHighScore();
     
     void drawCharacter();
-    void drawShadow(float R, float X, float Y, int vert);
+    void drawShadow(float R, float X, float Y);
     void initialPosition();
     void init(const char* file_obj_body, const char* file_mtl_body, const char* file_obj_head, const char* file_mtl_head, int value);
 private:
