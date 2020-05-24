@@ -200,7 +200,7 @@ void Menu::initMenu(){
     
     //TITLE
     
-    title = _title.load("/Users/gennaromellone/Desktop/gioco/Starun.obj","/Users/gennaromellone/Desktop/gioco/Starun.mtl");
+    title = _title.load("textures/Starun.obj","textures/Starun.mtl");
     
     //TEXTURE MENU ITEMS
     texture = SOIL_load_OGL_texture("textures/logo.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);

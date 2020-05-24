@@ -7,8 +7,6 @@
 //
 
 
-//TODO: Cambiare Fonts!!!
-
 #include "GUI.hpp"
 
 void GUI::draw(int score, int life){

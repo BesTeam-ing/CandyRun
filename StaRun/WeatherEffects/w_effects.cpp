@@ -43,14 +43,18 @@ void WeatherEffects::drawRain(){
             y = this->par_sys[loop].ypos;
             z = this->par_sys[loop].zpos + zoom;
 
-          
-            glColor3f(0.5, 0.5, 1.0);
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            
+            glColor4f(0.5, 0.5, 1.0, 0.6);
             glPushMatrix();
                 glBegin(GL_LINES);
                     glVertex3f(x, y, z);
                     glVertex3f(x, y+0.5, z);
                 glEnd();
             glPopMatrix();
+            glDisable(GL_BLEND);
+
             
             this->par_sys[loop].ypos += this->par_sys[loop].vel / (slowdown*1000);
             this->par_sys[loop].vel += this->par_sys[loop].gravity;
@@ -75,12 +79,16 @@ void WeatherEffects::drawSnow(){
             x = par_sys[loop].xpos;
             y = par_sys[loop].ypos;
             z = par_sys[loop].zpos + zoom;
-
-            glColor3f(1.0, 1.0, 1.0);
+            
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            glColor4f(1.0, 1.0, 1.0, 0.7);
+            
             glPushMatrix();
                 glTranslatef(x, y, z);
                 glutSolidSphere(0.2, 16, 16);
             glPopMatrix();
+            glDisable(GL_BLEND);
 
             par_sys[loop].ypos += par_sys[loop].vel / (slowdown*1000);
             par_sys[loop].vel += par_sys[loop].gravity;
