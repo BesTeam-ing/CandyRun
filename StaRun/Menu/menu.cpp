@@ -16,6 +16,7 @@ polygon polygons[15];
 Server server;
 Character _character;
 objloader _title;
+int scores[2];
 
 GLfloat lp_title[] = {0.5, 0.5, 0.9, 0.4};
 
@@ -62,7 +63,8 @@ int texture,
 
 bool isFirst = true;
 bool isHighscore = false;
-char _score[20];
+char _scoreBB8[20];
+char _scoreD0[20];
 char* connection = "";
 
 Menu::Menu(){}
@@ -223,9 +225,19 @@ void Menu::initMenu(){
     for (int j=0; j<WEATHER_COUNT; j++){
         texture_weather[j] = SOIL_load_OGL_texture(WEATHER[j], SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     }
+//    LOAD SCORES
+    std::thread([](){
+        _character.ReadHighScore();
+        sprintf(_scoreBB8, "%d", _character.getBB8score());
+        sprintf(_scoreD0, "%d", _character.getD0score());
+        
+    }).detach();
+    
 }
 
 void Menu::draw(){
+    
+//HIGHSCORES
     if(isHighscore){
         glPushMatrix();
         glColor4f(0.0, 0.0, 0.0,0.4);
@@ -240,9 +252,15 @@ void Menu::draw(){
                 glVertex3f(polygons[13].x2, polygons[13].y1, -3);
             glEnd();
         glPopMatrix();
+
+        //sprintf(_score,"Highscore: %d", _character.ReadHighScore());
+        this->DrawText(-1, 1.5, -4, "Highscore" ,25.0);
         
-        sprintf(_score,"Highscore: %d", _character.ReadHighScore());
-        this->DrawText(-1, 0, -4, _score,25.0);
+        this->DrawText(-1.5, 0, -4, "BB8:" ,25.0);
+        this->DrawText(0, 0, -4, _scoreBB8 ,15.0);
+        
+        this->DrawText(-1.5, -1, -4, "D0:" ,25.0);
+        this->DrawText(0, -1, -4, _scoreD0 ,15.0);
     }
 
 //AGGIORNO I DATI METEO IN MODO ASINCRONO

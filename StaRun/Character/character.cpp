@@ -9,7 +9,7 @@
 #include "character.hpp"
 
 //GLfloat lp[] = { 1.0, 0.7, 0.6, 0.0f };
-GLfloat lp[] = {0.5, 0.5, 0.9, 0.4};
+GLfloat lp[] = {0.5, 0.9, 0.9, 0.4};
 
 enum character{
     BB8,
@@ -88,32 +88,62 @@ int Character::getLife(){
     return this->lifes;
 }
 
+int Character::getD0score(){
+    return this->d0_score;
+}
+int Character::getBB8score(){
+    return this->bb8_score;
+}
+
 int Character::ReadHighScore() {
-    std::ifstream fin("/Users/ciro/Desktop/Università/Computer Graphics/Progetto/StaRun/StaRun/Character/highscore.txt");
+    std::ifstream fin("Character/highscore.txt");
 
     if (!fin.is_open()) {
         std::cout << "Impossibile aprire il file!" << std::endl;
         return -1;
     }
+    int i = 0;
+    
+    std::string str;
+    int score[2];
+    while (std::getline(fin, str))
+    {
+        score[i] = std::stoi(str);
+        i++;
+    }
+    
+    this->bb8_score = score[0];
+    this->d0_score = score[1];
 
-    int score = 0;
-    fin >> score;
+    //fin >> score;
     fin.close();
 
-    return score;
+    return 1;
 }
 
-void Character::SaveHighScore() {    
-    if(ReadHighScore() < this->score){
+void Character::SaveHighScore() {
+    if(ReadHighScore() == 1){
+        
+        if (this->bb8_score < this->score and this->character_choosen == BB8){
+            this->bb8_score = this->score;
+            std::cout<<"New Score BB8= "<<this->bb8_score<<std::endl;
+            
+        }
+        else if (this->d0_score < this->score and this->character_choosen == D0){
+            this->d0_score = this->score;
+            std::cout<<"New Score D0= "<<this->d0_score<<std::endl;
+        }
+        
         std::ofstream myfile;
-        myfile.open("/Users/ciro/Desktop/Università/Computer Graphics/Progetto/StaRun/StaRun/Character/highscore.txt");
+               myfile.open("Character/highscore.txt");
 
         if (!myfile.is_open()) {
             std::cout << "Unable to update highscore" << std::endl;
             return;
         }
 
-        myfile << this->score;
+        myfile << this->bb8_score << std::endl << this->d0_score;
+        std::cout<<this->bb8_score << std::endl << this->d0_score<<std::endl;
         myfile.close();
     }
 }
@@ -154,23 +184,24 @@ void Character::drawCharacter(){
         //CORPO
         glPushMatrix();
             glTranslatef(this->x, this->y, this->z);
-            glRotatef(this->rotation, 0, 0, this->rotate);
+            glRotatef(this->rotation, 0, 0, -this->rotate);
             glRotatef(this->rotateAngle, -1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->body);
         glPopMatrix();
         
         //TESTA
-        /*
+        
         glPushMatrix();
             glTranslatef(this->x, this->y, this->z);
             glRotatef(180, 0, -1, 0);
             //glRotatef(10, 0, 0, 1); TESTA A DESTRA
+            glRotatef(this->rotation, 0, 0, -this->rotate);
             glRotatef(10, 1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->head);
         glPopMatrix();
-         */
+         
         
     }
     // MI PIEGO A DESTRA O SINISTRA

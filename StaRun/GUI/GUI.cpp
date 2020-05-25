@@ -55,8 +55,9 @@ void GUI::draw(int score, int life){
     glPopMatrix();
     
     //Aggiungo lo score
+    glColor4f(1.0, 1.0, 0.0, 1.0);
     glPushMatrix();
-    glTranslatef(-17, 8.5, 1.1);
+        glTranslatef(-17, 8.5, 1.1);
         glScalef(0.01,0.01,0.01);
         for( const char* p = S; *p; p++){
             glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
@@ -97,7 +98,7 @@ void GUI::draw(int score, int life){
     glPopMatrix();
     
     if (life >= 1 ){    // Se ho almeno UNA vita disegno il ROSSO
-        glColor4f(0.5, 0.0, 0.0, 0.7);
+        glColor4f(0.7, 0.0, 0.0, 0.9);
         glPushMatrix();
         glBegin(GL_POLYGON);
         glVertex3f(-18.7, 5.5, 1.1);
@@ -108,7 +109,7 @@ void GUI::draw(int score, int life){
         glPopMatrix();
     }
     if (life >= 2){     // Se ho almeno DUE vita disegno il GIALLO
-        glColor4f(0.5, 0.5, 0.0, 0.7);
+        glColor4f(0.7, 0.7, 0.0, 0.9);
         glPushMatrix();
         glBegin(GL_POLYGON);
             glVertex3f(-17.9, 5.5, 1.1);
@@ -121,7 +122,7 @@ void GUI::draw(int score, int life){
     
     if (life >= 3){     // Se ho almeno TRE vite disegno il VERDE
         
-        glColor4f(0.0, 0.5, 0.0, 0.7);
+        glColor4f(0.0, 0.7, 0.0, 0.9);
         glPushMatrix();
         glBegin(GL_POLYGON);
             glVertex3f(-16.4, 5.5, 1.1);

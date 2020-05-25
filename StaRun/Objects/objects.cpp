@@ -115,7 +115,7 @@ void Object::draw(int obj){
         case LAMP:
             glPushMatrix();
                 glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-                glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+                glLightfv(GL_LIGHT0,GL_POSITION,lightL);
                 glRotatef(this->angle_rotation, 0, -1, 0);
                 glCallList(light);
             glPopMatrix();
@@ -183,12 +183,13 @@ void Object::initObject(){
     }
 }
 
-void Object::drawObject(float speed){
+void Object::drawObject(float speed,int x){
     //ENEMY OR BATTERY
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
             int n = rand()%10-5;
-            if(objects[i][j].getZ() > 30.0)
+            if(objects[i][j].getZ() > 30.0 or ((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <=  + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY))
+                
                 objects[i][j].setPosition(n, 1, -60);
            
             glPushMatrix();
@@ -215,12 +216,13 @@ void Object::drawObject(float speed){
 }
 
 int Object::handleCollision(float x, float y, float z){
+    
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
             if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].obj == WALL)
                 return OSTACOLO;
+            
             else if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY){
-                //objects[i][j].setPosition(0, 0, 30);
                 return PREMIO;
             }
         }

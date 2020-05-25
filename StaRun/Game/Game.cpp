@@ -202,7 +202,7 @@ void Game::drawGame(){
         
         character.drawCharacter();
         
-        obj.drawObject(0.1);
+        obj.drawObject(0.1, character.getX());
         
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
             std::cout<<"Collision"<<std::endl;

@@ -51,7 +51,7 @@ public:
     void setObj(int obj);
     
     void initObject();
-    void drawObject(float speed);
+    void drawObject(float speed, int x);
     int handleCollision(float x, float y, float z);
     
 private:
@@ -78,7 +78,9 @@ private:
     float angle_rotation = 0.0f;
     float rotateAngle = 0.0f;
     
-    const GLfloat lightWall[4] = { 0.1, 0.5, 0.5, 0.1};
+    const GLfloat lightWall[4] = { -2.1, 2.9, 0.5, 0.4};
+    const GLfloat lightB[4] = { 0.1, 0.9, 0.5, 0.1};
+    const GLfloat lightL[4] = { 4.0, 2.8, 0.1, 0.8};
     void drawShadow(float R, float X, float Y);
     
     void draw(int obj);

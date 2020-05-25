@@ -37,6 +37,9 @@ public:
     
     int getScore();
     int getLife();
+    
+    int getBB8score();
+    int getD0score();
     int ReadHighScore();
     void SaveHighScore();
     
@@ -51,6 +54,8 @@ private:
     float rotateAngle = 0.0f;
     
     int score;
+    int bb8_score = -1;
+    int d0_score = -1;
     int lifes =3;
     
     int rotate = 0;
