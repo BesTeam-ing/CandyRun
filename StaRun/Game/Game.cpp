@@ -193,8 +193,7 @@ void Game::drawGame(){
                 break;
         }
         
-        road.drawRoad();
-        
+        road.drawRoad(speed);
         //create light
         glEnable(GL_LIGHTING);
         
@@ -202,7 +201,7 @@ void Game::drawGame(){
         
         character.drawCharacter();
         
-        obj.drawObject(0.1, character.getX());
+        obj.drawObject(speed, character.getX());
         
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
             std::cout<<"Collision"<<std::endl;

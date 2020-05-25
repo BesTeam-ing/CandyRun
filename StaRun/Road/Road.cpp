@@ -77,13 +77,13 @@ void Road::initializeGround(){
     }
 }
 
-void Road::drawRoad(){
+void Road::drawRoad(float speed){
     for (int i=0; i < roads.size(); i++){
         if(roads[i].getZ() >= 40.0f)
             roads[i].setPosition(0.0f, 0.0f, -79.9f);
         
         glPushMatrix();
-            roads[i].setPosition(0.0f, 0.0f, roundf((roads[i].getZ() + 0.1f)*100)/100);
+            roads[i].setPosition(0.0f, 0.0f, roundf((roads[i].getZ() + speed)*100)/100);
             roads[i].draw();
         glPopMatrix();
     }

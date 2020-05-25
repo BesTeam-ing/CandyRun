@@ -188,7 +188,7 @@ void Object::drawObject(float speed,int x){
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
             int n = rand()%10-5;
-            if(objects[i][j].getZ() > 30.0 or ((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <=  + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY))
+            if(objects[i][j].getZ() > 30.0 or (objects[i][j].pos_Z == 15.0f && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY))
                 
                 objects[i][j].setPosition(n, 1, -60);
            
@@ -219,10 +219,10 @@ int Object::handleCollision(float x, float y, float z){
     
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
-            if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].obj == WALL)
+            if(objects[i][j].pos_Z == 15.0f && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].obj == WALL)
                 return OSTACOLO;
             
-            else if((objects[i][j].pos_Z <= 15.0f && objects[i][j].pos_Z >= 14.99f) && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY){
+            else if(objects[i][j].pos_Z == 15.0f  && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY){
                 return PREMIO;
             }
         }

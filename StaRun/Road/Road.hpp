@@ -47,7 +47,7 @@ public:
     unsigned int getTexture();
     
     void initializeGround();
-    void drawRoad();
+    void drawRoad(float speed);
 };
 
 #endif /* Road_hpp */

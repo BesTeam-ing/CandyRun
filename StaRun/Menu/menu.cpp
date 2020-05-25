@@ -225,13 +225,6 @@ void Menu::initMenu(){
     for (int j=0; j<WEATHER_COUNT; j++){
         texture_weather[j] = SOIL_load_OGL_texture(WEATHER[j], SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     }
-//    LOAD SCORES
-    std::thread([](){
-        _character.ReadHighScore();
-        sprintf(_scoreBB8, "%d", _character.getBB8score());
-        sprintf(_scoreD0, "%d", _character.getD0score());
-        
-    }).detach();
     
 }
 
@@ -252,7 +245,10 @@ void Menu::draw(){
                 glVertex3f(polygons[13].x2, polygons[13].y1, -3);
             glEnd();
         glPopMatrix();
-
+        
+        _character.ReadHighScore();
+        sprintf(_scoreBB8, "%d", _character.getBB8score());
+        sprintf(_scoreD0, "%d", _character.getD0score());
         //sprintf(_score,"Highscore: %d", _character.ReadHighScore());
         this->DrawText(-1, 1.5, -4, "Highscore" ,25.0);
         
