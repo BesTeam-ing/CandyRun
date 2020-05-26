@@ -37,7 +37,7 @@ public:
     }
 
     Vector3f unit(){
-        return *this / sqrt(x * x + y * y + z * z);
+        return *this/sqrt(x * x + y * y + z * z);
     }
 
     Vector3f cross(Vector3f v){

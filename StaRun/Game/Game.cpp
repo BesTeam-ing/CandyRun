@@ -15,7 +15,7 @@
 
 SkyBox sky;
 WeatherEffects part;
-Camera camera = Camera(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
+Camera camera;
 Road road;
 Object obj;
 Character character;
@@ -97,6 +97,8 @@ void Game::init(){
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
     glEnable(GL_LIGHT0);
+    
+    camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
     
     glPushMatrix();
         menu.initMenu();

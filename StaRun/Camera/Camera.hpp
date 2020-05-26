@@ -22,14 +22,13 @@ class Camera
 public:
     Vector3f eye, center, up;
 
-    Camera(float eyeX = 0.0f, float eyeY = 12.0f, float eyeZ = 260.0f, float centerX = 0.0f, float centerY = 0.0f, float centerZ = 240.0f, float upX = 0.0f, float upY = 1.0f, float upZ = 0.0f){
+    void init(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ){
         eye = Vector3f(eyeX, eyeY, eyeZ);
         center = Vector3f(centerX, centerY, centerZ);
         up = Vector3f(upX, upY, upZ);
     }
 
     void moveX(float d){
-        
         Vector3f right = up.cross(center - eye).unit();
         Vector3f r_d = right * d;
         
