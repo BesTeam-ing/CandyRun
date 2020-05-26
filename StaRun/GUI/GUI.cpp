@@ -14,7 +14,7 @@ void GUI::draw(int score, int life){
     char S[10];
     sprintf(S,"%d", score);
     
-    glDisable(GL_LIGHTING);
+    //glDisable(GL_LIGHTING);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
@@ -132,6 +132,6 @@ void GUI::draw(int score, int life){
         glEnd();
         glPopMatrix();
     }
-    glEnable(GL_LIGHTING);
+    //glEnable(GL_LIGHTING);
     glDisable(GL_BLEND);
 }

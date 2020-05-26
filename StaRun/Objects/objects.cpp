@@ -12,6 +12,7 @@ GLfloat lp1[] = { 0.0f, 1.0f, -1.0f, 0.0f };
 std::vector< std::vector<Object> > objects(4);
 std::vector< std::vector<Object> > lamp(2);
 Object o;
+GLfloat lightPosition[] = { 0.0f, 5.0f, -8.0f, 0.0f };
 
 Object::Object(){}
 Object::~Object(){}
@@ -89,10 +90,13 @@ void Object::draw(int obj){
     switch (obj) {
         case WALL:
             glPushMatrix();
-            glTranslatef(this->pos_X, this->pos_Y + 0.2, this->pos_Z);
-                glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+            glEnable(GL_LIGHTING);
+                glTranslatef(this->pos_X, this->pos_Y + 0.2, this->pos_Z);
                 glCallList(wall);
+            glDisable(GL_LIGHTING);
             glPopMatrix();
+            
             break;
         
         case BATTERY:
@@ -100,12 +104,17 @@ void Object::draw(int obj){
             if(this->rotateAngle > 360.0f)
                 this->rotateAngle -= 360.0f;
             glPushMatrix();
+            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+            glEnable(GL_LIGHTING);
                 glTranslatef(this->pos_X, this->pos_Y+0.5, this->pos_Z);
-                glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
+                //glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
                 glRotatef(this->rotateAngle, 0, -1, 0);
                 glRotatef(this->angle_rotation, -1, 0, 0);
                 glCallList(battery);
+            glDisable(GL_LIGHTING);
             glPopMatrix();
+            
+            
             glPushMatrix();
                 this->drawShadow(0.5, this->pos_X, this->pos_Z);
             glPopMatrix();
@@ -114,10 +123,13 @@ void Object::draw(int obj){
         
         case LAMP:
             glPushMatrix();
+            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+            glEnable(GL_LIGHTING);
                 glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-                glLightfv(GL_LIGHT0,GL_POSITION,lightL);
+                //glLightfv(GL_LIGHT0,GL_POSITION,lightL);
                 glRotatef(this->angle_rotation, 0, -1, 0);
                 glCallList(light);
+            glDisable(GL_LIGHTING);
             glPopMatrix();
             break;
          
@@ -233,7 +245,7 @@ int Object::handleCollision(float x, float y, float z){
 
 void Object::drawShadow(float R, float X, float Y){
         glColor4f(0.3, 0.3, 0.3, 0.9);
-        glDisable(GL_LIGHTING);
+        //glDisable(GL_LIGHTING);
         glRotatef(90, 1, 0, 0);
         GLfloat xOffset = X;
         GLfloat yOffset = Y +0.6;
@@ -243,6 +255,5 @@ void Object::drawShadow(float R, float X, float Y){
             glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
         glEnd();
 
-        glEnable(GL_LIGHTING);
-        
+        //glEnable(GL_LIGHTING);
 }

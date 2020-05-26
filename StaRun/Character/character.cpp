@@ -8,8 +8,7 @@
 
 #include "character.hpp"
 
-//GLfloat lp[] = { 1.0, 0.7, 0.6, 0.0f };
-GLfloat lp[] = {0.5, 0.9, 0.9, 0.4};
+GLfloat lp[] = { 0.0f, 5.0f, -8.0f, 0.0f };
 
 enum character{
     BB8,
@@ -158,18 +157,20 @@ void Character::drawCharacter(){
     //D0
     if(this->character_choosen == D0){
         //CORPO
-        //std::cout<<this->rotate<<std::endl;
         glPushMatrix();
-        glTranslatef(this->x-0.1, this->y, this->z+0.5);
+        glEnable(GL_LIGHTING);
+            glTranslatef(this->x-0.1, this->y, this->z+0.5);
             glRotatef(this->rotation, 0, 0, this->rotate);
             glRotatef(this->rotateAngle, -1, 0, 0);
             glRotatef(90, 0, 1, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->body);
+        glDisable(GL_LIGHTING);
         glPopMatrix();
             
         //TESTA
         glPushMatrix();
+        glEnable(GL_LIGHTING);
             glTranslatef(this->x-0.1, this->y, this->z+0.5);
             glRotatef(this->rotation, 0, 0, this->rotate);
             glRotatef(180, 0, -1, 0);
@@ -178,31 +179,32 @@ void Character::drawCharacter(){
             glRotatef(10, 1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->head);
+        glDisable(GL_LIGHTING);
         glPopMatrix();
     }
     else if(this->character_choosen == BB8){ //BB8
         //CORPO
         glPushMatrix();
+        glEnable(GL_LIGHTING);
             glTranslatef(this->x, this->y, this->z);
             glRotatef(this->rotation, 0, 0, -this->rotate);
             glRotatef(this->rotateAngle, -1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->body);
+        glDisable(GL_LIGHTING);
         glPopMatrix();
         
         //TESTA
-        
         glPushMatrix();
+        glEnable(GL_LIGHTING);
             glTranslatef(this->x, this->y, this->z);
             glRotatef(180, 0, -1, 0);
-            //glRotatef(10, 0, 0, 1); TESTA A DESTRA
             glRotatef(this->rotation, 0, 0, -this->rotate);
             glRotatef(10, 1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
             glCallList(this->head);
+        glDisable(GL_LIGHTING);
         glPopMatrix();
-         
-        
     }
     // MI PIEGO A DESTRA O SINISTRA
     if (this->rotate != 0){
@@ -224,24 +226,18 @@ void Character::drawCharacter(){
             }
     }
     
-    
     glPushMatrix();
         drawShadow(0.5, this->x, this->y);
     glPopMatrix();
 }
 
 void Character::drawShadow(float R, float X, float Y){
-        glColor4f(0.3, 0.3, 0.3, 0.9);
-        glDisable(GL_LIGHTING);
+        glColor4f(0.3, 0.3, 0.3, 1.0);
         glRotatef(90, 1, 0, 0);
         GLfloat xOffset = X;
         GLfloat yOffset = this->z +0.6;
         glBegin(GL_POLYGON);
-
-        for(float t = -10 * PI; t <= 10 * PI; t += PI/20.0)
-            glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
+            for(float t = -10 * PI; t <= 10 * PI; t += PI/20.0)
+                glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
         glEnd();
-
-        glEnable(GL_LIGHTING);
-        
 }

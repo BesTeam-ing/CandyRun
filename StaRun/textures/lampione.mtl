@@ -1,7 +1,10 @@
 # Exported from 3D Builder
 
 newmtl Nuovo.1_0
-Kd 0.536000 0.800000 0.747200
+Kd 0.533500 0.708100 0.970000
+# Ka 0.3 0.3 0.3
+# Ks 0.3 0.3 0.3
+# illum 10
 
 newmtl Light_0
 Kd 1.00000 9.900000 7.300000

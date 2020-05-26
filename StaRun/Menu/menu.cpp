@@ -77,7 +77,7 @@ int Menu::getBackground(){
     
     int hour=aTime->tm_hour;
 
-    if(hour>=18){
+    if(hour>=19){
         switch (this->background) {
             case 0:
                 return 6;
@@ -259,7 +259,7 @@ void Menu::draw(){
         this->DrawText(0, -1, -4, _scoreD0 ,15.0);
     }
 
-//AGGIORNO I DATI METEO IN MODO ASINCRONO
+    //AGGIORNO I DATI METEO IN MODO ASINCRONO
     if(isFirst){
         isFirst = false;
         connection = "In Connection ...";
@@ -313,7 +313,7 @@ void Menu::draw(){
     
     glDisable(GL_TEXTURE_2D);
     
-//DISEGNO TITOLO
+    //DISEGNO TITOLO
     glPushMatrix();
         glColor3f(1.0, 1.0, 0.0);
         glScalef(0.6, 0.6, 0.6);

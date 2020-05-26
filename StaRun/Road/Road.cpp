@@ -9,7 +9,7 @@
 #include "Road.hpp"
 
 std::vector<Road> roads;
-GLfloat lp3[] = {0.9, 0.9, 0.9, 0.0};
+GLfloat lp3[] = { 0.0f, 5.0f, -8.0f, 0.0f };
 
 Road::Road(){}
 
@@ -46,10 +46,18 @@ void Road::draw(){
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, this->texture);
     
+    /*
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_MODULATE);
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+     */
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+    //glTexEnvi(GL_TEXTURE_2D,GL_TEXTURE_ENV_MODE,GL_MODULATE);
+    
     glPushMatrix();
+    glEnable(GL_LIGHTING);
     glLightfv(GL_LIGHT0,GL_POSITION,lp3);
     glBegin(GL_QUADS);
         glTexCoord2f(0.0f,0.0f);
@@ -61,6 +69,7 @@ void Road::draw(){
         glTexCoord2f(1.0f,0.0f);
         glVertex3f(pos_X + end_X, pos_Y + end_Y, start_Z + pos_Z);
     glEnd();
+    glDisable(GL_LIGHTING);
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
 }

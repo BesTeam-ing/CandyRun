@@ -48,9 +48,6 @@ float speed = 0.1;
 
 int background_chosen = 0;
 
-//GLfloat lightPosition[] = { 1.0f, 0.7f, -0.6f, 0.0f };
-GLfloat lightPosition[] = { 0.1, 0.5, 0.5, 0.1};
-
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
     this->argv = argv;
@@ -99,10 +96,9 @@ void Game::init(){
 
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
-    glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT4);
     
     glPushMatrix();
-        
         menu.initMenu();
         
         obj.load();
@@ -194,13 +190,11 @@ void Game::drawGame(){
         }
         
         road.drawRoad(speed);
-        //create light
-        glEnable(GL_LIGHTING);
         
         gui.draw(character.getScore(), character.getLife());
         
         character.drawCharacter();
-        
+    
         obj.drawObject(speed, character.getX());
         
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
@@ -214,9 +208,7 @@ void Game::drawGame(){
             character.setScore(10);
             engine->play2D("sounds/score.wav");
         }
-       
-        glDisable(GL_LIGHTING);
-    }
+}
     
     glFlush();
     glutSwapBuffers();
@@ -354,6 +346,8 @@ void Game::windowKey(unsigned char key,int x,int y){
                 character.initialPosition();
                 isStart = false;
                 isPaused = false;
+                speed = 0.1;
+                update = 0.1;
             }
         }
         else{
@@ -386,7 +380,6 @@ void Game::displayProject(double fov, double asp, double dim){
     glLoadIdentity();
     gluPerspective(fov,asp,dim/16,16*dim);
     glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
     glutReshapeWindow( DEF_WINDOW_WIDTH, DEF_WINDOW_HEIGHT);
 }
 
