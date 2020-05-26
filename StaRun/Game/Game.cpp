@@ -96,7 +96,7 @@ void Game::init(){
 
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
-    glEnable(GL_LIGHT4);
+    glEnable(GL_LIGHT0);
     
     glPushMatrix();
         menu.initMenu();
