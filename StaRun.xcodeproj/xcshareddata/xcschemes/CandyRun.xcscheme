@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/ciro/Desktop/Universita&#x300;/Computer Graphics/Progetto/StaRun/StaRun"
+      customWorkingDirectory = "/Users/gennaromellone/Documents/StaRun/StaRun"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"

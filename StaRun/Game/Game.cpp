@@ -48,6 +48,7 @@ float speed = 0.1;
 
 int background_chosen = 0;
 
+
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
     this->argv = argv;
@@ -100,6 +101,7 @@ void Game::initAll(){
     glEnable(GL_DEPTH_TEST);
 
     glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT2);
     
     camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
     
@@ -115,8 +117,8 @@ void Game::initAll(){
     
 }
 
-float lightPos[] = { 0.0, 5.0, -10.0, 0.0 }; // Spotlight position.
-float spotDirection[] = {0.0, 0.0, -1.0}; // Spotlight direction.
+//float lightPos[] = { 0.0, 15.0, -9.0, 1.0 }; // Spotlight position.
+//float spotDirection[] = {0.0, -1.0,0.0}; // Spotlight direction.
 
 void Game::drawGame(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
@@ -196,22 +198,13 @@ void Game::drawGame(){
         
         glEnable(GL_LIGHTING);
         
-        /*
-        glPushMatrix();
-            //glTranslatef(character.getX(), 3.0, 0.0); // Move the spotlight.
-            
-            // Spotlight properties including position.
-            glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-            //glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 360.0f);
-            //glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, spotDirection);
-            //glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 2.0f);
+        
+       
 
-        glPopMatrix();
-
-         
+         /*
         glPushMatrix();
-        glTranslatef(0, 2, 0);
-        glutSolidSphere(2, 20, 20);
+            glTranslatef(0, 2, 0);
+            glutSolidSphere(2, 20, 20);
         glPopMatrix();
         */
         

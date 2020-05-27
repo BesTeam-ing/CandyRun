@@ -157,7 +157,9 @@ void Character::drawCharacter(){
     //D0
     if(this->character_choosen == D0){
         //CORPO
+        
         glPushMatrix();
+        
         glEnable(GL_LIGHTING);
             glTranslatef(this->x-0.1, this->y, this->z+0.5);
             glRotatef(this->rotation, 0, 0, this->rotate);

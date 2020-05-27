@@ -86,8 +86,15 @@ void Object::setRotation(float angle){
     this->angle_rotation = angle;
 }
 
+float spotDirection[] = {-1.0, -1.0, 0.0}; // Spotlight direction.
+GLfloat Giallo[]      = { 1.0f, 1.0f, 0.0f, 1.0f };
+
 void Object::draw(int obj){
-    glEnable(GL_LIGHTING);
+    
+// MODIFICARE PER LUCE
+    float lightPos[] = { this->pos_X, 12.0, 8.0, 0.5 }; // Spotlight position.
+//-------------
+    
     switch (obj) {
         case WALL:
             glPushMatrix();
@@ -126,10 +133,28 @@ void Object::draw(int obj){
             glPushMatrix();
             glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
             glEnable(GL_LIGHTING);
+            
                 glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
                 glRotatef(this->angle_rotation, 0, -1, 0);
+        
                 glCallList(light);
             glDisable(GL_LIGHTING);
+            glPopMatrix();
+            
+//MODIFICARE PER LUCE
+            glPushMatrix();
+                glEnable(GL_LIGHTING);
+                glLightfv(GL_LIGHT2, GL_AMBIENT, Giallo);
+                glLightfv(GL_LIGHT2, GL_DIFFUSE, Giallo);
+            //FORSE QUESTO
+                glTranslatef(this->pos_X, 0, this->pos_Z); // Move the spotlight.
+                                  
+            // Spotlight properties including position.
+                glLightfv(GL_LIGHT2, GL_POSITION, lightPos);
+                glLightf(GL_LIGHT2, GL_SPOT_CUTOFF, 25.0);
+                glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, spotDirection);
+                glLightf(GL_LIGHT2, GL_SPOT_EXPONENT, 2.0f);
+                glDisable(GL_LIGHTING);
             glPopMatrix();
             break;
          
