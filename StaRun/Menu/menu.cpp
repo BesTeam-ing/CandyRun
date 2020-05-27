@@ -546,7 +546,6 @@ void Menu::drawMenu(){
     glLoadIdentity();
     
     glDisable(GL_LIGHTING);
-    glEnable(GL_DEPTH_TEST);
     
     glScalef(0.25,0.25,0.25);
     

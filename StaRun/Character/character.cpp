@@ -147,7 +147,7 @@ void Character::SaveHighScore() {
     }
 }
 
-void Character::drawCharacter(){
+void Character::drawCharacter(){    
     this->rotateAngle += 1;
     if(this->rotateAngle > 360.0f)
         this->rotateAngle -= 360.0f;

@@ -96,36 +96,39 @@ void Game::init(){
 
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
+    
+    glEnable(GL_DEPTH_TEST);
+
     glEnable(GL_LIGHT0);
     
     camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
     
-    glPushMatrix();
-        menu.initMenu();
+    menu.initMenu();
         
-        obj.load();
-        obj.initObject();
-        road.initializeGround();
-        
-        glMatrixMode(GL_MODELVIEW);
-            
-        engine = irrklang::createIrrKlangDevice();
-        engine->play2D("sounds/starwars.wav", true);
-        engine->setSoundVolume(0.0f);
+    obj.load();
+    obj.initObject();
+    road.initializeGround();
+                
+    engine = irrklang::createIrrKlangDevice();
+    engine->play2D("sounds/starwars.wav", true);
+    engine->setSoundVolume(0.0f);
     
-    glPopMatrix();
 }
+
+float lightPos[] = { 0.0, 5.0, -10.0, 0.0 }; // Spotlight position.
+float spotDirection[] = {0.0, 0.0, -1.0}; // Spotlight direction.
 
 void Game::drawGame(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
     glClearColor(0.0,0.0,0.0,1.0);
     glLoadIdentity();
-    glEnable(GL_DEPTH_TEST);
     
     camera.look();
     sky.drawSkyBox(9.5*dim);
     
     if(isPaused){
+        glDisable(GL_LIGHTING);
+        
         const char* text;
         const char* text_resume;
         const char* text_esc;
@@ -190,6 +193,27 @@ void Game::drawGame(){
             default:
                 break;
         }
+        
+        glEnable(GL_LIGHTING);
+        
+        /*
+        glPushMatrix();
+            //glTranslatef(character.getX(), 3.0, 0.0); // Move the spotlight.
+            
+            // Spotlight properties including position.
+            glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
+            //glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 360.0f);
+            //glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, spotDirection);
+            //glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 2.0f);
+
+        glPopMatrix();
+
+         
+        glPushMatrix();
+        glTranslatef(0, 2, 0);
+        glutSolidSphere(2, 20, 20);
+        glPopMatrix();
+        */
         
         road.drawRoad(speed);
         

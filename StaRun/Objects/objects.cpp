@@ -87,6 +87,7 @@ void Object::setRotation(float angle){
 }
 
 void Object::draw(int obj){
+    glEnable(GL_LIGHTING);
     switch (obj) {
         case WALL:
             glPushMatrix();
@@ -126,7 +127,6 @@ void Object::draw(int obj){
             glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
             glEnable(GL_LIGHTING);
                 glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-                //glLightfv(GL_LIGHT0,GL_POSITION,lightL);
                 glRotatef(this->angle_rotation, 0, -1, 0);
                 glCallList(light);
             glDisable(GL_LIGHTING);
