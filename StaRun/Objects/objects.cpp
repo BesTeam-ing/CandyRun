@@ -8,11 +8,17 @@
 
 #include "objects.hpp"
 
-GLfloat lp1[] = { 0.0f, 1.0f, -1.0f, 0.0f };
 std::vector< std::vector<Object> > objects(4);
 std::vector< std::vector<Object> > lamp(2);
 Object o;
 GLfloat lightPosition[] = { 0.0f, 5.0f, -8.0f, 0.0f };
+GLfloat Giallo[] = { 1.0f, 1.0f, 0.0f, 1.0f };
+
+float spotDirection[] = {1.0, -1.0, 0.0};
+float spotDirection1[] = {-1.0, -1.0, 0.0};
+
+float lightPos[] = {-5.0, 12.0, 0.0, 0.5};
+float lightPos1[] = {5.0, 12.0, 0.0, 0.5};
 
 Object::Object(){}
 Object::~Object(){}
@@ -86,15 +92,7 @@ void Object::setRotation(float angle){
     this->angle_rotation = angle;
 }
 
-float spotDirection[] = {-1.0, -1.0, 0.0}; // Spotlight direction.
-GLfloat Giallo[]      = { 1.0f, 1.0f, 0.0f, 1.0f };
-
 void Object::draw(int obj){
-    
-// MODIFICARE PER LUCE
-    float lightPos[] = { this->pos_X, 12.0, 8.0, 0.5 }; // Spotlight position.
-//-------------
-    
     switch (obj) {
         case WALL:
             glPushMatrix();
@@ -141,14 +139,12 @@ void Object::draw(int obj){
             glDisable(GL_LIGHTING);
             glPopMatrix();
             
-//MODIFICARE PER LUCE
+            //LUCE LAMPIONE SINISTRO
             glPushMatrix();
                 glEnable(GL_LIGHTING);
                 glLightfv(GL_LIGHT2, GL_AMBIENT, Giallo);
                 glLightfv(GL_LIGHT2, GL_DIFFUSE, Giallo);
-            //FORSE QUESTO
-                glTranslatef(this->pos_X, 0, this->pos_Z); // Move the spotlight.
-                                  
+            
             // Spotlight properties including position.
                 glLightfv(GL_LIGHT2, GL_POSITION, lightPos);
                 glLightf(GL_LIGHT2, GL_SPOT_CUTOFF, 25.0);
@@ -156,6 +152,21 @@ void Object::draw(int obj){
                 glLightf(GL_LIGHT2, GL_SPOT_EXPONENT, 2.0f);
                 glDisable(GL_LIGHTING);
             glPopMatrix();
+            
+            //LUCE LAMPIONE DESTRO
+            glPushMatrix();
+                glEnable(GL_LIGHTING);
+                glLightfv(GL_LIGHT3, GL_AMBIENT, Giallo);
+                glLightfv(GL_LIGHT3, GL_DIFFUSE, Giallo);
+            
+            // Spotlight properties including position.
+                glLightfv(GL_LIGHT3, GL_POSITION, lightPos1);
+                glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 25.0);
+                glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, spotDirection1);
+                glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 2.0f);
+                glDisable(GL_LIGHTING);
+            glPopMatrix();
+             
             break;
          
             
@@ -270,7 +281,7 @@ int Object::handleCollision(float x, float y, float z){
 
 void Object::drawShadow(float R, float X, float Y){
         glColor4f(0.3, 0.3, 0.3, 0.9);
-        //glDisable(GL_LIGHTING);
+        glDisable(GL_LIGHTING);
         glRotatef(90, 1, 0, 0);
         GLfloat xOffset = X;
         GLfloat yOffset = Y +0.6;

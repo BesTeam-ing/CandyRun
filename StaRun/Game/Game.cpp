@@ -102,6 +102,7 @@ void Game::initAll(){
 
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHT2);
+    glEnable(GL_LIGHT3);
     
     camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
     
