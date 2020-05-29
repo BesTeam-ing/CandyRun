@@ -65,7 +65,7 @@ bool isFirst = true;
 bool isHighscore = false;
 char _scoreBB8[20];
 char _scoreD0[20];
-char* connection = "";
+const char* connection = "";
 
 Menu::Menu(){}
 
@@ -201,7 +201,6 @@ void Menu::initMenu(){
     polygons[14].y2=-3.5;
     
     //TITLE
-    
     title = _title.load("textures/Starun.obj","textures/Starun.mtl");
     
     //TEXTURE MENU ITEMS
@@ -229,8 +228,7 @@ void Menu::initMenu(){
 }
 
 void Menu::draw(){
-    
-//HIGHSCORES
+    //HIGHSCORES
     if(isHighscore){
         glPushMatrix();
         glColor4f(0.0, 0.0, 0.0,0.4);
@@ -326,7 +324,6 @@ void Menu::draw(){
     
     //Z = -1
     //DISEGNO METEO ICON
-    
     DrawText(-3.8,-3.8,-2,connection,15.0);
     
     glEnable(GL_TEXTURE_2D);
@@ -433,7 +430,7 @@ void Menu::draw(){
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     
-    //ARROW LEFT
+    //ARROWS LEFT
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, arrow_left);
     
@@ -453,11 +450,22 @@ void Menu::draw(){
         glTexCoord2f(1.0f,0.0f);
         glVertex3f(polygons[9].x2, polygons[9].y1, -2);
     glEnd();
+    
+    glBegin(GL_QUADS);
+        glTexCoord2f(0.0f,0.0f);
+        glVertex3f(polygons[11].x1, polygons[11].y1, -2);
+        glTexCoord2f(0.0f,1);
+        glVertex3f(polygons[11].x1, polygons[11].y2, -2);
+        glTexCoord2f(1.0f,1);
+        glVertex3f(polygons[11].x2, polygons[11].y2, -2);
+        glTexCoord2f(1.0f,0.0f);
+        glVertex3f(polygons[11].x2, polygons[11].y1, -2);
+    glEnd();
     glDisable(GL_BLEND);
     glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     
-    //ARROW RIGHT
+    //ARROWS RIGHT
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, arrow_right);
     
@@ -477,44 +485,7 @@ void Menu::draw(){
         glTexCoord2f(1.0f,0.0f);
         glVertex3f(polygons[10].x2, polygons[10].y1, -2);
     glEnd();
-    glDisable(GL_BLEND);
-    glPopMatrix();
-    glDisable(GL_TEXTURE_2D);
     
-    //ARROW LEFT 1
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, arrow_left);
-    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    glPushMatrix();
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glColor4f(1.0, 1.0, 1.0, 1.0);
-    glBegin(GL_QUADS);
-        glTexCoord2f(0.0f,0.0f);
-        glVertex3f(polygons[11].x1, polygons[11].y1, -2);
-        glTexCoord2f(0.0f,1);
-        glVertex3f(polygons[11].x1, polygons[11].y2, -2);
-        glTexCoord2f(1.0f,1);
-        glVertex3f(polygons[11].x2, polygons[11].y2, -2);
-        glTexCoord2f(1.0f,0.0f);
-        glVertex3f(polygons[11].x2, polygons[11].y1, -2);
-    glEnd();
-    glDisable(GL_BLEND);
-    glPopMatrix();
-    glDisable(GL_TEXTURE_2D);
-    
-    //ARROW RIGTH 1
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, arrow_right);
-    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    glPushMatrix();
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glColor4f(1.0, 1.0, 1.0, 1.0);
     glBegin(GL_QUADS);
         glTexCoord2f(0.0f,0.0f);
         glVertex3f(polygons[12].x1, polygons[12].y1, -2);
@@ -568,6 +539,7 @@ void Menu::DrawText(float x,float y, float z, const char *text, int size){
 }
 
 int Menu::select(GLint x, GLint y){
+    //interazione mouse
     if(isHighscore){
         isHighscore = false;
     }

@@ -48,7 +48,6 @@ float speed = 0.1;
 
 int background_chosen = 0;
 
-
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
     this->argv = argv;
@@ -92,6 +91,7 @@ void Game::init(){
     this->initAll();
         
     this->Timer(0);
+    
     glutMainLoop();
 }
 
@@ -104,31 +104,35 @@ void Game::initAll(){
     glEnable(GL_LIGHT2);
     glEnable(GL_LIGHT3);
     
-    camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f);
+    camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f); //inizializzazione camera
     
-    menu.initMenu();
+    menu.initMenu(); //inizializzazione menu
         
+    //caricamento oggetti (WALL, BATTERY e LAMP)
     obj.load();
     obj.initObject();
+    
+    //creazione della strada
     road.initializeGround();
-                
+    
+    //musica
     engine = irrklang::createIrrKlangDevice();
     engine->play2D("sounds/starwars.wav", true);
     engine->setSoundVolume(0.0f);
     
 }
 
-//float lightPos[] = { 0.0, 15.0, -9.0, 1.0 }; // Spotlight position.
-//float spotDirection[] = {0.0, -1.0,0.0}; // Spotlight direction.
-
 void Game::drawGame(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
     glClearColor(0.0,0.0,0.0,1.0);
     glLoadIdentity();
     
+    //settaggio della posizione della camera
     camera.look();
+    //disegno dello skybox
     sky.drawSkyBox(9.5*dim);
     
+    //controllo dello stato del gioco
     if(isPaused){
         glDisable(GL_LIGHTING);
         
@@ -152,6 +156,7 @@ void Game::drawGame(){
             x1 = -15;
         }
         
+        //visulaizzazione testo
         glPushMatrix();
             glColor4f(1.0, 1.0, 1.0, 0.0);
             glTranslatef(x, 3, 0);
@@ -182,7 +187,7 @@ void Game::drawGame(){
     else{
         isGameOver = false;
                 
-        //WEATHER CONDITION
+        //condizioni meteo
         switch (weather_condition) {
             case CLEAR:
                 break;
@@ -199,24 +204,19 @@ void Game::drawGame(){
         
         glEnable(GL_LIGHTING);
         
-        
-       
-
-         /*
-        glPushMatrix();
-            glTranslatef(0, 2, 0);
-            glutSolidSphere(2, 20, 20);
-        glPopMatrix();
-        */
-        
+        //disegno della strada
         road.drawRoad(speed);
         
+        //disegno della gui del personaggio (vite e punteggio)
         gui.draw(character.getScore(), character.getLife());
         
+        //disegno del player (BB8 o D0)
         character.drawCharacter();
     
+        //disegno degli oggetti
         obj.drawObject(speed, character.getX());
         
+        //gestione delle collisioni
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
             std::cout<<"Collision"<<std::endl;
             character.setLife(-1);
@@ -228,7 +228,7 @@ void Game::drawGame(){
             character.setScore(10);
             engine->play2D("sounds/score.wav");
         }
-}
+    }
     
     glFlush();
     glutSwapBuffers();
@@ -256,14 +256,18 @@ void Game::gameOver(){
 }
 
 void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
+    //initerzione mouse
     if(!isStart){
         if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
             int select = menu.select(x,y);
             
             if(select == 1){
                 isStart = true;
+                //inizializzazione delle particelle
                 part.initParticles();
                 std::cout<<"Caso :" <<menu.getBackground()<<std::endl;
+                
+                //scelta dello skybox
                 switch (menu.getBackground()) {
                     case 0: //GIORNO SERENO
                         sky.initSkyBox("textures/sky191ft.bmp", "textures/sky191rt.bmp", "textures/sky191lf.bmp", "textures/sky191bk.bmp", "textures/sky191up.bmp", "textures/sky191dn.bmp");
@@ -340,6 +344,7 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
 
 
 void Game::windowSpecial(int key,int x,int y){
+    //interazione tastiera
     if(isStart){
         if (key == GLUT_KEY_RIGHT){
             if(isAudio)
@@ -359,6 +364,7 @@ void Game::windowSpecial(int key,int x,int y){
 }
 
 void Game::windowKey(unsigned char key,int x,int y){
+    //interazione tastiera
     if (key == 27){
         if(isStart){
             if(isPaused){
