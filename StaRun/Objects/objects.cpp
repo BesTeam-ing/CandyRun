@@ -67,23 +67,6 @@ void Object::setPosition(float X, float Y, float Z){
     this->pos_Z = Z;
 }
 
-void Object::setDimension(float f){
-
-    this-> start_X = -f;
-    this-> start_Y = -f;
-    this-> start_Z = -f;
-    
-    this-> end_X = f;
-    this-> end_Y = f;
-    this-> end_Z = f;
-}
-
-void Object::setColor(GLfloat r, GLfloat g, GLfloat b){
-    this->r = r;
-    this->g = g;
-    this->b = b;
-}
-
 void Object::setObj(int obj){
     this->obj = obj;
 }
@@ -96,11 +79,11 @@ void Object::draw(int obj){
     switch (obj) {
         case WALL:
             glPushMatrix();
-            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
-            glEnable(GL_LIGHTING);
-                glTranslatef(this->pos_X, this->pos_Y + 0.2, this->pos_Z);
-                glCallList(wall);
-            glDisable(GL_LIGHTING);
+                glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+                glEnable(GL_LIGHTING);
+                    glTranslatef(this->pos_X, this->pos_Y + 0.2, this->pos_Z);
+                    glCallList(wall);
+                glDisable(GL_LIGHTING);
             glPopMatrix();
             
             break;
@@ -110,16 +93,14 @@ void Object::draw(int obj){
             if(this->rotateAngle > 360.0f)
                 this->rotateAngle -= 360.0f;
             glPushMatrix();
-            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
-            glEnable(GL_LIGHTING);
-                glTranslatef(this->pos_X, this->pos_Y+0.5, this->pos_Z);
-                //glLightfv(GL_LIGHT0,GL_POSITION,lightWall);
-                glRotatef(this->rotateAngle, 0, -1, 0);
-                glRotatef(this->angle_rotation, -1, 0, 0);
-                glCallList(battery);
-            glDisable(GL_LIGHTING);
+                glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+                glEnable(GL_LIGHTING);
+                    glTranslatef(this->pos_X, this->pos_Y+0.5, this->pos_Z);
+                    glRotatef(this->rotateAngle, 0, -1, 0);
+                    glRotatef(this->angle_rotation, -1, 0, 0);
+                    glCallList(battery);
+                glDisable(GL_LIGHTING);
             glPopMatrix();
-            
             
             glPushMatrix();
                 this->drawShadow(0.5, this->pos_X, this->pos_Z);
@@ -129,14 +110,12 @@ void Object::draw(int obj){
         
         case LAMP:
             glPushMatrix();
-            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
-            glEnable(GL_LIGHTING);
-            
-                glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
-                glRotatef(this->angle_rotation, 0, -1, 0);
-        
-                glCallList(light);
-            glDisable(GL_LIGHTING);
+                glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+                glEnable(GL_LIGHTING);
+                    glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
+                    glRotatef(this->angle_rotation, 0, -1, 0);
+                    glCallList(light);
+                glDisable(GL_LIGHTING);
             glPopMatrix();
             
             //LUCE LAMPIONE SINISTRO
@@ -145,7 +124,7 @@ void Object::draw(int obj){
                 glLightfv(GL_LIGHT2, GL_AMBIENT, Giallo);
                 glLightfv(GL_LIGHT2, GL_DIFFUSE, Giallo);
             
-            // Spotlight properties including position.
+                //Spotlight properties including position.
                 glLightfv(GL_LIGHT2, GL_POSITION, lightPos);
                 glLightf(GL_LIGHT2, GL_SPOT_CUTOFF, 25.0);
                 glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, spotDirection);
@@ -159,16 +138,14 @@ void Object::draw(int obj){
                 glLightfv(GL_LIGHT3, GL_AMBIENT, Giallo);
                 glLightfv(GL_LIGHT3, GL_DIFFUSE, Giallo);
             
-            // Spotlight properties including position.
+                //Spotlight properties including position.
                 glLightfv(GL_LIGHT3, GL_POSITION, lightPos1);
                 glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 25.0);
                 glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, spotDirection1);
                 glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 2.0f);
                 glDisable(GL_LIGHTING);
             glPopMatrix();
-             
             break;
-         
             
         default:
             break;
@@ -179,7 +156,7 @@ void Object::initObject(){
     objects.clear();
     lamp.clear();
     
-    //ENEMY OR BATTERY
+    //WALL OR BATTERY
     float beginning = -60.0;
     for (int i=0; i<4; i++) {
         std::vector<Object> v1;
@@ -264,7 +241,7 @@ void Object::drawObject(float speed,int x){
 }
 
 int Object::handleCollision(float x, float y, float z){
-    
+    //gestione collisioni
     for (int i=0; i<objects.size(); i++) {
         for(int j=0; j<objects[i].size(); j++){
             if(objects[i][j].pos_Z == 15.0f && (objects[i][j].pos_X <= x + 2.5 && objects[i][j].pos_X >= x - 2.5) && objects[i][j].obj == WALL)
@@ -280,16 +257,14 @@ int Object::handleCollision(float x, float y, float z){
 }
 
 void Object::drawShadow(float R, float X, float Y){
-        glColor4f(0.3, 0.3, 0.3, 0.9);
-        glDisable(GL_LIGHTING);
-        glRotatef(90, 1, 0, 0);
-        GLfloat xOffset = X;
-        GLfloat yOffset = Y +0.6;
-        glBegin(GL_POLYGON);
-
+    //ombra oggetti
+    glColor4f(0.3, 0.3, 0.3, 0.9);
+    glDisable(GL_LIGHTING);
+    glRotatef(90, 1, 0, 0);
+    GLfloat xOffset = X;
+    GLfloat yOffset = Y +0.6;
+    glBegin(GL_POLYGON);
         for(float t = -10 * PI; t <= 10 * PI; t += PI/20.0)
             glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
-        glEnd();
-
-        //glEnable(GL_LIGHTING);
+    glEnd();
 }

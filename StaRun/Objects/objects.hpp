@@ -44,8 +44,6 @@ public:
     
     void load();
     unsigned int getTexture();
-    void setDimension(float f);
-    void setColor(GLfloat r, GLfloat g, GLfloat b);
     
     int getObj();
     void setObj(int obj);
