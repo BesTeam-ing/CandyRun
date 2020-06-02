@@ -43,7 +43,6 @@ void Road::init(const char *t){
 
 void Road::draw(){
     glColor4f(0.8, 0.8, 0.8, 0.1);
-        
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, this->texture);
     
@@ -55,8 +54,8 @@ void Road::draw(){
      */
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-    glTexEnvi(GL_TEXTURE_2D,GL_TEXTURE_ENV_MODE,GL_MODULATE );
-    
+    glTexEnvf(GL_TEXTURE_2D,GL_TEXTURE_ENV_MODE,GL_REPLACE );
+
     glPushMatrix();
     //glEnable(GL_LIGHTING);
     //glLightfv(GL_LIGHT0,GL_POSITION,lp3);

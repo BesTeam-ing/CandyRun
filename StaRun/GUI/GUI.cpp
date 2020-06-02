@@ -13,7 +13,7 @@ void GUI::draw(int score, int life){
     
     char S[10];
     sprintf(S,"%d", score);
-    
+    //glDisable(GL_FOG);
     glDisable(GL_LIGHTING);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

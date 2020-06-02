@@ -58,6 +58,8 @@ private:
     static void gameOver();
     static int ReadHighScore();
     static void Timer(int value);
+    
+    static void setFogColor(float r, float g, float b, float a);
 };
 
 #endif /* Game_hpp */

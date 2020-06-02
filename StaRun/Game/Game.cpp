@@ -33,6 +33,14 @@ bool isAudio = false;
 bool isGameOver = false;
 bool isDay = true;
 
+static bool isFog = true ; // Is fog on?
+static int fogMode = GL_EXP2; // Fog mode.
+static float fogDensity = 0.005; // Fog density.
+static float fogStart = -70; // Fog start z value.
+static float fogEnd = 30; // Fog end z value.
+float fogColor[4] = {0.6, 0.6, 0.6, 1.0};
+
+
 enum weather{
     CLEAR,
     RAIN,
@@ -135,6 +143,7 @@ void Game::drawGame(){
     //controllo dello stato del gioco
     if(isPaused){
         glDisable(GL_LIGHTING);
+        glDisable(GL_FOG);
         
         const char* text;
         const char* text_resume;
@@ -203,6 +212,19 @@ void Game::drawGame(){
         }
         
         glEnable(GL_LIGHTING);
+        
+        if(isFog){
+            glEnable(GL_FOG);
+            glFogfv(GL_FOG_COLOR, fogColor);
+            glFogi(GL_FOG_MODE, fogMode);
+            glFogf(GL_FOG_START, fogStart);
+            glFogf(GL_FOG_END, fogEnd);
+            glFogf(GL_FOG_DENSITY, fogDensity);
+            glHint(GL_FOG_HINT, GL_NICEST);
+        }
+        else{
+            glDisable(GL_FOG);
+        }
         
         //disegno della strada
         road.drawRoad(speed);
@@ -273,6 +295,11 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                         sky.initSkyBox("textures/sky191ft.bmp", "textures/sky191rt.bmp", "textures/sky191lf.bmp", "textures/sky191bk.bmp", "textures/sky191up.bmp", "textures/sky191dn.bmp");
                         weather_condition = CLEAR;
                         isDay = true;
+                        fogDensity = 0.001;
+                        setFogColor(0.7, 0.7, 0.7, 1.0);
+                        glDisable(GL_LIGHT2);
+                        glDisable(GL_LIGHT3);
+                        
                         break;
                     
                     case 1: //GIORNO PIOGGIA
@@ -418,4 +445,11 @@ void Game::displayReshape(int width,int height){
 void Game::redisplayAll(void){
     displayProject(fov, asp, dim);
     glutPostRedisplay();
+}
+
+void Game::setFogColor(float r, float g, float b, float a){
+    fogColor[0] = r;
+    fogColor[1] = g;
+    fogColor[2] = b;
+    fogColor[3] = a;
 }
