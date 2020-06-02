@@ -52,7 +52,7 @@ int weather_condition = CLEAR;
 char* score;
 char* vite;
 
-float update = 0.1;
+float update = 0.2;
 float speed = 0.2;
 
 int background_chosen = 0;
@@ -71,7 +71,7 @@ void Game::Timer(int value)
         if(update <= 1.5){
             if(10%(int(update*10)) == 0){
                 std::cout<<"QUI: "<<update*10<<std::endl;
-                speed += update;
+                speed = update;
                 std::cout<<"Velocità: "<<speed<<std::endl;
             }
         }
@@ -274,8 +274,8 @@ void Game::gameOver(){
     std::cout<<"Game Over"<<std::endl;
     isPaused = true;
     isGameOver = true;
-    speed = 0.1;
-    update = 0.1;
+    speed = 0.2;
+    update = 0.2;
 }
 
 void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
@@ -469,8 +469,8 @@ void Game::windowKey(unsigned char key,int x,int y){
                 character.initialPosition();
                 isStart = false;
                 isPaused = false;
-                speed = 0.1;
-                update = 0.1;
+                speed = 0.2;
+                update = 0.2;
             }
         }
         else{
