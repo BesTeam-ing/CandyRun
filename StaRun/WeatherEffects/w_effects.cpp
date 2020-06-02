@@ -46,7 +46,7 @@ void WeatherEffects::drawRain(){
             glEnable(GL_BLEND);
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             
-            glColor4f(0.5, 0.5, 1.0, 0.6);
+            glColor4f(0.65, 0.65, 0.9, 0.8);
             glPushMatrix();
                 glBegin(GL_LINES);
                     glVertex3f(x, y, z);
@@ -82,7 +82,7 @@ void WeatherEffects::drawSnow(){
             
             glEnable(GL_BLEND);
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-            glColor4f(1.0, 1.0, 1.0, 0.7);
+            glColor4f(1.0, 1.0, 1.0, 0.5);
             
             glPushMatrix();
                 glTranslatef(x, y, z);

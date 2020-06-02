@@ -8,7 +8,7 @@
 
 #include "character.hpp"
 
-GLfloat lp[] = { 0.0f, 5.0f, -8.0f, 0.0f };
+GLfloat lp[] = { 0.0f, 8.0f, -8.0f, 0.0f };
 
 enum character{
     BB8,

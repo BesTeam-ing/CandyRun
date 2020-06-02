@@ -11,7 +11,9 @@
 std::vector< std::vector<Object> > objects(4);
 std::vector< std::vector<Object> > lamp(2);
 Object o;
-GLfloat lightPosition[] = { 0.0f, 5.0f, -8.0f, 0.0f };
+GLfloat lightPosition[] = { 0.0f, 10.0f, -8.0f, 0.05f };
+GLfloat lampLight[] = { 0.0f, 5.0f, -8.0f, 1.0f };
+
 GLfloat Giallo[] = { 1.0f, 1.0f, 0.0f, 1.0f };
 
 float spotDirection[] = {1.0, -1.0, 0.0};
@@ -110,7 +112,7 @@ void Object::draw(int obj){
         
         case LAMP:
             glPushMatrix();
-                glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+                glLightfv(GL_LIGHT0,GL_POSITION,lampLight);
                 glEnable(GL_LIGHTING);
                     glTranslatef(this->pos_X, this->pos_Y, this->pos_Z);
                     glRotatef(this->angle_rotation, 0, -1, 0);

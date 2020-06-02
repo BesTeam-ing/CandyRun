@@ -39,6 +39,7 @@ static float fogDensity = 0.005; // Fog density.
 static float fogStart = -70; // Fog start z value.
 static float fogEnd = 30; // Fog end z value.
 float fogColor[4] = {0.6, 0.6, 0.6, 1.0};
+float ambientLight[4] = {0.1, 0.1, 0.1, 1.0};
 
 
 enum weather{
@@ -52,7 +53,7 @@ char* score;
 char* vite;
 
 float update = 0.1;
-float speed = 0.1;
+float speed = 0.2;
 
 int background_chosen = 0;
 
@@ -70,7 +71,7 @@ void Game::Timer(int value)
         if(update <= 1.5){
             if(10%(int(update*10)) == 0){
                 std::cout<<"QUI: "<<update*10<<std::endl;
-                speed = update;
+                speed += update;
                 std::cout<<"Velocità: "<<speed<<std::endl;
             }
         }
@@ -295,10 +296,14 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                         sky.initSkyBox("textures/sky191ft.bmp", "textures/sky191rt.bmp", "textures/sky191lf.bmp", "textures/sky191bk.bmp", "textures/sky191up.bmp", "textures/sky191dn.bmp");
                         weather_condition = CLEAR;
                         isDay = true;
-                        fogDensity = 0.001;
+                        
+                        fogDensity = 0.005;
                         setFogColor(0.7, 0.7, 0.7, 1.0);
                         glDisable(GL_LIGHT2);
                         glDisable(GL_LIGHT3);
+                        
+                        setAmbientLight(0.4, 0.4, 0.4, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                     
@@ -306,46 +311,111 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                         sky.initSkyBox("textures/sky303ft.bmp", "textures/sky303rt.bmp", "textures/sky303lf.bmp", "textures/sky303bk.bmp", "textures/sky303up.bmp", "textures/sky303dn.bmp");
                         weather_condition = RAIN;
                         isDay = true;
+                        
+                        fogDensity = 0.01;
+                        setFogColor(0.6, 0.6, 0.6, 1.0);
+                        glDisable(GL_LIGHT2);
+                        glDisable(GL_LIGHT3);
+                        
+                        setAmbientLight(0.2, 0.2, 0.2, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         break;
+                        
                     case 2: //GIORNO NEVE
                         sky.initSkyBox("textures/sky303ft.bmp", "textures/sky303rt.bmp", "textures/sky303lf.bmp", "textures/sky303bk.bmp", "textures/sky303up.bmp", "textures/sky303dn.bmp");
                         weather_condition = SNOW;
                         isDay = true;
+                        
+                        fogDensity = 0.015;
+                        setFogColor(0.6, 0.6, 0.6, 1.0);
+                        glDisable(GL_LIGHT2);
+                        glDisable(GL_LIGHT3);
+                        
+                        setAmbientLight(0.2, 0.2, 0.2, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
+                        
                         break;
                     
                     case 4: //MARTE
                         sky.initSkyBox("textures/pinkft.bmp", "textures/pinkrt.bmp", "textures/pinklf.bmp", "textures/pinkbk.bmp", "textures/pinkup.bmp", "textures/pinkdn.bmp");
                         weather_condition = CLEAR;
                         isDay = true;
+                        
+                        fogDensity = 0.005;
+                        setFogColor(0.6, 0.3, 0.3, 1.0);
+                        glDisable(GL_LIGHT2);
+                        glDisable(GL_LIGHT3);
+                        
+                        setAmbientLight(0.5, 0.3, 0.3, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
+                        
                         break;
                         
                     case 5: //SPAZIO
                         sky.initSkyBox("textures/spaceft.bmp", "textures/spacert.bmp", "textures/spacelf.bmp", "textures/spacebk.bmp", "textures/spaceup.bmp", "textures/spacedn.bmp");
                         weather_condition = CLEAR;
                         isDay = false;
+                        
+                        fogDensity = 0.002;
+                        setFogColor(0.3, 0.3, 0.3, 1.0);
+                        glDisable(GL_LIGHT2);
+                        glDisable(GL_LIGHT3);
+                        
+                        setAmbientLight(0.15, 0.15, 0.15, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
+                        
                         break;
                         
-                    case 6: //SERA SERNO
+                    case 6: //SERA SERENO
                         sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
                         weather_condition = CLEAR;
                         isDay = false;
+                        
+                        fogDensity = 0.005;
+                        setFogColor(0.3, 0.3, 0.3, 1.0);
+                        
+                        setAmbientLight(0.4, 0.4, 0.2, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
+                        
                         break;
                         
                     case 7: //SERA PIOGGIA
                         sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
                         weather_condition = RAIN;
                         isDay = false;
+                        
+                        fogDensity = 0.03;
+                        setFogColor(0.4, 0.4, 0.3, 1.0);
+                        
+                        setAmbientLight(0.4, 0.4, 0.2, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
+                        
                         break;
                         
                     case 8: //SERA NEVE
                         sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
                         weather_condition = SNOW;
                         isDay = false;
+                        
+                        fogDensity = 0.03;
+                        setFogColor(0.4, 0.4, 0.3, 1.0);
+                        
+                        setAmbientLight(0.4, 0.4, 0.2, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
+                        
                         break;
                         
                     default: //GIORNO SERENO
                         sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
                         weather_condition = CLEAR;
+                        
+                        fogDensity = 0.005;
+                        setFogColor(0.7, 0.7, 0.7, 1.0);
+                        glDisable(GL_LIGHT2);
+                        glDisable(GL_LIGHT3);
+                        
+                        setAmbientLight(0.2, 0.2, 0.2, 1.0);
+                        glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                 }
                 
                 switch (menu.getCharacter()) {
@@ -452,4 +522,10 @@ void Game::setFogColor(float r, float g, float b, float a){
     fogColor[1] = g;
     fogColor[2] = b;
     fogColor[3] = a;
+}
+void Game::setAmbientLight(float r, float g, float b, float a){
+    ambientLight[0] = r;
+    ambientLight[1] = g;
+    ambientLight[2] = b;
+    ambientLight[3] = a;
 }

@@ -60,6 +60,8 @@ private:
     static void Timer(int value);
     
     static void setFogColor(float r, float g, float b, float a);
+    static void setAmbientLight(float r, float g, float b, float a);
+
 };
 
 #endif /* Game_hpp */
