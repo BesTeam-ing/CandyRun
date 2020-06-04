@@ -19,8 +19,8 @@ GLfloat Giallo[] = { 1.0f, 1.0f, 0.0f, 1.0f };
 float spotDirection[] = {1.0, -1.0, 0.0};
 float spotDirection1[] = {-1.0, -1.0, 0.0};
 
-float lightPos[] = {-5.0, 12.0, 0.0, 0.5};
-float lightPos1[] = {5.0, 12.0, 0.0, 0.5};
+float lightPos[] = {-2.2, 0.85, 0.0, 0.01};
+float lightPos1[] = {2.2, 0.85, 0.0, 0.01};
 
 Object::Object(){}
 Object::~Object(){}
@@ -147,11 +147,13 @@ void Object::draw(int obj){
                 glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 2.0f);
                 glDisable(GL_LIGHTING);
             glPopMatrix();
+            
             break;
             
         default:
             break;
     }
+    
 }
 
 void Object::initObject(){
