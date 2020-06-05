@@ -265,12 +265,13 @@ void Menu::draw(){
         std::thread([](){
             std::string api = server.getWeather();
             connection = "Connected!";
-            if(api.find("Sereno")){
+            
+            if(api.find("Sereno") != std::string::npos){
                 texture_back[3] = texture_back[0];
                 temp = 0;
                 temp_night = 6;
             }
-            else if(api.find("Nuvol") || api.find("Pioggia") || api.find("Neve")){
+            else if(api.find("Nuvol") != std::string::npos or api.find("Pioggia") != std::string::npos or api.find("Neve") != std::string::npos or api.find("Rovesci") != std::string::npos){
                 texture_back[3] = texture_back[1];
                 temp = 1;
                 temp_night = 7;
