@@ -1,8 +1,8 @@
 //
 //  objects.hpp
-//  CandyRun
+//  StaRun
 //
-//  Created by Gennaro Mellone on 09/05/2020.
+//  Created by Ciro De Vita and Gennaro Mellone on 09/05/2020.
 //  Copyright © 2020 BesTeam-ing. All rights reserved.
 //
 

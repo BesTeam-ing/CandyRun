@@ -1,14 +1,14 @@
 //
 //  character.cpp
-//  CandyRun
+//  StaRun
 //
-//  Created by Ciro De Vita on 13/05/2020.
+//  Created by Ciro De Vita and Gennaro Mellone on 13/05/2020.
 //  Copyright © 2020 BesTeam-ing. All rights reserved.
 //
 
 #include "character.hpp"
 
-GLfloat lp[] = { 0.0f, 8.0f, -8.0f, 0.0f };
+GLfloat lp[] = { 0.0f, 8.0f, -8.0f, 0.001f };
 
 enum character{
     BB8,
@@ -57,7 +57,7 @@ void Character::setX(float x){
     else{// MI SPOSTO A SINISTRA
         this->rotate = -1;
     }
-    if((this->x + x) > 7 || (this->x + x) < -7)
+    if((this->x + x) > 6 || (this->x + x) < -6)
         return;
     else
         this->x += x;
@@ -234,7 +234,7 @@ void Character::drawCharacter(){
 }
 
 void Character::drawShadow(float R, float X, float Y){
-        glColor4f(0.3, 0.3, 0.3, 1.0);
+        glColor4f(0.2, 0.2, 0.2, 1.0);
         glRotatef(90, 1, 0, 0);
         GLfloat xOffset = X;
         GLfloat yOffset = this->z +0.6;

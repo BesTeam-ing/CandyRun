@@ -1,8 +1,8 @@
 //
 //  Game.hpp
-//  CandyRun
+//  StaRun
 //
-//  Created by Ciro De Vita on 12/05/2020.
+//  Created by Ciro De Vita and Gennaro Mellone on 12/05/2020.
 //  Copyright © 2020 BesTeam-ing. All rights reserved.
 //
 

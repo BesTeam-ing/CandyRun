@@ -1,9 +1,6 @@
 //
 //  objloader.cpp
-//  CandyRun
-//
-//  Created by Gennaro Mellone on 16/05/2020.
-//  Copyright © 2020 BesTeam-ing. All rights reserved.
+//  StaRun
 //
 //  Bisogna installare BREW INSTALL SDL
 

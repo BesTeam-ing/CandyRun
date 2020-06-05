@@ -1,8 +1,8 @@
 //
 //  Server.cpp
-//  CandyRun
+//  StaRun
 //
-//  Created by Ciro De Vita on 11/05/2020.
+//  Created by Ciro De Vita and Gennaro Mellone on 11/05/2020.
 //  Copyright © 2020 BesTeam-ing. All rights reserved.
 //
 
