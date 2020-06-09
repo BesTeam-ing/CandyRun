@@ -158,15 +158,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63119318245B174500FE95F7 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		6396F1582464AFDB00B72597 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2362,7 +2353,6 @@
 			buildPhases = (
 				63119316245B174500FE95F7 /* Sources */,
 				63119317245B174500FE95F7 /* Frameworks */,
-				63119318245B174500FE95F7 /* CopyFiles */,
 				6396F1582464AFDB00B72597 /* Copy Files */,
 				40E0382F2469E52B00F1EDC2 /* CopyFiles */,
 			);
