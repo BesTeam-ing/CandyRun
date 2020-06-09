@@ -88,6 +88,12 @@ int Menu::getBackground(){
             case 2:
                 return 8;
                 break;
+            case 4:
+                return 4;
+                break;
+            case 5:
+                return 5;
+                break;
             
             default:
                 return temp_night;
