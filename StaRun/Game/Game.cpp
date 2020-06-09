@@ -122,6 +122,7 @@ void Game::initAll(){
     obj.initObject();
     
     //creazione della strada
+    road.load();
     road.initializeGround();
     
     //musica
@@ -271,6 +272,7 @@ void Game::gameOver(){
     obj.initObject();
     character.SaveHighScore();
     character.initialPosition();
+    road.initializeGround();
     std::cout<<"Game Over"<<std::endl;
     isPaused = true;
     isGameOver = true;
@@ -445,13 +447,13 @@ void Game::windowSpecial(int key,int x,int y){
     if(isStart){
         if (key == GLUT_KEY_RIGHT){
             if(isAudio)
-                engine->play2D("sounds/Jump.wav");
+                engine->play2D("sounds/bb8-05.wav");
             
             character.setX(1);
         }
         else if (key == GLUT_KEY_LEFT){
             if(isAudio)
-                engine->play2D("sounds/Jump.wav");
+                engine->play2D("sounds/bb8-05.wav");
             
             character.setX(-1);
         }

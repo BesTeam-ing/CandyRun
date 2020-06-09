@@ -46,6 +46,7 @@ public:
     float getZ();
     unsigned int getTexture();
     
+    void load();
     void initializeGround();
     void drawRoad(float speed);
 };
