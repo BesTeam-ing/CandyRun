@@ -10,6 +10,7 @@
 
 std::vector<Road> roads;
 GLfloat lp3[] = { 0.0f, 5.0f, -8.0f, 0.0f };
+Road r;
 
 Road::Road(){}
 
@@ -35,6 +36,10 @@ void Road::setPosition(float X, float Y, float Z){
     this->pos_X = X;
     this->pos_Y = Y;
     this->pos_Z = Z;
+}
+
+void Road::load(){
+    r.init("textures/road_grey.jpg");
 }
 
 void Road::init(const char *t){
@@ -75,11 +80,10 @@ void Road::draw(){
 }
 
 void Road::initializeGround(){
-    Road r;
+    roads.clear();
     
     float beginning = -80.0;
     for(int i=0; i<4; i++){
-        r.init("textures/road_grey.jpg");
         r.setPosition(0.0f, 0.0f, beginning);
         roads.push_back(r);
         beginning += 30;

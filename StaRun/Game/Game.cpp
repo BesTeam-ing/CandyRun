@@ -122,6 +122,7 @@ void Game::initAll(){
     obj.initObject();
     
     //creazione della strada
+    road.load();
     road.initializeGround();
     
     //musica
@@ -271,6 +272,7 @@ void Game::gameOver(){
     obj.initObject();
     character.SaveHighScore();
     character.initialPosition();
+    road.initializeGround();
     std::cout<<"Game Over"<<std::endl;
     isPaused = true;
     isGameOver = true;
