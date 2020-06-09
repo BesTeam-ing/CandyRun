@@ -19,10 +19,6 @@
 		40003EB02476F6E20057F96A /* sky191lf.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA92476F68A0057F96A /* sky191lf.bmp */; };
 		40003EB12476F6E20057F96A /* sky191rt.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA72476F6890057F96A /* sky191rt.bmp */; };
 		40003EB22476F6E20057F96A /* sky191up.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EA82476F6890057F96A /* sky191up.bmp */; };
-		40003EB724771DF10057F96A /* bb8_body.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB324771DE60057F96A /* bb8_body.mtl */; };
-		40003EB824771DF10057F96A /* bb8_body.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB524771DE60057F96A /* bb8_body.obj */; };
-		40003EB924771DF10057F96A /* bb8_head.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB624771DE60057F96A /* bb8_head.mtl */; };
-		40003EBA24771DF10057F96A /* bb8_head.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40003EB424771DE60057F96A /* bb8_head.obj */; };
 		4002E282246AB2B3007157C3 /* Jump.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4002E281246AAF90007157C3 /* Jump.wav */; };
 		4002E286246AB525007157C3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4002E284246AB525007157C3 /* Game.cpp */; };
 		4002E57D246B1C82007157C3 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E577246B1BA3007157C3 /* ikpFLAC.dylib */; };
@@ -39,6 +35,10 @@
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
+		4044802B248FD885008C1D82 /* bb8_body.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40448029248FD876008C1D82 /* bb8_body.mtl */; };
+		4044802C248FD885008C1D82 /* bb8_body.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40448028248FD876008C1D82 /* bb8_body.obj */; };
+		4044802D248FD885008C1D82 /* bb8_head.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 4044802A248FD877008C1D82 /* bb8_head.mtl */; };
+		4044802E248FD885008C1D82 /* bb8_head.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40448027248FD876008C1D82 /* bb8_head.obj */; };
 		40664F4924773DC4005921D4 /* d0_body.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F4624773D94005921D4 /* d0_body.mtl */; };
 		40664F4A24773DC4005921D4 /* d0_body.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F4524773D94005921D4 /* d0_body.obj */; };
 		40664F4B24773DC4005921D4 /* d0_head.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F4724773D94005921D4 /* d0_head.mtl */; };
@@ -171,6 +171,10 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				4044802B248FD885008C1D82 /* bb8_body.mtl in Copy Files */,
+				4044802C248FD885008C1D82 /* bb8_body.obj in Copy Files */,
+				4044802D248FD885008C1D82 /* bb8_head.mtl in Copy Files */,
+				4044802E248FD885008C1D82 /* bb8_head.obj in Copy Files */,
 				63D04A38247B2DE8004F6B7D /* Starun.mtl in Copy Files */,
 				63D04A39247B2DE8004F6B7D /* Starun.obj in Copy Files */,
 				639881532479CC1700224E63 /* lampione.mtl in Copy Files */,
@@ -209,10 +213,6 @@
 				40664F4A24773DC4005921D4 /* d0_body.obj in Copy Files */,
 				40664F4B24773DC4005921D4 /* d0_head.mtl in Copy Files */,
 				40664F4C24773DC4005921D4 /* d0_head.obj in Copy Files */,
-				40003EB724771DF10057F96A /* bb8_body.mtl in Copy Files */,
-				40003EB824771DF10057F96A /* bb8_body.obj in Copy Files */,
-				40003EB924771DF10057F96A /* bb8_head.mtl in Copy Files */,
-				40003EBA24771DF10057F96A /* bb8_head.obj in Copy Files */,
 				40003EAD2476F6E20057F96A /* sky191bk.bmp in Copy Files */,
 				40003EAE2476F6E20057F96A /* sky191dn.bmp in Copy Files */,
 				40003EAF2476F6E20057F96A /* sky191ft.bmp in Copy Files */,
@@ -255,10 +255,6 @@
 		40003EAA2476F68A0057F96A /* sky191bk.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191bk.bmp; sourceTree = "<group>"; };
 		40003EAB2476F68A0057F96A /* sky191ft.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191ft.bmp; sourceTree = "<group>"; };
 		40003EAC2476F68A0057F96A /* sky191dn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = sky191dn.bmp; sourceTree = "<group>"; };
-		40003EB324771DE60057F96A /* bb8_body.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.mtl; sourceTree = "<group>"; };
-		40003EB424771DE60057F96A /* bb8_head.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.obj; sourceTree = "<group>"; };
-		40003EB524771DE60057F96A /* bb8_body.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.obj; sourceTree = "<group>"; };
-		40003EB624771DE60057F96A /* bb8_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.mtl; sourceTree = "<group>"; };
 		4002E281246AAF90007157C3 /* Jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Jump.wav; sourceTree = "<group>"; };
 		4002E284246AB525007157C3 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		4002E285246AB525007157C3 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
@@ -276,6 +272,10 @@
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
+		40448027248FD876008C1D82 /* bb8_head.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.obj; sourceTree = "<group>"; };
+		40448028248FD876008C1D82 /* bb8_body.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.obj; sourceTree = "<group>"; };
+		40448029248FD876008C1D82 /* bb8_body.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.mtl; sourceTree = "<group>"; };
+		4044802A248FD877008C1D82 /* bb8_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.mtl; sourceTree = "<group>"; };
 		40664F4524773D94005921D4 /* d0_body.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_body.obj; sourceTree = "<group>"; };
 		40664F4624773D94005921D4 /* d0_body.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_body.mtl; sourceTree = "<group>"; };
 		40664F4724773D94005921D4 /* d0_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_head.mtl; sourceTree = "<group>"; };
@@ -2263,6 +2263,10 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				40448029248FD876008C1D82 /* bb8_body.mtl */,
+				40448028248FD876008C1D82 /* bb8_body.obj */,
+				4044802A248FD877008C1D82 /* bb8_head.mtl */,
+				40448027248FD876008C1D82 /* bb8_head.obj */,
 				63D04A36247B2D76004F6B7D /* Starun.mtl */,
 				63D04A37247B2D76004F6B7D /* Starun.obj */,
 				639881502479CB7000224E63 /* lampione.mtl */,
@@ -2300,10 +2304,6 @@
 				40664F4524773D94005921D4 /* d0_body.obj */,
 				40664F4724773D94005921D4 /* d0_head.mtl */,
 				40664F4824773D95005921D4 /* d0_head.obj */,
-				40003EB324771DE60057F96A /* bb8_body.mtl */,
-				40003EB524771DE60057F96A /* bb8_body.obj */,
-				40003EB624771DE60057F96A /* bb8_head.mtl */,
-				40003EB424771DE60057F96A /* bb8_head.obj */,
 				40003EAA2476F68A0057F96A /* sky191bk.bmp */,
 				40003EAC2476F68A0057F96A /* sky191dn.bmp */,
 				40003EAB2476F68A0057F96A /* sky191ft.bmp */,
