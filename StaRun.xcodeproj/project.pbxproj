@@ -2609,7 +2609,7 @@
 				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UVP22J537Y;
+				DEVELOPMENT_TEAM = 73L5SW73XX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -2638,6 +2638,7 @@
 					/usr/local/Cellar/sdl/1.2.15_1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

@@ -469,6 +469,7 @@ void Game::windowKey(unsigned char key,int x,int y){
             if(isPaused){
                 obj.initObject();
                 character.initialPosition();
+                road.initializeGround();
                 isStart = false;
                 isPaused = false;
                 speed = 0.2;
