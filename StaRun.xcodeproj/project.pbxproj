@@ -34,10 +34,6 @@
 		402B605F245B20C300A4DE19 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B605E245B20C300A4DE19 /* OpenGL.framework */; };
 		402B6061245B20C700A4DE19 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6060245B20C700A4DE19 /* GLUT.framework */; };
 		402B6063245B20D300A4DE19 /* libglut.3.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */; };
-		4044802B248FD885008C1D82 /* bb8_body.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 40448029248FD876008C1D82 /* bb8_body.mtl */; };
-		4044802C248FD885008C1D82 /* bb8_body.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40448028248FD876008C1D82 /* bb8_body.obj */; };
-		4044802D248FD885008C1D82 /* bb8_head.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 4044802A248FD877008C1D82 /* bb8_head.mtl */; };
-		4044802E248FD885008C1D82 /* bb8_head.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 40448027248FD876008C1D82 /* bb8_head.obj */; };
 		4044803C248FE257008C1D82 /* bb8-05.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4044803B248FE24A008C1D82 /* bb8-05.wav */; };
 		4044803D248FE257008C1D82 /* bb8-06.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40448039248FE249008C1D82 /* bb8-06.wav */; };
 		4044803E248FE257008C1D82 /* bb8-07.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4044803A248FE24A008C1D82 /* bb8-07.wav */; };
@@ -164,10 +160,6 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
-				4044802B248FD885008C1D82 /* bb8_body.mtl in Copy Files */,
-				4044802C248FD885008C1D82 /* bb8_body.obj in Copy Files */,
-				4044802D248FD885008C1D82 /* bb8_head.mtl in Copy Files */,
-				4044802E248FD885008C1D82 /* bb8_head.obj in Copy Files */,
 				63D04A38247B2DE8004F6B7D /* Starun.mtl in Copy Files */,
 				63D04A39247B2DE8004F6B7D /* Starun.obj in Copy Files */,
 				639881532479CC1700224E63 /* lampione.mtl in Copy Files */,
@@ -264,10 +256,6 @@
 		402B605E245B20C300A4DE19 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		402B6060245B20C700A4DE19 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		402B6062245B20D300A4DE19 /* libglut.3.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.0.dylib; path = ../../../../../../../usr/local/Cellar/freeglut/3.2.1/lib/libglut.3.11.0.dylib; sourceTree = "<group>"; };
-		40448027248FD876008C1D82 /* bb8_head.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.obj; sourceTree = "<group>"; };
-		40448028248FD876008C1D82 /* bb8_body.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.obj; sourceTree = "<group>"; };
-		40448029248FD876008C1D82 /* bb8_body.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.mtl; sourceTree = "<group>"; };
-		4044802A248FD877008C1D82 /* bb8_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.mtl; sourceTree = "<group>"; };
 		40448039248FE249008C1D82 /* bb8-06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bb8-06.wav"; sourceTree = "<group>"; };
 		4044803A248FE24A008C1D82 /* bb8-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bb8-07.wav"; sourceTree = "<group>"; };
 		4044803B248FE24A008C1D82 /* bb8-05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bb8-05.wav"; sourceTree = "<group>"; };
@@ -986,6 +974,10 @@
 		6312EFCB246B19200003CC58 /* MF-3DAYS.S3M */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MF-3DAYS.S3M"; sourceTree = "<group>"; };
 		6312EFCC246B19200003CC58 /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		6312EFCD246B19200003CC58 /* MF-PANTS.MOD */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MF-PANTS.MOD"; sourceTree = "<group>"; };
+		6385C99F249043A8000BD3A5 /* bb8_body.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.obj; sourceTree = "<group>"; };
+		6385C9A0249043A8000BD3A5 /* bb8_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.mtl; sourceTree = "<group>"; };
+		6385C9A1249043A8000BD3A5 /* bb8_body.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_body.mtl; sourceTree = "<group>"; };
+		6385C9A2249043A8000BD3A5 /* bb8_head.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bb8_head.obj; sourceTree = "<group>"; };
 		6396F1392464A51900B72597 /* image_helper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
 		6396F13A2464A51900B72597 /* stbi_pkm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stbi_pkm.h; sourceTree = "<group>"; };
 		6396F13B2464A51900B72597 /* jo_jpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jo_jpeg.h; sourceTree = "<group>"; };
@@ -2258,10 +2250,10 @@
 		6396F179246754E300B72597 /* textures */ = {
 			isa = PBXGroup;
 			children = (
-				40448029248FD876008C1D82 /* bb8_body.mtl */,
-				40448028248FD876008C1D82 /* bb8_body.obj */,
-				4044802A248FD877008C1D82 /* bb8_head.mtl */,
-				40448027248FD876008C1D82 /* bb8_head.obj */,
+				6385C9A1249043A8000BD3A5 /* bb8_body.mtl */,
+				6385C99F249043A8000BD3A5 /* bb8_body.obj */,
+				6385C9A0249043A8000BD3A5 /* bb8_head.mtl */,
+				6385C9A2249043A8000BD3A5 /* bb8_head.obj */,
 				63D04A36247B2D76004F6B7D /* Starun.mtl */,
 				63D04A37247B2D76004F6B7D /* Starun.obj */,
 				639881502479CB7000224E63 /* lampione.mtl */,
@@ -2599,7 +2591,7 @@
 				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
@@ -2618,7 +2610,7 @@
 				CODE_SIGN_ENTITLEMENTS = StaRun/StaRun.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73L5SW73XX;
+				DEVELOPMENT_TEAM = UVP22J537Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (

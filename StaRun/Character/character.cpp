@@ -188,7 +188,7 @@ void Character::drawCharacter(){
         //CORPO
         glPushMatrix();
         glEnable(GL_LIGHTING);
-        glTranslatef(this->x, this->y-0.1, this->z+0.2);
+        glTranslatef(this->x, this->y, this->z+0.2);
             glRotatef(this->rotation, 0, 0, -this->rotate);
             glRotatef(this->rotateAngle, -1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
@@ -199,7 +199,7 @@ void Character::drawCharacter(){
         //TESTA
         glPushMatrix();
         glEnable(GL_LIGHTING);
-        glTranslatef(this->x, this->y-0.1, this->z+0.2);
+        glTranslatef(this->x, this->y, this->z+0.2);
             glRotatef(180, 0, -1, 0);
             glRotatef(this->rotation, 0, 0, -this->rotate);
             glRotatef(10, 1, 0, 0);
