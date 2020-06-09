@@ -200,7 +200,7 @@ void Character::drawCharacter(){
         glPushMatrix();
         glEnable(GL_LIGHTING);
         glTranslatef(this->x, this->y, this->z+0.2);
-            glRotatef(180, 0, -1, 0);
+            //glRotatef(180, 0, -1, 0);
             glRotatef(this->rotation, 0, 0, -this->rotate);
             glRotatef(10, 1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);

@@ -75,6 +75,10 @@
 		40F68AF12469829B00538F5B /* libcurl.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F68AF02469829B00538F5B /* libcurl.4.tbd */; };
 		40F68AF32469878400538F5B /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F68AF22469878400538F5B /* jsoncpp.cpp */; };
 		6311931E245B174500FE95F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6311931D245B174500FE95F7 /* main.cpp */; };
+		6385C9AB249046E5000BD3A5 /* bb8_body.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 6385C9A1249043A8000BD3A5 /* bb8_body.mtl */; };
+		6385C9AC249046E5000BD3A5 /* bb8_body.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6385C99F249043A8000BD3A5 /* bb8_body.obj */; };
+		6385C9AD249046E5000BD3A5 /* bb8_head.mtl in Copy Files */ = {isa = PBXBuildFile; fileRef = 6385C9A0249043A8000BD3A5 /* bb8_head.mtl */; };
+		6385C9AE249046E5000BD3A5 /* bb8_head.obj in Copy Files */ = {isa = PBXBuildFile; fileRef = 6385C9A2249043A8000BD3A5 /* bb8_head.obj */; };
 		6396F14E2464A62400B72597 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F1392464A51900B72597 /* image_helper.c */; };
 		6396F14F2464A62400B72597 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13C2464A51900B72597 /* image_DXT.c */; };
 		6396F1502464A62400B72597 /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 6396F13F2464A51900B72597 /* SOIL2.c */; };
@@ -160,6 +164,10 @@
 			dstPath = textures;
 			dstSubfolderSpec = 16;
 			files = (
+				6385C9AB249046E5000BD3A5 /* bb8_body.mtl in Copy Files */,
+				6385C9AC249046E5000BD3A5 /* bb8_body.obj in Copy Files */,
+				6385C9AD249046E5000BD3A5 /* bb8_head.mtl in Copy Files */,
+				6385C9AE249046E5000BD3A5 /* bb8_head.obj in Copy Files */,
 				63D04A38247B2DE8004F6B7D /* Starun.mtl in Copy Files */,
 				63D04A39247B2DE8004F6B7D /* Starun.obj in Copy Files */,
 				639881532479CC1700224E63 /* lampione.mtl in Copy Files */,
