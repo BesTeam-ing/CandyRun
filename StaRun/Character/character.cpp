@@ -8,7 +8,7 @@
 
 #include "character.hpp"
 
-GLfloat lp[] = { 0.0f, 8.0f, -8.0f, 0.001f };
+GLfloat lp[] = { 0.0f, 5.0f, 1.0f, 0.5f };
 
 enum character{
     BB8,
@@ -187,13 +187,13 @@ void Character::drawCharacter(){
     else if(this->character_choosen == BB8){ //BB8
         //CORPO
         glPushMatrix();
-        glEnable(GL_LIGHTING);
-        glTranslatef(this->x, this->y, this->z+0.2);
+            glEnable(GL_LIGHTING);
+            glTranslatef(this->x, this->y, this->z+0.2);
             glRotatef(this->rotation, 0, 0, -this->rotate);
-            glRotatef(this->rotateAngle, -1, 0, 0);
             glLightfv(GL_LIGHT0,GL_POSITION,lp);
+            glRotatef(this->rotateAngle, -1, 0, 0);
             glCallList(this->body);
-        glDisable(GL_LIGHTING);
+            glDisable(GL_LIGHTING);
         glPopMatrix();
         
         //TESTA
