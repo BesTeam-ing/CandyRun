@@ -182,7 +182,7 @@ void Object::initObject(){
             if(x<1){
                 if (rand() % 2 == 0){
                     e = WALL;
-                    o.setPosition(n, 1.0f, beginning+7);
+                    o.setPosition(n, 1.0f, beginning+5);
                 }
                 else{
                     e = BATTERY;
@@ -193,7 +193,7 @@ void Object::initObject(){
             }
             else{
                 e = WALL;
-                o.setPosition(n, 1.0f, beginning+7);
+                o.setPosition(n, 1.0f, beginning+5);
             }
             
             o.setObj(e);
