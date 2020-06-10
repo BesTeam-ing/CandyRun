@@ -70,9 +70,7 @@ void Game::Timer(int value)
     if(isStart && !isPaused){
         if(update <= 1.5){
             if(10%(int(update*10)) == 0){
-                std::cout<<"QUI: "<<update*10<<std::endl;
                 speed = update;
-                std::cout<<"Velocità: "<<speed<<std::endl;
             }
         }
         else
@@ -242,13 +240,11 @@ void Game::drawGame(){
         
         //gestione delle collisioni
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
-            std::cout<<"Collision"<<std::endl;
             character.setLife(-1);
             if(character.getLife() == 0)
                 gameOver();
         }
         else if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 2){
-            std::cout<<"Premio +1"<<std::endl;
             character.setScore(10);
             engine->play2D("sounds/score.wav");
         }
@@ -273,7 +269,6 @@ void Game::gameOver(){
     character.SaveHighScore();
     character.initialPosition();
     road.initializeGround();
-    std::cout<<"Game Over"<<std::endl;
     isPaused = true;
     isGameOver = true;
     speed = 0.2;
@@ -290,7 +285,6 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                 isStart = true;
                 //inizializzazione delle particelle
                 part.initParticles();
-                std::cout<<"Caso :" <<menu.getBackground()<<std::endl;
                 
                 //scelta dello skybox
                 switch (menu.getBackground()) {

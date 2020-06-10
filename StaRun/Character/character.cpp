@@ -50,7 +50,6 @@ float Character::getZ(){
 }
 
 void Character::setX(float x){
-    std::cout<<x<<" "<<this->x<<std::endl;
     if(this->x + x < this->x){ // MI SPOSTO A DESTRA
         this->rotate = 1;
     }
@@ -125,12 +124,10 @@ void Character::SaveHighScore() {
         
         if (this->bb8_score < this->score and this->character_choosen == BB8){
             this->bb8_score = this->score;
-            //std::cout<<"New Score BB8= "<<this->bb8_score<<std::endl;
             
         }
         else if (this->d0_score < this->score and this->character_choosen == D0){
             this->d0_score = this->score;
-            //std::cout<<"New Score D0= "<<this->d0_score<<std::endl;
         }
         
         std::ofstream myfile;
@@ -142,7 +139,6 @@ void Character::SaveHighScore() {
         }
 
         myfile << this->bb8_score << std::endl << this->d0_score;
-        //std::cout<<this->bb8_score << std::endl << this->d0_score<<std::endl;
         myfile.close();
     }
 }
