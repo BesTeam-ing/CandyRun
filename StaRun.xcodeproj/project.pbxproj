@@ -23,7 +23,6 @@
 		4002E57D246B1C82007157C3 /* ikpFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E577246B1BA3007157C3 /* ikpFLAC.dylib */; };
 		4002E57E246B1C82007157C3 /* ikpMP3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E578246B1BA3007157C3 /* ikpMP3.dylib */; };
 		4002E57F246B1C82007157C3 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002E579246B1BA3007157C3 /* libirrklang.dylib */; };
-		4018AE79247162F5004F720F /* menu_item.jpg in Copy Files */ = {isa = PBXBuildFile; fileRef = 4018AE78247162A1004F720F /* menu_item.jpg */; };
 		4027E3292473362D0036F5B7 /* skybk.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 4027E326247335A20036F5B7 /* skybk.bmp */; };
 		4027E32A2473362D0036F5B7 /* skydn.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 4027E327247335A20036F5B7 /* skydn.bmp */; };
 		4027E32B2473362D0036F5B7 /* skyft.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 4027E328247335A20036F5B7 /* skyft.bmp */; };
@@ -49,7 +48,6 @@
 		40664F612477D499005921D4 /* sun.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F562477D48E005921D4 /* sun.png */; };
 		40664F622477D499005921D4 /* left-arrow.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F552477D47D005921D4 /* left-arrow.png */; };
 		40664F632477D499005921D4 /* right-arrow.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F532477D47D005921D4 /* right-arrow.png */; };
-		40664F642477D499005921D4 /* test.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F542477D47D005921D4 /* test.png */; };
 		40664F672477D97D005921D4 /* bb8_icon.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F652477D972005921D4 /* bb8_icon.png */; };
 		40664F682477D97E005921D4 /* d0_icon.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F662477D972005921D4 /* d0_icon.png */; };
 		40664F752477DDAB005921D4 /* spacebk.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F6F2477DD0A005921D4 /* spacebk.bmp */; };
@@ -209,7 +207,6 @@
 				40664F612477D499005921D4 /* sun.png in Copy Files */,
 				40664F622477D499005921D4 /* left-arrow.png in Copy Files */,
 				40664F632477D499005921D4 /* right-arrow.png in Copy Files */,
-				40664F642477D499005921D4 /* test.png in Copy Files */,
 				40664F4924773DC4005921D4 /* d0_body.mtl in Copy Files */,
 				40664F4A24773DC4005921D4 /* d0_body.obj in Copy Files */,
 				40664F4B24773DC4005921D4 /* d0_head.mtl in Copy Files */,
@@ -236,7 +233,6 @@
 				4027E32C2473362D0036F5B7 /* skylf.bmp in Copy Files */,
 				4027E32D2473362D0036F5B7 /* skyrt.bmp in Copy Files */,
 				4027E32E2473362D0036F5B7 /* skyup.bmp in Copy Files */,
-				4018AE79247162F5004F720F /* menu_item.jpg in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +257,6 @@
 		4002E577246B1BA3007157C3 /* ikpFLAC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = ikpFLAC.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/ikpFLAC.dylib"; sourceTree = "<group>"; };
 		4002E578246B1BA3007157C3 /* ikpMP3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = ikpMP3.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/ikpMP3.dylib"; sourceTree = "<group>"; };
 		4002E579246B1BA3007157C3 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "../../../../../../../usr/local/Cellar/irrklang/1.5.0/bin/macosx-gcc/libirrklang.dylib"; sourceTree = "<group>"; };
-		4018AE78247162A1004F720F /* menu_item.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu_item.jpg; sourceTree = "<group>"; };
 		4027E323247335A20036F5B7 /* skylf.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = skylf.bmp; sourceTree = "<group>"; };
 		4027E324247335A20036F5B7 /* skyrt.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = skyrt.bmp; sourceTree = "<group>"; };
 		4027E325247335A20036F5B7 /* skyup.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = skyup.bmp; sourceTree = "<group>"; };
@@ -280,7 +275,6 @@
 		40664F4724773D94005921D4 /* d0_head.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_head.mtl; sourceTree = "<group>"; };
 		40664F4824773D95005921D4 /* d0_head.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = d0_head.obj; sourceTree = "<group>"; };
 		40664F532477D47D005921D4 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
-		40664F542477D47D005921D4 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		40664F552477D47D005921D4 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
 		40664F562477D48E005921D4 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		40664F572477D48E005921D4 /* mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mars.png; sourceTree = "<group>"; };
@@ -2310,7 +2304,6 @@
 				40664F562477D48E005921D4 /* sun.png */,
 				40664F552477D47D005921D4 /* left-arrow.png */,
 				40664F532477D47D005921D4 /* right-arrow.png */,
-				40664F542477D47D005921D4 /* test.png */,
 				40664F4624773D94005921D4 /* d0_body.mtl */,
 				40664F4524773D94005921D4 /* d0_body.obj */,
 				40664F4724773D94005921D4 /* d0_head.mtl */,
@@ -2337,7 +2330,6 @@
 				4027E323247335A20036F5B7 /* skylf.bmp */,
 				4027E324247335A20036F5B7 /* skyrt.bmp */,
 				4027E325247335A20036F5B7 /* skyup.bmp */,
-				4018AE78247162A1004F720F /* menu_item.jpg */,
 			);
 			path = textures;
 			sourceTree = "<group>";
