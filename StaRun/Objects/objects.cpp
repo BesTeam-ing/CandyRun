@@ -13,6 +13,8 @@ std::vector< std::vector<Object> > lamp(2);
 Object o;
 GLfloat lightPosition[] = { 0.0f, 10.0f, -8.0f, 0.05f };
 GLfloat lampLight[] = { 0.0f, 5.0f, -8.0f, 1.0f };
+GLfloat lp_wall[] = { 0.0f, 7.0f, -10.0f, 1.0f };
+
 
 GLfloat Giallo[] = { 1.0f, 1.0f, 0.0f, 1.0f };
 
@@ -80,13 +82,21 @@ void Object::setRotation(float angle){
 void Object::draw(int obj){
     switch (obj) {
         case WALL:
+            glLightfv(GL_LIGHT0,GL_POSITION,lp_wall);
+
             glPushMatrix();
-                glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
                 glEnable(GL_LIGHTING);
                     glTranslatef(this->pos_X, this->pos_Y + 0.2, this->pos_Z);
+                    glLightfv(GL_LIGHT0,GL_POSITION,lp_wall);
+
                     glCallList(wall);
                 glDisable(GL_LIGHTING);
             glPopMatrix();
+            
+            glPushMatrix();
+                this->drawShadowWall(this->pos_X, this->pos_Z);
+            glPopMatrix();
+            
             
             break;
         
@@ -95,11 +105,12 @@ void Object::draw(int obj){
             if(this->rotateAngle > 360.0f)
                 this->rotateAngle -= 360.0f;
             glPushMatrix();
-                glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
                 glEnable(GL_LIGHTING);
                     glTranslatef(this->pos_X, this->pos_Y+0.5, this->pos_Z);
                     glRotatef(this->rotateAngle, 0, -1, 0);
                     glRotatef(this->angle_rotation, -1, 0, 0);
+            glLightfv(GL_LIGHT0,GL_POSITION,lightPosition);
+
                     glCallList(battery);
                 glDisable(GL_LIGHTING);
             glPopMatrix();
@@ -263,7 +274,7 @@ int Object::handleCollision(float x, float y, float z){
 
 void Object::drawShadow(float R, float X, float Y){
     //ombra oggetti
-    glColor4f(0.3, 0.3, 0.3, 0.9);
+    glColor4f(0.2, 0.2, 0.2, 0.9);
     glDisable(GL_LIGHTING);
     glRotatef(90, 1, 0, 0);
     GLfloat xOffset = X;
@@ -271,5 +282,23 @@ void Object::drawShadow(float R, float X, float Y){
     glBegin(GL_POLYGON);
         for(float t = -10 * PI; t <= 10 * PI; t += PI/20.0)
             glVertex3f(xOffset+R * cos(t), yOffset+R * sin(t)/2, -0.001);
+    glEnd();
+}
+
+void Object::drawShadowWall(float X, float Y){
+    //ombra oggetti
+    float offsetX = 2.4;
+    float offsetY = 0.6;
+    float trap = 0.5;
+    
+    glColor4f(0.1, 0.1, 0.1, 0.9);
+    glDisable(GL_LIGHTING);
+    glRotatef(90, 1, 0, 0);
+
+    glBegin(GL_POLYGON);
+        glVertex3f(X - offsetX, Y, -0.001);
+        glVertex3f(X + offsetX, Y, -0.001);
+        glVertex3f(X + offsetX - trap, Y + offsetY, -0.001);
+        glVertex3f(X - offsetX + trap, Y + offsetY, -0.001);
     glEnd();
 }

@@ -80,6 +80,7 @@ private:
     const GLfloat lightB[4] = { 0.1, 0.9, 0.5, 0.1};
     const GLfloat lightL[4] = { 4.0, 2.8, 0.1, 0.8};
     void drawShadow(float R, float X, float Y);
+    void drawShadowWall(float X, float Y);
     
     void draw(int obj);
 };

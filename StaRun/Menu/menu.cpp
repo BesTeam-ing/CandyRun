@@ -77,7 +77,7 @@ int Menu::getBackground(){
     
     int hour=aTime->tm_hour;
 
-    if(hour >= 19 or hour <= 5){
+    if(hour >= 9 or hour <= 5){
         switch (this->background) {
             case 0:
                 return 6;
