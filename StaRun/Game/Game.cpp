@@ -127,7 +127,7 @@ void Game::initAll(){
     
     //musica
     engine = irrklang::createIrrKlangDevice();
-    engine->play2D("sounds/starwars.wav", true);
+    //engine->play2D("sounds/starwars.wav", true);
     engine->setSoundVolume(0.0f);
     
 }
@@ -444,7 +444,7 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
 
 void Game::windowSpecial(int key,int x,int y){
     //interazione tastiera
-    if(isStart){
+    if(isStart && !isPaused){
         if (key == GLUT_KEY_RIGHT){
             if(isAudio)
                 engine->play2D("sounds/bb8-05.wav");
