@@ -171,18 +171,18 @@ void Object::initObject(){
             if(x<1){
                 if (rand() % 2 == 0){
                     e = WALL;
-                    o.setPosition(n, 0.5f, beginning+7);
+                    o.setPosition(n, 1.0f, beginning+7);
                 }
                 else{
                     e = BATTERY;
                     x++;
-                    o.setPosition(n, 0.5f, beginning);
+                    o.setPosition(n, 1.0f, beginning);
                     o.setRotation(45);
                 }
             }
             else{
                 e = WALL;
-                o.setPosition(n, 0.5f, beginning+7);
+                o.setPosition(n, 1.0f, beginning+7);
             }
             
             o.setObj(e);
@@ -218,13 +218,14 @@ void Object::drawObject(float speed,int x){
         for(int j=0; j<objects[i].size(); j++){
             int n = rand()%10-5;
             if(objects[i][j].getZ() > 30.0 or (objects[i][j].pos_Z == 15.0f && (objects[i][j].pos_X <= x + 0.5 && objects[i][j].pos_X >= x - 0.5) && objects[i][j].obj == BATTERY))
-                
+            {
                 objects[i][j].setPosition(n, 1, -60);
+            }
            
-            glPushMatrix();
+            //glPushMatrix();
                 objects[i][j].setPosition(objects[i][j].getX(), objects[i][j].getY(), roundf((objects[i][j].getZ() + speed)*100)/100);
                 objects[i][j].draw(objects[i][j].obj);
-            glPopMatrix();
+            //glPopMatrix();
         }
     }
     
@@ -236,10 +237,10 @@ void Object::drawObject(float speed,int x){
             else if(lamp[i][j].getZ() > 30.0 && j==1)
                 lamp[i][j].setPosition(7, 2.1f, -60);
            
-            glPushMatrix();
+            //glPushMatrix();
                 lamp[i][j].setPosition(lamp[i][j].getX(), lamp[i][j].getY(), roundf((lamp[i][j].getZ() + speed)*100)/100);
                 lamp[i][j].draw(lamp[i][j].obj);
-            glPopMatrix();
+            //glPopMatrix();
         }
     }
 }
