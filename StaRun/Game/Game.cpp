@@ -21,7 +21,7 @@ Object obj;
 Character character;
 Menu menu;
 GUI gui;
-irrklang::ISoundEngine* engine;
+irrklang::ISoundEngine* engine = irrklang::createIrrKlangDevice();;
 
 GLdouble asp;
 GLdouble dim = 15.0f;
@@ -29,7 +29,7 @@ GLdouble fov = 60.0f;
 
 bool isStart = false;
 bool isPaused = false;
-bool isAudio = false;
+bool isAudio = true;
 bool isGameOver = false;
 bool isDay = true;
 
@@ -124,10 +124,7 @@ void Game::initAll(){
     road.initializeGround();
     
     //musica
-    engine = irrklang::createIrrKlangDevice();
-    //engine->play2D("sounds/starwars.wav", true);
-    engine->setSoundVolume(0.0f);
-    
+    engine->play2D("sounds/starwars.wav", true);
 }
 
 void Game::drawGame(){
@@ -240,13 +237,14 @@ void Game::drawGame(){
         
         //gestione delle collisioni
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
+            engine->play2D("sounds/impact.wav", false);
             character.setLife(-1);
             if(character.getLife() == 0)
                 gameOver();
         }
         else if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 2){
             character.setScore(10);
-            engine->play2D("sounds/score.wav");
+            engine->play2D("sounds/score.wav", false);
         }
     }
     
@@ -264,7 +262,7 @@ void Game::drawScene(){
 }
 
 void Game::gameOver(){
-    engine->play2D("sounds/game_over.wav");
+    engine->play2D("sounds/screaming.wav", false);
     obj.initObject();
     character.SaveHighScore();
     character.initialPosition();
@@ -283,6 +281,7 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
             
             if(select == 1){
                 isStart = true;
+                engine->stopAllSounds();
                 //inizializzazione delle particelle
                 part.initParticles();
                 
@@ -441,13 +440,13 @@ void Game::windowSpecial(int key,int x,int y){
     if(isStart && !isPaused){
         if (key == GLUT_KEY_RIGHT){
             if(isAudio)
-                engine->play2D("sounds/bb8-05.wav");
+                engine->play2D("sounds/bb8-05.wav", false);
             
             character.setX(1);
         }
         else if (key == GLUT_KEY_LEFT){
             if(isAudio)
-                engine->play2D("sounds/bb8-05.wav");
+                engine->play2D("sounds/bb8-05.wav", false);
             
             character.setX(-1);
         }
@@ -461,6 +460,7 @@ void Game::windowKey(unsigned char key,int x,int y){
     if (key == 27){
         if(isStart){
             if(isPaused){
+                engine->play2D("sounds/starwars.wav", true);
                 obj.initObject();
                 character.initialPosition();
                 road.initializeGround();
