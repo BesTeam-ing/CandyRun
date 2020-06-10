@@ -64,7 +64,6 @@
 		40664F842477EFF6005921D4 /* spaceup.bmp in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F812477EFE5005921D4 /* spaceup.bmp */; };
 		40664F8C2477FB1F005921D4 /* highscore.txt in Copy Files */ = {isa = PBXBuildFile; fileRef = 40664F8B2477FB0B005921D4 /* highscore.txt */; };
 		408D95502472B81E0080D9E5 /* starwars.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408D954F2472B8040080D9E5 /* starwars.wav */; };
-		40A80392246EB60200241D87 /* game_over.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A80391246EB5F600241D87 /* game_over.wav */; };
 		40A91C6C2490FA06003924F2 /* bb8_select.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A91C6A2490F9F2003924F2 /* bb8_select.wav */; };
 		40A91C6D2490FA06003924F2 /* d0_select.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A91C6B2490F9F3003924F2 /* d0_select.wav */; };
 		40A91C6E2490FA06003924F2 /* impact.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A91C682490F9F1003924F2 /* impact.wav */; };
@@ -160,7 +159,6 @@
 				4044803E248FE257008C1D82 /* bb8-07.wav in CopyFiles */,
 				40B9D440247531390066D229 /* score.wav in CopyFiles */,
 				408D95502472B81E0080D9E5 /* starwars.wav in CopyFiles */,
-				40A80392246EB60200241D87 /* game_over.wav in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +297,6 @@
 		40664F8B2477FB0B005921D4 /* highscore.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = highscore.txt; sourceTree = "<group>"; };
 		40702C66247695070056D275 /* StaRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StaRun.entitlements; sourceTree = "<group>"; };
 		408D954F2472B8040080D9E5 /* starwars.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = starwars.wav; sourceTree = "<group>"; };
-		40A80391246EB5F600241D87 /* game_over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_over.wav; sourceTree = "<group>"; };
 		40A91C682490F9F1003924F2 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
 		40A91C692490F9F2003924F2 /* screaming.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = screaming.wav; sourceTree = "<group>"; };
 		40A91C6A2490F9F2003924F2 /* bb8_select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bb8_select.wav; sourceTree = "<group>"; };
@@ -1154,7 +1151,6 @@
 				4044803A248FE24A008C1D82 /* bb8-07.wav */,
 				40B9D43F2475312B0066D229 /* score.wav */,
 				408D954F2472B8040080D9E5 /* starwars.wav */,
-				40A80391246EB5F600241D87 /* game_over.wav */,
 			);
 			path = sounds;
 			sourceTree = "<group>";
