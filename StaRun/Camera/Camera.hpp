@@ -20,8 +20,6 @@
 class Camera
 {
 public:
-    Vector3f eye, center, up;
-
     void init(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ){
         eye = Vector3f(eyeX, eyeY, eyeZ);
         center = Vector3f(centerX, centerY, centerZ);
@@ -75,6 +73,9 @@ public:
     void look(){
         gluLookAt(eye.x, eye.y, eye.z, center.x, center.y, center.z, up.x, up.y, up.z);
     }
+    
+private:
+    Vector3f eye, center, up;
 };
 
 

@@ -18,10 +18,10 @@
 
 class GUI{
 public:
+    GUI();
+    ~GUI();
+    
     void draw(int score, int life);
-    
-private:
-    
 };
 
 #endif /* GUI_hpp */

@@ -9,6 +9,10 @@
 
 #include "GUI.hpp"
 
+GUI::GUI(){}
+
+GUI::~GUI(){}
+
 void GUI::draw(int score, int life){
     
     char S[10];
