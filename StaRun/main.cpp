@@ -10,10 +10,10 @@
 
 int main(int argc, char **argv)
 {
-    srand(int(time(NULL)));
+    srand(int(time(NULL))); //Initialize random variable
     
     Game game(argc,argv, "StaRun");
-    game.init();
+    game.init(); //Call game function to manage the game
     
     return 0;
 }

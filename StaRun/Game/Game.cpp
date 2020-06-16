@@ -13,6 +13,7 @@
 #define DEF_WINDOW_POS_H 50
 #define DEF_WINDOW_POS_W 50
 
+//Istance objects from all classes
 SkyBox sky;
 WeatherEffects part;
 Camera camera;
@@ -23,16 +24,19 @@ Menu menu;
 GUI gui;
 irrklang::ISoundEngine* engine = irrklang::createIrrKlangDevice();;
 
+//Camera settings
 GLdouble asp;
 GLdouble dim = 15.0f;
 GLdouble fov = 60.0f;
 
+//InGame boolean variables
 bool isStart = false;
 bool isPaused = false;
 bool isAudio = true;
 bool isGameOver = false;
 bool isDay = true;
 
+//FOG Settings
 static bool isFog = true ; // Is fog on?
 static int fogMode = GL_EXP2; // Fog mode.
 static float fogDensity = 0.005; // Fog density.
@@ -41,22 +45,26 @@ static float fogEnd = 30; // Fog end z value.
 float fogColor[4] = {0.6, 0.6, 0.6, 1.0};
 float ambientLight[4] = {0.1, 0.1, 0.1, 1.0};
 
-
+//Weather type
 enum weather{
     CLEAR,
     RAIN,
     SNOW
 };
-int weather_condition = CLEAR;
+int weather_condition = CLEAR; //Default weather condition
 
+//GUI Strings
 char* score;
 char* vite;
 
+//Speed settings
 float update = 0.2;
 float speed = 0.2;
 
+//Background settings
 int background_chosen = 0;
 
+//Game constructor
 Game::Game(int argc, char **argv, const char *name){
     this->argc = argc;
     this->argv = argv;
@@ -65,6 +73,7 @@ Game::Game(int argc, char **argv, const char *name){
 
 Game::~Game(){};
 
+//Function used to manage speed game
 void Game::Timer(int value)
 {
     if(isStart && !isPaused){
@@ -82,6 +91,7 @@ void Game::Timer(int value)
     glutTimerFunc(10000, Timer, 0);
 }
 
+//Overall game initialization
 void Game::init(){
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
@@ -102,43 +112,46 @@ void Game::init(){
     glutMainLoop();
 }
 
+//Object and environment initialization
 void Game::initAll(){
     glClearColor(0.0,0.0,0.0,0.0);
     
     glEnable(GL_DEPTH_TEST);
 
-    glEnable(GL_LIGHT0);
-    glEnable(GL_LIGHT2);
-    glEnable(GL_LIGHT3);
+    glEnable(GL_LIGHT0); //General Light
+    glEnable(GL_LIGHT2); //Left Lamps Light
+    glEnable(GL_LIGHT3); //Right Lamps Light
     
-    camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f); //inizializzazione camera
+    camera.init(0.0f, 3.0f, 20.0f, 0.0, 2.0f, -1.0f, 0.0f, 1.0f, 0.0f); //Camera initialization
     
-    menu.initMenu(); //inizializzazione menu
+    menu.initMenu(); //Menu initialization
         
-    //caricamento oggetti (WALL, BATTERY e LAMP)
+    //Load objects (WALL, BATTERY e LAMP)
     obj.load();
     obj.initObject();
     
-    //creazione della strada
+    //Load Road and initialize it
     road.load();
     road.initializeGround();
     
-    //musica
+    //Start music
     engine->play2D("sounds/starwars.wav", true);
 }
 
+//Main drawGame function
 void Game::drawGame(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
     glClearColor(0.0,0.0,0.0,1.0);
     glLoadIdentity();
     
-    //settaggio della posizione della camera
+    //Set camera position
     camera.look();
-    //disegno dello skybox
+    
+    //Draw Skybox
     sky.drawSkyBox(9.5*dim);
     
-    //controllo dello stato del gioco
-    if(isPaused){
+    //Check game status
+    if(isPaused){//If it is paused
         glDisable(GL_LIGHTING);
         glDisable(GL_FOG);
         
@@ -146,7 +159,8 @@ void Game::drawGame(){
         const char* text_resume;
         const char* text_esc;
         int x, x1;
-        if(isGameOver){
+        
+        if(isGameOver){ //If it is GameOver
             text = "GAME OVER";
             text_resume = "PRESS 'P' TO RESTART";
             text_esc = "PRESS 'ESC' TO QUIT";
@@ -154,7 +168,7 @@ void Game::drawGame(){
             x1 = -15;
         }
             
-        else{
+        else{//Or it is Pause
             text = "PAUSE";
             text_resume = "PRESS 'P' TO RESUME";
             text_esc = "PRESS 'ESC' TO QUIT";
@@ -162,29 +176,34 @@ void Game::drawGame(){
             x1 = -15;
         }
         
-        //visulaizzazione testo
+        //Show text PAUSE
         glPushMatrix();
             glColor4f(1.0, 1.0, 1.0, 0.0);
             glTranslatef(x, 3, 0);
             glScalef(0.05,0.05,0.05);
+        
             for( const char* p = text; *p; p++){
                 glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
             }
         glPopMatrix();
         
+        //Show text RESUME
         glPushMatrix();
             glColor4f(1.0, 1.0, 1.0, 0.0);
             glTranslatef(x1, -2, 0);
             glScalef(0.02,0.02,0.02);
+        
             for( const char* p = text_resume; *p; p++){
                 glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
             }
         glPopMatrix();
         
+        //Show text EXIT
         glPushMatrix();
             glColor4f(1.0, 1.0, 1.0, 0.0);
             glTranslatef(x1, -7, 0);
             glScalef(0.02,0.02,0.02);
+        
             for( const char* p = text_esc; *p; p++){
                 glutStrokeCharacter(GLUT_STROKE_ROMAN, *p);
             }
@@ -193,7 +212,7 @@ void Game::drawGame(){
     else{
         isGameOver = false;
                 
-        //condizioni meteo
+        //Set weather condition
         switch (weather_condition) {
             case CLEAR:
                 break;
@@ -203,13 +222,13 @@ void Game::drawGame(){
             case SNOW:
                 part.drawSnow();
                 break;
-                
             default:
                 break;
         }
         
         glEnable(GL_LIGHTING);
         
+        //Check FOG
         if(isFog){
             glEnable(GL_FOG);
             glFogfv(GL_FOG_COLOR, fogColor);
@@ -222,28 +241,29 @@ void Game::drawGame(){
         else{
             glDisable(GL_FOG);
         }
-        
-        //disegno della strada
+
+        //Draw Road
         road.drawRoad(speed);
         
-        //disegno della gui del personaggio (vite e punteggio)
+        //Draw GUI (Lifes and Points)
         gui.draw(character.getScore(), character.getLife());
         
-        //disegno del player (BB8 o D0)
+        //Draw character
         character.drawCharacter();
     
-        //disegno degli oggetti
+        //Draw objects
         obj.drawObject(speed, character.getX());
         
-        //gestione delle collisioni
+        //Manage Collisions
         if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 1){
-            engine->play2D("sounds/impact.wav", false);
-            character.setLife(-1);
+            engine->play2D("sounds/impact.wav", false); //If hit a WALL
+            character.setLife(-1); //Lose a life
+            
             if(character.getLife() == 0)
                 gameOver();
         }
         else if(obj.handleCollision(character.getX(), character.getY(), character.getZ()) == 2){
-            character.setScore(10);
+            character.setScore(10); //If hit a BATTERY
             engine->play2D("sounds/score.wav", false);
         }
     }
@@ -252,17 +272,21 @@ void Game::drawGame(){
     glutSwapBuffers();
 }
 
+//Function to manage scene
 void Game::drawScene(){
-    if(isStart)
-        drawGame();
-    else
-        menu.drawMenu();
+    if(isStart) //If game is started
+        drawGame(); //Show game
+    
+    else //Else if we are in main menu
+        menu.drawMenu(); //Show main menu
     
     redisplayAll();
 }
-
+//GameOver function
 void Game::gameOver(){
     engine->play2D("sounds/screaming.wav", false);
+    
+    //Restore default settings
     obj.initObject();
     character.SaveHighScore();
     character.initialPosition();
@@ -273,21 +297,22 @@ void Game::gameOver(){
     update = 0.2;
 }
 
+//Main function to handle mouse input
 void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
-    //initerzione mouse
-    if(!isStart){
+
+    if(!isStart){//If we are in Main Menu
         if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
             int select = menu.select(x,y);
             
-            if(select == 1){
+            if(select == 1){ //We select START GAME
                 isStart = true;
                 engine->stopAllSounds();
-                //inizializzazione delle particelle
-                part.initParticles();
                 
-                //scelta dello skybox
+                part.initParticles(); //Intialize particles (Rain and Snow)
+                
+                //SkyBox selection
                 switch (menu.getBackground()) {
-                    case 0: //GIORNO SERENO
+                    case 0: //DAY 
                         sky.initSkyBox("textures/sky191ft.bmp", "textures/sky191rt.bmp", "textures/sky191lf.bmp", "textures/sky191bk.bmp", "textures/sky191up.bmp", "textures/sky191dn.bmp");
                         weather_condition = CLEAR;
                         isDay = true;

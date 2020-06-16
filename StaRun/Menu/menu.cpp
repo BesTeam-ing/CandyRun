@@ -67,14 +67,13 @@ unsigned int texture,
     background_right,
     title;
 
-bool isFirst = true;
-
-bool isHighscore = false;
+bool isFirst = true; // For server call
+bool isHighscore = false; //Open HighScore menu
 
 char _scoreBB8[20];
 char _scoreD0[20];
 
-const char* connection = "";
+const char* connection = ""; //Connection string
 
 Menu::Menu(){}
 Menu::~Menu(){}
@@ -87,7 +86,7 @@ int Menu::getBackground(){
     int hour=aTime->tm_hour;
 
     //check day/night
-    if(hour >= 19 or hour <= 5){
+    if(hour >= 19 or hour <= 5){ //If it is night use switch to change weather
         switch (this->background) {
             case 0:
                 return 6;
@@ -530,6 +529,7 @@ void Menu::draw(){
     DrawText(1.5,-1.50,-2,"Weather",25.0);
 }
 
+// Used to draw menu and clean buffer
 void Menu::drawMenu(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
     
@@ -563,7 +563,7 @@ void Menu::DrawText(float x,float y, float z, const char *text, int size){
 
 //function to handle mouse interaction
 int Menu::select(GLint x, GLint y){
-    //interazione mouse
+    
     if(isHighscore){
         isHighscore = false;
     }
