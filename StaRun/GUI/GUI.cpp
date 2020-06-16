@@ -17,14 +17,11 @@ void GUI::draw(int score, int life){
     
     char S[10];
     sprintf(S,"%d", score);
-    //glDisable(GL_FOG);
     glDisable(GL_LIGHTING);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
-    //Gestisco lo SCORE
-    
-    //Disegno trapezio frontale
+    //trapeze
     glColor4f(0.0, 0.1, 0.7, 0.5);
     glPushMatrix();
     glBegin(GL_POLYGON);
@@ -36,7 +33,7 @@ void GUI::draw(int score, int life){
     glEnd();
     glPopMatrix();
     
-    //Disegno ombra trapezio
+    //trapeze's shadow
     glColor4f(0.2, 0.2, 0.2, 0.3);
     glPushMatrix();
     glBegin(GL_POLYGON);
@@ -48,7 +45,7 @@ void GUI::draw(int score, int life){
     glEnd();
     glPopMatrix();
     
-    //Disegno scritta SCORE
+    //score
     glColor4f(1.0, 1.0, 1.0, 1.0);
     glPushMatrix();
     glTranslatef(-18, 10, 1.1);
@@ -58,7 +55,7 @@ void GUI::draw(int score, int life){
         }
     glPopMatrix();
     
-    //Aggiungo lo score
+    //score update
     glColor4f(1.0, 1.0, 0.0, 1.0);
     glPushMatrix();
         glTranslatef(-17, 8.5, 1.1);
@@ -68,9 +65,7 @@ void GUI::draw(int score, int life){
         }
     glPopMatrix();
     
-//Gestisco le VITE
-    
-    //Disegno rettangolo Vite
+    //lives
     glColor4f(0.0, 0.1, 0.7, 0.5);
     glPushMatrix();
     glBegin(GL_POLYGON);
@@ -81,7 +76,7 @@ void GUI::draw(int score, int life){
     glEnd();
     glPopMatrix();
     
-    //Disegno ombra trapezio
+    //lives shadow
     glColor4f(0.2, 0.2, 0.2, 0.3);
     glPushMatrix();
     glBegin(GL_POLYGON);
@@ -101,7 +96,8 @@ void GUI::draw(int score, int life){
         }
     glPopMatrix();
     
-    if (life >= 1 ){    // Se ho almeno UNA vita disegno il ROSSO
+    //lives handling
+    if (life >= 1 ){ //if i have only one life, draw RED
         glColor4f(0.7, 0.0, 0.0, 0.9);
         glPushMatrix();
         glBegin(GL_POLYGON);
@@ -112,7 +108,7 @@ void GUI::draw(int score, int life){
         glEnd();
         glPopMatrix();
     }
-    if (life >= 2){     // Se ho almeno DUE vita disegno il GIALLO
+    if (life >= 2){ //if i have at least two lives, draw YELLOW
         glColor4f(0.7, 0.7, 0.0, 0.9);
         glPushMatrix();
         glBegin(GL_POLYGON);
@@ -124,8 +120,7 @@ void GUI::draw(int score, int life){
         glPopMatrix();
     }
     
-    if (life >= 3){     // Se ho almeno TRE vite disegno il VERDE
-        
+    if (life >= 3){ //if i havethree lives, draw GREEN
         glColor4f(0.0, 0.7, 0.0, 0.9);
         glPushMatrix();
         glBegin(GL_POLYGON);
@@ -136,6 +131,5 @@ void GUI::draw(int score, int life){
         glEnd();
         glPopMatrix();
     }
-    //glEnable(GL_LIGHTING);
     glDisable(GL_BLEND);
 }

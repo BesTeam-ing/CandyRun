@@ -52,23 +52,25 @@ std::string Server::getWeather(){
 
     if (httpCode == 200)
     {
-        // Response looks good - done using Curl now.  Try to parse the results
-        // and print them out.
         Json::Value jsonData;
         Json::Reader jsonReader;
 
+        //json data parsed
         if (jsonReader.parse(*httpData.get(), jsonData))
-        {            
+        {
+            //return server response as string (from json to string)
             return jsonData["forecast"]["text"]["it"].toStyledString();
         }
         else
         {
+            //return error
             std::cout << "Could not parse HTTP data as JSON" << std::endl;
             std::cout << "HTTP data was:\n" << *httpData.get() << std::endl;
             return "Error";
         }
     }
     else{
+        //return error
         std::cout << "Couldn't GET from " << url << " - exiting" << std::endl;
         return "Error";
     }

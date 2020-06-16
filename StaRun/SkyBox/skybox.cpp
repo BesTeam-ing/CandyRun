@@ -12,6 +12,7 @@ SkyBox::SkyBox(){}
 
 SkyBox::~SkyBox(){}
 
+//load textures
 void SkyBox::initSkyBox(char const *front, char const *right, char const *left, char const *back, char const *up, char const *down){
     this->skybox[FRONT] = SOIL_load_OGL_texture(front, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     this->skybox[RIGHT] = SOIL_load_OGL_texture(right, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
@@ -21,6 +22,7 @@ void SkyBox::initSkyBox(char const *front, char const *right, char const *left, 
     this->skybox[DOWN] = SOIL_load_OGL_texture(down, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
 }
 
+//function to draw skybox
 void SkyBox::drawSkyBox(double D){
     glColor3f(1.0f,1.0f,1.0f);
     glEnable(GL_TEXTURE_2D);

@@ -8,20 +8,23 @@
 
 #include "menu.hpp"
 
+Server server;
+Character _character;
+objloader _title;
+
+//struct polygon
 typedef struct polygon{
      float x1,y1,x2,y2;
 } polygon;
   
 polygon polygons[15];
-Server server;
-Character _character;
-objloader _title;
 int scores[2];
 
-GLfloat lp_title[] = {0.5, 0.5, 0.9, 0.4};
+GLfloat lp_title[] = {0.5, 0.5, 0.9, 0.4}; //light position
 
-int temp = 0, temp_night = 6;
+int temp = 0, temp_night = 6; //temp variables
 
+//BACKGROUND
 int i = 0;
 const int BACKGROUND_COUNT = 6;
 const char* BACKGROUND[] = {
@@ -33,6 +36,7 @@ const char* BACKGROUND[] = {
     "textures/spaceup.bmp"
 };
 
+//CHARACTERS
 int j = 0;
 const int CHARACTER_COUNT = 2;
 const char* CHARACTER[] = {
@@ -40,6 +44,7 @@ const char* CHARACTER[] = {
     "textures/d0_icon.png"
 };
 
+//WEATHER
 int k = 0;
 const int WEATHER_COUNT = 6;
 const char* WEATHER[] = {
@@ -51,7 +56,8 @@ const char* WEATHER[] = {
     "textures/space.png"
 };
 
-int texture,
+//textures
+unsigned int texture,
     texture_back[BACKGROUND_COUNT],
     texture_character[CHARACTER_COUNT],
     texture_weather[WEATHER_COUNT],
@@ -62,21 +68,25 @@ int texture,
     title;
 
 bool isFirst = true;
+
 bool isHighscore = false;
+
 char _scoreBB8[20];
 char _scoreD0[20];
+
 const char* connection = "";
 
 Menu::Menu(){}
-
 Menu::~Menu(){}
 
+//function that return backgorund choosen
 int Menu::getBackground(){
+    //get current time
     time_t theTime = time(NULL);
     struct tm *aTime = localtime(&theTime);
-    
     int hour=aTime->tm_hour;
 
+    //check day/night
     if(hour >= 19 or hour <= 5){
         switch (this->background) {
             case 0:
@@ -109,10 +119,12 @@ int Menu::getBackground(){
     }
 }
 
+//function that return character choosen
 int Menu::getCharacter(){
     return this->character;
 }
 
+//menu initialization
 void Menu::initMenu(){
     //MENU BUTTONS z=-1
     
@@ -233,6 +245,7 @@ void Menu::initMenu(){
     
 }
 
+//function to draw menu
 void Menu::draw(){
     //HIGHSCORES
     if(isHighscore){
@@ -250,29 +263,29 @@ void Menu::draw(){
             glEnd();
         glPopMatrix();
         
+        //display highscore
         _character.ReadHighScore();
         sprintf(_scoreBB8, "%d", _character.getBB8score());
         sprintf(_scoreD0, "%d", _character.getD0score());
-        //sprintf(_score,"Highscore: %d", _character.ReadHighScore());
         this->DrawText(-1, 1.5, -4, "Highscore" ,25.0);
-        
         this->DrawText(-1.5, 0, -4, "BB8:" ,25.0);
         this->DrawText(0, 0, -4, _scoreBB8 ,15.0);
-        
         this->DrawText(-1.5, -1, -4, "D0:" ,25.0);
         this->DrawText(0, -1, -4, _scoreD0 ,15.0);
     }
 
-    //AGGIORNO I DATI METEO IN MODO ASINCRONO
+    //thread to update weather condition asynchronously
+    //check if it's the first time
     if(isFirst){
         isFirst = false;
         connection = "In Connection ...";
         texture_back[3] = texture_back[5];
         std::thread([](){
-            std::string api = server.getWeather();
+            std::string api = server.getWeather(); //get weather condition
             connection = "Connected!";
-            std::transform(api.begin(), api.end(), api.begin(), ::tolower);
+            std::transform(api.begin(), api.end(), api.begin(), ::tolower); //string tolower
             
+            //string comparison
             if(api.find("sereno") != std::string::npos){
                 texture_back[3] = texture_back[0];
                 temp = 0;
@@ -289,7 +302,7 @@ void Menu::draw(){
                 temp_night = 8;
             }
             
-        }).detach();
+        }).detach(); //thread end
     }
     
     glEnable(GL_TEXTURE_2D);
@@ -298,10 +311,11 @@ void Menu::draw(){
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 
-    //SFONDO Z=0
+    //background Z=0
     glPushMatrix();
     glColor3f(1.0, 1.0, 1.0);
     
+    //enable blending
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glBegin(GL_QUADS);
@@ -319,7 +333,7 @@ void Menu::draw(){
     
     glDisable(GL_TEXTURE_2D);
     
-    //DISEGNO TITOLO
+    //title
     glPushMatrix();
         glColor3f(1.0, 1.0, 0.0);
         glScalef(0.6, 0.6, 0.6);
@@ -331,7 +345,7 @@ void Menu::draw(){
     
     
     //Z = -1
-    //DISEGNO METEO ICON
+    //METEO ICON
     DrawText(-3.8,-3.8,-2,connection,15.0);
     
     glEnable(GL_TEXTURE_2D);
@@ -359,7 +373,7 @@ void Menu::draw(){
     
     DrawText(-3.8,-2.5,-2,"Powered By:",15.0);
     
-    //BACKGROUND PULSANTI
+    //button background
     for(int i=0;i<6;i++){
         glEnable(GL_TEXTURE_2D);
         if (i == 0 or i == 1 or i == 2)
@@ -534,6 +548,7 @@ void Menu::drawMenu(){
     glutSwapBuffers();
 }
 
+//function to draw some text
 void Menu::DrawText(float x,float y, float z, const char *text, int size){
     float _size = 0.0001*size;
         glPushMatrix();
@@ -546,6 +561,7 @@ void Menu::DrawText(float x,float y, float z, const char *text, int size){
     glPopMatrix();
 }
 
+//function to handle mouse interaction
 int Menu::select(GLint x, GLint y){
     //interazione mouse
     if(isHighscore){

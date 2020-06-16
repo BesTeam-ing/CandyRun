@@ -14,6 +14,7 @@
 #include <OpenGL/glext.h>
 #include <SOIL2/SOIL2.h>
 
+//skybox faces
 enum FACES{
     FRONT,
     RIGHT,
@@ -33,7 +34,7 @@ public:
     void drawSkyBox(double D);
     
 private:
-    unsigned int skybox[6];
+    unsigned int skybox[6]; //array that contains pointers to textures
 };
 
 #endif /* skybox_hpp */

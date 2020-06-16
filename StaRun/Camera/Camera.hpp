@@ -20,12 +20,14 @@
 class Camera
 {
 public:
+    //initial camera position
     void init(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ){
         eye = Vector3f(eyeX, eyeY, eyeZ);
         center = Vector3f(centerX, centerY, centerZ);
         up = Vector3f(upX, upY, upZ);
     }
-
+    
+    //move camera
     void moveX(float d){
         Vector3f right = up.cross(center - eye).unit();
         Vector3f r_d = right * d;
@@ -48,6 +50,7 @@ public:
         center = center + v_d;
     }
 
+    //rotate camera
     void rotateX(float a){
         Vector3f view = (center - eye).unit();
         Vector3f right = up.cross(view).unit();

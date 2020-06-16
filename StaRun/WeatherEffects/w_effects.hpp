@@ -33,9 +33,9 @@ private:
     
     typedef struct{
         // Life
-        bool alive;    // is the particle alive?
-        float life;    // particle lifespan
-        float fade; // decay
+        bool alive;// is the particle alive?
+        float life;// particle lifespan
+        float fade;// decay
         // color
         float red;
         float green;
@@ -52,13 +52,13 @@ private:
     
     particles par_sys[MAX_PARTICLES];
     
+    //rain and snow's velocity/direction
     float slowdown = 2.0;
     float velocity = 2.0;
     float zoom = -40.0;
-    float pan = 0.0;
-    float tilt = 0.0;
     float hailsize = 0.1;
     
+    //start/end position
     float start_X = -15.0;
     float start_Y = 15.0;
     float start_Z = 40.0;

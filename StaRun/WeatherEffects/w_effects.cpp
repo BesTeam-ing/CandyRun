@@ -8,9 +8,11 @@
 
 #include "w_effects.hpp"
 
+//constructor/destructor
 WeatherEffects::WeatherEffects(){};
 WeatherEffects::~WeatherEffects(){};
 
+//attributes initialization
 void WeatherEffects::init(int i){
     this->par_sys[i].alive = true;
     this->par_sys[i].life = 1.0;
@@ -34,18 +36,22 @@ void WeatherEffects::initParticles(){
     }
 };
 
+//function to draw rain particles
 void WeatherEffects::drawRain(){
     float x, y, z;
     
     for (int loop = 0; loop < MAX_PARTICLES; loop=loop+2) {
         if (this->par_sys[loop].alive == true) {
+            //set x,y,z position
             x = this->par_sys[loop].xpos;
             y = this->par_sys[loop].ypos;
             z = this->par_sys[loop].zpos + zoom;
 
+            //enable blending
             glEnable(GL_BLEND);
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             
+            //draw rain segment (line)
             glColor4f(0.68, 0.68, 0.95, 0.8);
             glPushMatrix();
                 glBegin(GL_LINES);
@@ -55,9 +61,9 @@ void WeatherEffects::drawRain(){
             glPopMatrix();
             glDisable(GL_BLEND);
 
-            
-            this->par_sys[loop].ypos += this->par_sys[loop].vel / (slowdown*1000);
-            this->par_sys[loop].vel += this->par_sys[loop].gravity;
+            // Update values
+            this->par_sys[loop].ypos += this->par_sys[loop].vel / (slowdown*1000); //y movement
+            this->par_sys[loop].vel += this->par_sys[loop].gravity; //gravity
             this->par_sys[loop].life -= this->par_sys[loop].fade;
 
             if (this->par_sys[loop].ypos <= final_Y) {
@@ -71,27 +77,32 @@ void WeatherEffects::drawRain(){
     }
 };
 
+//function to draw snow particles
 void WeatherEffects::drawSnow(){
     float x, y, z;
     
     for (int loop = 0; loop < MAX_PARTICLES; loop=loop+2) {
         if (par_sys[loop].alive == true) {
+            //set x,y,z position
             x = par_sys[loop].xpos;
             y = par_sys[loop].ypos;
             z = par_sys[loop].zpos + zoom;
             
+            //enable blending
             glEnable(GL_BLEND);
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             glColor4f(1.0, 1.0, 1.0, 0.5);
             
+            //draw snow sphere
             glPushMatrix();
                 glTranslatef(x, y, z);
                 glutSolidSphere(0.2, 16, 16);
             glPopMatrix();
             glDisable(GL_BLEND);
 
-            par_sys[loop].ypos += par_sys[loop].vel / (slowdown*1000);
-            par_sys[loop].vel += par_sys[loop].gravity;
+            // Update values
+            par_sys[loop].ypos += par_sys[loop].vel / (slowdown*1000); //y movement
+            par_sys[loop].vel += par_sys[loop].gravity; //gravity
             par_sys[loop].life -= par_sys[loop].fade;
 
             if (par_sys[loop].ypos <= final_Y) {
@@ -105,16 +116,18 @@ void WeatherEffects::drawSnow(){
     }
 };
 
+//function to draw hail particles
 void WeatherEffects::drawHail(){
     float x, y, z;
 
     for (int loop = 0; loop < MAX_PARTICLES; loop=loop+2) {
         if (par_sys[loop].alive == true) {
+            //set x,y,z position
             x = par_sys[loop].xpos;
             y = par_sys[loop].ypos;
             z = par_sys[loop].zpos + zoom;
 
-            // Draw particles
+            // Draw hail
             glColor3f(0.8, 0.8, 0.9);
             glPushMatrix();
                 glBegin(GL_QUADS);
@@ -151,11 +164,12 @@ void WeatherEffects::drawHail(){
                 glEnd();
             glPopMatrix();
 
+            // Update values
             if (par_sys[loop].ypos <= final_Y) {
                 par_sys[loop].vel = par_sys[loop].vel * -1.0;
             }
-            par_sys[loop].ypos += par_sys[loop].vel / (slowdown*1000); // * 1000
-            par_sys[loop].vel += par_sys[loop].gravity;
+            par_sys[loop].ypos += par_sys[loop].vel / (slowdown*1000); //y movement
+            par_sys[loop].vel += par_sys[loop].gravity; //gravity
             par_sys[loop].life -= par_sys[loop].fade;
 
             if (par_sys[loop].life < 0.0) {

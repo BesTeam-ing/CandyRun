@@ -21,10 +21,13 @@ class Road
 {
 private:
     unsigned int texture;
+    
+    //road start position
     float start_X = -7.0;
     float start_Y = 0.0;
     float start_Z = -15.0;
     
+    //road end position
     float end_X = 7.0;
     float end_Y = 0.0;
     float end_Z = 15.0;

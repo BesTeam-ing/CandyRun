@@ -21,6 +21,7 @@ public:
     
     std::string getWeather();
 private:
+    //API url
     std::string url = "http://api.meteo.uniparthenope.it/products/wrf5/forecast/com63049";
     static std::size_t callback(const char* in, std::size_t size, std::size_t num,std::string* out);
 };

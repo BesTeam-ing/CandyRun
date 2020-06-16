@@ -40,10 +40,10 @@ public:
 private:
     void DrawText(float x,float y, float z, const char *text, int size);
     void draw();
+    
     int background = 0;
     int character = 0;
     int weather = 0;
-    
 };
 
 #endif /* menu_hpp */
