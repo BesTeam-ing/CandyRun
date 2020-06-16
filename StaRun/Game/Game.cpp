@@ -310,134 +310,187 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                 
                 part.initParticles(); //Intialize particles (Rain and Snow)
                 
-                //SkyBox selection
+// SKYBOXES SELECTION
                 switch (menu.getBackground()) {
-                    case 0: //DAY 
-                        sky.initSkyBox("textures/sky191ft.bmp", "textures/sky191rt.bmp", "textures/sky191lf.bmp", "textures/sky191bk.bmp", "textures/sky191up.bmp", "textures/sky191dn.bmp");
-                        weather_condition = CLEAR;
-                        isDay = true;
+                    case 0: //DAY SUNNY
                         
+                        //Load textures
+                        sky.initSkyBox("textures/sky191ft.bmp", "textures/sky191rt.bmp", "textures/sky191lf.bmp", "textures/sky191bk.bmp", "textures/sky191up.bmp", "textures/sky191dn.bmp");
+                        
+                        //Set variables
+                        isDay = true;
+                        weather_condition = CLEAR;
+                        
+                        //Set fog
                         fogDensity = 0.005;
                         setFogColor(0.7, 0.7, 0.7, 1.0);
+                        
+                        //Set Lights
                         glDisable(GL_LIGHT2);
                         glDisable(GL_LIGHT3);
-                        
                         setAmbientLight(0.4, 0.4, 0.4, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                     
-                    case 1: //GIORNO PIOGGIA
+                    case 1: //DAY SNOW
+                        
+                        //Load textures
                         sky.initSkyBox("textures/sky303ft.bmp", "textures/sky303rt.bmp", "textures/sky303lf.bmp", "textures/sky303bk.bmp", "textures/sky303up.bmp", "textures/sky303dn.bmp");
+                        
+                        //Set variables
                         weather_condition = RAIN;
                         isDay = true;
                         
+                        //Set fog
                         fogDensity = 0.01;
                         setFogColor(0.6, 0.6, 0.6, 1.0);
+                        
+                        //Set Lights
                         glDisable(GL_LIGHT2);
                         glDisable(GL_LIGHT3);
-                        
                         setAmbientLight(0.2, 0.2, 0.2, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
+                        
                         break;
                         
-                    case 2: //GIORNO NEVE
+                    case 2: //DAY SNOW
+                        //Load textures
                         sky.initSkyBox("textures/sky303ft.bmp", "textures/sky303rt.bmp", "textures/sky303lf.bmp", "textures/sky303bk.bmp", "textures/sky303up.bmp", "textures/sky303dn.bmp");
+                        
+                        //Set variables
                         weather_condition = SNOW;
                         isDay = true;
                         
+                        //Set fog
                         fogDensity = 0.015;
                         setFogColor(0.6, 0.6, 0.6, 1.0);
+                        
+                        //Set Lights
                         glDisable(GL_LIGHT2);
                         glDisable(GL_LIGHT3);
-                        
                         setAmbientLight(0.2, 0.2, 0.2, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                     
-                    case 4: //MARTE
+                    case 4: //MARS
+                        
+                        //Load textures
                         sky.initSkyBox("textures/pinkft.bmp", "textures/pinkrt.bmp", "textures/pinklf.bmp", "textures/pinkbk.bmp", "textures/pinkup.bmp", "textures/pinkdn.bmp");
+                        
+                        //Set variables
                         weather_condition = CLEAR;
                         isDay = true;
                         
+                        //Set fog
                         fogDensity = 0.005;
                         setFogColor(0.6, 0.3, 0.3, 1.0);
+                        
+                        //Set Lights
                         glDisable(GL_LIGHT2);
                         glDisable(GL_LIGHT3);
-                        
                         setAmbientLight(0.5, 0.3, 0.3, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                         
-                    case 5: //SPAZIO
+                    case 5: //SPACE
+                        
+                        //Load textures
                         sky.initSkyBox("textures/spaceft.bmp", "textures/spacert.bmp", "textures/spacelf.bmp", "textures/spacebk.bmp", "textures/spaceup.bmp", "textures/spacedn.bmp");
+                        
+                        //Set variables
                         weather_condition = CLEAR;
                         isDay = false;
                         
+                        //Set fog
                         fogDensity = 0.002;
                         setFogColor(0.3, 0.3, 0.3, 1.0);
+                        
+                        //Set Lights
                         glDisable(GL_LIGHT2);
                         glDisable(GL_LIGHT3);
-                        
                         setAmbientLight(0.15, 0.15, 0.15, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                         
-                    case 6: //SERA SERENO
+                    case 6: //NIGHT CLEAR
+                        
+                        //Load textures
                         sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
+                        
+                        //Set variables
                         weather_condition = CLEAR;
                         isDay = false;
                         
+                        //Set fog
                         fogDensity = 0.005;
                         setFogColor(0.3, 0.3, 0.3, 1.0);
                         
+                        //Set Lights
                         setAmbientLight(0.4, 0.4, 0.2, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                         
-                    case 7: //SERA PIOGGIA
+                    case 7: //NIGHT RAIN
+                        
+                        //Load textures
                         sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
+                        //Set variables
                         weather_condition = RAIN;
                         isDay = false;
                         
+                        //Set fog
                         fogDensity = 0.03;
                         setFogColor(0.4, 0.4, 0.3, 1.0);
                         
+                        //Set Lights
                         setAmbientLight(0.4, 0.4, 0.2, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                         
-                    case 8: //SERA NEVE
+                    case 8: //NIGHT SNOW
+                        
+                        //Load textures
                         sky.initSkyBox("textures/skyft.bmp", "textures/skyrt.bmp", "textures/skylf.bmp", "textures/skybk.bmp", "textures/skyup.bmp", "textures/skydn.bmp");
+                        //Set variables
                         weather_condition = SNOW;
                         isDay = false;
                         
+                        //Set fog
                         fogDensity = 0.03;
                         setFogColor(0.4, 0.4, 0.3, 1.0);
                         
+                        //Set Lights
                         setAmbientLight(0.4, 0.4, 0.2, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                         
                         break;
                         
-                    default: //GIORNO SERENO
+                    default: //DAY SUNNY
+                        
+                        //Load textures
                         sky.initSkyBox("textures/txStormydays_front.bmp", "textures/txStormydays_right.bmp", "textures/txStormydays_left.bmp", "textures/txStormydays_back.bmp", "textures/txStormydays_up.bmp", "textures/txStormydays_down.bmp");
+                        
+                        //Set variables
                         weather_condition = CLEAR;
                         
+                        //Set fog
                         fogDensity = 0.005;
                         setFogColor(0.7, 0.7, 0.7, 1.0);
+                        
+                        //Set Lights
                         glDisable(GL_LIGHT2);
                         glDisable(GL_LIGHT3);
-                        
                         setAmbientLight(0.2, 0.2, 0.2, 1.0);
                         glLightfv(GL_LIGHT0,GL_AMBIENT,ambientLight);
                 }
                 
+//CHARACTER SELECTION
                 switch (menu.getCharacter()) {
                     case 0: //BB8
                         character.init("textures/bb8_body.obj","textures/bb8_body.mtl", "textures/bb8_head.obj", "textures/bb8_head.mtl", 0);
@@ -446,11 +499,13 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
                         character.init("textures/d0_body.obj","textures/d0_body.mtl", "textures/d0_head.obj", "textures/d0_head.mtl", 1);
                         break;
                         
-                    default:
+                    default: //Default is BB8
                         character.init("textures/bb8_body.obj","textures/bb8_body.mtl", "textures/bb8_head.obj", "textures/bb8_head.mtl", 0);
                         break;
                 }
             }
+            
+            //Exit Game
             else if(select == 3){
                 engine->drop();
                 exit(0);
@@ -459,32 +514,36 @@ void Game::mouseInput(GLint button, GLint state, GLint x, GLint y){
     }
 }
 
-
+//Special keys function
 void Game::windowSpecial(int key,int x,int y){
-    //interazione tastiera
-    if(isStart && !isPaused){
+
+    if(isStart && !isPaused){ //If we are in Game Window
+        
         if (key == GLUT_KEY_RIGHT){
-            if(isAudio)
+            if(isAudio) //If audio is enabled
                 engine->play2D("sounds/bb8-05.wav", false);
             
-            character.setX(1);
+            character.setX(1); //Move Right
         }
         else if (key == GLUT_KEY_LEFT){
-            if(isAudio)
+            if(isAudio) //If audio is enabled
                 engine->play2D("sounds/bb8-05.wav", false);
             
-            character.setX(-1);
+            character.setX(-1); //Move Left
         }
     }
 
     redisplayAll();
 }
 
+//Keys function
 void Game::windowKey(unsigned char key,int x,int y){
-    //interazione tastiera
-    if (key == 27){
-        if(isStart){
-            if(isPaused){
+
+    if (key == 27){ //ESC
+        if(isStart){ //If we are in game
+            if(isPaused){ //If game is paused
+                
+                //Return to main menu and set variables to default
                 engine->play2D("sounds/starwars.wav", true);
                 obj.initObject();
                 character.initialPosition();
@@ -495,17 +554,19 @@ void Game::windowKey(unsigned char key,int x,int y){
                 update = 0.2;
             }
         }
-        else{
+        else{ //Else quit game
             engine->drop();
             exit(0);
         }
     }
     
+    //PAUSE or RESUME
     else if(key == 'p' or key == 'P'){
         if(isStart)
             isPaused = !isPaused;
     }
     
+    // MUTE ON or OFF
     else if(key == 'm' or key == 'M'){
         if(isAudio){
             engine->setSoundVolume(0.0f);
@@ -519,7 +580,7 @@ void Game::windowKey(unsigned char key,int x,int y){
     
     redisplayAll();
 }
-
+//Default displayProject function
 void Game::displayProject(double fov, double asp, double dim){
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -528,23 +589,28 @@ void Game::displayProject(double fov, double asp, double dim){
     glutReshapeWindow( DEF_WINDOW_WIDTH, DEF_WINDOW_HEIGHT);
 }
 
+//Function to manage screen size
 void Game::displayReshape(int width,int height){
     asp = (height>0) ? (double)width/height : 1;
-    glViewport(0,0, width, height);
+    glutReshapeWindow( DEF_WINDOW_WIDTH, DEF_WINDOW_HEIGHT);
     displayProject(fov, asp, dim);
 }
 
+// Function to redisplay all
 void Game::redisplayAll(void){
     displayProject(fov, asp, dim);
     glutPostRedisplay();
 }
 
+//Set the fog color
 void Game::setFogColor(float r, float g, float b, float a){
     fogColor[0] = r;
     fogColor[1] = g;
     fogColor[2] = b;
     fogColor[3] = a;
 }
+
+//Set the ambient light color
 void Game::setAmbientLight(float r, float g, float b, float a){
     ambientLight[0] = r;
     ambientLight[1] = g;
